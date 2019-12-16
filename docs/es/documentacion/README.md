@@ -29,7 +29,7 @@ asdasd asd ajf dfg sjdfi fsdhf sdjifsdfh vds fs dvhs vsv
   <template slot="demo">
     <AtPicture v-bind="{
         sources: [{srcset: 'https://source.unsplash.com/random/600x400', media: '480px'},{srcset: 'https://source.unsplash.com/random/320x200', media: '320px'}]
-    }"/> 
+    }"/>
   </template>
 
   ```vue
