@@ -6,7 +6,6 @@ import resolve from 'rollup-plugin-node-resolve'
 import { terser } from 'rollup-plugin-terser'
 import alias from '@rollup/plugin-alias'
 import autoprefixer from 'autoprefixer'
-console.log(path.resolve('src/scss'))
 
 export default [
     {
