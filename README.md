@@ -2,10 +2,10 @@
 
 Vue UI Component library for Avoris travel projects.
 
-## Documentation
+## Documentation
 
-[Español](https://avoristravel.github.io/athos/es/)
-[English](https://avoristravel.github.io/athos/)(Working on it)
+- [Español](https://avoristravel.github.io/athos/es/)
+- [English](https://avoristravel.github.io/athos/) (Working on it)
 
 ## Development
 
