@@ -1,6 +1,7 @@
 const { resolve, join } = require('path')
 
 module.exports = {
+    base: '/athos/',
     dest: resolve('docs/dist'),
     locales: {
         '/': {
