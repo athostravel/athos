@@ -1,17 +1,28 @@
 {
   "name": "@avoristravel/athos",
+  "description": "Vue UI components library",
   "version": "0.0.1",
   "main": "dist/athos.umd.js",
   "module": "dist/athos.esm.js",
   "unpkg": "dist/athos.min.js",
   "scripts": {
-    "dev:docs": "vuepress dev docs",
+    "dev": "vuepress dev docs",
     "build:docs": "vuepress build docs",
     "build": "npm run linter && rimraf dist && npm run build:styles && npm run build:styleThemes && npm run autoprefixer && rollup --config build/rollup.config.js",
     "build:styles": "node-sass --output-style compressed src/scss/styles.scss dist/css/athos.css",
     "build:styleThemes": "node-sass --output-style compressed -o dist/css/themes src/scss/themes",
     "autoprefixer": "postcss dist/css --base dist/css --dir dist/css --use autoprefixer --no-map",
     "linter": "eslint --fix 'src/**/*.{js,vue}' && stylelint 'src/**/*.{scss,vue}'"
+  },
+  "author": "Javier Puche",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/avoristravel/athos/issues"
+  },
+  "homepage": "https://github.com/avoristravel/athos#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avoristravel/athos.git"
   },
   "dependencies": {
     "vuex": "^3.1.2"
@@ -21,7 +32,6 @@
     "autoprefixer": "^9.7.3",
     "babel-eslint": "^10.0.3",
     "cache-loader": "^4.1.0",
-    "core-js": "^3.5.0",
     "css-loader": "^3.3.2",
     "eslint": "^6.7.2",
     "eslint-config-standard": "^14.1.0",
