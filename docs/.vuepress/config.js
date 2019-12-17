@@ -75,11 +75,11 @@ module.exports = {
                 sidebar: {
                     '/es/documentacion/': [
                         {
-                            title: 'Desarrollo',
+                            title: 'Componentes',
                             collapsable: false,
                             sidebarDepth: 2,
                             children: [
-                                '/es/documentacion/'
+                                '/es/documentacion/components/picture'
                             ]
                         }
                     ]
