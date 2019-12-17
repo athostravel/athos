@@ -19,6 +19,10 @@ Para crear un componente (se aplica también a páginas y layouts) deberemos seg
 │   ├── ...
 ```
 
+::: tip
+Cuando nos referimos a componentes también estamos hablando de páginas y layouts. Todo son componentes, pero es una manera de categorizarlos.
+:::
+
 ## Preparar el componente para la librería
 
 Una vez creados los archivos deberemos preparar el componente para ser exportado en la librería. Para ello en el `index.js` añadimos:
@@ -106,3 +110,8 @@ El archivo `.vue` seguiría este formato:
   }
 </style>
 ```
+
+- Todos los componentes deberán llevar un `name` en formato CamelCase empezando por `At` y seguido por el nombre del componente.
+- Todas las clases para los componentes deberán empezar por `c-` seguido del nombre. Todo minúsculas y con guiones medios.
+- En caso de usar variables, deberá haber dos `styles`. En el primero irá la clase del componente con las variables locales sin el atributo `scope` y en el segundo los estilos del componente con el atributo `scope`.
+- Los nombres de las variables deberán empezar por `c-` seguido de nombre del componente, seguido de la propiedad de css que aplicará.  

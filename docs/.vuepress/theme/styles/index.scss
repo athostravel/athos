@@ -135,6 +135,22 @@ div {
   }
 }
 
+.docs-msg {
+  background-color: #f1f8ff;
+  color: #707096;
+  border-left: 4px solid #70b3ec;
+  padding: 1rem;
+  border-radius: 0.25rem;
+
+  &__title {
+    font-weight: 700;
+  }
+
+  > * {
+    margin-bottom: 0;
+  }
+}
+
 @mixin encapsulated ($tag) {
   > #{$tag} {
     &:not(.preview) {

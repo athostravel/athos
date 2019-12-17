@@ -3,28 +3,7 @@
         <div class="page__content">
             <slot name="top" />
 
-            <div class="theme-default-content">
-                <Content />
-
-                <Tabs>
-                    <Tab v-for="tab in $page.frontmatter.API" :key="tab.id" :title="tab.title">
-                        <table>
-                            <template v-for="(item, index) in tab.items">
-                                <tr v-if="index === 0" :key="index">
-                                    <th v-for="(value, key, i) in item" :key="i">
-                                        {{ key }}
-                                    </th>
-                                </tr>
-                                <tr :key="index">
-                                    <td v-for="(value, key, i) in item" :key="i">
-                                        {{ value }}
-                                    </td>
-                                </tr>
-                            </template>
-                        </table>
-                    </Tab>
-                </Tabs>
-            </div>
+            <Content class="theme-default-content" />
 
             <footer class="page-edit">
                 <div

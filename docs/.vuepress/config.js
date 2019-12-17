@@ -94,7 +94,8 @@ module.exports = {
                             sidebarDepth: 2,
                             children: [
                                 '/es/desarrollo/',
-                                '/es/desarrollo/crear-un-componente'
+                                '/es/desarrollo/crear-un-componente',
+                                '/es/desarrollo/documentar-un-componente'
                             ]
                         }
                     ]

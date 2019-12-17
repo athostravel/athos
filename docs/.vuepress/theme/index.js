@@ -21,9 +21,9 @@ module.exports = (options, ctx) => ({
         '@vuepress/search',
         '@vuepress/plugin-nprogress',
         ['container', {
-            type: 'theorem',
-            before: info => `<details class="custom-block details">${info ? `<summary>${info}</summary>` : ''}\n`,
-            after: () => '</details>\n'
+            type: 'tip',
+            before: tip => `<div class="docs-msg docs-msg--tip">${tip ? `<div class="docs-msg__title">${tip}</div>` : ''}\n`,
+            after: () => '</div>\n'
         }]
     ]
 })

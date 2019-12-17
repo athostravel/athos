@@ -2,4 +2,4 @@
 home: true
 ---
 
-home
+[Documentación](/es/documentacion/)
