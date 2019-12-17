@@ -127,7 +127,7 @@
           "name" : "iconDetail",
           "type" : "Boolean",
           "parameters" : "null",
-          "description": "Icon detail.",
+          "description": "Separation of the icon with the value of the input element.",
           "default": "false"
         }
       ] 
