@@ -1,4 +1,4 @@
-import PriceButton from './PriceButton'
+import PriceButton from './PriceButton.vue'
 import { use, registerComponent } from '@utils/plugins'
 
 const Plugin = {

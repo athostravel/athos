@@ -1,4 +1,4 @@
-import Price from './Price'
+import Price from './Price.vue'
 import { use, registerComponent } from '@utils/plugins'
 
 const Plugin = {
