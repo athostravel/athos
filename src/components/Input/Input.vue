@@ -2,15 +2,15 @@
     <div
         class="c-input"
         :class="{
-            //'c-input--has-icon': icon,
-            //'c-input--has-icon-left': icon && iconAlign === 'left',
-            //'c-input--has-icon-detail': iconDetail,
+            'c-input--has-icon': icon,
+            'c-input--has-icon-left': icon && iconAlign === 'left',
+            'c-input--has-icon-detail': iconDetail,
             'c-input--has-label': label,
             'c-input--is-disabled': disabled,
             'c-input--tiny' : size && size === 'tiny',
             'c-input--small' : size && size === 'small',
             'c-input--medium' : size && size === 'medium',
-            'c-input--large' : size && size === 'large'
+            'c-input--large' : size && size === 'large',
         }"
     >
         <div class="c-input__inner">
@@ -38,77 +38,26 @@
                     {{ label }}
                 </span>
             </label>
-            <!--
-            <AtIcon
+
+            <Icon
                 v-if="icon"
                 class="c-input__icon"
                 :icon="icon"
             />
-            -->
         </div>
     </div>
 </template>
 
 <script>
-    //import formControl from '../../mixins/formControl'
-    //import AtIcon from '../Icon/Icon.vue'
+    import formControl from '@mixins/formControl'
+    import Icon from '@components/Icon/Icon.vue'
 
     export default {
         name: 'AtInput',
-        props: {
-            idElement: {
-                type: String,
-                idElement: undefined
-            },
-            type: {
-                type: String,
-                default: 'text'
-            },
-            name: {
-                type: String,
-                default: undefined
-            },
-            placeholder: {
-                type: String,
-                default: undefined
-            },
-            readonly: {
-                type: String,
-                default: undefined
-            },
-            disabled: {
-                type: String,
-                default: undefined
-            },
-            value: {
-                type: String,
-                default: undefined
-            },
-            required: {
-                type: String,
-                default: undefined
-            },
-            autocomplete: {
-                type: String,
-                default: undefined
-            },
-            checked: {
-                type: String,
-                default: undefined
-            },
-            max: {
-                type: String,
-                default: undefined
-            },
-            min: {
-                type: String,
-                default: undefined
-            },
-            multiple: {
-                type: String,
-                default: undefined
-            }
-        }
+        components: {
+            Icon
+        },
+        mixins: [formControl]
     }
 </script>
 

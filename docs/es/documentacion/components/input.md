@@ -28,9 +28,9 @@
 
 <Preview>
   <template slot="demo">
-    <AtInput />
+    <AtInput label="Lorem ipsum" placeholder="Lorem ipsum" />
   </template>
-
+  
   ```vue
   <template>
     <AtInput v-bind="input"/>
@@ -41,14 +41,13 @@
           data() {
               return {
                   input: {
-                      label: "Fullname",
-                      placeholder: "Fullname"
+                      label: "Lorem ipsum",
+                      placeholder: "Lorem ipsum"
                   }
               }
           }
       }
   </script>
-
   ```
 </Preview>
 
