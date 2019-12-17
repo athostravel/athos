@@ -101,6 +101,7 @@
     color: currentColor;
     padding: 0.5rem 2rem;
     display: block;
+    line-height: 1.2;
 
     &.active {
       color: var(--docs-color-primary);

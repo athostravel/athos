@@ -70,16 +70,40 @@ module.exports = {
                     {
                         text: 'Documentación',
                         link: '/es/documentacion/'
+                    },
+                    {
+                        text: 'Desarrollo',
+                        link: '/es/desarrollo/'
                     }
                 ],
                 sidebar: {
                     '/es/documentacion/': [
+                        {
+                            title: 'Empezando',
+                            collapsable: false,
+                            sidebarDepth: 2,
+                            children: [
+                                '/es/documentacion/'
+                            ]
+                        },
                         {
                             title: 'Componentes',
                             collapsable: false,
                             sidebarDepth: 2,
                             children: [
                                 '/es/documentacion/components/picture'
+                            ]
+                        }
+                    ],
+                    '/es/desarrollo/': [
+                        {
+                            title: 'Empezando',
+                            collapsable: false,
+                            sidebarDepth: 2,
+                            children: [
+                                '/es/desarrollo/',
+                                '/es/desarrollo/crear-un-componente',
+                                '/es/desarrollo/documentar-un-componente'
                             ]
                         }
                     ]
