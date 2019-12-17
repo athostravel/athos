@@ -48,7 +48,7 @@
 <style lang="scss" scoped>
   .c-tabs {
     &__nav {
-      border-bottom: #{em(1px)} solid var(--color-border);
+      border-bottom: 1px solid var(--docs-color-border);
       display: grid;
       margin-bottom: 0.5rem;
       grid-auto-flow: column;
