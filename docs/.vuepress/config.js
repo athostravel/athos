@@ -91,7 +91,8 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 2,
                             children: [
-                                '/es/documentacion/components/picture'
+                                '/es/documentacion/components/picture',
+                                '/es/documentacion/components/input'
                             ]
                         }
                     ],
