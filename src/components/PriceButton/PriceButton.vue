@@ -10,14 +10,14 @@
             <Price v-bind="price" />
         </div>
         <div class="c-price-button__button">
-            <!-- <Button v-bind="button" />-->
+            <Button v-bind="button" />
         </div>
     </component>
 </template>
 
 <style lang="scss">
   :root {
-    --c-price-button-background: #fff;
+    --c-price-button-background: #f6f6f6;
     --c-price-button-price-border-radius: 4px 0 0 4px;
     --c-price-button-price-padding: #{em(8px) em(16px)};
   }
@@ -50,29 +50,19 @@
 
 <script>
 
-    import Price from '../Price/Price'
+    import Price from '@components/Price/Price'
+    import Button from '@components/Button/Button'
 
     export default {
         name: 'AtPriceButton',
         components: {
-            Price
+            Price,
+            Button
         },
         props: {
             tag: {
                 type: String,
                 default: 'div'
-            },
-            text: {
-                type: String,
-                default: 'Desde'
-            },
-            before: {
-                type: String,
-                default: undefined
-            },
-            value: {
-                type: String,
-                default: undefined
             },
             inverted: {
                 type: Boolean,
