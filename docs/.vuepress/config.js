@@ -91,6 +91,8 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 2,
                             children: [
+                                '/es/documentacion/components/icon',
+                                '/es/documentacion/components/iconList',
                                 '/es/documentacion/components/picture'
                             ]
                         }
