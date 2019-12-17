@@ -1,113 +1,53 @@
----
-{
-  "API": [
-    {
-      "title": "properties",
-      "items": [
-        {
-          "name": "v-model",
-          "type": "String / boolean / array",
-          "parameters": null,
-          "description": "Link values.",
-          "default": null
-        },
-        {
-          "name": "color",
-          "type": "String",
-          "parameters": "primary, success, danger, warning, dark, RGB, HEX",
-          "description": "Color options for checkBox.",
-          "default": "primary"
-        },
-        {
-          "name": "vs-value",
-          "type": "String",
-          "parameters": "primary, success, danger, warning, dark, RGB, HEX",
-          "description": "Value if different from a boolean.",
-          "default": null
-        },
-        {
-          "name": "icon",
-          "type": "String",
-          "parameters": "Material Icons",
-          "description": "Change the checkBox icon.",
-          "default": "checked"
-        },
-        {
-          "name": "icon-pack",
-          "type": "String",
-          "parameters": "Icon Pack Class Name",
-          "description": "Icon Pack to be used. If not set, icon will default to Material Icons. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.",
-          "default": "material-icons"
-        }
-      ]
-    },
-    {
-      "title": "events",
-      "items": [
-        {
-          "name": "events",
-          "type": "String / boolean / array",
-          "parameters": null,
-          "description": "Link values.",
-          "default": null
-        },
-        {
-          "name": "color",
-          "type": "String",
-          "parameters": "primary, success, danger, warning, dark, RGB, HEX",
-          "description": "Color options for checkBox.",
-          "default": "primary"
-        },
-        {
-          "name": "vs-value",
-          "type": "String",
-          "parameters": "primary, success, danger, warning, dark, RGB, HEX",
-          "description": "Value if different from a boolean.",
-          "default": null
-        },
-        {
-          "name": "icon",
-          "type": "String",
-          "parameters": "Material Icons",
-          "description": "Change the checkBox icon.",
-          "default": "checked"
-        },
-        {
-          "name": "icon-pack",
-          "type": "String",
-          "parameters": "Icon Pack Class Name",
-          "description": "Icon Pack to be used. If not set, icon will default to Material Icons. ex. FA4 uses fa or fas, FA5 uses fas, far, or fal.",
-          "default": "material-icons"
-        }
-      ]
-    }
-  ]
-}
----
-# sadasd
 
-asdasd asd ajf dfg sjdfi fsdhf sdjifsdfh vds fs dvhs vsv
+# Instalación
 
-<Preview>
-  <template slot="demo">
-    <AtMuchoviajeHome v-bind="{
-      webcode: 'muchoviaje',
-      campaings: ['black-friday', 'winter']
-    }"/> 
-  </template>
+Actualmente dispones de dos maneras de usar Athos:
 
-  ```vue
-  <HelloWorld />
-  ```
-</Preview>
+## CDN
 
-<Preview>
-  <template slot="demo">
-    <AtHelloWorld/> 
-  </template>
+Comienza un proyecto rápidamente usando un CDN y deja que Athos haga la magia.
 
-  ```vue
-  <HelloWorld />
-  ```
-</Preview>
+```html
+!DOCTYPE html>
+<html>
+<head>
+    <link href="https://unpkg.com/athos/dist/css/athos.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+    <div id="app">
+        <at-button>Hello World</at-button>
+    </div>
 
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/athos/dist/athos.min.js"></script>
+    <script>
+        new Vue({
+            el: '#app'
+        })
+    </script>
+</body>
+</html>
+```
+
+## NPM
+
+```bash
+npm install athos --save-dev
+```
+
+Una vez instalado:
+
+```js
+import Vue from 'vue'
+import App from './App.vue'
+import Athos from 'athos'
+import 'athos/dist/css/athos.css'
+
+Vue.config.productionTip = false
+Vue.use(Athos)
+
+new Vue({
+  render: h => h(App),
+}).$mount('#app')
+```
