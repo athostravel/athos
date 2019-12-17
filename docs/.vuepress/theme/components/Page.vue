@@ -6,7 +6,7 @@
             <div class="theme-default-content">
                 <Content/>
 
-                <Tabs>
+                <Tabs v-if="$page.frontmatter.API">
                     <Tab v-for="(tabs, index) in $page.frontmatter.API" :key="tabs.index" :title="tabs.title">
                         <table >
                             <thead>
