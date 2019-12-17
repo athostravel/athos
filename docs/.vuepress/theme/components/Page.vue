@@ -3,7 +3,28 @@
         <div class="page__content">
             <slot name="top" />
 
-            <Content class="theme-default-content" />
+            <div class="theme-default-content">
+                <Content />
+
+                <Tabs>
+                    <Tab v-for="tab in $page.frontmatter.API" :key="tab.id" :title="tab.title">
+                        <table>
+                            <template v-for="(item, index) in tab.items">
+                                <tr v-if="index === 0" :key="index">
+                                    <th v-for="(value, key, i) in item" :key="i">
+                                        {{ key }}
+                                    </th>
+                                </tr>
+                                <tr :key="index">
+                                    <td v-for="(value, key, i) in item" :key="i">
+                                        {{ value }}
+                                    </td>
+                                </tr>
+                            </template>
+                        </table>
+                    </Tab>
+                </Tabs>
+            </div>
 
             <footer class="page-edit">
                 <div
@@ -48,15 +69,20 @@
 
 <script>
     import { resolvePage, outboundRE, endingSlashRE } from '../util'
+    import Tab from '@theme/components/Tab.vue'
+    import Tabs from '@theme/components/Tabs.vue'
 
     export default {
+        components: {
+            Tab,
+            Tabs
+        },
         props: {
             sidebarItems: {
                 type: Array,
                 default: () => {}
             }
         },
-
         computed: {
             lastUpdated () {
                 return this.$page.lastUpdated
