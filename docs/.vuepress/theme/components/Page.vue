@@ -1,9 +1,38 @@
 <template>
     <main class="page">
         <div class="page__content">
-            <slot name="top" />
+            <slot name="top"/>
 
-            <Content class="theme-default-content" />
+            <Content class="theme-default-content"/>
+
+            <div v-if="$page.frontmatter.API" class="theme-default-content">
+                <Tabs>
+                    <Tab v-for="(tabs, index) in $page.frontmatter.API" :key="tabs.index" :title="tabs.title">
+                        <table >
+                            <thead>
+                                <tr>
+                                    <th v-for="(item ,objKey, idx) in tabs.items[index]" :key="idx">
+                                        <div>
+                                            {{ objKey }}
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="item in tabs.items" :key="item.id">
+                                    <td>{{ item.name }}</td>
+                                    <td>{{ item.type }}</td>
+                                    <td>{{ item.parameters }}</td>
+                                    <td>{{ item.description }}</td>
+                                    <td>{{ item.default }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </Tab>
+                </Tabs>
+            </div>
+
+
 
             <footer class="page-edit">
                 <div
@@ -15,7 +44,7 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     >{{ editLinkText }}</a>
-                    <OutboundLink />
+                    <OutboundLink/>
                 </div>
 
                 <div
@@ -41,12 +70,14 @@
                 </p>
             </div>
 
-            <slot name="bottom" />
+            <slot name="bottom"/>
         </div>
     </main>
 </template>
 
 <script>
+    import Tabs from '@theme/components/Tabs'
+    import Tab from '@theme/components/Tab'
     import { resolvePage, outboundRE, endingSlashRE } from '../util'
     import Tab from '@theme/components/Tab.vue'
     import Tabs from '@theme/components/Tabs.vue'
@@ -59,7 +90,8 @@
         props: {
             sidebarItems: {
                 type: Array,
-                default: () => {}
+                default: () => {
+                }
             }
         },
         computed: {
