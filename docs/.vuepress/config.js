@@ -92,6 +92,7 @@ module.exports = {
                             sidebarDepth: 2,
                             children: [
                                 '/es/documentacion/components/button',
+                                '/es/documentacion/components/heading',
                                 '/es/documentacion/components/icon',
                                 '/es/documentacion/components/iconList',
                                 '/es/documentacion/components/picture',
