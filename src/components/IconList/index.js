@@ -1,4 +1,4 @@
-import IconList from '../IconList/IconList'
+import IconList from './IconList.vue'
 import { use, registerComponent } from '@utils/plugins'
 
 const Plugin = {

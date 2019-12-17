@@ -12,28 +12,8 @@
     </div>
 </template>
 
-<style scoped lang="scss">
-  .c-icon-list {
-    $this:&;
-
-    display: flex;
-    align-items: center;
-
-    &__icon:not(:last-child) {
-      margin: #{em(8px)};
-    }
-
-    &--vertical {
-      #{$this}__icon:not(:last-child) {
-        margin: #{em(8px)};
-      }
-    }
-  }
-</style>
-
 <script>
-
-    import Icon from '../Icon/Icon'
+    import Icon from '@components/Icon/Icon'
 
     export default {
         name: 'AtIconList',
@@ -52,3 +32,22 @@
         }
     }
 </script>
+
+<style scoped lang="scss">
+  .c-icon-list {
+    $this:&;
+
+    display: flex;
+    align-items: center;
+
+    &__icon:not(:last-child) {
+      margin: #{em(8px)};
+    }
+
+    &--vertical {
+      #{$this}__icon:not(:last-child) {
+        margin: #{em(8px)};
+      }
+    }
+  }
+</style>
