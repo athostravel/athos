@@ -5,55 +5,85 @@
       "title": "properties",
       "items": [
         {
-          "name": "src",
+          "name": "tag",
           "type": "String",
           "parameters": null,
-          "description": "Route for the default image",
-          "default": "https://source.unsplash.com/random/1920x1080"
+          "description": "Tag for the component",
+          "default": "a"
         },
         {
-          "name" : "alt",
+          "name" : "text",
           "type" : "String",
           "parameters" : "",
-          "description": "Specifies an alternate text for an image",
-          "default": "empty"
-        },
-        {
-          "name" : "title",
-          "type" : "String",
-          "parameters" : "",
-          "description": "Specifies an title text for an image",
+          "description": "Text to display",
           "default": "undefined"
         },
         {
-          "name" : "sources",
-          "type" : "Array",
-          "parameters" : "srcset, media",
-          "description": "List of sources by resolution",
+          "name" : "href",
+          "type" : "String",
+          "parameters" : "",
+          "description": "Reference for the button",
+          "default": "#"
+        },
+        {
+          "name" : "icon",
+          "type" : "String, Boolean",
+          "parameters" : "",
+          "description": "Icon to display near the text",
           "default": "undefined"
-        }                
+        },
+        {
+          "name" : "iconAlign",
+          "type" : "String",
+          "parameters" : "",
+          "description": "Position of the icon",
+          "default": "left"
+        },
+        {
+          "name" : "outlined",
+          "type" : "Boolean",
+          "parameters" : "",
+          "description": "Button without background",
+          "default": "false"
+        },
+        {
+          "name" : "casper",
+          "type" : "Boolean",
+          "parameters" : "",
+          "description": "Button without background",
+          "default": "false"
+        },
+        {
+          "name" : "size",
+          "type" : "String",
+          "parameters" : "",
+          "description": "Button size",
+          "default": "undefined"
+        },
+        {
+          "name" : "disabled",
+          "type" : "Boolean",
+          "parameters" : "",
+          "description": "Disables the button",
+          "default": "false"
+        }                                                             
       ] 
     }
   ]
 }
 ---
 
-# Picture
+# Button
 
 <Preview>
   <template slot="demo">
-        <AtButton v-bind="{
-            sources: [
-                {srcset: 'https://source.unsplash.com/random/600x400', media: '480px'},
-                {srcset: 'https://source.unsplash.com/random/320x200', media: '320px'}
-            ]
-        }"/> 
+        <AtButton text="Click me !"/> 
   </template>
 
   ```vue
   <template>
       <div>
-          <AtPicture v-bind="picture"/>
+          <AtButton v-bind="button"/>
       </div>
   </template>
   
@@ -61,17 +91,19 @@
       export default {
           data() {
               return {
-                  picture: {
-                      title: "Titulo",
-                      alt: "Alt",
-                      src: "https://source.unsplash.com/random/1920x1080",
-                      sources: [
-                          {srcset: 'https://source.unsplash.com/random/600x400', media: '480px'},
-                          {srcset: 'https://source.unsplash.com/random/320x200', media: '320px'}
-                      ]
+                  button: {
+                      tag: "button",
+                      text: "Click Me!",
+                      href: "https://www.google.es",
+                      icon: "c-icon-arrow",
+                      iconAlign: "right",
+                      outlined: false,
+                      casper: false,
+                      size: "tiny",
+                      disabled: false
                   }
               }
-          },
+          }
       }
   </script>
 
