@@ -1,9 +1,9 @@
-import MuchoviajeHome from './MuchoviajeHome.vue'
+import PriceButton from './PriceButton.vue'
 import { use, registerComponent } from '@utils/plugins'
 
 const Plugin = {
     install (Vue) {
-        registerComponent(Vue, MuchoviajeHome)
+        registerComponent(Vue, PriceButton)
     }
 }
 

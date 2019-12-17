@@ -20,7 +20,7 @@
 
 <script>
     import LazyLoadDirective from '../../directives/LazyLoadDirective'
-    import AtPictureSource from './PictureSource.vue'
+    import AtPictureSource from '@components/Picture/PictureSource.vue'
 
     export default {
         name: 'AtPicture',
