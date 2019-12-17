@@ -28,7 +28,7 @@
 
 <Preview>
   <template slot="demo">
-        <AtIcon/> 
+    <AtIcon icon="heart"/> 
   </template>
 
   ```vue
@@ -50,7 +50,6 @@
           },
       }
   </script>
-
   ```
 </Preview>
 

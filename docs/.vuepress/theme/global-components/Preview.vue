@@ -77,7 +77,8 @@
                 copied: false,
                 themeSelected: 'Default',
                 themeClass: '',
-                showApplyBtn: false
+                showApplyBtn: false,
+                iconsTheme: 'sadsad'
             }
         },
         computed: {
@@ -87,9 +88,11 @@
         },
         watch: {
             globalTheme (newTheme, oldTheme) {
-                this.themeClass = this.$store.getters['themes/getThemeByName'](newTheme).class
+                const theme = this.$store.getters['themes/getThemeByName'](newTheme)
+                this.themeClass = theme.class
                 this.themeSelected = newTheme
                 this.showApplyBtn = false
+                this.changeIconsTheme(theme.icons)
             }
         },
         mounted () {
@@ -98,8 +101,10 @@
         },
         methods: {
             selectTheme () {
-                this.themeClass = this.$store.getters['themes/getThemeByName'](this.themeSelected).class
+                const theme = this.$store.getters['themes/getThemeByName'](this.themeSelected)
+                this.themeClass = theme.class
                 this.showApplyBtn = true
+                this.changeIconsTheme(theme.icons)
             },
             selectGlobalTheme () {
                 this.$store.commit('themes/selectTheme', this.themeSelected)
@@ -108,8 +113,16 @@
             setGlobalTheme () {
                 if (this.$store.state.themes.currentTheme) {
                     this.themeSelected = this.$store.state.themes.currentTheme
-                    this.themeClass = this.$store.getters['themes/getThemeByName'](this.$store.state.themes.currentTheme).class
+                    const theme = this.$store.getters['themes/getThemeByName'](this.$store.state.themes.currentTheme)
+                    this.themeClass = theme.class
+                    this.changeIconsTheme(theme.icons)
+                } else {
+                    this.changeIconsTheme(this.$store.getters['themes/getThemeByName']('Default').icons)
                 }
+            },
+            changeIconsTheme (theme) {
+                this.iconsTheme = theme
+                this.$emit('updateHead')
             },
             toggleCode () {
                 this.codeIsVisible = !this.codeIsVisible
@@ -140,6 +153,13 @@
             },
             escapePress () {
                 document.addEventListener('keydown', (e) => e.keyCode === 27 && this.demoIsFullscreen && this.toggleDemo())
+            }
+        },
+        metaInfo () {
+            return {
+                link: [
+                    { rel: 'stylesheet', href: this.iconsTheme, id: 'iconsThemes' }
+                ]
             }
         }
     }
