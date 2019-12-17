@@ -1,14 +1,14 @@
 <template>
     <main class="page">
         <div class="page__content">
-            <slot name="top"/>
+            <slot name="top" />
 
-            <div class="theme-default-content">
-                <Content/>
+            <Content class="theme-default-content" />
 
-                <Tabs v-if="$page.frontmatter.API">
+            <div v-if="$page.frontmatter.API" class="theme-default-content">
+                <Tabs>
                     <Tab v-for="(tabs, index) in $page.frontmatter.API" :key="tabs.index" :title="tabs.title">
-                        <table >
+                        <table>
                             <thead>
                                 <tr>
                                     <th v-for="(item ,objKey, idx) in tabs.items[index]" :key="idx">
@@ -32,8 +32,6 @@
                 </Tabs>
             </div>
 
-
-
             <footer class="page-edit">
                 <div
                     v-if="editLink"
@@ -44,7 +42,7 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     >{{ editLinkText }}</a>
-                    <OutboundLink/>
+                    <OutboundLink />
                 </div>
 
                 <div
@@ -70,7 +68,7 @@
                 </p>
             </div>
 
-            <slot name="bottom"/>
+            <slot name="bottom" />
         </div>
     </main>
 </template>
@@ -81,16 +79,16 @@
     import { resolvePage, outboundRE, endingSlashRE } from '../util'
 
     export default {
+        components: {
+            Tab,
+            Tabs
+        },
         props: {
             sidebarItems: {
                 type: Array,
                 default: () => {
                 }
             }
-        },
-        components: {
-            Tabs,
-            Tab
         },
         computed: {
             lastUpdated () {

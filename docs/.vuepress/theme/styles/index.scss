@@ -66,7 +66,7 @@ code {
   font: 0.875em/1 var(--docs-code-font-family);
   background-color: var(--docs-code-background-color);
   border-radius: 0.25rem;
-  display: inline-block;
+  display: inline;
 }
 
 pre {
@@ -132,6 +132,22 @@ div {
 .simplebar-scrollbar {
   &::before {
     background: var(--docs-color-border);
+  }
+}
+
+.docs-msg {
+  background-color: #f1f8ff;
+  color: #707096;
+  border-left: 4px solid #70b3ec;
+  padding: 1rem;
+  border-radius: 0.25rem;
+
+  &__title {
+    font-weight: 700;
+  }
+
+  > * {
+    margin-bottom: 0;
   }
 }
 
@@ -202,6 +218,10 @@ div {
   @include encapsulated ('h1, h2, h3, h4, h5, h6') {
     display: flex;
 
+    &:not(:first-child) {
+      margin-top: 4rem;
+    }
+
     a {
       text-decoration: none;
       color: var(--docs-color-primary);
@@ -213,20 +233,24 @@ div {
     }
   }
 
-  @include encapsulated ('h2') {
+  @include encapsulated ('h1') {
     font-size: 1.8em;
   }
 
-  @include encapsulated ('h3') {
-    font-size: 1.6em;
-  }
-
-  @include encapsulated ('h4') {
+  @include encapsulated ('h2') {
     font-size: 1.4em;
   }
 
-  @include encapsulated ('h5') {
+  @include encapsulated ('h3') {
+    font-size: 1.3em;
+  }
+
+  @include encapsulated ('h4') {
     font-size: 1.2em;
+  }
+
+  @include encapsulated ('h5') {
+    font-size: 1.1em;
   }
 
   @include encapsulated ('h6') {
