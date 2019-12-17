@@ -11,7 +11,7 @@ Comienza un proyecto rápidamente usando un CDN y deja que Athos haga la magia.
 !DOCTYPE html>
 <html>
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/athos/dist/css/athos.css" rel="stylesheet">
+    <link href="https://unpkg.com/athos/dist/css/athos.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 </head>
 <body>
@@ -20,7 +20,7 @@ Comienza un proyecto rápidamente usando un CDN y deja que Athos haga la magia.
     </div>
 
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
-    <script src="https://unpkg.com/athos.min.js"></script>
+    <script src="https://unpkg.com/athos/dist/athos.min.js"></script>
     <script>
         new Vue({
             el: '#app'
@@ -33,7 +33,7 @@ Comienza un proyecto rápidamente usando un CDN y deja que Athos haga la magia.
 ## NPM
 
 ```bash
-npm install @avoristravel/athos --save-dev
+npm install athos --save-dev
 ```
 
 Una vez instalado:
@@ -41,8 +41,8 @@ Una vez instalado:
 ```js
 import Vue from 'vue'
 import App from './App.vue'
-import Athos from '@avoristravel/athos'
-import '@avoristravel/athos/dist/css/athos.css'
+import Athos from 'athos'
+import 'athos/dist/css/athos.css'
 
 Vue.config.productionTip = false
 Vue.use(Athos)
