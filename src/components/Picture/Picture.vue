@@ -43,10 +43,6 @@
                 type: String,
                 default: undefined
             },
-            lazy: {
-                type: Boolean,
-                default: false
-            },
             sources: {
                 type: Array,
                 default: () => []

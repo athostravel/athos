@@ -3,7 +3,6 @@
         :srcset="shim"
         :data-src="srcset"
         :media="`(min-width: ${media})`"
-        :type="type"
     >
 </template>
 
@@ -16,10 +15,6 @@
                 default: ''
             },
             media: {
-                type: String,
-                default: undefined
-            },
-            type: {
                 type: String,
                 default: undefined
             },
