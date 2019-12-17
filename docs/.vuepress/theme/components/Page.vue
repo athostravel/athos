@@ -1,14 +1,14 @@
 <template>
     <main class="page">
         <div class="page__content">
-            <slot name="top"/>
+            <slot name="top" />
 
-            <Content class="theme-default-content"/>
+            <Content class="theme-default-content" />
 
             <div v-if="$page.frontmatter.API" class="theme-default-content">
                 <Tabs>
                     <Tab v-for="(tabs, index) in $page.frontmatter.API" :key="tabs.index" :title="tabs.title">
-                        <table >
+                        <table>
                             <thead>
                                 <tr>
                                     <th v-for="(item ,objKey, idx) in tabs.items[index]" :key="idx">
@@ -32,8 +32,6 @@
                 </Tabs>
             </div>
 
-
-
             <footer class="page-edit">
                 <div
                     v-if="editLink"
@@ -44,7 +42,7 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     >{{ editLinkText }}</a>
-                    <OutboundLink/>
+                    <OutboundLink />
                 </div>
 
                 <div
@@ -70,7 +68,7 @@
                 </p>
             </div>
 
-            <slot name="bottom"/>
+            <slot name="bottom" />
         </div>
     </main>
 </template>
@@ -79,8 +77,6 @@
     import Tabs from '@theme/components/Tabs'
     import Tab from '@theme/components/Tab'
     import { resolvePage, outboundRE, endingSlashRE } from '../util'
-    import Tab from '@theme/components/Tab.vue'
-    import Tabs from '@theme/components/Tabs.vue'
 
     export default {
         components: {

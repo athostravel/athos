@@ -79,6 +79,14 @@ module.exports = {
                 sidebar: {
                     '/es/documentacion/': [
                         {
+                            title: 'Empezando',
+                            collapsable: false,
+                            sidebarDepth: 2,
+                            children: [
+                                '/es/documentacion/'
+                            ]
+                        },
+                        {
                             title: 'Componentes',
                             collapsable: false,
                             sidebarDepth: 2,

@@ -47,34 +47,16 @@
 <style lang="scss" scoped>
   .c-tabs {
     &__nav {
-<<<<<<< HEAD
-      border-bottom: #{em(1px)} solid var(--color-border);
-      margin-bottom: 2em;
-      display: grid;
-      grid-auto-flow: column;
-      overflow-x: auto;
-      grid-gap: 2em;
-=======
       border-bottom: 1px solid var(--docs-color-border);
       display: grid;
       margin-bottom: 0.5rem;
       grid-auto-flow: column;
       overflow-x: auto;
       grid-gap: 1rem;
->>>>>>> be12e60ad7a972db4c28f4cb2c61682965661a11
       justify-content: start;
       align-items: end;
 
       &-item {
-<<<<<<< HEAD
-        padding: 1em;
-        border-bottom: #{em(1px)} solid transparent;
-        transition: all 0.3s;
-
-        &.is-active {
-          color: var(--color-secondary);
-          border-color: var(--color-secondary);
-=======
         all: unset;
         padding: 0.5rem 1rem;
         border-bottom: 1px solid transparent;
@@ -87,7 +69,6 @@
           cursor: default;
           color: var(--docs-color-primary);
           border-color: var(--docs-color-primary);
->>>>>>> be12e60ad7a972db4c28f4cb2c61682965661a11
         }
       }
     }
