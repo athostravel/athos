@@ -49,7 +49,7 @@
     &__nav {
       border-bottom: 1px solid var(--docs-color-border);
       display: grid;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
       grid-auto-flow: column;
       overflow-x: auto;
       grid-gap: 1rem;
