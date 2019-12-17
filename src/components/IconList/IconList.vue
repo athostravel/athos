@@ -1,11 +1,8 @@
 <template>
     <div
         class="c-icon-list"
-        :class="
-            {
-                'c-icon-list--vertical' : vertical
-            }
-        ">
+        :class="{'c-icon-list--vertical' : vertical}"
+    >
         <Icon
             v-for="icon in icons"
             :key="icon.id"
@@ -15,13 +12,6 @@
     </div>
 </template>
 
-<style lang="scss">
-  :root {
-    --c-icon-list-margin: 0 8px 0 0;
-    --c-icon-list-vertical-margin: 0 0 8px 0;
-  }
-</style>
-
 <style scoped lang="scss">
   .c-icon-list {
     $this:&;
@@ -30,12 +20,12 @@
     align-items: center;
 
     &__icon:not(:last-child) {
-      margin: #{em(var(--c-icon-list-margin))};
+      margin: #{em(8px)};
     }
 
     &--vertical {
       #{$this}__icon:not(:last-child) {
-        margin: #{em(var(--c-icon-list-vertical-margin))};
+        margin: #{em(8px)};
       }
     }
   }
