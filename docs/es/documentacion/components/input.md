@@ -193,8 +193,8 @@
           data() {
               return {
                   input: {
-                      label: "Lorem ipsum",
-                      placeholder: "Lorem ipsum"
+                      label: "Fullname",
+                      placeholder: "Fullname"
                   }
               }
           }
