@@ -98,7 +98,8 @@ module.exports = {
                                 '/es/documentacion/components/iconList',
                                 '/es/documentacion/components/picture',
                                 '/es/documentacion/components/price',
-                                '/es/documentacion/components/priceButton'
+                                '/es/documentacion/components/priceButton',
+                                '/es/documentacion/components/text'
                             ]
                         }
                     ],
