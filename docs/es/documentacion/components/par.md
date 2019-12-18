@@ -31,17 +31,19 @@
 }
 ---
 
-# Text
+# Paragraph
+
+Usamos 'Par' como abreviatura
 
 <Preview>
   <template slot="demo">
-        <AtText/> 
+        <AtPar/> 
   </template>
   
    ```vue
     <template>
         <div>
-            <AtText v-bind="text"/>
+            <AtPar v-bind="text"/>
         </div>
     </template>
     
