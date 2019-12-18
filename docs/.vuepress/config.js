@@ -97,7 +97,9 @@ module.exports = {
                                 '/es/documentacion/components/picture',
                                 '/es/documentacion/components/price',
                                 '/es/documentacion/components/priceButton',
-                                '/es/documentacion/components/input'
+                                '/es/documentacion/components/input',
+                                '/es/documentacion/components/checkbox',
+                                '/es/documentacion/components/radio'
                             ]
                         }
                     ],
