@@ -71,7 +71,7 @@
 
 <Preview>
   <template slot="demo">
-    <AtBannerSirius v-bind='[{"tag": "article","shadow": true,"overlay":true,"price":{"text":"desde","before":"400","value":"299"},"button":{"text":"ver","tag":"div"}}]'/> 
+    <AtBannerSirius v-bind='[{"tag": "article","shadow": true,"overlay":true,"price":{"text":"desde","before":"400","value":"299"},"button":{"text":"ver","tag":"div"},"title": "Punta Cana y Playa Bávaro"}]'/> 
   </template>
 
   ```vue
@@ -93,6 +93,8 @@
                   shadow: false,
                   radius: false,
                   overlay: false,
+                  title: "Punta Cana y Playa Bávaro",
+                  meta: "9 días y 7 noches",
                   picture: {
                       src: 'https://source.unsplash.com/random/1920x1080',
                       sources: [

@@ -9,6 +9,10 @@
         :picture="picture"
         :banner="banner"
     >
+        <component :is="textTag" class="c-banner__text">
+            <Hola v-bind="meta" class="c-banner__meta" />
+            <Hola v-bind="title" class="c-banner__title" />
+        </component>
         <IconList
             :icons="icons"
             class="c-banner__icons"
@@ -25,13 +29,15 @@
     import Banner from '@components/Banner/Banner'
     import PriceButton from '@components/PriceButton/PriceButton'
     import IconList from '@components/IconList/IconList'
+    import Hola from '@components/Text/Text'
 
     export default {
         name: 'AtBannerSirius',
         components: {
             Banner,
             PriceButton,
-            IconList
+            IconList,
+            Hola
         },
         props: {
             textTag: {
@@ -39,12 +45,12 @@
                 default: 'div'
             },
             title: {
-                type: Object,
-                default: () => {}
+                type: String,
+                default: undefined
             },
             meta: {
-                type: Object,
-                default: () => {}
+                type: String,
+                default: undefined
             },
             button: {
                 type: Object,
