@@ -8,126 +8,126 @@
           "name" : "id",
           "type" : "String",
           "parameters" : "null",
-          "description": "The id attribute specifies a unique id for an HTML element.",
+          "description": "El atributo id especifica una identificación única para un elemento HTML.",
           "default": "undefined"
         },
         {
           "name" : "name",
           "type" : "String",
           "parameters" : "null",
-          "description": "The name attribute specifies the name of an <input> element. The name attribute is used to reference elements in a JavaScript, or to reference form data after a form is submitted. Note: Only form elements with a name attribute will have their values passed when submitting a form.",
+          "description": "El atributo de nombre especifica el nombre de un elemento <input>. El atributo de nombre se usa para hacer referencia a elementos en un JavaScript o para hacer referencia a datos de formulario después de enviar un formulario. Nota: Solo los elementos de formulario con un atributo de nombre tendrán sus valores pasados ​​al enviar un formulario.",
           "default": "undefined"
         },    
         {
           "name" : "type",
           "type" : "String",
           "parameters" : "null",
-          "description": "The type attribute specifies the type of <input> element to display.",
+          "description": "El atributo type especifica el tipo de elemento <input> a mostrar.",
           "default": "text"
         },     
         {
           "name" : "label",
           "type" : "String",
           "parameters" : "null",
-          "description": "The <label> tag defines a label for a <button>, <input>, <meter>, <output>, <progress>, <select>, or <textarea> element. The <label> element does not render as anything special for the user. However, it provides a usability improvement for mouse users, because if the user clicks on the text within the <label> element, it toggles the control. The for attribute of the <label> tag should be equal to the id attribute of the related element to bind them together.",
+          "description": "La etiqueta <label> define una etiqueta para un elemento <button>, <input>, <meter>, <output>, <progress>, <select> o <textarea>. El elemento <label> no se representa como algo especial para el usuario. Sin embargo, proporciona una mejora de usabilidad para los usuarios del mouse, porque si el usuario hace clic en el texto dentro del elemento <label>, alterna el control. El atributo for de la etiqueta <label> debe ser igual al atributo id del elemento relacionado para unirlos.",
           "default": "undefined"
         },               
         {
           "name" : "placeholder",
           "type" : "String",
           "parameters" : "null",
-          "description": "The placeholder attribute specifies a short hint that describes the expected value of an input field (e.g. a sample value or a short description of the expected format). The short hint is displayed in the input field before the user enters a value.",
+          "description": "Este atributo da una pista breve del valor esperado dentro de un campo de texto.",
           "default": "undefined"
         },            
         {
           "name" : "value",
           "type" : "String",
           "parameters" : "null",
-          "description": "The value attribute specifies the value of an <input> element.",
+          "description": "El atributo value especifica el valor de un elemento <input>.",
           "default": "undefined"
         },            
         {
           "name" : "size",
           "type" : "String",
           "parameters" : "null",
-          "description": "Input element size element.",
+          "description": "Tamaño del elemento <input>.",
           "default": "undefined"
         },            
         {
           "name" : "max",
           "type" : "String",
           "parameters" : "null",
-          "description": "The max attribute specifies the maximum value for an <input> element.",
+          "description": "El atributo max especifica el valor máximo para un elemento <input>.",
           "default": "undefined"
         },            
         {
           "name" : "min",
           "type" : "String",
           "parameters" : "null",
-          "description": "The min attribute specifies the maximum value for an <input> element.",
+          "description": "El atributo min especifica el valor mínimo para un elemento <input>.",
           "default": "undefined"
         },            
         {
           "name" : "readonly",
           "type" : "Boolean",
           "parameters" : "null",
-          "description": "When present, it specifies that an input field is read-only.",
+          "description": "Cuando está presente, especifica que ese elemento <input> es de solo lectura.",
           "default": "false"
         },            
         {
           "name" : "disabled",
           "type" : "Boolean",
           "parameters" : "null",
-          "description": "When present, it specifies that the <input> element should be disabled.",
+          "description": "Cuando está presente, especifica que el elemento <input> debe estar deshabilitado.",
           "default": "false"
         },            
         {
           "name" : "required",
           "type" : "Boolean",
           "parameters" : "null",
-          "description": "When present, it specifies that an input field must be filled out before submitting the form.",
+          "description": "Cuando está presente, especifica que se debe completar un campo de entrada antes de enviar el formulario.",
           "default": "false"
         },            
         {
           "name" : "multiple",
           "type" : "Boolean",
           "parameters" : "null",
-          "description": "When present, it specifies that the user is allowed to enter more than one value in the <input> element. Note: The multiple attribute works with the following input types: email, and file.",
+          "description": "Cuando está presente, especifica que el usuario puede ingresar más de un valor en el elemento <input>. El atributo múltiple funciona con los siguientes types de <input>: email y file.",
           "default": "false"
         },            
         {
           "name" : "checked",
           "type" : "Boolean",
           "parameters" : "null",
-          "description": "When present, it specifies that an <input> element should be pre-selected (checked) when the page loads. The checked attribute can be used with <input type='checkbox'> and <input type='radio'>. The checked attribute can also be set after the page load, with a JavaScript.",
+          "description": "Cuando está presente, especifica que un elemento <input> se debe preseleccionar (marcar) cuando se carga la página. El atributo marcado se puede usar con <input type = 'checkbox'> y <input type = 'radio'>. El atributo marcado también se puede establecer después de la carga de la página, con un JavaScript.",
           "default": "false"
         },            
         {
           "name" : "autocomplete",
           "type" : "Boolean",
           "parameters" : "null",
-          "description": "The autocomplete attribute specifies whether or not an input field should have autocomplete enabled. Autocomplete allows the browser to predict the value. When a user starts to type in a field, the browser should display options to fill in the field, based on earlier typed values. The autocomplete attribute works with the following <input> types: text, search, url, tel, email, password, datepickers, range, and color.",
+          "description": "El atributo autocompletar especifica si un campo de entrada debe tener autocompletado habilitado o no. Autocompletar permite al navegador predecir el valor. Cuando un usuario comienza a escribir en un campo, el navegador debe mostrar opciones para completar el campo, en función de los valores escritos anteriormente. El atributo de autocompletar funciona con los siguientes tipos de <input>: text, search, url, tel, email, password, datepickers, range, and color.",
           "default": "false"
         },
         {
           "name" : "icon",
           "type" : "String",
           "parameters" : "null",
-          "description": "Icon that accompanies an input element.",
+          "description": "Icono que acompaña a un elemento de entrada.",
           "default": "undefined"
         },               
         {
           "name" : "iconAlign",
           "type" : "String",
           "parameters" : "null",
-          "description": "Icon position.",
+          "description": "Posición del icono dentro del <input>.",
           "default": "undefined"
         },               
         {
           "name" : "iconDetail",
           "type" : "Boolean",
           "parameters" : "null",
-          "description": "Separation of the icon with the value of the input element.",
+          "description": "Pequeño borde vertical utilizado para separar el icono del valor del input.",
           "default": "false"
         }
       ] 
