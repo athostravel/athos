@@ -1,26 +1,20 @@
 <template>
     <div v-if="api" class="theme-default-content">
         <Tabs>
-            <Tab v-for="(tabs, index) in api" :key="tabs.index" :title="tabs.title">
+            <Tab v-for="(tab, index) in api" :key="index" :title="tab.title">
                 <table>
-                    <thead>
-                        <tr>
-                            <th v-for="(item ,objKey, idx) in tabs.items[index]" :key="idx">
-                                <div>
-                                    {{ objKey }}
-                                </div>
+                    <template v-for="(item, i) in tab.items">
+                        <tr v-if="i === 0" :key="i">
+                            <th v-for="(value, key, idx) in item" :key="idx">
+                                {{ key }}
                             </th>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <tr v-for="item in tabs.items" :key="item.id">
-                            <td>{{ item.name }}</td>
-                            <td>{{ item.type }}</td>
-                            <td>{{ item.parameters }}</td>
-                            <td>{{ item.description }}</td>
-                            <td>{{ item.default }}</td>
+                        <tr :key="item.id">
+                            <td v-for="(value, key, idx) in item" :key="idx">
+                                {{ value }}
+                            </td>
                         </tr>
-                    </tbody>
+                    </template>
                 </table>
             </Tab>
         </Tabs>

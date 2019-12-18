@@ -2,55 +2,113 @@
 {
   "API": [
     {
-      "title": "properties",
+      "title": "Propiedades",
       "items": [
         {
-          "name": "vertical",
-          "type": "Boolean",
-          "parameters": null,
-          "description": "Add a class for display the component vertically",
-          "default": "false"
+          "Nombre" : "icons",
+          "Tipo" : "Array",
+          "Descripción": "Array de objetos con los iconos",
+          "Por defecto": "empty"
         },
         {
-          "name" : "icons",
-          "type" : "Array",
-          "parameters" : "",
-          "description": "Array of icons classes",
-          "default": "empty"
-        }               
+          "Nombre": "vertical",
+          "Tipo": "Boolean",
+          "Descripción": "Añade una clase para mostrarlo en vertical",
+          "Por defecto": "false"
+        }             
       ] 
     }
-  ]
+  ],
+  "previewOptions": {
+    "booleans": [
+      'vertical'
+    ],
+    "selects": [
+      {
+        "prop": color,
+        "label": Colors,
+        "attrs": {
+          "items": [
+            'red',
+            'blue'
+          ]
+        }
+      }
+    ]
+  }
 }
 ---
 
 # Icon List
 
-<Preview>
-  <template slot="demo">
-        <AtIconList/> 
+<Preview :options="$page.frontmatter.previewOptions">
+  <template slot="demo" slot-scope="boolean">
+    <AtIconList 
+      :icons="[
+        { icon: 'heart' },
+        { icon: 'heart' },
+        { icon: 'heart' }
+      ]" 
+      v-bind="boolean"
+    /> 
   </template>
 
   ```vue
   <template>
-      <div>
-          <AtIconList v-bind="icon"/>
-      </div>
+      <AtIconList v-bind="iconList"/>
   </template>
   
   <script>
       export default {
           data() {
               return {
-                  icon: {
-                      icon: "c-icon-star",
-                      tag: "div"
+                  iconList: {
+                    icons: [
+                        { icon: 'heart' },
+                        { icon: 'heart' },
+                        { icon: 'heart' }
+                    ]
                   }
               }
           },
       }
   </script>
+  ```
+</Preview>
 
+<Preview>
+  <template slot="demo">
+    <AtIconList 
+      :icons="[
+        { icon: 'heart' },
+        { icon: 'heart' },
+        { icon: 'heart' }
+      ]" 
+      vertical
+    /> 
+  </template>
+
+  ```vue
+  <template>
+      <AtIconList v-bind="iconList"/>
+  </template>
+  
+  <script>
+      export default {
+          data() {
+              return {
+                  iconList: {
+                    icons: [
+                        { icon: 'heart' },
+                        { icon: 'heart' },
+                        { icon: 'heart' }
+                    ],
+                    vertical: true
+                  }
+              }
+          },
+      }
+  </script>
   ```
 </Preview>
 
