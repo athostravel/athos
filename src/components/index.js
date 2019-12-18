@@ -1,5 +1,6 @@
 export { default as HelloWorld } from '@components/HelloWorld'
 export { default as ByeWorld } from '@components/ByeWorld'
+export { default as Banner } from '@components/Banner'
 export { default as Button } from '@components/Button'
 export { default as Icon } from '@components/Icon'
 export { default as IconList } from '@components/IconList'
