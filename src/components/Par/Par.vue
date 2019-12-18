@@ -1,10 +1,10 @@
 <template>
     <component
         :is="tag"
-        :class="{'c-text--has-bg': background}"
-        class="c-text"
+        :class="{'c-par--has-bg': background}"
+        class="c-par"
     >
-        <span class="c-text__text">
+        <span class="c-par__text">
             {{ text }}
         </span>
     </component>
@@ -12,37 +12,37 @@
 
 <style lang="scss">
   :root {
-    --c-text-background: #c6c6c6;
-    --c-text-padding: 0.5em;
-    --c-text-color: currentColor;
-    --c-text-font-size: 1em;
-    --c-text-margin: 0;
-    --c-text-line-height: 1.4;
-    --c-text-font-weight: 400;
+    --c-par-background: #c6c6c6;
+    --c-par-padding: 0.5em;
+    --c-par-color: currentColor;
+    --c-par-font-size: 1em;
+    --c-par-margin: 0;
+    --c-par-line-height: 1.4;
+    --c-par-font-weight: 400;
   }
 </style>
 
 <style scoped lang="scss">
-  .c-text {
-    color: var(--c-text-color);
-    margin: var(--c-text-margin);
+  .c-par {
+    color: var(--c-par-color);
+    margin: var(--c-par-margin);
 
     &__text {
-      font-weight: var(--c-text-font-weight);
-      font-size: var(--c-text-font-size);
-      line-height: var(--c-text-line-height);
+      font-weight: var(--c-par-font-weight);
+      font-size: var(--c-par-font-size);
+      line-height: var(--c-par-line-height);
     }
 
     &--has-bg {
-      background: var(--c-text-background);
-      padding: var(--c-text-padding);
+      background: var(--c-par-background);
+      padding: var(--c-par-padding);
     }
   }
 </style>
 
 <script>
     export default {
-        name: 'AtText',
+        name: 'AtPar',
         props: {
             tag: {
                 type: String,

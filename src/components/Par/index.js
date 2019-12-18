@@ -1,4 +1,4 @@
-import Text from './Text.vue'
+import Text from './Par.vue'
 import { use, registerComponent } from '@utils/plugins'
 
 const Plugin = {

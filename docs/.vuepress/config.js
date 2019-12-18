@@ -96,10 +96,10 @@ module.exports = {
                                 '/es/documentacion/components/button',
                                 '/es/documentacion/components/icon',
                                 '/es/documentacion/components/iconList',
+                                '/es/documentacion/components/par',
                                 '/es/documentacion/components/picture',
                                 '/es/documentacion/components/price',
-                                '/es/documentacion/components/priceButton',
-                                '/es/documentacion/components/text'
+                                '/es/documentacion/components/priceButton'
                             ]
                         }
                     ],
