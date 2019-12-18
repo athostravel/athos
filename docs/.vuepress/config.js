@@ -99,7 +99,8 @@ module.exports = {
                                 '/es/documentacion/components/priceButton',
                                 '/es/documentacion/components/input',
                                 '/es/documentacion/components/checkbox',
-                                '/es/documentacion/components/radio'
+                                '/es/documentacion/components/radio',
+                                '/es/documentacion/components/textarea'
                             ]
                         }
                     ],
