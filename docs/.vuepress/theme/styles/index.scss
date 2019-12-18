@@ -321,3 +321,10 @@ div {
     margin-bottom: 0;
   }
 }
+
+.preview {
+  &__demo {
+    font-family: var(--font-family-primary, inherit);
+    font-size: var(--font-size-body, 1rem);
+  }
+}
