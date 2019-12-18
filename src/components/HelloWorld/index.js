@@ -1,9 +1,9 @@
-import BannerSirius from './BannerSirius.vue'
+import HelloWorld from './HelloWorld.vue'
 import { use, registerComponent } from '@utils/plugins'
 
 const Plugin = {
     install (Vue) {
-        registerComponent(Vue, BannerSirius)
+        registerComponent(Vue, HelloWorld)
     }
 }
 
