@@ -5,32 +5,28 @@
       "title": "properties",
       "items": [
         {
-          "name": "tag",
-          "type": "String",
-          "parameters": ,
-          "description": "Tag to the component",
-          "default": "undefined"
+          "Nombre": "tag",
+          "Tipo": "String",
+          "Descripción": "Etiqueta HTML del componente",
+          "Por defecto": "undefined"
         },
         {
-          "name" : "inverted",
-          "type" : "Boolean",
-          "parameters" : "",
-          "description": "Will add a class to display the component in inverted position",
-          "default": "empty"
+          "Nombre" : "inverted",
+          "Tipo" : "Boolean",
+          "Descripción": "Invierte el botón con la caja",
+          "Por defecto": "empty"
         },
         {
-          "name" : "button",
-          "type" : "Object",
-          "parameters" : "",
-          "description": "Button props",
-          "default": "empty"
+          "Nombre" : "button",
+          "Tipo" : "Object",
+          "Descripción": "Propiedades de Button",
+          "Por defecto": "empty"
         },                      
         {
-          "name" : "price",
-          "type" : "Object",
-          "parameters" : "",
-          "description": "Price props",
-          "default": "empty"
+          "Nombre" : "price",
+          "Tipo" : "Object",
+          "Descripción": "Propiedades de Price",
+          "Por defecto": "empty"
         }                      
       ] 
     }
@@ -48,3 +44,6 @@
   <<< @/examples/components/PriceButton/PriceButton.vue
 </Preview>
   
+## API
+
+<Api />

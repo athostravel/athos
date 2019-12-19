@@ -2,7 +2,7 @@
 {
   "API": [
     {
-      "title": "properties",
+      "title": "Propiedades",
       "items": [
         {
           "Nombre": "tag",
@@ -83,4 +83,7 @@
   <<< @/examples/components/Button/Button.vue
 </Preview>
 
+## API
+
+<Api />
 

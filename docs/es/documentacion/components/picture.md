@@ -29,35 +29,31 @@
           "Por defecto": "undefined"
         }                
       ] 
-    },
+    }
+  ],
+  "APIPictureSource": [
     {
-      "title": "PictureSource",
+      "title": "Propiedades",
       "items": [
         {
-          "Nombre": "src",
+          "Nombre": "srcset",
           "Tipo": "String",
           "Descripción": "Url de la imagen",
-          "Por defecto": "https://source.unsplash.com/random/1920x1080"
-        },
-        {
-          "Nombre" : "alt",
-          "Tipo" : "String",
-          "Descripción": "Texto alternativo de la imagen",
           "Por defecto": "empty"
         },
         {
-          "Nombre" : "title",
-          "Tipo" : "String",
-          "Descripción": "Título de la imagen",
+          "Nombre": "srcset",
+          "Tipo": "media",
+          "Descripción": "Tamaño en pixeles del la mediaquery",
           "Por defecto": "undefined"
         },
         {
-          "Nombre" : "sources",
-          "Tipo" : "Array",
-          "Descripción": "Listado de sources",
+          "Nombre": "shim",
+          "Tipo": "String",
+          "Descripción": "Imagen en base64",
           "Por defecto": "undefined"
-        }                
-      ] 
+        }
+      ]
     }
   ]
 }
@@ -73,6 +69,17 @@
   <<< @/examples/components/Picture/Picture.vue
 </Preview>
 
-## PictureSource
+## API 
+
+<Api />
+
+## Picture Source
+
+El componente `PictureSource` se usa junto con el componente `Picture` para pintar los sources del picture.
+
+### API
+
+<Api :data="$page.frontmatter.APIPictureSource" />
+
 
 

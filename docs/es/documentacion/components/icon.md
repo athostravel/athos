@@ -38,4 +38,6 @@
   <<< @/examples/components/Icon/Icon.vue
 </Preview>
 
+## API
 
+<Api />

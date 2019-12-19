@@ -5,8 +5,6 @@
 
             <Content class="theme-default-content" />
 
-            <Api />
-
             <footer class="page-edit">
                 <div
                     v-if="editLink"
@@ -49,13 +47,9 @@
 </template>
 
 <script>
-    import Api from '@theme/components/Api'
     import { resolvePage, outboundRE, endingSlashRE } from '../util'
 
     export default {
-        components: {
-            Api
-        },
         props: {
             sidebarItems: {
                 type: Array,
