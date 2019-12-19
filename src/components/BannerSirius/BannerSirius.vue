@@ -3,15 +3,12 @@
         tag="article"
         class="c-banner--sirius"
         text="Button"
-        shadow
-        radius
-        overlay
         :picture="picture"
-        :banner="banner"
+        v-bind="banner"
     >
         <component :is="textTag" class="c-banner__text">
-            <Hola v-bind="meta" class="c-banner__meta" />
-            <Hola v-bind="title" class="c-banner__title" />
+            <Par v-bind="meta" class="c-banner__meta" />
+            <Par v-bind="title" class="c-banner__title" />
         </component>
         <IconList
             :icons="icons"
@@ -29,7 +26,7 @@
     import Banner from '@components/Banner/Banner'
     import PriceButton from '@components/PriceButton/PriceButton'
     import IconList from '@components/IconList/IconList'
-    import Hola from '@components/Text/Text'
+    import Par from '@components/Par/Par'
 
     export default {
         name: 'AtBannerSirius',
@@ -37,7 +34,7 @@
             Banner,
             PriceButton,
             IconList,
-            Hola
+            Par
         },
         props: {
             textTag: {
@@ -66,7 +63,7 @@
             },
             icons: {
                 type: Array,
-                default: () => ['heart', 'marker']
+                default: () => []
             },
             banner: {
                 type: Object,
