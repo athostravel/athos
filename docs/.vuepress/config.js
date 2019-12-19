@@ -103,6 +103,7 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 2,
                             children: [
+                                '/es/documentacion/components/banner',
                                 '/es/documentacion/components/button',
                                 '/es/documentacion/components/icon',
                                 '/es/documentacion/components/iconList',

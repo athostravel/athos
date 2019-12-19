@@ -24,7 +24,7 @@ export default ({ Vue, options }) => {
             class: 't-iberojet',
             icons: 'https://i.icomoon.io/public/2320a6af31/iberojet/style.css',
             fonts: [
-                'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap'
+                'https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap'
             ]
         },
         {
@@ -32,7 +32,7 @@ export default ({ Vue, options }) => {
             class: 't-muchoviaje',
             icons: 'https://i.icomoon.io/public/2320a6af31/muchoviaje/style.css',
             fonts: [
-                'https://fonts.googleapis.com/css?family=Titillium+Web&display=swap'
+                'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap'
             ]
         }
     ])
