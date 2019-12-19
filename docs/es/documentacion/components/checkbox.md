@@ -51,6 +51,12 @@
           "type" : "Boolean",
           "description": "Cuando se carga la página el checkbox se mostrará marcado.",
           "default": "false"
+        },         
+        {
+          "name" : "toggleSwitch",
+          "type" : "Boolean",
+          "description": "Cuando se quiere un checkbox con aspecto visual tipo toggle switch.",
+          "default": "false"
         }
       ] 
     }
@@ -63,11 +69,13 @@
 <Preview>
   <template slot="demo">
     <AtCheckbox type="checkbox" id="check" name="check" label="Checkbox" />
+    <AtCheckbox type="checkbox" id="checkSwitch" name="checkSwitch" label="Sí" toggleSwitch />
   </template>
   
   ```vue
   <template>
     <AtCheckbox type="checkbox" id="check" name="check" label="Checkbox" />
+    <AtCheckbox type="checkbox" id="checkSwitch" name="checkSwitch" label="Sí" toggleSwitch />
   </template>
   
   <script>
