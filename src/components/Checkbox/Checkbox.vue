@@ -59,9 +59,9 @@
 
         align-items: center;
         display: flex;
-        cursor: pointer;
 
         &__input {
+            cursor: pointer;
             opacity: 0;
             position: absolute;
 
@@ -81,13 +81,14 @@
         &__label {
             align-items: var(--c-checkbox-align);
             display: flex;
+            cursor: pointer;
 
             &::before {
                 align-items: center;
-                content: "";
                 background: var(--c-checkbox-input-background);
                 border-radius: var(--c-checkbox-input-radius);
                 border: var(--c-checkbox-input-border);
+                content: "";
                 display: flex;
                 height: var(--c-checkbox-height);
                 justify-content: center;
@@ -113,8 +114,6 @@
             --c-checkbox-slider-active-background: #000;
             --c-checkbox-slider-transform: #{em(4px)};
 
-            align-items: center;
-            display: flex;
             height: var(--c-checkbox-height);
             position: relative;
             width: var(--c-checkbox-width);
@@ -142,8 +141,6 @@
                 }
 
                 &__label {
-                    cursor: pointer;
-
                     &::before {
                         border: none;
                     }
