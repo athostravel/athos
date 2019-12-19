@@ -66,21 +66,16 @@
 }
 ---
 
-# Banner
-
-Componente Banner simple, base para crear componentes más complejos
+# Banner Sirius
 
 
 <Preview>
   <template slot="demo">
-    <components-Banner-Banner />
+    <components-BannerSirius-BannerSirius />
   </template>
   
-  <<< @/examples/components/Banner/Banner.vue
+  <<< @/examples/components/BannerSirius/BannerSirius.vue
 </Preview>
   
-
-
-
 
 

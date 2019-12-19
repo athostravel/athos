@@ -15,7 +15,13 @@
           "Tipo" : "String",
           "Descripción": "Etiqueta HTML del componente",
           "Por defecto": "span"
-        }               
+        },
+        {
+          "Nombre" : "rounded",
+          "Tipo" : "Boolean",
+          "Descripción": "Añade una clase para hacerlo redondeado",
+          "Por defecto": "false"
+        }                       
       ] 
     }
   ]
