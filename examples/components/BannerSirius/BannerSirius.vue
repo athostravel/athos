@@ -11,9 +11,6 @@
                     href: 'https://www.google.es',
                     align: 'center',
                     valign: 'center',
-                    shadow: false,
-                    radius: false,
-                    overlay: false,
                     title: {
                         text: 'Punta Cana y Playa Bávaro',
                         background: true
