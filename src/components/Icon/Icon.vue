@@ -10,7 +10,7 @@
         props: {
             icon: {
                 type: [String, Boolean],
-                default: undefined
+                default: false
             },
             tag: {
                 type: String,
@@ -20,8 +20,15 @@
     }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
+  .c-icon {
+    --c-icon-font-family: var(--font-family-icons);
+  }
+</style>
+
+<style lang="scss" scoped>
   .c-icon {
     display: inline-block;
+    font-family: var(--c-icon-font-family) !important;
   }
 </style>

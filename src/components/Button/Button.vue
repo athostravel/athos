@@ -22,19 +22,19 @@
                 'c-button__icon--right': iconAlign === 'right' && text
             }"
         >
-            <AtIcon :icon="icon" />
+            <Icon :icon="icon" />
         </span>
         <span v-if="text" class="c-button__text">{{ text }}</span>
     </component>
 </template>
 
 <script>
-    import AtIcon from '../Icon/Icon.vue'
+    import Icon from '@components/Icon/Icon.vue'
 
     export default {
         name: 'AtButton',
         components: {
-            AtIcon
+            Icon
         },
         props: {
             tag: {

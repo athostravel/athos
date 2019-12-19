@@ -18,10 +18,6 @@
                 type: String,
                 default: undefined
             },
-            lazy: {
-                type: Boolean,
-                default: true
-            },
             shim: {
                 type: String,
                 default: undefined
