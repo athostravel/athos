@@ -82,13 +82,13 @@
     --c-banner-overlay: linear-gradient(0deg, #000 0%, transparent 50%);
     --c-banner-content-padding: 1em 1em 1em 0;
     --c-banner-meta-color: #fff;
-    --c-banner-meta-background: #c6c6c6;
+    --c-banner-meta-background: var(--color-primary);
     --c-banner-meta-padding: 0.5em;
     --c-banner-meta-font-size: 0.875em;
-    --c-banner-title-color: #fff;
-    --c-banner-title-background: #d6d6d6;
+    --c-banner-title-color: var(--color-primary);
+    --c-banner-title-background: #fff;
     --c-banner-title-padding: 0.5em;
-    --c-banner-title-font-size: 1em;
+    --c-banner-title-font-size: #{em(18px)};
     --c-banner-picture-ratio-height: 3;
     --c-banner-picture-ratio-width: 4;
   }

@@ -17,7 +17,8 @@
 
 <style lang="scss">
   .c-price-button {
-    --c-price-button-background: #f6f6f6;
+    --c-price-button-background: #fff;
+    --c-button-background-color: var(--color-secondary);
     --c-price-button-price-border-radius: 4px 0 0 4px;
     --c-price-button-price-padding: #{em(8px) em(16px)};
   }

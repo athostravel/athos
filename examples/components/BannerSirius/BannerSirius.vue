@@ -1,5 +1,5 @@
 <template>
-    <AtBannerSirius v-bind="bannerSirius"/>
+    <AtBannerSirius v-bind="bannerSirius" />
 </template>
 
 <script>
@@ -25,8 +25,8 @@
                         value: '300'
                     },
                     icons: [
-                        { icon: 'heart' },
-                        { icon: 'heart' }
+                        { icon: 'heart', rounded: true, background: true, tag: 'a' },
+                        { icon: 'heart', rounded: true, background: true, tag: 'a' }
                     ],
                     button: {
                         text: 'go'
