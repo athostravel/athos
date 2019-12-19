@@ -1,13 +1,13 @@
 <template>
     <div
         class="c-icon-list"
-        :class="{'c-icon-list--vertical' : vertical}"
+        :class="{ 'c-icon-list--vertical' : vertical }"
     >
         <Icon
             v-for="icon in icons"
             :key="icon.id"
             class="c-icon-list__icon"
-            :icon="icon"
+            v-bind="icon"
         />
     </div>
 </template>
@@ -33,20 +33,28 @@
     }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
   .c-icon-list {
-    $this:&;
+    $this: &;
 
     display: flex;
     align-items: center;
 
-    &__icon:not(:last-child) {
-      margin: #{em(8px)};
+    &__icon {
+      & + & {
+        margin-left: #{em(8px)};
+      }
     }
 
     &--vertical {
-      #{$this}__icon:not(:last-child) {
-        margin: #{em(8px)};
+      flex-direction: column;
+      align-items: flex-start;
+
+      #{$this}__icon {
+        & + #{$this}__icon {
+          margin-left: 0;
+          margin-top: #{em(8px)};
+        }
       }
     }
   }

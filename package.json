@@ -12,7 +12,7 @@
     "build:styles": "node-sass --output-style compressed src/scss/styles.scss dist/css/athos.css",
     "build:styleThemes": "node-sass --output-style compressed -o dist/css/themes src/scss/themes",
     "autoprefixer": "postcss dist/css --base dist/css --dir dist/css --use autoprefixer --no-map",
-    "linter": "eslint 'src/**/*.{js,vue}' && stylelint 'src/**/*.{scss,vue}'"
+    "linter": "eslint --fix 'src/**/*.{js,vue}' && stylelint --fix 'src/**/*.{scss,vue}'"
   },
   "author": "Javier Puche",
   "license": "GPL-3.0-or-later",
@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@rollup/plugin-alias": "^2.2.0",
+    "@vuepress/plugin-register-components": "^1.2.0",
     "autoprefixer": "^9.7.3",
     "babel-eslint": "^10.0.3",
     "cache-loader": "^4.1.0",

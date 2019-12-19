@@ -3,6 +3,17 @@ const { resolve, join } = require('path')
 module.exports = {
     base: '/athos/',
     dest: resolve('docs/dist'),
+    extraWatchFiles: [
+        resolve('examples')
+    ],
+    plugins: [
+        [
+            '@vuepress/register-components',
+            {
+                componentsDir: './examples'
+            }
+        ]
+    ],
     locales: {
         '/': {
             lang: 'en-EN',
@@ -26,6 +37,7 @@ module.exports = {
                 '@utils': resolve('src/utils'),
                 '@store': resolve('src/store'),
                 '@mixins': resolve('src/mixins'),
+                '@directives': resolve('src/directives'),
                 '@scss': resolve('src/scss')
             }
         }

@@ -2,70 +2,70 @@
 {
   "API": [
     {
-      "title": "properties",
+      "title": "Propiedades",
       "items": [
         {
-          "name": "tag",
-          "type": "String",
-          "parameters": null,
-          "description": "Tag for the component",
-          "default": "a"
+          "Nombre": "tag",
+          "Tipo": "String",
+          "Parámetros": "",
+          "Descripción": "Etiqueta HTML del componente",
+          "Por defecto": "a"
         },
         {
-          "name" : "text",
-          "type" : "String",
-          "parameters" : "",
-          "description": "Text to display",
-          "default": "undefined"
+          "Nombre" : "text",
+          "Tipo" : "String",
+          "Parámetros": "",
+          "Descripción": "Texto a mostrar",
+          "Por defecto": "undefined"
         },
         {
-          "name" : "href",
-          "type" : "String",
-          "parameters" : "",
-          "description": "Reference for the button",
-          "default": "#"
+          "Nombre" : "href",
+          "Tipo" : "String",
+          "Parámetros": "",
+          "Descripción": "Enlace del botón",
+          "Por defecto": "#"
         },
         {
-          "name" : "icon",
-          "type" : "String, Boolean",
-          "parameters" : "",
-          "description": "Icon to display near the text",
-          "default": "undefined"
+          "Nombre" : "icon",
+          "Tipo" : "String, Boolean",
+          "Parámetros": "",
+          "Descripción": "Clase del icono a mostrar",
+          "Por defecto": "undefined"
         },
         {
-          "name" : "iconAlign",
-          "type" : "String",
-          "parameters" : "",
-          "description": "Position of the icon",
-          "default": "left"
+          "Nombre" : "iconAlign",
+          "Tipo" : "String",
+          "Parámetros": "",
+          "Descripción": "Posición del icono",
+          "Por defecto": "left"
         },
         {
-          "name" : "outlined",
-          "type" : "Boolean",
-          "parameters" : "",
-          "description": "Button without background",
-          "default": "false"
+          "Nombre" : "outlined",
+          "Tipo" : "Boolean",
+          "Parámetros": "",
+          "Descripción": "Muestra una apariencia alternativa del botón",
+          "Por defecto": "false"
         },
         {
-          "name" : "casper",
-          "type" : "Boolean",
-          "parameters" : "",
-          "description": "Button without background",
-          "default": "false"
+          "Nombre" : "casper",
+          "Tipo" : "Boolean",
+          "Parámetros": "",
+          "Descripción": "Muestra una apariencia alternativa del botón",
+          "Por defecto": "false"
         },
         {
-          "name" : "size",
-          "type" : "String",
-          "parameters" : "",
-          "description": "Button size",
-          "default": "undefined"
+          "Nombre" : "size",
+          "Tipo" : "String",
+          "Parámetros": "tiny, small, medium, large",
+          "Descripción": "Tamaño del botón",
+          "Por defecto": "undefined"
         },
         {
-          "name" : "disabled",
-          "type" : "Boolean",
-          "parameters" : "",
-          "description": "Disables the button",
-          "default": "false"
+          "Nombre" : "disabled",
+          "Tipo" : "Boolean",
+          "Parámetros": "",
+          "Descripción": "Deshabilita el botón",
+          "Por defecto": "false"
         }                                                             
       ] 
     }
@@ -77,37 +77,13 @@
 
 <Preview>
   <template slot="demo">
-        <AtButton text="Click me !"/> 
+    <components-Button-Button /> 
   </template>
 
-  ```vue
-  <template>
-      <div>
-          <AtButton v-bind="button"/>
-      </div>
-  </template>
-  
-  <script>
-      export default {
-          data() {
-              return {
-                  button: {
-                      tag: "button",
-                      text: "Click Me!",
-                      href: "https://www.google.es",
-                      icon: "c-icon-arrow",
-                      iconAlign: "right",
-                      outlined: false,
-                      casper: false,
-                      size: "tiny",
-                      disabled: false
-                  }
-              }
-          }
-      }
-  </script>
-
-  ```
+  <<< @/examples/components/Button/Button.vue
 </Preview>
 
+## API
+
+<Api />
 

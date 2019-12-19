@@ -1,13 +1,18 @@
 <template>
     <div
         class="c-price"
-        :class="{'c-price--inline' : inline}"
+        :class="{
+            'c-price--inline' : inline,
+            'c-price--align-left' : align === 'left'
+        }"
     >
-        <div v-if="text" class="c-price__text">
-            {{ text }}
-        </div>
-        <div v-if="before" class="c-price__before">
-            {{ before }}{{ currency }}
+        <div class="c-price__box">
+            <div v-if="text" class="c-price__text">
+                {{ text }}
+            </div>
+            <div v-if="before" class="c-price__before">
+                {{ before }}{{ currency }}
+            </div>
         </div>
         <div class="c-price__value">
             {{ value }}{{ currency }}
@@ -35,6 +40,10 @@
                 type: String,
                 default: '€'
             },
+            align: {
+                type: String,
+                default: 'right'
+            },
             inline: {
                 type: Boolean,
                 default: false
@@ -44,8 +53,7 @@
 </script>
 
 <style lang="scss">
-  :root {
-    --c-price-gap: 0 4px;
+  .c-price {
     --c-price-text-align: right;
     --c-price-color: var(--color-primary);
     --c-price-text-font-size: 0.875em;
@@ -57,36 +65,58 @@
 
 <style scoped lang="scss">
   .c-price {
+    $this: &;
+
     color: var(--c-price-color);
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: "text before" "value value";
-    grid-gap: var(--c-price-gap);
     text-align: var(--c-price-text-align);
 
+    &__box {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+    }
+
     &__text {
-      grid-area: text;
-      justify-self: flex-end;
-      align-self: center;
       font-size: var(--c-price-text-font-size);
+      margin-right: 0.5rem;
     }
 
     &__before {
-      grid-area: before;
       text-decoration: line-through;
-      align-self: center;
       font-size: var(--c-price-before-font-size);
     }
 
     &__value {
-      grid-area: value;
       font-size: var(--c-price-value-font-size);
       font-weight: var(--c-price-value-font-weight);
     }
 
     &--inline {
-      grid-template-rows: 1fr;
-      grid-template-areas: "text before value";
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+
+      #{$this} {
+        &__box {
+          display: contents;
+        }
+
+        &__before {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+
+    &--align-left {
+      --c-price-text-align: left;
+
+      justify-content: flex-start;
+
+      #{$this} {
+        &__box {
+          justify-content: flex-start;
+        }
+      }
     }
   }
 </style>
