@@ -2,35 +2,60 @@
 {
   "API": [
     {
-      "title": "properties",
+      "title": "Propiedades",
       "items": [
         {
-          "name": "src",
-          "type": "String",
-          "parameters": null,
-          "description": "Route for the default image",
-          "default": "https://source.unsplash.com/random/1920x1080"
+          "Nombre": "src",
+          "Tipo": "String",
+          "Descripción": "Url de la imagen",
+          "Por defecto": "https://source.unsplash.com/random/1920x1080"
         },
         {
-          "name" : "alt",
-          "type" : "String",
-          "parameters" : "",
-          "description": "Specifies an alternate text for an image",
-          "default": "empty"
+          "Nombre" : "alt",
+          "Tipo" : "String",
+          "Descripción": "Texto alternativo de la imagen",
+          "Por defecto": "empty"
         },
         {
-          "name" : "title",
-          "type" : "String",
-          "parameters" : "",
-          "description": "Specifies an title text for an image",
-          "default": "undefined"
+          "Nombre" : "title",
+          "Tipo" : "String",
+          "Descripción": "Título de la imagen",
+          "Por defecto": "undefined"
         },
         {
-          "name" : "sources",
-          "type" : "Array",
-          "parameters" : "srcset, media",
-          "description": "List of sources by resolution",
-          "default": "undefined"
+          "Nombre" : "sources",
+          "Tipo" : "Array",
+          "Descripción": "Listado de sources",
+          "Por defecto": "undefined"
+        }                
+      ] 
+    },
+    {
+      "title": "PictureSource",
+      "items": [
+        {
+          "Nombre": "src",
+          "Tipo": "String",
+          "Descripción": "Url de la imagen",
+          "Por defecto": "https://source.unsplash.com/random/1920x1080"
+        },
+        {
+          "Nombre" : "alt",
+          "Tipo" : "String",
+          "Descripción": "Texto alternativo de la imagen",
+          "Por defecto": "empty"
+        },
+        {
+          "Nombre" : "title",
+          "Tipo" : "String",
+          "Descripción": "Título de la imagen",
+          "Por defecto": "undefined"
+        },
+        {
+          "Nombre" : "sources",
+          "Tipo" : "Array",
+          "Descripción": "Listado de sources",
+          "Por defecto": "undefined"
         }                
       ] 
     }
@@ -42,40 +67,12 @@
 
 <Preview>
   <template slot="demo">
-        <AtPicture v-bind="{
-            sources: [
-                {srcset: 'https://source.unsplash.com/random/600x400', media: '480px'},
-                {srcset: 'https://source.unsplash.com/random/320x200', media: '320px'}
-            ]
-        }"/> 
+    <components-Picture-Picture />
   </template>
 
-  ```vue
-  <template>
-      <div>
-          <AtPicture v-bind="picture"/>
-      </div>
-  </template>
-  
-  <script>
-      export default {
-          data() {
-              return {
-                  picture: {
-                      title: "Titulo",
-                      alt: "Alt",
-                      src: "https://source.unsplash.com/random/1920x1080",
-                      sources: [
-                          {srcset: 'https://source.unsplash.com/random/600x400', media: '480px'},
-                          {srcset: 'https://source.unsplash.com/random/320x200', media: '320px'}
-                      ]
-                  }
-              }
-          },
-      }
-  </script>
-
-  ```
+  <<< @/examples/components/Picture/Picture.vue
 </Preview>
+
+## PictureSource
 
 

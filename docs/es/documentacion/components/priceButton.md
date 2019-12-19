@@ -40,42 +40,11 @@
 
 # Price Button
 
-
 <Preview>
   <template slot="demo">
-        <AtPriceButton v-bind='[{"tag":"div","price":{"text":"desde","before":"400","value":"299"},"button":{"text":"ver","tag":"div"}}]'/> 
+    <components-PriceButton-PriceButton />
   </template>
   
-   ```vue
-    <template>
-        <div>
-            <AtPriceButton v-bind="config"/>
-        </div>
-    </template>
-    
-    <script>
-        export default {
-            data() {
-                return {
-                    config: {
-                        tag: 'a',
-                        price: {
-                            text: "Desde",
-                            before: "300",
-                            value: "199",
-                            currency: "$",
-                            inline: true,
-                            
-                        },
-                        button: {
-                          tag: 'div',
-                          text: 'ir'
-                        } 
-                    }     
-                }
-            }
-        }
-    </script>
-   ```
+  <<< @/examples/components/PriceButton/PriceButton.vue
 </Preview>
   

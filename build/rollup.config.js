@@ -40,7 +40,8 @@ export default [
                     { find: '@pages', replacement: path.resolve('src/pages') },
                     { find: '@utils', replacement: path.resolve('src/utils') },
                     { find: '@store', replacement: path.resolve('src/store') },
-                    { find: '@mixins', replacement: path.resolve('src/mixins') }
+                    { find: '@mixins', replacement: path.resolve('src/mixins') },
+                    { find: '@directives', replacement: path.resolve('src/directives') }
                 ]
             }),
             commonjs(),

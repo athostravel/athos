@@ -49,32 +49,10 @@
 
 <Preview>
   <template slot="demo">
-        <AtPrice v-bind="{text: 'Desde', before: '600', value: '480'}"/> 
+    <components-Price-Price />
   </template>
   
-   ```vue
-    <template>
-        <div>
-            <AtPrice v-bind="price"/>
-        </div>
-    </template>
-    
-    <script>
-        export default {
-            data() {
-                return {
-                    price: {
-                        text: "Desde",
-                        before: "300",
-                        value: "199",
-                        currency: "$",
-                        inline: true
-                    }
-                }
-            },
-        }
-    </script>
-   ```
+  <<< @/examples/components/Price/Price.vue
 </Preview>
   
   

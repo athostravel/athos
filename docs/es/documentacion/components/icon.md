@@ -13,7 +13,7 @@
         {
           "Nombre" : "tag",
           "Tipo" : "String",
-          "Descripción": "Tag HTML del elemento",
+          "Descripción": "Etiqueta HTML del componente",
           "Por defecto": "span"
         }               
       ] 
@@ -26,27 +26,10 @@
 
 <Preview>
   <template slot="demo">
-    <AtIcon icons="heart"/> 
+    <components-Icon-Icon /> 
   </template>
 
-  ```vue
-  <template>
-      <AtIcon v-bind="icon"/>
-  </template>
-  
-  <script>
-      export default {
-          data() {
-              return {
-                  icon: {
-                      icon: "heart",
-                      tag: "span"
-                  }
-              }
-          },
-      }
-  </script>
-  ```
+  <<< @/examples/components/Icon/Icon.vue
 </Preview>
 
 
