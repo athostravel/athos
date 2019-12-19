@@ -1,7 +1,7 @@
 <template>
     <component
         :is="tag"
-        :href="href && tag === 'a'"
+        :href="href && tag === 'a' ? href : ''"
         class="c-banner"
         :class="{
             'c-banner--has-shadow' : shadow,
@@ -9,7 +9,7 @@
             'c-banner--has-overlay' : overlay
         }"
     >
-        <AtPicture
+        <Picture
             class="c-banner__picture"
             v-bind="picture"
         />
@@ -23,20 +23,19 @@
                 'c-banner__box--v-align-bottom' : valign === 'bottom'
             }"
         >
-            <div class="c-banner__content">
-                <slot />
-            </div>
+            <slot />
+
         </div>
     </component>
 </template>
 
 <script>
-    import AtPicture from '../Picture/Picture.vue'
+    import Picture from '@components/Picture/Picture.vue'
 
     export default {
         name: 'AtBanner',
         components: {
-            AtPicture
+            Picture
         },
         props: {
             tag: {

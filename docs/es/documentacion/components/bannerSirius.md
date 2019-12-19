@@ -71,71 +71,11 @@
 
 <Preview>
   <template slot="demo">
-    <AtBannerSirius v-bind='[
-                               {
-                                  banner:{
-                                     overlay:false,
-                                     radius:false,
-                                     shadow:false,
-                                  },
-                                  picture: {
-                                    src: "https://source.unsplash.com/random/200x200"
-                                  },
-                                  price:{
-                                     text:"desde",
-                                     before:"400",
-                                     value:"299"
-                                  },
-                                  button:{
-                                     text:"ver",
-                                     tag:"div"
-                                  },
-                                  title: "Punta Cana y Playa Bávaro",
-                                  meta: "9 días y 7 noches",
-                                  textTag: "div"
-                               }
-                            ]'/> 
-  </template>
-
-  ```vue
-  <template>
-      <div>
-          <AtBannerSirius v-bind="banner"/>
-      </div>
+    <components-BannerSirius-BannerSirius />
   </template>
   
-<script>
-    export default {
-        data() {
-            return {
-              banner: {
-                  tag: 'a',
-                  href: 'https://www.google.es',
-                  align: 'center',
-                  valign: 'center',
-                  shadow: false,
-                  radius: false,
-                  overlay: false,
-                  title: "Punta Cana y Playa Bávaro",
-                  meta: "9 días y 7 noches",
-                  banner: {
-                    overlay: false,
-                    shadow: true,
-                    radius: false
-                  }, 
-                  picture: {
-                      src: 'https://source.unsplash.com/random/1920x1080',
-                      sources: [
-                          {srcset: 'https://source.unsplash.com/random/600x400', media: '480px'},
-                          {srcset: 'https://source.unsplash.com/random/320x200', media: '320px'}
-                      ]
-                  }
-              }
-            }
-        }
-    }
-</script>
-  ```
+  <<< @/examples/components/BannerSirius/BannerSirius.vue
 </Preview>
+  
 
 

@@ -70,43 +70,17 @@
 
 Componente Banner simple, base para crear componentes más complejos
 
+
 <Preview>
   <template slot="demo">
-    <AtBanner v-bind='[{"tag": "article","shadow": true,"overlay":true}]'/> 
-  </template>
-
-  ```vue
-  <template>
-      <div>
-          <AtBanner v-bind="banner"/>
-      </div>
+    <components-Banner-Banner />
   </template>
   
-<script>
-    export default {
-        data() {
-            return {
-              banner: {
-                  tag: 'a',
-                  href: 'https://www.google.es',
-                  align: 'center',
-                  valign: 'center',
-                  shadow: false,
-                  radius: false,
-                  overlay: false,
-                  picture: {
-                      src: 'https://source.unsplash.com/random/1920x1080',
-                      sources: [
-                          {srcset: 'https://source.unsplash.com/random/600x400', media: '480px'},
-                          {srcset: 'https://source.unsplash.com/random/320x200', media: '320px'}
-                      ]
-                  }
-              }
-            }
-        }
-    }
-</script>
-  ```
+  <<< @/examples/components/Banner/Banner.vue
 </Preview>
+  
+
+
+
 
 
