@@ -83,4 +83,7 @@
   <<< @/examples/components/Button/Button.vue
 </Preview>
 
+## API
+
+<Api />
 

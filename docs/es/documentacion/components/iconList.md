@@ -31,3 +31,7 @@
 
   <<< @/examples/components/IconList/IconList.vue
 </Preview>
+
+## API
+
+<Api />

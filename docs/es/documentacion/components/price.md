@@ -55,4 +55,6 @@
   <<< @/examples/components/Price/Price.vue
 </Preview>
   
-  
+## API
+
+<Api />

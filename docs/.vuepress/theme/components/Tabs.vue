@@ -58,7 +58,7 @@
 
       &-item {
         all: unset;
-        padding: 0.5rem 1rem;
+        padding: 0 1rem 0.5rem 1rem;
         border-bottom: 1px solid transparent;
         transition: all 0.3s;
         text-transform: capitalize;

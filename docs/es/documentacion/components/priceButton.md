@@ -48,3 +48,6 @@
   <<< @/examples/components/PriceButton/PriceButton.vue
 </Preview>
   
+## API
+
+<Api />

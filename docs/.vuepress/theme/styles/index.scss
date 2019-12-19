@@ -169,6 +169,10 @@ div {
 }
 
 .theme-default-content {
+  & + & {
+    margin-top: var(--docs-space-between-tags);
+  }
+
   > * {
     margin-top: var(--docs-space-between-tags);
     margin-bottom: var(--docs-space-between-tags);
