@@ -57,7 +57,7 @@
 </script>
 
 <style lang="scss">
-  :root {
+  .c-picture {
     --c-picture-ratio-width: 16;
     --c-picture-ratio-height: 9;
     --c-picture-overlay: transparent;

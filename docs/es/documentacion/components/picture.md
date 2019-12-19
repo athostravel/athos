@@ -73,9 +73,9 @@
 
 <Api />
 
-## PictureSource
+## Picture Source
 
-El componente PictureSource se usa junto con el componente Picture para pintar los sources del picture.
+El componente `PictureSource` se usa junto con el componente `Picture` para pintar los sources del picture.
 
 ### API
 

@@ -2,7 +2,7 @@
 {
   "API": [
     {
-      "title": "properties",
+      "title": "Propiedades",
       "items": [
         {
           "Nombre": "tag",
