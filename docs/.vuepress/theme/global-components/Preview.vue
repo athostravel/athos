@@ -70,6 +70,12 @@
 
 <script>
     export default {
+        props: {
+            options: {
+                type: Object,
+                default: () => {}
+            }
+        },
         data () {
             return {
                 codeIsVisible: false,
@@ -78,7 +84,8 @@
                 themeSelected: 'Default',
                 themeClass: '',
                 showApplyBtn: false,
-                iconsTheme: 'sadsad'
+                iconsTheme: '',
+                fontsTheme: []
             }
         },
         computed: {
@@ -93,6 +100,7 @@
                 this.themeSelected = newTheme
                 this.showApplyBtn = false
                 this.changeIconsTheme(theme.icons)
+                this.changeFontsTheme(theme.fonts)
             }
         },
         mounted () {
@@ -105,6 +113,7 @@
                 this.themeClass = theme.class
                 this.showApplyBtn = true
                 this.changeIconsTheme(theme.icons)
+                this.changeFontsTheme(theme.fonts)
             },
             selectGlobalTheme () {
                 this.$store.commit('themes/selectTheme', this.themeSelected)
@@ -116,13 +125,24 @@
                     const theme = this.$store.getters['themes/getThemeByName'](this.$store.state.themes.currentTheme)
                     this.themeClass = theme.class
                     this.changeIconsTheme(theme.icons)
+                    this.changeFontsTheme(theme.fonts)
                 } else {
                     this.changeIconsTheme(this.$store.getters['themes/getThemeByName']('Default').icons)
+                    this.changeFontsTheme(this.$store.getters['themes/getThemeByName']('Default').fonts)
                 }
             },
             changeIconsTheme (theme) {
                 this.iconsTheme = theme
                 this.$emit('updateHead')
+            },
+            changeFontsTheme (theme) {
+                this.fontsTheme = theme
+                this.$emit('updateHead')
+            },
+            getFontsTheme () {
+                return this.fontsTheme.map((item, index) => {
+                    return { rel: 'stylesheet', href: item, id: `fontsThemes${index}` }
+                })
             },
             toggleCode () {
                 this.codeIsVisible = !this.codeIsVisible
@@ -158,7 +178,8 @@
         metaInfo () {
             return {
                 link: [
-                    { rel: 'stylesheet', href: this.iconsTheme, id: 'iconsThemes' }
+                    { rel: 'stylesheet', href: this.iconsTheme, id: 'iconsThemes' },
+                    ...this.getFontsTheme()
                 ]
             }
         }

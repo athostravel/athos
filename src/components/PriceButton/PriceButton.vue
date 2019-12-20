@@ -3,7 +3,7 @@
         :is="tag"
         class="c-price-button"
         :class="{
-            'c-price-button--inv' : inverted
+            'c-price-button--inverted' : inverted
         }"
     >
         <div class="c-price-button__price">
@@ -16,7 +16,7 @@
 </template>
 
 <style lang="scss">
-  :root {
+  .c-price-button {
     --c-price-button-background: #f6f6f6;
     --c-price-button-price-border-radius: 4px 0 0 4px;
     --c-price-button-price-padding: #{em(8px) em(16px)};
@@ -31,6 +31,9 @@
     display: inline-flex;
 
     &__price {
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
       background: var(--c-price-button-background);
       padding: var(--c-price-button-price-padding);
       border-radius: var(--c-price-button-price-border-radius);
@@ -40,7 +43,7 @@
       display: flex;
     }
 
-    &--inv {
+    &--inverted {
       #{$this}__button {
         order: -1;
       }
@@ -49,7 +52,6 @@
 </style>
 
 <script>
-
     import Price from '@components/Price/Price'
     import Button from '@components/Button/Button'
 
