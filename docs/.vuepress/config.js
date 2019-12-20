@@ -111,7 +111,8 @@ module.exports = {
                                 '/es/documentacion/components/par',
                                 '/es/documentacion/components/picture',
                                 '/es/documentacion/components/price',
-                                '/es/documentacion/components/priceButton'
+                                '/es/documentacion/components/priceButton',
+                                '/es/documentacion/components/card-icon'
                             ]
                         }
                     ],
