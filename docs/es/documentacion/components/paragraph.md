@@ -33,11 +33,9 @@
 
 # Paragraph
 
-Usamos 'Par' como abreviatura
-
 <Preview>
   <template slot="demo">
-        <AtPar/> 
+        <AtParagraph/> 
   </template>
   
    ```vue

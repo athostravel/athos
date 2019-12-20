@@ -2,60 +2,60 @@
 {
   "API": [
     {
-      "title": "properties",
+      "title": "Propiedades",
       "items": [
         {
-          "name": "tag",
-          "type": "String",
+          "Nombre": "tag",
+          "Tipo": "String",
           "parameters": null,
           "description": "Tag HTML para el componente",
           "default": "div"
         },
         {
-          "name" : "href",
-          "type" : "String",
+          "Nombre" : "href",
+          "Tipo" : "String",
           "parameters" : "",
           "description": "Enlace del componente",
           "default": "undefined"
         },
         {
-          "name" : "align",
-          "type" : "String",
+          "Nombre" : "align",
+          "Tipo" : "String",
           "parameters" : "",
           "description": "Alineación horizontal",
           "default": "undefined"
         },
         {
-          "name" : "valign",
-          "type" : "String",
+          "Nombre" : "valign",
+          "Tipo" : "String",
           "parameters" : "",
           "description": "Alineación vertical",
           "default": "undefined"
         },
         {
-          "name" : "shadow",
-          "type" : "Boolean",
+          "Nombre" : "shadow",
+          "Tipo" : "Boolean",
           "parameters" : "",
           "description": "Box shadow de la caja",
           "default": "false"
         },
         {
-          "name" : "radius",
-          "type" : "Boolean",
+          "Nombre" : "radius",
+          "Tipo" : "Boolean",
           "parameters" : "",
           "description": "Border radius de la caja",
           "default": "false"
         },
         {
-          "name" : "overlay",
-          "type" : "Boolean",
+          "Nombre" : "overlay",
+          "Tipo" : "Boolean",
           "parameters" : "",
           "description": "Capa de superposición sobre la imagen",
           "default": "false"
         },
         {
-          "name" : "picture",
-          "type" : "Object",
+          "Nombre" : "picture",
+          "Tipo" : "Object",
           "parameters" : "src,sources,alt,title",
           "description": "Props para el picture",
           "default": "empty"
@@ -68,8 +68,7 @@
 
 # Banner
 
-Componente Banner simple, base para crear componentes más complejos
-
+Componente base para crear componentes más complejos
 
 <Preview>
   <template slot="demo">
@@ -78,7 +77,10 @@ Componente Banner simple, base para crear componentes más complejos
   
   <<< @/examples/components/Banner/Banner.vue
 </Preview>
-  
+
+## API
+
+<Api />
 
 
 

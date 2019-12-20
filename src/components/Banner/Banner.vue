@@ -1,7 +1,7 @@
 <template>
     <component
         :is="tag"
-        :href="href && tag === 'a' ? href : ''"
+        :href="(href && tag === 'a') && href"
         class="c-banner"
         :class="{
             'c-banner--has-shadow' : shadow,
@@ -24,7 +24,6 @@
             }"
         >
             <slot />
-
         </div>
     </component>
 </template>
@@ -75,12 +74,12 @@
 </script>
 
 <style lang="scss">
-  :root {
+  .c-banner {
     --c-banner-box-shadow: var(--shadow-distant);
     --c-banner-border-radius: var(--radius-s);
     --c-banner-overlay: transparent;
-    --c-banner-picture-ratio-width: 13;
-    --c-banner-picture-ratio-height: 17;
+    --c-banner-picture-ratio-width: 16;
+    --c-banner-picture-ratio-height: 9;
     --c-banner-content-padding: #{em(32px)};
     --c-banner-content-text-align: center;
     --c-banner-title-line-height: 1.4;
@@ -189,4 +188,3 @@
     }
   }
 </style>
-

@@ -11,7 +11,7 @@
 </template>
 
 <style lang="scss">
-  :root {
+  .c-paragraph {
     --c-paragraph-background: none;
     --c-paragraph-padding: 0.5em;
     --c-paragraph-color: currentColor;
