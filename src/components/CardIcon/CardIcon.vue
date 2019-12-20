@@ -98,21 +98,25 @@
       line-height: var(--c-card-icon-text-line-height);
     }
 
-      &--align {
-        &-right {
-          grid-template-columns: 1fr var(--c-card-icon-width-columns);
-          grid-template-areas: "description icon";
-        }
-        &-top {
-          grid-template-columns: 1fr;
-          grid-template-areas:  "icon"
-                                "description";
-        }
-        &-bottom {
-          grid-template-columns: 1fr;
-          grid-template-areas:  "description"
-                                "icon";
-        }
+    &--align {
+      &-right {
+        grid-template-columns: 1fr var(--c-card-icon-width-columns);
+        grid-template-areas: "description icon";
       }
+
+      &-top {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "icon"
+          "description";
+      }
+
+      &-bottom {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "description"
+          "icon";
+      }
+    }
   }
 </style>
