@@ -1,4 +1,4 @@
-import CheckBox from './Checkbox'
+import CheckBox from './Checkbox.vue'
 import { use, registerComponent } from '@utils/plugins'
 
 const Plugin = {
