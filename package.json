@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@rollup/plugin-alias": "^2.2.0",
+    "@vuepress/plugin-register-components": "^1.2.0",
     "autoprefixer": "^9.7.3",
     "babel-eslint": "^10.0.3",
     "cache-loader": "^4.1.0",

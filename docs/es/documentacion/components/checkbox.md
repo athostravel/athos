@@ -64,26 +64,10 @@
   <template slot="demo">
     <AtCheckbox type="checkbox" id="check" name="check" label="Checkbox" />
   </template>
-  
-  ```vue
-  <template>
-    <AtCheckbox type="checkbox" id="check" name="check" label="Checkbox" />
-  </template>
-  
-  <script>
-      export default {
-          data() {
-              return {
-                  checkbox: {
-                      id: "check",
-                      name: "check",
-                      label: "Checkbox"
-                  }
-              }
-          }
-      }
-  </script>
-  ```
+
+  <<< @/examples/components/Checkbox/Checkbox.vue
 </Preview>
 
+## API 
 
+<Api />

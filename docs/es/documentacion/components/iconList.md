@@ -2,22 +2,20 @@
 {
   "API": [
     {
-      "title": "properties",
+      "title": "Propiedades",
       "items": [
         {
-          "name": "vertical",
-          "type": "Boolean",
-          "parameters": null,
-          "description": "Add a class for display the component vertically",
-          "default": "false"
+          "Nombre" : "icons",
+          "Tipo" : "Array",
+          "Descripción": "Array de objetos con los iconos",
+          "Por defecto": "empty"
         },
         {
-          "name" : "icons",
-          "type" : "Array",
-          "parameters" : "",
-          "description": "Array of icons classes",
-          "default": "empty"
-        }               
+          "Nombre": "vertical",
+          "Tipo": "Boolean",
+          "Descripción": "Añade una clase para mostrarlo en vertical",
+          "Por defecto": "false"
+        }             
       ] 
     }
   ]
@@ -28,30 +26,12 @@
 
 <Preview>
   <template slot="demo">
-        <AtIconList/> 
+    <components-IconList-IconList/> 
   </template>
 
-  ```vue
-  <template>
-      <div>
-          <AtIconList v-bind="icon"/>
-      </div>
-  </template>
-  
-  <script>
-      export default {
-          data() {
-              return {
-                  icon: {
-                      icon: "c-icon-star",
-                      tag: "div"
-                  }
-              }
-          },
-      }
-  </script>
-
-  ```
+  <<< @/examples/components/IconList/IconList.vue
 </Preview>
 
+## API
 
+<Api />

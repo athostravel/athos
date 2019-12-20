@@ -3,6 +3,17 @@ const { resolve, join } = require('path')
 module.exports = {
     base: '/athos/',
     dest: resolve('docs/dist'),
+    extraWatchFiles: [
+        resolve('examples')
+    ],
+    plugins: [
+        [
+            '@vuepress/register-components',
+            {
+                componentsDir: './examples'
+            }
+        ]
+    ],
     locales: {
         '/': {
             lang: 'en-EN',
@@ -26,6 +37,7 @@ module.exports = {
                 '@utils': resolve('src/utils'),
                 '@store': resolve('src/store'),
                 '@mixins': resolve('src/mixins'),
+                '@directives': resolve('src/directives'),
                 '@scss': resolve('src/scss')
             }
         }
@@ -91,11 +103,17 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 2,
                             children: [
+                                '/es/documentacion/components/banner',
+                                '/es/documentacion/components/bannerSirius',
                                 '/es/documentacion/components/button',
                                 '/es/documentacion/components/checkbox',
                                 '/es/documentacion/components/icon',
                                 '/es/documentacion/components/iconList',
                                 '/es/documentacion/components/input',
+                                '/es/documentacion/components/par',
+                                '/es/documentacion/components/picture',
+                                '/es/documentacion/components/price',
+                                '/es/documentacion/components/priceButton',
                                 '/es/documentacion/components/picture',
                                 '/es/documentacion/components/price',
                                 '/es/documentacion/components/priceButton',

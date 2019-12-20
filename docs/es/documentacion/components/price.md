@@ -2,42 +2,49 @@
 {
   "API": [
     {
-      "title": "properties",
+      "title": "Propiedades",
       "items": [
         {
-          "name": "text",
-          "type": "String",
-          "parameters": ,
-          "description": "if it exists, will print a literal",
-          "default": "undefined"
+          "Nombre": "text",
+          "Tipo": "String",
+          "Parámetros" : "",
+          "Descripción": "Añade un texto pequeño",
+          "Por defecto": "undefined"
         },
         {
-          "name" : "before",
-          "type" : "String",
-          "parameters" : "",
-          "description": "if it exists, it will paint a crossed out text",
-          "default": "empty"
+          "Nombre" : "before",
+          "Tipo" : "String",
+          "Parámetros" : "",
+          "Descripción": "Añade un precio anterior al actual",
+          "Por defecto": "empty"
         },
         {
-          "name" : "value",
-          "type" : "String",
-          "parameters" : "",
-          "description": "Price to print",
-          "default": "undefined"
+          "Nombre" : "value",
+          "Tipo" : "String",
+          "Parámetros" : "",
+          "Descripción": "Valor del precio",
+          "Por defecto": "undefined"
         },
         {
-          "name" : "currency",
-          "type" : "String",
-          "parameters" : "",
-          "description": "Type of currency",
-          "default": "€"
+          "Nombre" : "currency",
+          "Tipo" : "String",
+          "Parámetros" : "",
+          "Descripción": "Tipo de moneda",
+          "Por defecto": "€"
         },
         {
-          "name" : "inline",
-          "type" : "Boolean",
-          "parameters" : "",
-          "description": "Will add a class to display the component in one line",
-          "default": "false"
+          "Nombre" : "align",
+          "Tipo" : "String",
+          "Parámetros" : "left, right",
+          "Descripción": "Alinea el precio",
+          "Por defecto": "right"
+        },
+        {
+          "Nombre" : "inline",
+          "Tipo" : "Boolean",
+          "Parámetros" : "",
+          "Descripción": "Pone el texto, el precio anterior y el precio en línea",
+          "Por defecto": "false"
         }                         
       ] 
     }
@@ -49,32 +56,12 @@
 
 <Preview>
   <template slot="demo">
-        <AtPrice v-bind="{text: 'Desde', before: '600', value: '480'}"/> 
+    <components-Price-Price />
   </template>
   
-   ```vue
-    <template>
-        <div>
-            <AtPrice v-bind="price"/>
-        </div>
-    </template>
-    
-    <script>
-        export default {
-            data() {
-                return {
-                    price: {
-                        text: "Desde",
-                        before: "300",
-                        value: "199",
-                        currency: "$",
-                        inline: true
-                    }
-                }
-            },
-        }
-    </script>
-   ```
+  <<< @/examples/components/Price/Price.vue
 </Preview>
   
-  
+## API
+
+<Api />

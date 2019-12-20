@@ -8,7 +8,7 @@
                     :alt="data.heroAlt || 'hero'"
                 >
 
-                <h1 v-if="data.heroText !== null" id="main-title">
+                <h1 v-if="data.heroText !== null" id="main-title" class="home__title">
                     {{ data.heroText || $title || 'Hello' }}
                 </h1>
 
@@ -90,9 +90,18 @@
       --docs-gutter: 4rem;
     }
 
+    &__title {
+      font-size: 2em;
+      margin-bottom: var(--docs-space-between-tags);
+    }
+
     &__content {
       max-width: var(--docs-container-width);
       margin: 0 auto;
+    }
+
+    p {
+      margin-bottom: var(--docs-space-between-tags);
     }
   }
 </style>
