@@ -24,7 +24,6 @@
             }"
         >
             <slot />
-
         </div>
     </component>
 </template>
@@ -189,4 +188,3 @@
     }
   }
 </style>
-

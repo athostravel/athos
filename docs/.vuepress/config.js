@@ -106,12 +106,19 @@ module.exports = {
                                 '/es/documentacion/components/banner',
                                 '/es/documentacion/components/bannerSirius',
                                 '/es/documentacion/components/button',
+                                '/es/documentacion/components/checkbox',
                                 '/es/documentacion/components/icon',
                                 '/es/documentacion/components/iconList',
+                                '/es/documentacion/components/input',
                                 '/es/documentacion/components/par',
                                 '/es/documentacion/components/picture',
                                 '/es/documentacion/components/price',
-                                '/es/documentacion/components/priceButton'
+                                '/es/documentacion/components/priceButton',
+                                '/es/documentacion/components/picture',
+                                '/es/documentacion/components/price',
+                                '/es/documentacion/components/priceButton',
+                                '/es/documentacion/components/radio',
+                                '/es/documentacion/components/textarea'
                             ]
                         }
                     ],
