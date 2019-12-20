@@ -1,9 +1,9 @@
-import TextArea from './Textarea.vue'
+import Textarea from './Textarea.vue'
 import { use, registerComponent } from '@utils/plugins'
 
 const Plugin = {
     install (Vue) {
-        registerComponent(Vue, TextArea)
+        registerComponent(Vue, Textarea)
     }
 }
 
