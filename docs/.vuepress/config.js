@@ -92,13 +92,13 @@ module.exports = {
                             sidebarDepth: 2,
                             children: [
                                 '/es/documentacion/components/button',
+                                '/es/documentacion/components/checkbox',
                                 '/es/documentacion/components/icon',
                                 '/es/documentacion/components/iconList',
+                                '/es/documentacion/components/input',
                                 '/es/documentacion/components/picture',
                                 '/es/documentacion/components/price',
                                 '/es/documentacion/components/priceButton',
-                                '/es/documentacion/components/input',
-                                '/es/documentacion/components/checkbox',
                                 '/es/documentacion/components/radio'
                             ]
                         }
