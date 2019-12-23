@@ -1,7 +1,7 @@
 <template>
     <component
         :is="tag"
-        :href="(href && tag === 'a') && href"
+        :href="tag === 'a' && href"
         class="c-banner"
         :class="{
             'c-banner--has-shadow' : shadow,
@@ -9,20 +9,8 @@
             'c-banner--has-overlay' : overlay
         }"
     >
-        <Picture
-            class="c-banner__picture"
-            v-bind="picture"
-        />
-        <div
-            v-if="$slots.default"
-            class="c-banner__box"
-            :class="{
-                'c-banner__box--align-center' : align === 'center',
-                'c-banner__box--align-right' : align === 'right',
-                'c-banner__box--v-align-center' : valign === 'center',
-                'c-banner__box--v-align-bottom' : valign === 'bottom'
-            }"
-        >
+        <Picture class="c-banner__picture" v-bind="picture" />
+        <div v-if="$slots.default" class="c-banner__box">
             <slot />
         </div>
     </component>
@@ -42,14 +30,6 @@
                 default: 'div'
             },
             href: {
-                type: String,
-                default: undefined
-            },
-            align: {
-                type: String,
-                default: undefined
-            },
-            valign: {
                 type: String,
                 default: undefined
             },
@@ -81,13 +61,6 @@
     --c-banner-picture-ratio-width: 16;
     --c-banner-picture-ratio-height: 9;
     --c-banner-content-padding: #{em(32px)};
-    --c-banner-content-text-align: center;
-    --c-banner-title-line-height: 1.4;
-    --c-banner-title-font-size: #{em(26px)};
-    --c-banner-title-color: #fff;
-    --c-banner-title-text-align: center;
-    --c-banner-button-margin-top: #{em(24px)};
-    --c-banner-button-color: #fff;
   }
 </style>
 
@@ -130,61 +103,15 @@
     }
 
     &__box {
+      display: flex;
+      flex-direction: column;
       z-index: 3;
       min-width: #{em(1px)};
-
-      &--v-align {
-        &-center,
-        &-bottom {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
-        &-center {
-          justify-content: center;
-        }
-
-        &-bottom {
-          justify-content: flex-end;
-        }
-      }
-
-      &--align {
-        &-center,
-        &-right {
-          display: flex;
-          flex-direction: column;
-        }
-
-        &-center {
-          align-items: center;
-        }
-
-        &-right {
-          align-items: flex-end;
-        }
-      }
     }
 
     &__content {
-      text-align: var(--c-banner-content-text-align);
       max-width: 100%;
       padding: var(--c-banner-content-padding);
-    }
-
-    &__title {
-      line-height: var(--c-banner-title-line-height);
-      font-size: var(--c-banner-title-font-size);
-      color: var(--c-banner-title-color);
-      text-align: var(--c-banner-title-text-align);
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    &__button {
-      color: var(--c-banner-button-color);
-      margin-top: var(--c-banner-button-margin-top);
     }
   }
 </style>

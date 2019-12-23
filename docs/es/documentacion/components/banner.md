@@ -7,68 +7,66 @@
         {
           "Nombre": "tag",
           "Tipo": "String",
-          "parameters": null,
-          "description": "Tag HTML para el componente",
-          "default": "div"
+          "Descripción": "Etiqueta HTML para el componente",
+          "Por defecto": "div"
         },
         {
           "Nombre" : "href",
           "Tipo" : "String",
-          "parameters" : "",
-          "description": "Enlace del componente",
-          "default": "undefined"
-        },
-        {
-          "Nombre" : "align",
-          "Tipo" : "String",
-          "parameters" : "",
-          "description": "Alineación horizontal",
-          "default": "undefined"
-        },
-        {
-          "Nombre" : "valign",
-          "Tipo" : "String",
-          "parameters" : "",
-          "description": "Alineación vertical",
-          "default": "undefined"
+          "Descripción": "Enlace del componente",
+          "Por defecto": "undefined"
         },
         {
           "Nombre" : "shadow",
           "Tipo" : "Boolean",
-          "parameters" : "",
-          "description": "Box shadow de la caja",
-          "default": "false"
+          "Descripción": "Sombra de la caja",
+          "Por defecto": "false"
         },
         {
           "Nombre" : "radius",
           "Tipo" : "Boolean",
-          "parameters" : "",
-          "description": "Border radius de la caja",
-          "default": "false"
+          "Descripción": "Border radius de la caja",
+          "Por defecto": "false"
         },
         {
           "Nombre" : "overlay",
           "Tipo" : "Boolean",
-          "parameters" : "",
-          "description": "Capa de superposición sobre la imagen",
-          "default": "false"
+          "Descripción": "Capa de superposición sobre la imagen",
+          "Por defecto": "false"
         },
         {
           "Nombre" : "picture",
           "Tipo" : "Object",
-          "parameters" : "src,sources,alt,title",
-          "description": "Props para el picture",
-          "default": "empty"
+          "Descripción": "Propiedades del componente Picture",
+          "Por defecto": "empty"
         }                                                                 
       ] 
+    },
+    {
+      "title": "Slots",
+      "items": [
+        {
+          "Nombre" : "default",
+          "Descripción": "Slot por defecto"
+        }
+      ]
+    }
+  ],
+  "APIBannerContent": [
+    {
+      "title": "Slots",
+      "items": [
+        {
+          "Nombre" : "default",
+          "Descripción": "Slot del contenido"
+        }
+      ]
     }
   ]
 }
 ---
 
 # Banner
-
-Componente base para crear componentes más complejos
 
 <Preview>
   <template slot="demo">
@@ -81,6 +79,14 @@ Componente base para crear componentes más complejos
 ## API
 
 <Api />
+
+## Banner Content
+
+El componente `BannerContent` se usa junto con el componente `Banner` para meter contenido.
+
+### API
+
+<Api :data="$page.frontmatter.APIBannerContent" />
 
 
 

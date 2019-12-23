@@ -1,5 +1,7 @@
 <template>
-    <AtButton v-bind="button" />
+    <div>
+        <AtButton v-bind="button" />
+    </div>
 </template>
 
 <script>
@@ -7,6 +9,7 @@
         data () {
             return {
                 button: {
+                    href: '#',
                     text: 'Button'
                 }
             }

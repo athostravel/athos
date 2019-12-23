@@ -1,9 +1,14 @@
 @mixin root-colors {
-  --color-primary-hue: 0;
-  --color-primary-saturation: 0%;
-  --color-primary-lumnosity: 0%;
+  --color-primary-hue: 288;
+  --color-primary-saturation: 56%;
+  --color-primary-lumnosity: 35%;
   --color-primary-hsl: var(--color-primary-hue), var(--color-primary-saturation), var(--color-primary-lumnosity);
   --color-primary: hsl(var(--color-primary-hsl));
+  --color-secondary-hue: 288;
+  --color-secondary-saturation: 76%;
+  --color-secondary-lumnosity: 65%;
+  --color-secondary-hsl: var(--color-secondary-hue), var(--color-secondary-saturation), var(--color-secondary-lumnosity);
+  --color-secondary: hsl(var(--color-secondary-hsl));
 
   // Grery colors
   @for $i from 0 through 20 {
