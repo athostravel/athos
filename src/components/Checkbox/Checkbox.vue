@@ -54,7 +54,7 @@
     --c-checkbox-input-radius: var(--radius-s);
     --c-checkbox-input-checked-background: #000;
     --c-checkbox-input-checked-border: #{em(1px)} solid #000;
-    --c-checkbox-icon: 'I';
+    --c-checkbox-icon: "\e919";
     --c-checkbox-align: center;
 
     align-items: center;

@@ -49,7 +49,7 @@
     &__nav {
       border-bottom: 1px solid var(--docs-color-border);
       display: grid;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
       grid-auto-flow: column;
       overflow-x: auto;
       grid-gap: 1rem;
@@ -58,7 +58,7 @@
 
       &-item {
         all: unset;
-        padding: 0.5rem 1rem;
+        padding: 0 1rem 0.5rem 1rem;
         border-bottom: 1px solid transparent;
         transition: all 0.3s;
         text-transform: capitalize;

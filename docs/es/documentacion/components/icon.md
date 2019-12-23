@@ -2,22 +2,20 @@
 {
   "API": [
     {
-      "title": "properties",
+      "title": "Propiedades",
       "items": [
         {
-          "name": "icon",
-          "type": "String, Boolean",
-          "parameters": null,
-          "description": "Class of the icon to display",
-          "default": "undefined"
+          "Nombre": "icon",
+          "Tipo": "String, Boolean",
+          "Descripción": "Clase del icono a mostrar",
+          "Por defecto": "false"
         },
         {
-          "name" : "tag",
-          "type" : "String",
-          "parameters" : "",
-          "description": "Specifies a tag for the element",
-          "default": "span"
-        }               
+          "Nombre" : "tag",
+          "Tipo" : "String",
+          "Descripción": "Etiqueta HTML del componente",
+          "Por defecto": "span"
+        }                    
       ] 
     }
   ]
@@ -28,29 +26,12 @@
 
 <Preview>
   <template slot="demo">
-    <AtIcon icon="heart"/> 
+    <components-Icon-Icon /> 
   </template>
 
-  ```vue
-  <template>
-      <div>
-          <AtIcon v-bind="icon"/>
-      </div>
-  </template>
-  
-  <script>
-      export default {
-          data() {
-              return {
-                  icon: {
-                      icon: "c-icon-star",
-                      tag: "div"
-                  }
-              }
-          },
-      }
-  </script>
-  ```
+  <<< @/examples/components/Icon/Icon.vue
 </Preview>
 
+## API
 
+<Api />

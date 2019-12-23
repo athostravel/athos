@@ -1,6 +1,6 @@
 <template>
     <picture v-lazy class="c-picture">
-        <AtPictureSource
+        <PictureSource
             v-for="source in sources"
             :key="source.id"
             :shim="shim"
@@ -19,13 +19,13 @@
 </template>
 
 <script>
-    import LazyLoadDirective from '../../directives/LazyLoadDirective'
-    import AtPictureSource from '@components/Picture/PictureSource.vue'
+    import LazyLoadDirective from '@directives/LazyLoadDirective'
+    import PictureSource from '@components/Picture/PictureSource.vue'
 
     export default {
         name: 'AtPicture',
         components: {
-            AtPictureSource
+            PictureSource
         },
         directives: {
             lazy: LazyLoadDirective
@@ -57,7 +57,7 @@
 </script>
 
 <style lang="scss">
-  :root {
+  .c-picture {
     --c-picture-ratio-width: 16;
     --c-picture-ratio-height: 9;
     --c-picture-overlay: transparent;

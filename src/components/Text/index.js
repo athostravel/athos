@@ -1,9 +1,9 @@
-import HelloWorld from './HelloWorld.vue'
+import Text from './Text.vue'
 import { use, registerComponent } from '@utils/plugins'
 
 const Plugin = {
     install (Vue) {
-        registerComponent(Vue, HelloWorld)
+        registerComponent(Vue, Text)
     }
 }
 
