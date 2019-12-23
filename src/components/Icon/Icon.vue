@@ -2,13 +2,7 @@
     <component
         :is="tag"
         class="c-icon"
-        :class="
-            [
-                icon && `c-icon--${icon}`,
-                {'c-icon--rounded': rounded},
-                {'c-icon--has-bg': background}
-            ]
-        "
+        :class="icon && `c-icon--${icon}`"
     >
         <slot />
     </component>
@@ -25,14 +19,6 @@
             tag: {
                 type: String,
                 default: 'span'
-            },
-            background: {
-                type: Boolean,
-                default: false
-            },
-            rounded: {
-                type: Boolean,
-                default: false
             }
         }
     }
@@ -40,29 +26,33 @@
 
 <style lang="scss">
   .c-icon {
+    --c-icon-size: 1em;
     --c-icon-font-family: var(--font-family-icons);
-    --c-icon-radius: var(--radius-circle);
-    --c-icon-background: var(--color-primary);
-    --c-icon-has-bg-color: #fff;
     --c-icon-color: currentColor;
-    --c-icon-padding: #{em(8px)};
   }
 </style>
 
 <style lang="scss" scoped>
   .c-icon {
     display: inline-block;
-    font-family: var(--c-icon-font-family) !important;
+    font-family: var(--c-icon-font-family) !important; /* Important is necessary */
     color: var(--c-icon-color);
+    font-size: var(--c-icon-size);
 
-    &--has-bg {
-      background-color: var(--c-icon-background);
-      padding: var(--c-icon-padding);
-      color: var(--c-icon-has-bg-color);
+    &--tiny {
+      --c-icon-size: 0.6668em;
     }
 
-    &--rounded {
-      border-radius: var(--c-icon-radius);
+    &--small {
+      --c-icon-size: 0.8336em;
+    }
+
+    &--medium {
+      --c-icon-size: 1.1668em;
+    }
+
+    &--large {
+      --c-icon-size: 1.3334em;
     }
   }
 </style>

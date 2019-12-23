@@ -50,6 +50,31 @@ module.exports = {
     },
     themeConfig: {
         logo: '/assets/img/avoris.svg',
+        themes: [
+            {
+                name: 'Default',
+                class: '',
+                icons: 'https://i.icomoon.io/public/2320a6af31/athos/style.css',
+                fonts: []
+            },
+            {
+                name: 'Iberojet',
+                class: 't-iberojet',
+                icons: 'https://i.icomoon.io/public/2320a6af31/iberojet/style.css',
+                fonts: [
+                    'https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap',
+                    'https://fonts.googleapis.com/css?family=Prata&display=swap'
+                ]
+            },
+            {
+                name: 'Muchoviaje',
+                class: 't-muchoviaje',
+                icons: 'https://i.icomoon.io/public/2320a6af31/muchoviaje/style.css',
+                fonts: [
+                    'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap'
+                ]
+            }
+        ],
         locales: {
             '/': {
                 selectText: 'Languages',
@@ -104,14 +129,14 @@ module.exports = {
                             sidebarDepth: 2,
                             children: [
                                 '/es/documentacion/components/banner',
-                                '/es/documentacion/components/bannerSirius',
+                                '/es/documentacion/components/banner-sirius',
                                 '/es/documentacion/components/button',
+                                '/es/documentacion/components/icon-list',
                                 '/es/documentacion/components/icon',
-                                '/es/documentacion/components/iconList',
-                                '/es/documentacion/components/par',
                                 '/es/documentacion/components/picture',
                                 '/es/documentacion/components/price',
-                                '/es/documentacion/components/priceButton'
+                                '/es/documentacion/components/price-button',
+                                '/es/documentacion/components/text'
                             ]
                         }
                     ],

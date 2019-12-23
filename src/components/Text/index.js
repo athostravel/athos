@@ -1,9 +1,9 @@
-import Paragraph from './Paragraph.vue'
+import Text from './Text.vue'
 import { use, registerComponent } from '@utils/plugins'
 
 const Plugin = {
     install (Vue) {
-        registerComponent(Vue, Paragraph)
+        registerComponent(Vue, Text)
     }
 }
 

@@ -3,7 +3,7 @@
         class="c-icon-list"
         :class="{ 'c-icon-list--vertical' : vertical }"
     >
-        <Icon
+        <Button
             v-for="icon in icons"
             :key="icon.id"
             class="c-icon-list__icon"
@@ -13,12 +13,12 @@
 </template>
 
 <script>
-    import Icon from '@components/Icon/Icon'
+    import Button from '@components/Button/Button'
 
     export default {
         name: 'AtIconList',
         components: {
-            Icon
+            Button
         },
         props: {
             vertical: {

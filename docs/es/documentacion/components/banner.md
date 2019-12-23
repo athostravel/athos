@@ -2,74 +2,71 @@
 {
   "API": [
     {
-      "title": "properties",
+      "title": "Propiedades",
       "items": [
         {
-          "name": "tag",
-          "type": "String",
-          "parameters": null,
-          "description": "Tag HTML para el componente",
-          "default": "div"
+          "Nombre": "tag",
+          "Tipo": "String",
+          "Descripción": "Etiqueta HTML para el componente",
+          "Por defecto": "div"
         },
         {
-          "name" : "href",
-          "type" : "String",
-          "parameters" : "",
-          "description": "Enlace del componente",
-          "default": "undefined"
+          "Nombre" : "href",
+          "Tipo" : "String",
+          "Descripción": "Enlace del componente",
+          "Por defecto": "undefined"
         },
         {
-          "name" : "align",
-          "type" : "String",
-          "parameters" : "",
-          "description": "Alineación horizontal",
-          "default": "undefined"
+          "Nombre" : "shadow",
+          "Tipo" : "Boolean",
+          "Descripción": "Sombra de la caja",
+          "Por defecto": "false"
         },
         {
-          "name" : "valign",
-          "type" : "String",
-          "parameters" : "",
-          "description": "Alineación vertical",
-          "default": "undefined"
+          "Nombre" : "radius",
+          "Tipo" : "Boolean",
+          "Descripción": "Border radius de la caja",
+          "Por defecto": "false"
         },
         {
-          "name" : "shadow",
-          "type" : "Boolean",
-          "parameters" : "",
-          "description": "Box shadow de la caja",
-          "default": "false"
+          "Nombre" : "overlay",
+          "Tipo" : "Boolean",
+          "Descripción": "Capa de superposición sobre la imagen",
+          "Por defecto": "false"
         },
         {
-          "name" : "radius",
-          "type" : "Boolean",
-          "parameters" : "",
-          "description": "Border radius de la caja",
-          "default": "false"
-        },
-        {
-          "name" : "overlay",
-          "type" : "Boolean",
-          "parameters" : "",
-          "description": "Capa de superposición sobre la imagen",
-          "default": "false"
-        },
-        {
-          "name" : "picture",
-          "type" : "Object",
-          "parameters" : "src,sources,alt,title",
-          "description": "Props para el picture",
-          "default": "empty"
+          "Nombre" : "picture",
+          "Tipo" : "Object",
+          "Descripción": "Propiedades del componente Picture",
+          "Por defecto": "empty"
         }                                                                 
       ] 
+    },
+    {
+      "title": "Slots",
+      "items": [
+        {
+          "Nombre" : "default",
+          "Descripción": "Slot por defecto"
+        }
+      ]
+    }
+  ],
+  "APIBannerContent": [
+    {
+      "title": "Slots",
+      "items": [
+        {
+          "Nombre" : "default",
+          "Descripción": "Slot del contenido"
+        }
+      ]
     }
   ]
 }
 ---
 
 # Banner
-
-Componente Banner simple, base para crear componentes más complejos
-
 
 <Preview>
   <template slot="demo">
@@ -78,7 +75,18 @@ Componente Banner simple, base para crear componentes más complejos
   
   <<< @/examples/components/Banner/Banner.vue
 </Preview>
-  
+
+## API
+
+<Api />
+
+## Banner Content
+
+El componente `BannerContent` se usa junto con el componente `Banner` para meter contenido.
+
+### API
+
+<Api :data="$page.frontmatter.APIBannerContent" />
 
 
 

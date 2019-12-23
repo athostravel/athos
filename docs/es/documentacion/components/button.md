@@ -35,7 +35,7 @@
         {
           "Nombre" : "iconAlign",
           "Tipo" : "String",
-          "Parámetros": "",
+          "Parámetros": "left, right",
           "Descripción": "Posición del icono",
           "Por defecto": "left"
         },
@@ -54,6 +54,20 @@
           "Por defecto": "false"
         },
         {
+          "Nombre" : "rounded",
+          "Tipo" : "Boolean",
+          "Parámetros": "",
+          "Descripción": "Redondea el botón",
+          "Por defecto": "false"
+        },
+        {
+          "Nombre" : "flat",
+          "Tipo" : "Boolean",
+          "Parámetros": "",
+          "Descripción": "Quita el aspecto de botón",
+          "Por defecto": "false"
+        },
+        {
           "Nombre" : "size",
           "Tipo" : "String",
           "Parámetros": "tiny, small, medium, large",
@@ -68,6 +82,15 @@
           "Por defecto": "false"
         }                                                             
       ] 
+    },
+    {
+      "title": "Slots",
+      "items": [
+        {
+          "Nombre" : "default",
+          "Descripción": "Slot del contenido. Al usar el slot no estarán disponibles los parámetros de icon y text."
+        }
+      ]
     }
   ]
 }

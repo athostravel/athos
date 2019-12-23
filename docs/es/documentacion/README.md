@@ -8,7 +8,7 @@ Actualmente dispones de dos maneras de usar Athos:
 Comienza un proyecto rápidamente usando un CDN y deja que Athos haga la magia.
 
 ```html
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <link href="https://unpkg.com/athos/dist/css/athos.css" rel="stylesheet">

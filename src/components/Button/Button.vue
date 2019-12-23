@@ -6,6 +6,8 @@
         :class="{
             'c-button--outlined' : outlined,
             'c-button--casper' : casper,
+            'c-button--rounded' : rounded,
+            'c-button--flat' : flat,
             'c-button--tiny' : size && size === 'tiny',
             'c-button--small' : size && size === 'small',
             'c-button--medium' : size && size === 'medium',
@@ -14,17 +16,23 @@
         }"
         :disabled="tag === 'button' && disabled"
     >
-        <span
-            v-if="icon"
-            class="c-button__icon"
-            :class="{
-                'c-button__icon--left': iconAlign === 'left' && text,
-                'c-button__icon--right': iconAlign === 'right' && text
-            }"
-        >
-            <Icon :icon="icon" />
-        </span>
-        <span v-if="text" class="c-button__text">{{ text }}</span>
+        <template v-if="!$slots.default">
+            <span
+                v-if="icon"
+                class="c-button__icon"
+                :class="{
+                    'c-button__icon--left': iconAlign === 'left' && text,
+                    'c-button__icon--right': iconAlign === 'right' && text
+                }"
+            >
+                <Icon :icon="icon" />
+            </span>
+            <span v-if="text" class="c-button__text">{{ text }}</span>
+        </template>
+
+        <div v-else class="c-button__content">
+            <slot />
+        </div>
     </component>
 </template>
 
@@ -65,6 +73,14 @@
                 type: Boolean,
                 default: false
             },
+            rounded: {
+                type: Boolean,
+                default: false
+            },
+            flat: {
+                type: Boolean,
+                default: false
+            },
             size: {
                 type: String,
                 default: undefined
@@ -78,7 +94,7 @@
 </script>
 
 <style lang="scss">
-  :root {
+  .c-button {
     --c-button-size: #{em(16px)};
     --c-button-text-align: center;
     --c-button-background-color: currentColor;
@@ -87,11 +103,12 @@
     --c-button-font-weight: 400;
     --c-button-text-transform: uppercase;
     --c-button-padding: #{em(8px) em(16px)};
-    --c-button-border-radius: #{em(2px)};
+    --c-button-border-radius: #{em(4px)};
     --c-button-border-style: solid;
     --c-button-border-width: 0;
     --c-button-border-color: currentColor;
     --c-button-min-height: #{em(48px)};
+    --c-button-min-width: var(--c-button-min-height);
     --c-button-icon-size: #{em(16px)};
     --c-button-overlay-opacity: 0.25;
     --c-button-overlay-color: #fff;
@@ -115,7 +132,6 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    cursor: pointer;
     overflow: hidden;
     text-align: var(--c-button-text-align);
     background-color: var(--c-button-background-color);
@@ -124,6 +140,7 @@
     border-radius: var(--c-button-border-radius);
     padding: var(--c-button-padding);
     min-height: var(--c-button-min-height);
+    min-width: var(--c-button-min-width);
     border-style: var(--c-button-border-style);
     border-width: var(--c-button-border-width);
     border-color: var(--c-button-border-color);
@@ -144,17 +161,18 @@
       border-radius: 50%;
     }
 
+    &__content,
     &__text {
-      font-size: var(--c-button-font-size);
-      font-weight: var(--c-button-font-weight);
       color: var(--c-button-color);
       z-index: 2;
+      font-size: var(--c-button-font-size);
+      font-weight: var(--c-button-font-weight);
     }
 
     &__icon {
       font-size: var(--c-button-icon-size);
       display: flex;
-      color: var(--c-button-color);
+      color: var(--c-button-icon-color, var(--c-button-color));
       z-index: 2;
 
       &--left {
@@ -194,6 +212,18 @@
       --c-button-overlay-color: currentColor;
       --c-button-color: currentColor;
       --c-button-border-width: 1px;
+    }
+
+    &--flat {
+      --c-button-background-color: transparent;
+      --c-button-overlay-color: transparent;
+      --c-button-padding: 0;
+      --c-button-min-height: auto;
+      --c-button-icon-color: currentColor;
+    }
+
+    &--rounded {
+      --c-button-border-radius: calc(var(--c-button-min-height) / 2);
     }
 
     &--is-disabled,

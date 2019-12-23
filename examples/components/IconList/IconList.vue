@@ -8,9 +8,9 @@
             return {
                 iconList: {
                     icons: [
-                        { icon: 'heart' },
-                        { icon: 'heart' },
-                        { icon: 'heart' }
+                        { icon: 'heart', flat: true, tag: 'span' },
+                        { icon: 'heart', flat: true, tag: 'span' },
+                        { icon: 'heart', flat: true, tag: 'span' }
                     ]
                 }
             }
