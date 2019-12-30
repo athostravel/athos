@@ -2,55 +2,55 @@
 {
   "API": [
     {
-      "title": "properties",
+      "title": "Propiedades",
       "items": [
         {
-          "name" : "id",
-          "type" : "String",
-          "description": "Identificador único dentro del DOM.",
-          "default": "undefined"
+          "Nombre" : "id",
+          "Tipo" : "String",
+          "Descripción": "Identificador del input",
+          "Por defecto": "Si se define un label el id será el label transformando sin carácteres especiales. Si no está definido el label será undefined"
         },
         {
-          "name" : "name",
-          "type" : "String",
-          "description": "Especifica el nombre del elemento.",
-          "default": "undefined"
+          "Nombre" : "name",
+          "Tipo" : "String",
+          "Descripción": "Nombre del input",
+          "Por defecto": "undefined"
         },
         {
-          "name" : "type",
-          "type" : "String",
-          "description": "Especifica el tipo de elemento.",
-          "default": "text"
+          "Nombre" : "type",
+          "Tipo" : "String",
+          "Descripción": "Especifica el tipo del input",
+          "Por defecto": "checkbox"
         },
         {
-          "name" : "label",
-          "type" : "String",
-          "description": "Texto que acompaña al radio.",
-          "default": "undefined"
+          "Nombre" : "label",
+          "Tipo" : "String",
+          "Descripción": "Texto para el label",
+          "Por defecto": "undefined"
         },
         {
-          "name" : "value",
-          "type" : "String",
-          "description": "Especifica el valor del radio.",
-          "default": "undefined"
+          "Nombre" : "value",
+          "Tipo" : "String || Boolean || Array || Object",
+          "Descripción": "Especifica el valor del input",
+          "Por defecto": "undefined"
         },
         {
-          "name" : "disabled",
-          "type" : "Boolean",
-          "description": "Sirve para deshabilitar el radio.",
-          "default": "false"
+          "Nombre" : "disabled",
+          "Tipo" : "Boolean",
+          "Descripción": "Deshabilita el checkbox",
+          "Por defecto": "false"
         },            
         {
-          "name" : "required",
-          "type" : "Boolean",
-          "description": "Indica que es obligatorio marcar el radio antes de enviar el formulario.",
-          "default": "false"
+          "Nombre" : "required",
+          "Tipo" : "Boolean",
+          "Descripción": "Indica que es obligatorio",
+          "Por defecto": "false"
         },         
         {
-          "name" : "checked",
-          "type" : "Boolean",
-          "description": "Cuando se carga la página el radio se mostrará marcado.",
-          "default": "false"
+          "Nombre" : "checked",
+          "Tipo" : "Boolean",
+          "Descripción": "Marca el checkbox",
+          "Por defecto": "false"
         }
       ] 
     }
@@ -62,28 +62,14 @@
 
 <Preview>
   <template slot="demo">
-    <AtRadio type="radio" id="radio" name="radio" label="Radio" />
+    <components-Radio-Radio />
   </template>
-  
-  ```vue
-  <template>
-    <AtRadio type="radio" id="radio" name="radio" label="Radio" />
-  </template>
-  
-  <script>
-      export default {
-          data() {
-              return {
-                  radio: {
-                      id: "radio",
-                      name: "radio",
-                      label: "Radio"
-                  }
-              }
-          }
-      }
-  </script>
-  ```
+
+  <<< @/examples/components/Radio/Radio.vue
 </Preview>
+
+## API
+
+<Api/>
 
 

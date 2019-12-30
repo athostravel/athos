@@ -45,7 +45,7 @@ export default {
             default: false
         },
         value: {
-            type: String,
+            type: [String, Boolean, Array, Object],
             default: undefined
         },
         size: {

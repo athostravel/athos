@@ -53,22 +53,34 @@
           "Por defecto": "false"
         }
       ] 
+    },
+    {
+      "title": "Slots",
+      "items": [
+        {
+          "Nombre" : "checked",
+          "Descripción": "Slot que muestra el contenido cuando el input está checked"
+        },
+        {
+          "Nombre" : "unchecked",
+          "Descripción": "Slot que muestra el contenido cuando el input está unchecked"
+        }
+      ]
     }
   ]
 }
 ---
 
-# Checkbox
+# Switch
 
 <Preview>
   <template slot="demo">
-    <components-Checkbox-Checkbox />
+    <components-Switch-Switch />
   </template>
-
-  <<< @/examples/components/Checkbox/Checkbox.vue
+  
+  <<< @/examples/components/Switch/Switch.vue
 </Preview>
 
 ## API
 
-<Api/>
-
+<Api />
