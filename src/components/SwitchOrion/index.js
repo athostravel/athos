@@ -1,9 +1,9 @@
-import ByeWorld from './ByeWorld.vue'
+import SwitchOrion from './SwitchOrion.vue'
 import { use, registerComponent } from '@utils/plugins'
 
 const Plugin = {
     install (Vue) {
-        registerComponent(Vue, ByeWorld)
+        registerComponent(Vue, SwitchOrion)
     }
 }
 

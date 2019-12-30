@@ -1,4 +1,5 @@
 @mixin root-radiuses {
+  --radius-xs: #{em((2px))};
   --radius-s: #{em((4px))};
   --radius-m: #{em((8px))};
   --radius-l: #{em((12px))};

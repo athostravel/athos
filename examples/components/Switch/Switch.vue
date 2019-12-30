@@ -1,16 +1,14 @@
 <template>
-    <div>
-        <AtButton v-bind="button" />
-    </div>
+    <AtSwitch v-bind="example" />
 </template>
 
 <script>
     export default {
         data () {
             return {
-                button: {
-                    href: '#',
-                    text: 'Button'
+                example: {
+                    id: 'example',
+                    label: 'Lorem Ipsum'
                 }
             }
         }

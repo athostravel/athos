@@ -11,21 +11,21 @@ Para poder documentar la API de cada componente puedes utilizar el frontmatter d
 {
    "API":[
       {
-         "title":"properties",
+         "title":"Propiedades",
          "items":[
             {
-               "name":"src",
-               "type":"String",
-               "parameters":null,
-               "description":"Route for the default image",
-               "default":"https://source.unsplash.com/random/1920x1080"
+               "Nombre": "src",
+               "Tipo": "String",
+               "Parámetros": "",
+               "Descripción":"Url de la imagen",
+               "Por defecto":"https://source.unsplash.com/random/1920x1080"
             },
             {
-               "name":"alt",
-               "type":"String",
-               "parameters":"",
-               "description":"Specifies an alternate text for an image",
-               "default":"empty"
+               "Nombre": "alt",
+               "Tipo": "String",
+               "Parámetros": "",
+               "Descripción": "Texto alternativo de la imagen",
+               "Por defecto": "empty"
             }
          ]
       }
@@ -36,4 +36,41 @@ Para poder documentar la API de cada componente puedes utilizar el frontmatter d
 # My Component
 ```
 
-Cada item de la `API` creará una pestaña con el nombre que aparezca en `title`. Los `items` se encargaran de crear la tabla donde las keys del objeto son los `th` y el value los `td`.
+Cada item de la `API` creará una pestaña con el nombre que aparezca en `title`. Los `items` se encargaran de crear la tabla donde las keys del objeto son los `th` y el value los `td`. Una vez definido el objecto podemos llamar al componente de la siguiente manera:
+
+```md
+<Api />
+```
+
+En caso de necesitar otro componente con diferente información bastaría con añadir otro objeto en el frontmatter y pasarselo al componente `Api` mediante `:data`:
+
+```md
+---
+{
+  "API" [],
+  "otherAPI":[
+    {
+      "title":"Propiedades",
+      "items":[
+        {
+          "Nombre": "src",
+          "Tipo": "String",
+          "Parámetros": "",
+          "Descripción":"Url de la imagen",
+          "Por defecto":"https://source.unsplash.com/random/1920x1080"
+        },
+        {
+          "Nombre": "alt",
+          "Tipo": "String",
+          "Parámetros": "",
+          "Descripción": "Texto alternativo de la imagen",
+          "Por defecto": "empty"
+        }
+      ]
+    }
+  ]
+}
+---
+
+<Api :data="$page.frontmatter.otherAPI" />
+```

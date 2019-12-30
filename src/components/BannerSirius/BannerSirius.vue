@@ -1,75 +1,60 @@
 <template>
-    <Banner
-        tag="article"
-        class="c-banner-sirius"
-        text="Button"
-        :picture="picture"
-        v-bind="banner"
-    >
+    <Banner tag="article" class="c-banner-sirius" v-bind="banner">
         <BannerContent class="c-banner-sirius__content">
-            <component :is="textTag" class="c-banner-sirius__text">
-                <Paragraph v-bind="meta" class="c-banner-sirius__meta" />
-                <Paragraph v-bind="title" class="c-banner-sirius__title" />
-            </component>
-            <IconList
-                :icons="icons"
-                class="c-banner-sirius__icons"
-            />
+            <div v-if="icons" class="c-banner-sirius__icons">
+                <div v-for="icon in icons" :key="icon.id" class="c-banner-sirius__icon">
+                    <Button v-bind="icon" class="c-banner-sirius__button" />
+                </div>
+            </div>
+
+            <div v-if="meta || title" class="c-banner-sirius__text">
+                <AtText v-if="meta" v-bind="meta" class="c-banner-sirius__meta" />
+                <AtText v-if="title" v-bind="title" class="c-banner-sirius__title" />
+            </div>
+
             <PriceButton
+                v-if="priceButton"
                 class="c-banner-sirius__price"
-                :price="price"
-                :button="button"
+                v-bind="priceButton"
             />
         </BannerContent>
     </Banner>
 </template>
 
 <script>
+    import Button from '@components/Button/Button'
     import Banner from '@components/Banner/Banner'
     import BannerContent from '@components/Banner/BannerContent'
     import PriceButton from '@components/PriceButton/PriceButton'
-    import IconList from '@components/IconList/IconList'
-    import Paragraph from '@components/Paragraph/Paragraph'
+    import AtText from '@components/Text/Text'
 
     export default {
         name: 'AtBannerSirius',
         components: {
+            Button,
             Banner,
             BannerContent,
             PriceButton,
-            IconList,
-            Paragraph
+            AtText
         },
         props: {
-            textTag: {
-                type: String,
-                default: 'div'
-            },
-            title: {
-                type: Object,
-                default: () => {}
+            icons: {
+                type: Array,
+                default: () => []
             },
             meta: {
                 type: Object,
                 default: () => {}
             },
-            button: {
+            title: {
                 type: Object,
                 default: () => {}
-            },
-            picture: {
-                type: Object,
-                default: () => {}
-            },
-            price: {
-                type: Object,
-                default: () => {}
-            },
-            icons: {
-                type: Array,
-                default: () => []
             },
             banner: {
+                type: Object,
+                default: () => {}
+            },
+            priceButton: {
                 type: Object,
                 default: () => {}
             }
@@ -79,72 +64,69 @@
 
 <style lang="scss">
   .c-banner-sirius {
-    --c-banner-overlay: linear-gradient(0deg, #000 0%, transparent 50%);
-    --c-banner-content-padding: 1em 1em 1em 0;
-    --c-banner-meta-color: #fff;
-    --c-banner-meta-background: #c6c6c6;
-    --c-banner-meta-padding: 0.5em;
-    --c-banner-meta-font-size: 0.875em;
-    --c-banner-title-color: #fff;
-    --c-banner-title-background: #d6d6d6;
-    --c-banner-title-padding: 0.5em;
-    --c-banner-title-font-size: 1em;
-    --c-banner-picture-ratio-height: 3;
-    --c-banner-picture-ratio-width: 4;
+    --c-banner-sirius-content-padding: 1em 1em 1em 0;
+    --c-banner-sirius-meta-background: var(--color-primary);
+    --c-banner-sirius-meta-color: var(--color-shade-0);
+    --c-banner-sirius-meta-font-size: 0.875em;
+    --c-banner-sirius-title-background: var(--color-shade-0);
+    --c-banner-sirius-title-color: var(--color-primary);
+    --c-banner-sirius-title-font-size: 1.125em;
+    --c-banner-sirius-price-button-color: var(--color-secondary);
   }
 </style>
 
 <style scoped lang="scss">
   .c-banner-sirius {
     &__content {
-      display: grid;
-      grid-template-rows: repeat(3, auto);
-      padding: var(--c-banner-content-padding);
-      grid-template-areas: "icons" "text" "price";
-      height: 100%;
-    }
-
-    &__text {
-      grid-area: text;
-      justify-self: start;
-      text-align: left;
+      padding: var(--c-banner-sirius-content-padding);
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
     }
 
     &__icons {
-      grid-area: icons;
-      align-self: start;
-      justify-self: end;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
-    &__price {
-      grid-area: price;
-      align-self: end;
-      justify-self: end;
-    }
-
-    &__picture {
-      --c-banner-picture-ratio-height: 4;
+    &__icon {
+      & + & {
+        margin-left: 0.5em;
+      }
     }
 
     &__button {
-      --c-button-text-transform: normal;
-      --c-button-font-size: 1.231em;
+      --c-button-background-color: hsla(var(--color-shade-0-hsl), 0.5);
+      --c-button-icon-color: var(--color-secondary);
     }
 
-    &__title {
-      --c-paragraph-font-size: var(--c-banner-title-font-size);
-      --c-paragraph-background: var(--c-banner-title-background);
-      --c-paragraph-padding: var(--c-banner-title-padding);
-      --c-paragraph-color: var(--c-banner-title-color);
+    &__text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 1em;
+      margin-bottom: 1em;
     }
 
     &__meta {
-      --c-paragraph-font-size: var(--c-banner-meta-font-size);
-      --c-paragraph-background: var(--c-banner-meta-background);
-      --c-paragraph-padding: var(--c-banner-meta-padding);
-      --c-paragraph-color: var(--c-banner-meta-color);
+      --c-text-background: var(--c-banner-sirius-meta-background);
+      --c-text-color: var(--c-banner-sirius-meta-color);
+      --c-text-font-size: var(--c-banner-sirius-meta-font-size);
+      --c-text-padding: 0.25em 1em;
+    }
 
-      display: inline-block;
+    &__title {
+      --c-text-background: var(--c-banner-sirius-title-background);
+      --c-text-color: var(--c-banner-sirius-title-color);
+      --c-text-font-size: var(--c-banner-sirius-title-font-size);
+      --c-text-padding: 0.5em 1em;
+    }
+
+    &__price {
+      color: var(--c-banner-sirius-price-button-color);
+      align-self: flex-end;
+      margin-top: auto;
     }
   }
 </style>

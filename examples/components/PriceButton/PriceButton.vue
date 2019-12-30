@@ -15,7 +15,7 @@
                     },
                     button: {
                         tag: 'div',
-                        text: 'Ir'
+                        icon: 'angle-right'
                     }
                 }
             }

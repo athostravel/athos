@@ -1,9 +1,9 @@
-import Paragraph from './Paragraph.vue'
+import CheckBox from './Checkbox.vue'
 import { use, registerComponent } from '@utils/plugins'
 
 const Plugin = {
     install (Vue) {
-        registerComponent(Vue, Paragraph)
+        registerComponent(Vue, CheckBox)
     }
 }
 

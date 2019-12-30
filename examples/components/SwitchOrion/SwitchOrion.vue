@@ -1,14 +1,14 @@
 <template>
-    <AtBanner v-bind="banner" />
+    <AtSwitchOrion v-bind="example" />
 </template>
 
 <script>
     export default {
         data () {
             return {
-                banner: {
-                    picture: {
-                        src: 'https://source.unsplash.com/random/1920x1080'
+                example: {
+                    atSwitch: {
+                        id: 'example'
                     }
                 }
             }

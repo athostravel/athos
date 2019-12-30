@@ -102,11 +102,12 @@
     padding: 0.5rem 2rem;
     display: block;
     line-height: 1.2;
+    border-left: 3px solid transparent;
 
     &.active {
       color: var(--docs-color-primary);
       font-weight: 600;
-      border-left: 3px solid var(--docs-color-primary);
+      border-color: var(--docs-color-primary);
     }
 
     .sidebar-sub-header & {
@@ -143,9 +144,31 @@
       }
     }
 
+    &.down {
+      &::before {
+        @include triangle('top', currentColor, 0.25rem);
+      }
+    }
+
     &.right {
       &::before {
         @include triangle('bottom', currentColor, 0.25rem);
+      }
+    }
+  }
+
+  .sidebar-group {
+    .sidebar-group {
+      .sidebar-heading {
+        font-weight: normal;
+        padding: 0.5rem 2rem;
+        margin: 0;
+        border-left: 3px solid transparent;
+      }
+
+      .sidebar-link {
+        padding-left: 3rem;
+        font-size: 0.9em;
       }
     }
   }

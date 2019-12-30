@@ -1,16 +1,14 @@
 <template>
-    <div>
-        <AtButton v-bind="button" />
-    </div>
+    <AtCheckbox v-bind="checkbox" />
 </template>
 
 <script>
     export default {
         data () {
             return {
-                button: {
-                    href: '#',
-                    text: 'Button'
+                checkbox: {
+                    name: 'example',
+                    label: 'Lorem Ipsum'
                 }
             }
         }
