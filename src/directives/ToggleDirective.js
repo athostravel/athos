@@ -19,11 +19,12 @@ export default {
 
 
         const bindEvent = (element) => {
+            const ele = typeof(element) === 'object' ? element.trigger : element
             const classAction = element.state !== undefined ? element.state ? 'add' : 'remove' : 'toggle'
-            triggerElements.push(document.querySelector(element.trigger))
+            triggerElements.push(document.querySelector(ele))
             triggerElementsClasses.push(element.class)
 
-            document.querySelectorAll(element.trigger).forEach(elem => {
+            document.querySelectorAll(ele).forEach(elem => {
                 elem.addEventListener(event, () => {
                     if (prop) el[prop] = element.state !== undefined ? element.state : el[prop] === true ? false : true
 
