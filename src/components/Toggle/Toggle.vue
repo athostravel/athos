@@ -1,6 +1,26 @@
 <template>
     <div>
 
+        <button class="myButton">
+            Hover Event #1
+        </button>
+        |
+        <button class="myButton">
+            Hover Event #2
+        </button>
+        |
+        <button class="myButton">
+            Hover Event #3
+        </button>
+        <br><br>
+        <div v-toggle toggle-trigger=".myButton" toggle-trigger-class="class-click-active" toggle-class="is-active">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur at consequatur eius fugiat illo iusto odio sunt voluptatem. Accusantium adipisci cupiditate dolores eligendi excepturi facilis laborum quaerat quo similique. Repudiandae.
+        </div>
+
+        <br>
+        <br>
+        <br>
+
         <input
             type="checkbox"
             v-toggle
@@ -71,6 +91,10 @@
             toggleClass: {
                 type: String,
                 default: 'is-active'
+            },
+            toggleProp: {
+                type: String,
+                default: undefined
             }
         },
         data () {

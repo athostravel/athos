@@ -7,19 +7,19 @@
         {
           "Nombre": "toggleTrigger",
           "Tipo": "String",
-          "Descripción": "Elemento objetivo",
+          "Descripción": "Elemento referenciado",
           "Por defecto": undefined
         },
         {
           "Nombre": "toggleTriggerClass",
           "Tipo": "String",
-          "Descripción": "****Class que se añade en el elemento que activa el toggle",
+          "Descripción": "Class que se añade en al elemento referenciado",
           "Por defecto": "is-active"
         }, 
         {
           "Nombre": "toggleClass",
           "Tipo": "String",
-          "Descripción": "Class que se añade en el elemento que se activa",
+          "Descripción": "Class que se añade en el elemento referenciado",
           "Por defecto": "is-active"
         }, 
         {
@@ -27,6 +27,12 @@
           "Tipo": "String",
           "Descripción": "Evento necesario para lanzar la acción",
           "Por defecto": "click"
+        },
+        {
+          "Nombre": "toggleProp",
+          "Tipo": "String",
+          "Descripción": "Sirve para añadir una propiedad al elemento referenciado",
+          "Por defecto": undefined
         }        
       ] 
     }

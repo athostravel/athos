@@ -10,7 +10,8 @@
                     toggleTrigger: '#myButton',
                     toggleTriggerClass: 'is-active',
                     toggleClass: 'is-active',
-                    toggleEvent: 'click'
+                    toggleEvent: 'click',
+                    toggleProp: 'checked'
                 }
             }
         }
