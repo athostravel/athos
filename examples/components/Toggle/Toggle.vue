@@ -1,13 +1,16 @@
 <template>
-    <AtToggle v-bind="toggle" />
+    <AtToggle v-bind="toggleTarget" />
 </template>
 
 <script>
     export default {
         data () {
             return {
-                toggle: {
-                    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut debitis, ducimus eum fuga harum itaque officiis? Accusantium assumenda beatae corporis eligendi illum maiores, repellendus repudiandae soluta vitae voluptatum. Adipisci, aut?'
+                toggleTarget: {
+                    toggleTrigger: '#myButton',
+                    toggleTriggerClass: 'is-active',
+                    toggleClass: 'is-active',
+                    toggleEvent: 'click'
                 }
             }
         }

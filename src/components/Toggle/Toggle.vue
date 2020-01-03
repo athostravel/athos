@@ -1,10 +1,22 @@
 <template>
-    <div
-        :class="open ? 'c-toggle--open' : 'c-toggle--closed'"
-    >
-        <span slot="toggleElement" data-text-open="{{ toggleText }}" data-text-close="{{ toggleOpenText }}">
-            {{ toggleText }}
-        </span>
+    <div>
+
+        <input
+            type="checkbox"
+            v-toggle
+            toggle-class="input"
+            toggle-trigger-class="boton"
+            toggle-trigger='.caca'
+            toggle-prop="checked"
+        />
+
+        <button id="true" class="caca">
+            force true
+        </button>
+        <button id="false" class="caca">
+            force false
+        </button>
+
     </div>
 </template>
 
@@ -17,13 +29,21 @@
             toggle: ToggleDirective
         },
         props: {
-            toggleText: {
+            toggleEvent: {
                 type: String,
-                default: 'Mostrar'
+                default: "click"
             },
-            toggleOpenText: {
+            toggleTrigger: {
                 type: String,
-                default: 'Ocultar'
+                default: undefined
+            },
+            toggleTriggerClass: {
+                type: String,
+                default: 'is-active'
+            },
+            toggleClass: {
+                type: String,
+                default: 'is-active'
             }
         },
         data () {
@@ -33,25 +53,3 @@
         }
     }
 </script>
-
-<style scoped lang="scss">
-  .c-toggle {
-    $this: &;
-
-    &--open {
-      #{$this} {
-        &__text {
-          display: none;
-        }
-      }
-    }
-
-    &--closed {
-      #{$this} {
-        &__text-hidden {
-          display: none;
-        }
-      }
-    }
-  }
-</style>

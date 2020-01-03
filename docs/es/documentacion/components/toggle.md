@@ -5,17 +5,29 @@
       "title": "Propiedades",
       "items": [
         {
-          "Nombre": "toggleText",
+          "Nombre": "toggleTrigger",
           "Tipo": "String",
-          "Descripción": "Texto por defecto de un toggle cerrado",
-          "Por defecto": "Mostrar"
+          "Descripción": "Elemento objetivo",
+          "Por defecto": undefined
         },
         {
-          "Nombre": "toggleOpenText",
+          "Nombre": "toggleTriggerClass",
           "Tipo": "String",
-          "Descripción": "Texto por defecto de un toggle abierto",
-          "Por defecto": "Ocultar"
-        }            
+          "Descripción": "****Class que se añade en el elemento que activa el toggle",
+          "Por defecto": "is-active"
+        }, 
+        {
+          "Nombre": "toggleClass",
+          "Tipo": "String",
+          "Descripción": "Class que se añade en el elemento que se activa",
+          "Por defecto": "is-active"
+        }, 
+        {
+          "Nombre": "toggleEvent",
+          "Tipo": "String",
+          "Descripción": "Evento necesario para lanzar la acción",
+          "Por defecto": "click"
+        }        
       ] 
     }
   ]
