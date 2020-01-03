@@ -4,17 +4,44 @@
         <input
             type="checkbox"
             v-toggle
-            toggle-class="input"
-            toggle-trigger-class="boton"
-            toggle-trigger='.caca'
+            toggle-class="is-active"
+            toggle-trigger-class="button--active"
+            toggle-trigger='#button'
             toggle-prop="checked"
         />
 
-        <button id="true" class="caca">
-            force true
+        <button id="button">
+            Toggle Class and Prop "checked"
         </button>
-        <button id="false" class="caca">
-            force false
+
+        <br>
+        <br>
+        <br>
+
+        <input
+            type="checkbox"
+            v-toggle
+            toggle-class="input"
+            toggle-trigger='[
+               {
+                  "state": true,
+                  "trigger": "#true",
+                  "class": "boton"
+               },
+               {
+                  "state": false,
+                  "trigger": "#false",
+                  "class": "boton2"
+               }
+            ]'
+            toggle-prop="checked"
+        />
+
+        <button id="true">
+            Force state true and Prop Checked
+        </button> |
+        <button id="false">
+            Force state false and Prop Not Checked
         </button>
 
     </div>
