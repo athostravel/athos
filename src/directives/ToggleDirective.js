@@ -17,18 +17,12 @@ export default {
         const triggerElements = []
         const triggerElementsClasses = []
 
-
-
         const bindEvent = (element) => {
             const ele = typeof(element) === 'object' ? element.trigger : element
             const classAction = element.state !== undefined ? element.state ? 'add' : 'remove' : 'toggle'
-            triggerElements.push(document.querySelector(ele)) // Si el trigger es class deberia ser querySelectorAll
-
-            console.log(triggerElements)
+            triggerElements.push(document.querySelector(ele))
 
             triggerElementsClasses.push(element.class)
-
-            console.log(triggerElementsClasses)
 
             document.querySelectorAll(ele).forEach(elem => {
                 elem.addEventListener(event, () => {
