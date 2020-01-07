@@ -128,8 +128,9 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 2,
                             children: [
-                                '/es/documentacion/components/banner-sirius',
                                 '/es/documentacion/components/banner',
+                                '/es/documentacion/components/banner-sirius',
+                                '/es/documentacion/components/banner-piscis',
                                 '/es/documentacion/components/button',
                                 '/es/documentacion/components/checkbox',
                                 '/es/documentacion/components/icon-list',
