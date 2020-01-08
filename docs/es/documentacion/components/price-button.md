@@ -1,39 +1,3 @@
----
-{
-  "API": [
-    {
-      "title": "Propiedades",
-      "items": [
-        {
-          "Nombre": "tag",
-          "Tipo": "String",
-          "Descripción": "Etiqueta HTML del componente",
-          "Por defecto": "undefined"
-        },
-        {
-          "Nombre" : "inverted",
-          "Tipo" : "Boolean",
-          "Descripción": "Invierte el botón con la caja",
-          "Por defecto": "empty"
-        },
-        {
-          "Nombre" : "button",
-          "Tipo" : "Object",
-          "Descripción": "Propiedades de Button",
-          "Por defecto": "empty"
-        },                      
-        {
-          "Nombre" : "price",
-          "Tipo" : "Object",
-          "Descripción": "Propiedades de Price",
-          "Por defecto": "empty"
-        }                      
-      ] 
-    }
-  ]
-}
----
-
 # Price Button
 
 <Preview>
@@ -44,6 +8,30 @@
   <<< @/examples/components/PriceButton/PriceButton.vue
 </Preview>
   
-## API
+## Propiedades
 
-<Api />
+| Nombre     | Tipo      | Descripción                                      | Por defecto |
+|------------|-----------|--------------------------------------------------|-------------|
+| `tag`      | `String`  | Etiqueta HTML del componente                     | `a`         |
+| `href`     | `String`  | Enlace del botón                                 | `#`         |
+| `inverted` | `Boolean` | Invierte el botón con la caja                    | `false`     |
+| `atButton` | `Object`  | Propiedades del componente [Button](./button.md) | [Propiedades por defecto](#propiedades-por-defecto)     |
+| `atPrice`  | `Object`  | Propiedades del componente [Price](./price.md)   | [Propiedades por defecto](#propiedades-por-defecto)     |
+| `atIcon`   | `Object`  | Propiedades del componente [Icon](./icon.md)     | [Propiedades por defecto](#propiedades-por-defecto)     |
+
+### Propiedades por defecto
+
+```js
+{
+    atPrice: {
+        text: 'Desde'
+    },
+    atButton: {
+        tag: 'div',
+        color: 'secondary'
+    },
+    atIcon: {
+        icon: 'angle-right'
+    }
+}
+```

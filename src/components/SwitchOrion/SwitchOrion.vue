@@ -18,10 +18,6 @@
             AtSwitch
         },
         props: {
-            atSwitch: {
-                type: Object,
-                default: () => {}
-            },
             checkedText: {
                 type: String,
                 default: 'Si'
@@ -29,6 +25,10 @@
             uncheckedText: {
                 type: String,
                 default: 'No'
+            },
+            atSwitch: {
+                type: Object,
+                default: () => {}
             }
         }
     }

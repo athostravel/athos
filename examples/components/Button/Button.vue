@@ -1,6 +1,23 @@
 <template>
     <div>
-        <AtButton v-bind="button" />
+        <AtButton v-bind="atButton" color="primary">
+            Button
+        </AtButton>
+        <AtButton v-bind="atButton" rounded>
+            Button
+        </AtButton>
+        <AtButton v-bind="atButton" outlined color="primary">
+            Button
+        </AtButton>
+        <AtButton v-bind="atButton" outlined rounded>
+            Button
+        </AtButton>
+        <AtButton v-bind="atButton" bordered color="primary">
+            Button
+        </AtButton>
+        <AtButton v-bind="atButton" bordered rounded>
+            Button
+        </AtButton>
     </div>
 </template>
 
@@ -8,7 +25,7 @@
     export default {
         data () {
             return {
-                button: {
+                atButton: {
                     href: '#',
                     text: 'Button'
                 }

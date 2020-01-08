@@ -1,45 +1,74 @@
 <template>
     <component
-        :is="tag"
+        :is="options.tag"
+        :href="options.href"
         class="c-price-button"
         :class="{
-            'c-price-button--inverted' : inverted
+            'c-price-button--inverted' : options.inverted
         }"
     >
         <div class="c-price-button__price">
-            <Price v-bind="price" />
+            <AtPrice v-bind="options.atPrice" />
         </div>
 
-        <Button class="c-price-button__button" v-bind="button" />
+        <AtButton class="c-price-button__button" v-bind="options.atButton">
+            <AtIcon class="c-price-button__icon" v-bind="options.atIcon" />
+        </AtButton>
     </component>
 </template>
 
 <script>
-    import Price from '@components/Price/Price'
-    import Button from '@components/Button/Button'
+    import AtPrice from '@components/Price/Price'
+    import AtButton from '@components/Button/Button'
+    import AtIcon from '@components/Icon/Icon'
 
     export default {
         name: 'AtPriceButton',
         components: {
-            Price,
-            Button
+            AtPrice,
+            AtButton,
+            AtIcon
         },
         props: {
             tag: {
                 type: String,
-                default: 'div'
+                default: 'a'
+            },
+            href: {
+                type: String,
+                default: '#'
             },
             inverted: {
                 type: Boolean,
                 default: false
             },
-            button: {
+            atButton: {
                 type: Object,
                 default: () => {}
             },
-            price: {
+            atPrice: {
                 type: Object,
                 default: () => {}
+            },
+            atIcon: {
+                type: Object,
+                default: () => {}
+            }
+        },
+        data () {
+            return {
+                defaultOptions: {
+                    atPrice: {
+                        text: 'Desde'
+                    },
+                    atButton: {
+                        tag: 'div',
+                        color: 'secondary'
+                    },
+                    atIcon: {
+                        icon: 'angle-right'
+                    }
+                }
             }
         }
     }
@@ -50,6 +79,7 @@
     --c-price-button-background: #f6f6f6;
     --c-price-button-price-border-radius: #{em(4px)} 0 0 #{em(4px)};
     --c-price-button-price-padding: #{em(8px) em(16px)};
+    --c-price-button-icon-size: #{em(24px)};
   }
 </style>
 
@@ -70,10 +100,13 @@
     }
 
     &__button {
-      --c-button-icon-size: #{em(24px)};
       --c-button-padding: #{em(8px)} #{em(16px)};
       --c-button-min-height: auto;
       --c-button-border-radius: 0 #{em(4px)} #{em(4px)} 0;
+    }
+
+    &__icon {
+      font-size: var(--c-price-button-icon-size);
     }
 
     &--inverted {

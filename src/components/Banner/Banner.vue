@@ -9,7 +9,8 @@
             'c-banner--has-overlay' : overlay
         }"
     >
-        <Picture class="c-banner__picture" v-bind="picture" />
+        <AtPicture class="c-banner__picture" v-bind="atPicture" />
+
         <div v-if="$slots.default" class="c-banner__box">
             <slot />
         </div>
@@ -17,12 +18,12 @@
 </template>
 
 <script>
-    import Picture from '@components/Picture/Picture.vue'
+    import AtPicture from '@components/Picture/Picture.vue'
 
     export default {
         name: 'AtBanner',
         components: {
-            Picture
+            AtPicture
         },
         props: {
             tag: {
@@ -45,7 +46,7 @@
                 type: Boolean,
                 default: false
             },
-            picture: {
+            atPicture: {
                 type: Object,
                 default: () => {}
             }

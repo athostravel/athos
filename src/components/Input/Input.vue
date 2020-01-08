@@ -2,8 +2,8 @@
     <div
         class="c-input"
         :class="{
-            'c-input--has-icon': icon,
-            'c-input--has-icon-left': icon && iconAlign === 'left',
+            'c-input--has-icon': button,
+            'c-input--has-icon-left': button && iconAlign === 'left',
             'c-input--has-icon-detail': iconDetail,
             'c-input--has-label': label,
             'c-input--is-disabled': disabled,
@@ -39,10 +39,11 @@
                 </span>
             </label>
 
-            <Icon
-                v-if="icon"
+            <Button
+                v-if="button"
                 class="c-input__icon"
-                :icon="icon"
+                :class="{ 'c-input__icon--not-events': !(button.tag === 'a' || button.tag === 'button') }"
+                v-bind="button"
             />
         </div>
     </div>
@@ -50,14 +51,21 @@
 
 <script>
     import formControl from '@mixins/formControl'
-    import Icon from '@components/Icon/Icon.vue'
+    import Button from '@components/Button/Button.vue'
 
     export default {
         name: 'AtInput',
         components: {
-            Icon
+            Button
         },
-        mixins: [formControl]
+        mixins: [formControl],
+        props: {
+            button: {
+                type: Object,
+                default: () => {}
+            }
+        }
+
     }
 </script>
 
@@ -180,26 +188,31 @@
     }
 
     &__icon {
-      font-size: var(--c-input-icon-font-size, 1em);
+      --c-button-icon-color: var(--c-input-icon-color);
+      --c-button-size: var(--c-input-icon-font-size, 1em);
+
       border-top-right-radius: var(--c-input-radius);
       border-bottom-right-radius: var(--c-input-radius);
       background-color: var(--c-input-icon-background-color);
-      color: var(--c-input-icon-color);
       min-width: var(--c-input-min-height);
       grid-row: 1/3;
       grid-column: 2/3;
-      pointer-events: none;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
       z-index: 2;
 
+      &--not-events {
+        pointer-events: none;
+      }
+
       &::after {
         display: var(--c-input-icon-detail);
         content: "";
         height: 2em;
         width: 0.0625em;
+        min-width: 1px;
         background-image: linear-gradient(to bottom, transparent, var(--c-input-icon-detail-color), transparent);
         position: absolute;
         left: 0;

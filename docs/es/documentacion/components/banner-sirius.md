@@ -1,47 +1,5 @@
----
-{
-  "API": [
-    {
-      "title": "Propiedades",
-      "items": [
-        {
-          "Nombre" : "icons",
-          "Tipo" : "Array",
-          "Descripción": "Cada item tiene hace referencia a las propiedades del componente Button",
-          "Por defecto": "empty"
-        },                                                             
-        {
-          "Nombre" : "meta",
-          "Tipo" : "Object",
-          "Descripción": "Propiedades del componente Text",
-          "Por defecto": "empty"
-        },                                                             
-        {
-          "Nombre" : "title",
-          "Tipo" : "Object",
-          "Descripción": "Propiedades del componente Text",
-          "Por defecto": "empty"
-        },                                                             
-        {
-          "Nombre" : "banner",
-          "Tipo" : "Object",
-          "Descripción": "Propiedades del componente Banner",
-          "Por defecto": "empty"
-        },                                                             
-        {
-          "Nombre" : "priceButton",
-          "Tipo" : "Object",
-          "Descripción": "Propiedades del componente PriceButton",
-          "Por defecto": "empty"
-        }                                                                
-      ] 
-    }
-  ]
-}
----
 
 # Banner Sirius
-
 
 <Preview>
   <template slot="demo">
@@ -50,8 +8,46 @@
   
   <<< @/examples/components/BannerSirius/BannerSirius.vue
 </Preview>
-  
-## API
 
-<Api />
 
+## Propiedades
+
+| Nombre          | Tipo     | Descripción                                                                                                          | Por defecto                                         |
+|-----------------|----------|----------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------|
+| `icons`         | `Array`  | Cada objeto del array hace referencia a las propiedades de los componentes [Button](./button.md) y [Icon](./icon.md) | [Items por defecto](#propiedades-por-defecto)       |
+| `meta`          | `Object` | Propiedades del componente [Text](./text.md)                                                                         | [Propiedades por defecto](#propiedades-por-defecto) |
+| `title`         | `Object` | Propiedades del componente [Text](./text.md)                                                                         | [Propiedades por defecto](#propiedades-por-defecto) |
+| `atBanner`      | `Object` | Propiedades del componente [Banner](./banner.md)                                                                     | [Propiedades por defecto](#propiedades-por-defecto) |
+| `atPriceButton` | `Object` | Propiedades del componente [PriceButton](./price-button.md)                                                          | `empty`                                             |
+
+### Propiedades por defecto
+
+```js
+{
+    title: { background: true },
+    meta: { background: true },
+    icons: [
+        {
+            atButton: {
+                rounded: true,
+                size: 'tiny'
+            },
+            atIcon: {
+                icon: 'heart'
+            }
+        },
+        {
+            atButton: {
+                rounded: true,
+                size: 'tiny'
+            },
+            atIcon: {
+                icon: 'heart'
+            }
+        }
+    ],
+    atBanner: {
+        radius: true
+    }
+}
+```

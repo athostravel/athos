@@ -38,6 +38,10 @@
   <<< @/examples/components/SwitchOrion/SwitchOrion.vue
 </Preview>
 
-## API
+## Propiedades
 
-<Api />
+| Nombre          | Tipo     | Descripción                                      | Por defecto |
+|-----------------|----------|--------------------------------------------------|-------------|
+| `checkedText`   | `String` | Texto a mostrar cuando el switch esté activo     | Si          |
+| `uncheckedText` | `String` | Texto a mostrar cuando el switch esté inactivo   | No          |
+| `atSwitch`      | `Object` | Propiedades del componente [Switch](./switch.md) | `empty`     |

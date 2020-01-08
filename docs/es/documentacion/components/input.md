@@ -2,115 +2,133 @@
 {
   "API": [
     {
-      "title": "properties",
+      "title": "Propiedades",
       "items": [
         {
-          "name" : "id",
-          "type" : "String",
-          "description": "El atributo id especifica una identificación única para un elemento HTML.",
-          "default": "undefined"
+          "Nombre" : "id",
+          "Tipo" : "String",
+          "Parámetros" : "",
+          "Descripción": "Identificador del input",
+          "Por defecto": "Si se define un label el id será el label transformando sin carácteres especiales. Si no está definido el label será undefined"
         },
         {
-          "name" : "name",
-          "type" : "String",
-          "description": "El atributo de nombre especifica el nombre de un elemento <input>. El atributo de nombre se usa para hacer referencia a elementos en un JavaScript o para hacer referencia a datos de formulario después de enviar un formulario. Nota: Solo los elementos de formulario con un atributo de nombre tendrán sus valores pasados ​​al enviar un formulario.",
-          "default": "undefined"
-        },    
-        {
-          "name" : "type",
-          "type" : "String",
-          "description": "El atributo type especifica el tipo de elemento <input> a mostrar.",
-          "default": "text"
-        },     
-        {
-          "name" : "label",
-          "type" : "String",
-          "description": "La etiqueta <label> define una etiqueta para un elemento <button>, <input>, <meter>, <output>, <progress>, <select> o <textarea>. El elemento <label> no se representa como algo especial para el usuario. Sin embargo, proporciona una mejora de usabilidad para los usuarios del mouse, porque si el usuario hace clic en el texto dentro del elemento <label>, alterna el control. El atributo for de la etiqueta <label> debe ser igual al atributo id del elemento relacionado para unirlos.",
-          "default": "undefined"
-        },               
-        {
-          "name" : "placeholder",
-          "type" : "String",
-          "description": "Este atributo da una pista breve del valor esperado dentro de un campo de texto.",
-          "default": "undefined"
-        },            
-        {
-          "name" : "value",
-          "type" : "String",
-          "description": "El atributo value especifica el valor de un elemento <input>.",
-          "default": "undefined"
-        },            
-        {
-          "name" : "size",
-          "type" : "String",
-          "description": "Tamaño del elemento <input>.",
-          "default": "undefined"
-        },            
-        {
-          "name" : "max",
-          "type" : "String",
-          "description": "El atributo max especifica el valor máximo para un elemento <input>.",
-          "default": "undefined"
-        },            
-        {
-          "name" : "min",
-          "type" : "String",
-          "description": "El atributo min especifica el valor mínimo para un elemento <input>.",
-          "default": "undefined"
-        },            
-        {
-          "name" : "readonly",
-          "type" : "Boolean",
-          "description": "Cuando está presente, especifica que ese elemento <input> es de solo lectura.",
-          "default": "false"
-        },            
-        {
-          "name" : "disabled",
-          "type" : "Boolean",
-          "description": "Cuando está presente, especifica que el elemento <input> debe estar deshabilitado.",
-          "default": "false"
-        },            
-        {
-          "name" : "required",
-          "type" : "Boolean",
-          "description": "Cuando está presente, especifica que se debe completar un campo de entrada antes de enviar el formulario.",
-          "default": "false"
-        },            
-        {
-          "name" : "multiple",
-          "type" : "Boolean",
-          "description": "Cuando está presente, especifica que el usuario puede ingresar más de un valor en el elemento <input>. El atributo múltiple funciona con los siguientes types de <input>: email y file.",
-          "default": "false"
-        },            
-        {
-          "name" : "checked",
-          "type" : "Boolean",
-          "description": "Cuando está presente, especifica que un elemento <input> se debe preseleccionar (marcar) cuando se carga la página. El atributo marcado se puede usar con <input type = 'checkbox'> y <input type = 'radio'>. El atributo marcado también se puede establecer después de la carga de la página, con un JavaScript.",
-          "default": "false"
-        },            
-        {
-          "name" : "autocomplete",
-          "type" : "Boolean",
-          "description": "El atributo autocompletar especifica si un campo de entrada debe tener autocompletado habilitado o no. Autocompletar permite al navegador predecir el valor. Cuando un usuario comienza a escribir en un campo, el navegador debe mostrar opciones para completar el campo, en función de los valores escritos anteriormente. El atributo de autocompletar funciona con los siguientes tipos de <input>: text, search, url, tel, email, password, datepickers, range, and color.",
-          "default": "false"
+          "Nombre" : "name",
+          "Tipo" : "String",
+          "Parámetros" : "",
+          "Descripción": "Nombre del input",
+          "Por defecto": "undefined"
         },
         {
-          "name" : "icon",
-          "type" : "String",
-          "description": "Icono que acompaña a un elemento de entrada.",
-          "default": "undefined"
+          "Nombre" : "type",
+          "Tipo" : "String",
+          "Parámetros" : "",
+          "Descripción": "Especifica el tipo del input",
+          "Por defecto": "text"
+        },
+        {
+          "Nombre" : "label",
+          "Tipo" : "String",
+          "Parámetros" : "",
+          "Descripción": "Texto para el label",
+          "Por defecto": "undefined"
+        },
+        {
+          "Nombre" : "value",
+          "Tipo" : "String || Boolean || Array || Object",
+          "Parámetros" : "",
+          "Descripción": "Especifica el valor del input",
+          "Por defecto": "undefined"
+        },
+        {
+          "Nombre" : "disabled",
+          "Tipo" : "Boolean",
+          "Parámetros" : "",
+          "Descripción": "Deshabilita el checkbox",
+          "Por defecto": "false"
+        },            
+        {
+          "Nombre" : "required",
+          "Tipo" : "Boolean",
+          "Parámetros" : "",
+          "Descripción": "Indica que es obligatorio",
+          "Por defecto": "false"
+        },         
+        {
+          "Nombre" : "checked",
+          "Tipo" : "Boolean",
+          "Parámetros" : "",
+          "Descripción": "Marca el checkbox",
+          "Por defecto": "false"
+        },              
+        {
+          "Nombre" : "placeholder",
+          "Tipo" : "String",
+          "Parámetros" : "",
+          "Descripción": "Placeholder del input",
+          "Por defecto": "undefined"
+        },                
+        {
+          "Nombre" : "size",
+          "Tipo" : "String",
+          "Parámetros" : "tiny, small, medium, large",
+          "Descripción": "Tamaño del componente",
+          "Por defecto": "undefined"
+        },            
+        {
+          "Nombre" : "max",
+          "Tipo" : "String",
+          "Parámetros" : "",
+          "Descripción": "Valor máximo en caso de que el tipo de input lo permita",
+          "Por defecto": "undefined"
+        },            
+        {
+          "Nombre" : "min",
+          "Tipo" : "String",
+          "Parámetros" : "",
+          "Descripción": "Valor mínimo en caso de que el tipo de input lo permita",
+          "Por defecto": "undefined"
+        },            
+        {
+          "Nombre" : "readonly",
+          "Tipo" : "Boolean",
+          "Parámetros" : "",
+          "Descripción": "Activa el modo solo lectura",
+          "Por defecto": "false"
+        },              
+        {
+          "Nombre" : "multiple",
+          "Tipo" : "Boolean",
+          "Parámetros" : "",
+          "Descripción": "Activa el modo multiple si el input es de tipo file",
+          "Por defecto": "false"
         },               
         {
-          "name" : "iconAlign",
-          "type" : "String",
-          "description": "Posición del icono dentro del <input>.",
-          "default": "undefined"
+          "Nombre" : "autocomplete",
+          "Tipo" : "Boolean",
+          "Parámetros" : "",
+          "Descripción": "Activa el modo autocomplete",
+          "Por defecto": "false"
+        },
+        {
+          "Nombre" : "icon",
+          "Tipo" : "String",
+          "Parámetros" : "",
+          "Descripción": "Clase para el icono",
+          "Por defecto": "undefined"
         },               
         {
-          "name" : "iconDetail",
-          "type" : "Boolean",
-          "description": "Pequeño borde vertical utilizado para separar el icono del valor del input.",
-          "default": "false"
+          "Nombre" : "iconAlign",
+          "Tipo" : "String",
+          "Parámetros" : "left, right",
+          "Descripción": "Posición del icono",
+          "Por defecto": "right"
+        },               
+        {
+          "Nombre" : "iconDetail",
+          "Tipo" : "Boolean",
+          "Parámetros" : "",
+          "Descripción": "Pequeño borde vertical utilizado para separar el icono del valor del input",
+          "Por defecto": "false"
         }
       ] 
     }
@@ -122,20 +140,7 @@
 
 <Preview>
   <template slot="demo">
-    <AtInput />
-    <AtInput label="Fullname" placeholder="Fullname" />
-    <AtInput label="Fullname" placeholder="Fullname" value="Antonio Banderas" />
-    <AtInput label="Input disabled" placeholder="Input disabled" value="Antonio Banderas" disabled />
-    <AtInput label="Input readonly" placeholder="Input readonly" value="Antonio Banderas" readonly />
-    <AtInput label="Telephone number" placeholder="Telephone number" type="tel" icon="phone" />
-    <AtInput label="Telephone number" placeholder="Telephone number" type="tel" icon="phone" icon-align="left" />
-    <AtInput label="Telephone number" placeholder="Telephone number" type="tel" icon="phone" icon-detail />
-    <AtInput label="Telephone number" placeholder="Telephone number" type="tel" icon="phone" icon-align="left" icon-detail />
-    <AtInput label="Telephone number" placeholder="Telephone number" type="tel" size="tiny" icon="phone" icon-align="left" icon-detail />
-    <AtInput label="Telephone number" placeholder="Telephone number" type="tel" size="small" icon="phone" icon-align="left" icon-detail />
-    <AtInput label="Telephone number" placeholder="Telephone number" type="tel" icon="phone" icon-align="left" icon-detail />
-    <AtInput label="Telephone number" placeholder="Telephone number" type="tel" size="medium" icon="phone" icon-align="left" icon-detail />
-    <AtInput label="Telephone number" placeholder="Telephone number" type="tel" size="large" icon="phone" icon-align="left" icon-detail />
+    <components-Input-Input />
   </template>
   
   <<< @/examples/components/Input/Input.vue

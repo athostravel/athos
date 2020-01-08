@@ -1,46 +1,50 @@
 <template>
-    <Banner tag="article" class="c-banner-sirius" v-bind="banner">
-        <BannerContent class="c-banner-sirius__content">
-            <div v-if="icons" class="c-banner-sirius__icons">
-                <div v-for="icon in icons" :key="icon.id" class="c-banner-sirius__icon">
-                    <Button v-bind="icon" class="c-banner-sirius__button" />
+    <AtBanner tag="article" class="c-banner-sirius" v-bind="options.atBanner">
+        <AtBannerContent class="c-banner-sirius__content">
+            <div v-if="options.icons" class="c-banner-sirius__icons">
+                <div v-for="item in options.icons" :key="item.id" class="c-banner-sirius__icon">
+                    <AtButton v-bind="item.atButton" class="c-banner-sirius__button">
+                        <AtIcon v-bind="item.atIcon" />
+                    </AtButton>
                 </div>
             </div>
 
-            <div v-if="meta || title" class="c-banner-sirius__text">
-                <AtText v-if="meta" v-bind="meta" class="c-banner-sirius__meta" />
-                <AtText v-if="title" v-bind="title" class="c-banner-sirius__title" />
+            <div v-if="options.meta || options.title" class="c-banner-sirius__text">
+                <AtText v-if="options.meta && options.meta.text" v-bind="options.meta" class="c-banner-sirius__meta" />
+                <AtText v-if="options.title && title.text" v-bind="options.title" class="c-banner-sirius__title" />
             </div>
 
-            <PriceButton
-                v-if="priceButton"
+            <AtPriceButton
+                v-if="options.atPriceButton"
                 class="c-banner-sirius__price"
-                v-bind="priceButton"
+                v-bind="options.atPriceButton"
             />
-        </BannerContent>
-    </Banner>
+        </AtBannerContent>
+    </AtBanner>
 </template>
 
 <script>
-    import Button from '@components/Button/Button'
-    import Banner from '@components/Banner/Banner'
-    import BannerContent from '@components/Banner/BannerContent'
-    import PriceButton from '@components/PriceButton/PriceButton'
+    import AtButton from '@components/Button/Button'
+    import AtIcon from '@components/Icon/Icon'
+    import AtBanner from '@components/Banner/Banner'
+    import AtBannerContent from '@components/Banner/BannerContent'
+    import AtPriceButton from '@components/PriceButton/PriceButton'
     import AtText from '@components/Text/Text'
 
     export default {
         name: 'AtBannerSirius',
         components: {
-            Button,
-            Banner,
-            BannerContent,
-            PriceButton,
+            AtIcon,
+            AtButton,
+            AtBanner,
+            AtBannerContent,
+            AtPriceButton,
             AtText
         },
         props: {
             icons: {
                 type: Array,
-                default: () => []
+                default: () => {}
             },
             meta: {
                 type: Object,
@@ -50,13 +54,44 @@
                 type: Object,
                 default: () => {}
             },
-            banner: {
+            atBanner: {
                 type: Object,
                 default: () => {}
             },
-            priceButton: {
+            atPriceButton: {
                 type: Object,
                 default: () => {}
+            }
+        },
+        data () {
+            return {
+                defaultOptions: {
+                    title: { background: true },
+                    meta: { background: true },
+                    icons: [
+                        {
+                            atButton: {
+                                rounded: true,
+                                size: 'tiny'
+                            },
+                            atIcon: {
+                                icon: 'heart'
+                            }
+                        },
+                        {
+                            atButton: {
+                                rounded: true,
+                                size: 'tiny'
+                            },
+                            atIcon: {
+                                icon: 'heart'
+                            }
+                        }
+                    ],
+                    atBanner: {
+                        radius: true
+                    }
+                }
             }
         }
     }
@@ -97,8 +132,8 @@
     }
 
     &__button {
-      --c-button-background-color: hsla(var(--color-shade-0-hsl), 0.5);
-      --c-button-icon-color: var(--color-secondary);
+      --c-button-background-color: hsla(var(--color-shade-0-hsl), 0.7);
+      --c-button-color: var(--color-secondary);
     }
 
     &__text {

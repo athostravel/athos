@@ -331,4 +331,10 @@ div {
     font-family: var(--font-family-primary, inherit);
     font-size: var(--font-size-body, 1rem);
   }
+
+  &-items {
+    > *:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
 }
