@@ -116,15 +116,19 @@
     --c-card-leo-title-line-height: var(--line-height-m);
     --c-card-leo-title-margin: 0 0 var(--space-s) 0;
     --c-card-leo-description-color: var(--color-shade-800);
-    --c-card-leo-content-padding: var(--space-s);
+    --c-card-leo-header-padding: var(--space-s) var(--space-m);
+    --c-card-leo-content-padding: var(--space-s) var(--space-m);
+    --c-card-leo-info-padding: var(--space-s) var(--space-m);
+    --c-card-leo-actions-padding: 0;
     --c-card-leo-button-background-color: var(transparent);
     --c-card-leo-button-color: var(--color-primary);
-    --c-card-leo-button-icon-size: #{em(32px)};
+    --c-card-leo-button-icon-size: var(--font-size-4xl);
     --c-card-leo-button-min-height: inherit;
     --c-card-leo-button-min-width: inherit;
     --c-card-leo-button-padding: 0;
-    --c-card-leo-icons-margin: var(--space-s) 0 0 0;
-    --c-card-leo-icons-space-margin: var(--space-s) 0 0 var(--space-s);
+    --c-card-leo-icons-margin: 0 var(--space-s) 0 0;
+    --c-card-leo-icon-margin: var(--space-s) 0 0 0;
+    --c-card-leo-icon-space-margin: var(--space-s) 0 0 var(--space-s);
   }
 </style>
 
@@ -144,7 +148,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-end;
-      margin-right: var(--space-s);
+      margin: var(--c-card-leo-icons-margin);
     }
 
     &__button {
@@ -157,15 +161,15 @@
     }
 
     &__icon {
-      margin: var(--c-card-leo-icons-margin);
+      margin: var(--c-card-leo-icon-margin);
 
       & + & {
-        margin: var(--c-card-leo-icons-space-margin);
+        margin: var(--c-card-leo-icon-space-margin);
       }
     }
 
     &__header {
-      padding: var(--c-card-leo-content-padding);
+      padding: var(--c-card-leo-header-padding);
     }
 
     &__meta {
@@ -184,7 +188,7 @@
     &__info {
       display: flex;
       flex-direction: column;
-      padding: var(--c-card-leo-content-padding);
+      padding: var(--c-card-leo-info-padding);
     }
 
     &__title {
@@ -203,7 +207,7 @@
     &__actions {
       display: flex;
       justify-content: flex-end;
-      padding: var(--c-card-leo-content-padding);
+      padding: var(--c-card-leo-actions-padding);
     }
 
     &__price {
