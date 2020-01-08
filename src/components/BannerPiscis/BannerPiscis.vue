@@ -24,7 +24,7 @@
                     class="c-banner-piscis__button"
                     :text="textButton"
                     :href="hrefButton"
-                    :outlined="true"
+                    outlined
                 />
             </div>
         </BannerContent>
