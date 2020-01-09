@@ -7,6 +7,7 @@
             'c-button--outlined' : outlined,
             'c-button--bordered' : bordered,
             'c-button--rounded' : rounded,
+            'c-button--radiused' : radiused,
             'c-button--is-disabled' : disabled,
             'c-button--primary' : color === 'primary',
             'c-button--secondary' : color === 'secondary',
@@ -54,6 +55,10 @@
                 type: Boolean,
                 default: false
             },
+            radiused: {
+                type: Boolean,
+                default: false
+            },
             disabled: {
                 type: Boolean,
                 default: false
@@ -80,7 +85,7 @@
     --c-button-font-weight: 400;
     --c-button-text-transform: uppercase;
     --c-button-padding: #{em(8px) em(16px)};
-    --c-button-border-radius: #{em(4px)};
+    --c-button-border-radius: 0;
     --c-button-border-style: solid;
     --c-button-border-width: 0;
     --c-button-border-color: var(--c-button-background-color);
@@ -106,6 +111,7 @@
     $this: &;
 
     display: inline-flex;
+    flex-direction: column;
     overflow: hidden;
     position: relative;
     font-size: var(--c-button-size);
@@ -118,6 +124,7 @@
     padding: var(--c-button-inner-padding);
 
     &__content {
+      flex-grow: 1;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -173,6 +180,10 @@
       @include c-button-hover($this) {
         --c-button-color: var(--color-shade-0);
       }
+    }
+
+    &--radiused {
+      --c-button-border-radius: #{em(4px)};
     }
 
     &--bordered {

@@ -8,10 +8,8 @@
             return {
                 atPriceButton: {
                     href: '#',
-                    atPrice: {
-                        before: '300',
-                        value: '199'
-                    }
+                    before: '300',
+                    value: '199'
                 }
             }
         }

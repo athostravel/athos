@@ -1,21 +1,18 @@
 <template>
     <div>
-        <AtButton v-bind="atButton" color="primary">
+        <AtButton v-bind="atButton">
             Button
         </AtButton>
         <AtButton v-bind="atButton" rounded>
             Button
         </AtButton>
-        <AtButton v-bind="atButton" outlined color="primary">
+        <AtButton v-bind="atButton" radiused>
             Button
         </AtButton>
-        <AtButton v-bind="atButton" outlined rounded>
+        <AtButton v-bind="atButton" outlined>
             Button
         </AtButton>
-        <AtButton v-bind="atButton" bordered color="primary">
-            Button
-        </AtButton>
-        <AtButton v-bind="atButton" bordered rounded>
+        <AtButton v-bind="atButton" bordered>
             Button
         </AtButton>
     </div>

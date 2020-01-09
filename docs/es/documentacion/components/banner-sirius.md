@@ -9,45 +9,44 @@
   <<< @/examples/components/BannerSirius/BannerSirius.vue
 </Preview>
 
-
 ## Propiedades
 
-| Nombre          | Tipo     | Descripción                                                                                                          | Por defecto                                         |
-|-----------------|----------|----------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------|
-| `icons`         | `Array`  | Cada objeto del array hace referencia a las propiedades de los componentes [Button](./button.md) y [Icon](./icon.md) | [Items por defecto](#propiedades-por-defecto)       |
-| `meta`          | `Object` | Propiedades del componente [Text](./text.md)                                                                         | [Propiedades por defecto](#propiedades-por-defecto) |
-| `title`         | `Object` | Propiedades del componente [Text](./text.md)                                                                         | [Propiedades por defecto](#propiedades-por-defecto) |
-| `atBanner`      | `Object` | Propiedades del componente [Banner](./banner.md)                                                                     | [Propiedades por defecto](#propiedades-por-defecto) |
-| `atPriceButton` | `Object` | Propiedades del componente [PriceButton](./price-button.md)                                                          | `empty`                                             |
+| Nombre  | Tipo     | Descripción                                                 | Por defecto |
+|---------|----------|-------------------------------------------------------------|-------------|
+| `href`  | `String` | Url del botón                                               | `#`         |
+| `meta`  | `String` | Texto pequeño                                               | `undefined` |
+| `title` | `String` | Texto del título                                            | `undefined` |
+| `video` | `String` | Url del vídeo                                               | `undefined` |
+| `image` | `Object` | Propiedades del componente [Banner](./banner.md)            | `{}`        |
+| `price` | `Object` | Propiedades del componente [PriceButton](./price-button.md) | `{}`        |
 
-### Propiedades por defecto
+### Configuración por defecto
 
 ```js
 {
+    banner: { radius: true },
+    video: {
+        button: { rounded: true, size: 'tiny' },
+        icon: { icon: 'heart' }
+    },
+    favourite: {
+        enabled: true,
+        button: { tag: 'button', rounded: true, size: 'tiny' },
+        icon: { icon: 'heart' }
+    },
     title: { background: true },
-    meta: { background: true },
-    icons: [
-        {
-            atButton: {
-                rounded: true,
-                size: 'tiny'
-            },
-            atIcon: {
-                icon: 'heart'
-            }
-        },
-        {
-            atButton: {
-                rounded: true,
-                size: 'tiny'
-            },
-            atIcon: {
-                icon: 'heart'
-            }
-        }
-    ],
-    atBanner: {
-        radius: true
-    }
+    meta: { background: true }
 }
 ```
+
+#### Referencias
+
+| Clave              | Componente            |
+|--------------------|-----------------------|
+| `banner`           | [Banner](./banner.md) |
+| `video.button`     | [Button](./button.md) |
+| `video.icon`       | [Icon](./icon.md)     |
+| `favourite.button` | [Button](./button.md) |
+| `favourite.icon`   | [Icon](./icon.md)     |
+| `title`            | [Text](./text.md)     |
+| `meta`             | [Text](./text.md)     |

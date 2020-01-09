@@ -1,18 +1,18 @@
 <template>
     <component
-        :is="options.tag"
-        :href="options.href"
+        :is="tag"
+        :href="href"
         class="c-price-button"
         :class="{
-            'c-price-button--inverted' : options.inverted
+            'c-price-button--inverted' : inverted
         }"
     >
-        <div class="c-price-button__price">
-            <AtPrice v-bind="options.atPrice" />
+        <div v-if="value || text" class="c-price-button__price">
+            <AtPrice v-bind="[cfg.price , { before, value, text }]" />
         </div>
 
-        <AtButton class="c-price-button__button" v-bind="options.atButton">
-            <AtIcon class="c-price-button__icon" v-bind="options.atIcon" />
+        <AtButton class="c-price-button__button" v-bind="cfg.button">
+            <AtIcon class="c-price-button__icon" v-bind="cfg.icon" />
         </AtButton>
     </component>
 </template>
@@ -38,34 +38,31 @@
                 type: String,
                 default: '#'
             },
+            text: {
+                type: String,
+                default: 'Desde'
+            },
+            before: {
+                type: String,
+                default: undefined
+            },
+            value: {
+                type: [String, Number],
+                default: undefined
+            },
             inverted: {
                 type: Boolean,
                 default: false
-            },
-            atButton: {
-                type: Object,
-                default: () => {}
-            },
-            atPrice: {
-                type: Object,
-                default: () => {}
-            },
-            atIcon: {
-                type: Object,
-                default: () => {}
             }
         },
         data () {
             return {
-                defaultOptions: {
-                    atPrice: {
-                        text: 'Desde'
-                    },
-                    atButton: {
+                cfg: {
+                    button: {
                         tag: 'div',
                         color: 'secondary'
                     },
-                    atIcon: {
+                    icon: {
                         icon: 'angle-right'
                     }
                 }

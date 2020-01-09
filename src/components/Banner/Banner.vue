@@ -9,7 +9,7 @@
             'c-banner--has-overlay' : overlay
         }"
     >
-        <AtPicture class="c-banner__picture" v-bind="atPicture" />
+        <AtPicture class="c-banner__picture" v-bind="{ src, alt, title, sources }" />
 
         <div v-if="$slots.default" class="c-banner__box">
             <slot />
@@ -34,6 +34,22 @@
                 type: String,
                 default: undefined
             },
+            src: {
+                type: String,
+                default: 'https://source.unsplash.com/random/1920x1080'
+            },
+            alt: {
+                type: String,
+                default: ''
+            },
+            title: {
+                type: String,
+                default: undefined
+            },
+            sources: {
+                type: Array,
+                default: () => []
+            },
             shadow: {
                 type: Boolean,
                 default: false
@@ -45,10 +61,6 @@
             overlay: {
                 type: Boolean,
                 default: false
-            },
-            atPicture: {
-                type: Object,
-                default: () => {}
             }
         }
     }

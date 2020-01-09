@@ -1,13 +1,18 @@
 import { merge } from 'lodash'
 
 export default {
-    data () {
-        return {
-            options: {},
-            defaultOptions: {}
+    props: {
+        config: {
+            type: Object,
+            default: () => {}
         }
     },
-    mounted () {
-        this.options = merge(this.defaultOptions, this.$props || {})
+    data () {
+        return {
+            cfg: {}
+        }
+    },
+    beforeMount () {
+        this.cfg = merge(this.cfg, this.config)
     }
 }

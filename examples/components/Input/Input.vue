@@ -6,14 +6,14 @@
         <AtInput v-bind="example3" />
         <AtInput v-bind="example4" />
         <AtInput v-bind="example5" />
-        <AtInput v-bind="example6" />
+        <!-- <AtInput v-bind="example6" />
         <AtInput v-bind="example7" />
         <AtInput v-bind="example8" />
         <AtInput v-bind="example9" />
         <AtInput v-bind="example10" />
         <AtInput v-bind="example11" />
         <AtInput v-bind="example12" />
-        <AtInput v-bind="example13" />
+        <AtInput v-bind="example13" /> -->
     </div>
 </template>
 
@@ -51,118 +51,122 @@
                     label: 'Fullname',
                     placeholder: 'Fullname',
                     value: 'Antonio Banderas',
-                    button: {
-                        icon: 'heart',
-                        tag: 'span',
-                        flat: true
+                    icon: {
+                        atButton: {
+                            tag: 'a'
+                        },
+                        atIcon: {
+                            icon: 'heart'
+                        }
                     }
-                },
-                example6: {
-                    id: 'example6',
-                    label: 'Fullname',
-                    placeholder: 'Fullname',
-                    value: 'Antonio Banderas',
-                    iconAlign: 'left',
-                    button: {
-                        icon: 'heart',
-                        tag: 'span',
-                        flat: true
-                    }
-                },
-                example7: {
-                    id: 'example7',
-                    label: 'Fullname',
-                    placeholder: 'Fullname',
-                    value: 'Antonio Banderas',
-                    iconDetail: true,
-                    button: {
-                        icon: 'heart',
-                        tag: 'span',
-                        flat: true
-                    }
-                },
-                example8: {
-                    id: 'example8',
-                    label: 'Fullname',
-                    placeholder: 'Fullname',
-                    value: 'Antonio Banderas',
-                    iconAlign: 'left',
-                    iconDetail: true,
-                    button: {
-                        icon: 'heart',
-                        tag: 'span',
-                        flat: true
-                    }
-                },
-                example9: {
-                    id: 'example9',
-                    label: 'Size',
-                    placeholder: 'Size',
-                    value: 'Tiny',
-                    iconAlign: 'left',
-                    iconDetail: true,
-                    button: {
-                        icon: 'heart',
-                        tag: 'span',
-                        flat: true
-                    },
-                    size: 'tiny'
-                },
-                example10: {
-                    id: 'example10',
-                    label: 'Size',
-                    placeholder: 'Size',
-                    value: 'Small',
-                    iconAlign: 'left',
-                    iconDetail: true,
-                    button: {
-                        icon: 'heart',
-                        tag: 'span',
-                        flat: true
-                    },
-                    size: 'small'
-                },
-                example11: {
-                    id: 'example11',
-                    label: 'Size',
-                    placeholder: 'Size',
-                    value: 'Default',
-                    iconAlign: 'left',
-                    iconDetail: true,
-                    button: {
-                        icon: 'heart',
-                        tag: 'span',
-                        flat: true
-                    }
-                },
-                example12: {
-                    id: 'example12',
-                    label: 'Size',
-                    placeholder: 'Size',
-                    value: 'Medium',
-                    iconAlign: 'left',
-                    iconDetail: true,
-                    button: {
-                        icon: 'heart',
-                        tag: 'span',
-                        flat: true
-                    },
-                    size: 'medium'
-                },
-                example13: {
-                    id: 'example13',
-                    label: 'Size',
-                    placeholder: 'Size',
-                    value: 'Large',
-                    iconAlign: 'left',
-                    iconDetail: true,
-                    button: {
-                        icon: 'heart',
-                        tag: 'span',
-                        flat: true
-                    },
-                    size: 'large'
+
                 }
+                // example6: {
+                //     id: 'example6',
+                //     label: 'Fullname',
+                //     placeholder: 'Fullname',
+                //     value: 'Antonio Banderas',
+                //     iconAlign: 'left',
+                //     atButton: {
+                //         icon: 'heart',
+                //         tag: 'span',
+                //         flat: true
+                //     }
+                // },
+                // example7: {
+                //     id: 'example7',
+                //     label: 'Fullname',
+                //     placeholder: 'Fullname',
+                //     value: 'Antonio Banderas',
+                //     iconDetail: true,
+                //     atButton: {
+                //         icon: 'heart',
+                //         tag: 'span',
+                //         flat: true
+                //     }
+                // },
+                // example8: {
+                //     id: 'example8',
+                //     label: 'Fullname',
+                //     placeholder: 'Fullname',
+                //     value: 'Antonio Banderas',
+                //     iconAlign: 'left',
+                //     iconDetail: true,
+                //     atButton: {
+                //         icon: 'heart',
+                //         tag: 'span',
+                //         flat: true
+                //     }
+                // },
+                // example9: {
+                //     id: 'example9',
+                //     label: 'Size',
+                //     placeholder: 'Size',
+                //     value: 'Tiny',
+                //     iconAlign: 'left',
+                //     iconDetail: true,
+                //     atButton: {
+                //         icon: 'heart',
+                //         tag: 'span',
+                //         flat: true
+                //     },
+                //     size: 'tiny'
+                // },
+                // example10: {
+                //     id: 'example10',
+                //     label: 'Size',
+                //     placeholder: 'Size',
+                //     value: 'Small',
+                //     iconAlign: 'left',
+                //     iconDetail: true,
+                //     atButton: {
+                //         icon: 'heart',
+                //         tag: 'span',
+                //         flat: true
+                //     },
+                //     size: 'small'
+                // },
+                // example11: {
+                //     id: 'example11',
+                //     label: 'Size',
+                //     placeholder: 'Size',
+                //     value: 'Default',
+                //     iconAlign: 'left',
+                //     iconDetail: true,
+                //     atButton: {
+                //         icon: 'heart',
+                //         tag: 'span',
+                //         flat: true
+                //     }
+                // },
+                // example12: {
+                //     id: 'example12',
+                //     label: 'Size',
+                //     placeholder: 'Size',
+                //     value: 'Medium',
+                //     iconAlign: 'left',
+                //     iconDetail: true,
+                //     atButton: {
+                //         icon: 'heart',
+                //         tag: 'span',
+                //         flat: true
+                //     },
+                //     size: 'medium'
+                // },
+                // example13: {
+                //     id: 'example13',
+                //     label: 'Size',
+                //     placeholder: 'Size',
+                //     value: 'Large',
+                //     iconAlign: 'left',
+                //     iconDetail: true,
+                //     atButton: {
+                //         icon: 'heart',
+                //         tag: 'span',
+                //         flat: true
+                //     },
+                //     size: 'large'
+                // }
             }
         }
     }

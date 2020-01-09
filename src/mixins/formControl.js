@@ -33,8 +33,8 @@ export default {
             default: undefined
         },
         icon: {
-            type: String,
-            default: undefined
+            type: Object,
+            default: () => {}
         },
         iconAlign: {
             type: String,

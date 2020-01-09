@@ -10,28 +10,32 @@
   
 ## Propiedades
 
-| Nombre     | Tipo      | Descripción                                      | Por defecto |
-|------------|-----------|--------------------------------------------------|-------------|
-| `tag`      | `String`  | Etiqueta HTML del componente                     | `a`         |
-| `href`     | `String`  | Enlace del botón                                 | `#`         |
-| `inverted` | `Boolean` | Invierte el botón con la caja                    | `false`     |
-| `atButton` | `Object`  | Propiedades del componente [Button](./button.md) | [Propiedades por defecto](#propiedades-por-defecto)     |
-| `atPrice`  | `Object`  | Propiedades del componente [Price](./price.md)   | [Propiedades por defecto](#propiedades-por-defecto)     |
-| `atIcon`   | `Object`  | Propiedades del componente [Icon](./icon.md)     | [Propiedades por defecto](#propiedades-por-defecto)     |
+| Nombre     | Tipo               | Descripción                        | Por defecto |
+|------------|--------------------|------------------------------------|-------------|
+| `tag`      | `String`           | Etiqueta HTML del componente       | `a`         |
+| `href`     | `String`           | Enlace del botón                   | `#`         |
+| `text`     | `String`           | Añade un texto pequeño             | `Desde`     |
+| `before`   | `String`           | Añade un precio anterior al actual | `undefined` |
+| `value`    | `String`, `Number` | Valor del precio                   | `undefined` |
+| `inverted` | `Boolean`          | Invierte el botón con la caja      | `false`     |
 
-### Propiedades por defecto
+### Configuración por defecto
 
 ```js
 {
-    atPrice: {
-        text: 'Desde'
-    },
-    atButton: {
+    button: {
         tag: 'div',
         color: 'secondary'
     },
-    atIcon: {
+    icon: {
         icon: 'angle-right'
     }
 }
 ```
+
+#### Referencias
+
+| Clave    | Componente            |
+|----------|-----------------------|
+| `button` | [Button](./button.md) |
+| `icon`   | [Icon](./icon.md)     |

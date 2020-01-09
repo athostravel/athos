@@ -1,23 +1,32 @@
 <template>
-    <AtBanner tag="article" class="c-banner-sirius" v-bind="options.atBanner">
+    <AtBanner
+        tag="article"
+        class="c-banner-sirius"
+        v-bind="[cfg.banner, image]"
+    >
         <AtBannerContent class="c-banner-sirius__content">
-            <div v-if="options.icons" class="c-banner-sirius__icons">
-                <div v-for="item in options.icons" :key="item.id" class="c-banner-sirius__icon">
-                    <AtButton v-bind="item.atButton" class="c-banner-sirius__button">
-                        <AtIcon v-bind="item.atIcon" />
+            <div v-if="video || cfg.favourite.enabled" class="c-banner-sirius__icons">
+                <div v-if="video" class="c-banner-sirius__icon">
+                    <AtButton v-bind="cfg.video.button" :href="video" class="c-banner-sirius__button">
+                        <AtIcon v-bind="cfg.video.icon" :icon="cfg.video.icon.icon" />
+                    </AtButton>
+                </div>
+                <div v-if="cfg.favourite.enabled" class="c-banner-sirius__icon">
+                    <AtButton v-bind="cfg.favourite.button" class="c-banner-sirius__button">
+                        <AtIcon v-bind="cfg.favourite.icon" :icon="cfg.favourite.icon.icon" />
                     </AtButton>
                 </div>
             </div>
 
-            <div v-if="options.meta || options.title" class="c-banner-sirius__text">
-                <AtText v-if="options.meta && options.meta.text" v-bind="options.meta" class="c-banner-sirius__meta" />
-                <AtText v-if="options.title && title.text" v-bind="options.title" class="c-banner-sirius__title" />
+            <div v-if="meta || title" class="c-banner-sirius__text">
+                <AtText v-if="meta" v-bind="cfg.meta" :text="meta" class="c-banner-sirius__meta" />
+                <AtText v-if="title" v-bind="cfg.title" :text="title" class="c-banner-sirius__title" />
             </div>
 
             <AtPriceButton
-                v-if="options.atPriceButton"
+                v-if="price && price.value"
                 class="c-banner-sirius__price"
-                v-bind="options.atPriceButton"
+                v-bind="[price, { href, config: cfg.priceButton }]"
             />
         </AtBannerContent>
     </AtBanner>
@@ -42,55 +51,46 @@
             AtText
         },
         props: {
-            icons: {
-                type: Array,
+            image: {
+                type: Object,
                 default: () => {}
+            },
+            price: {
+                type: Object,
+                default: () => {}
+            },
+            video: {
+                type: String,
+                default: undefined
             },
             meta: {
-                type: Object,
-                default: () => {}
+                type: String,
+                default: undefined
             },
             title: {
-                type: Object,
-                default: () => {}
+                type: String,
+                default: undefined
             },
-            atBanner: {
-                type: Object,
-                default: () => {}
-            },
-            atPriceButton: {
-                type: Object,
-                default: () => {}
+            href: {
+                type: String,
+                default: '#'
             }
         },
         data () {
             return {
-                defaultOptions: {
+                cfg: {
+                    banner: { radius: true },
+                    video: {
+                        button: { rounded: true, size: 'tiny' },
+                        icon: { icon: 'heart' }
+                    },
+                    favourite: {
+                        enabled: true,
+                        button: { tag: 'button', rounded: true, size: 'tiny' },
+                        icon: { icon: 'heart' }
+                    },
                     title: { background: true },
-                    meta: { background: true },
-                    icons: [
-                        {
-                            atButton: {
-                                rounded: true,
-                                size: 'tiny'
-                            },
-                            atIcon: {
-                                icon: 'heart'
-                            }
-                        },
-                        {
-                            atButton: {
-                                rounded: true,
-                                size: 'tiny'
-                            },
-                            atIcon: {
-                                icon: 'heart'
-                            }
-                        }
-                    ],
-                    atBanner: {
-                        radius: true
-                    }
+                    meta: { background: true }
                 }
             }
         }

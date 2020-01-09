@@ -17,6 +17,7 @@
 | `outlined` | `Boolean` |                                    | Muestra una apariencia alternativa del botón | `false`     |
 | `bordered` | `Boolean` |                                    | Muestra una apariencia alternativa del botón | `false`     |
 | `rounded`  | `Boolean` |                                    | Redondea el botón                            | `false`     |
+| `radiused` | `Boolean` |                                    | Añade un pequeño radio al botón              | `false`     |
 | `disabled` | `Boolean` |                                    | Deshabilita el botón                         | `false`     |
 | `color`    | `String`  | `primary`, `secondary`             | Cambia el color del botón                    | `undefined` |
 | `size`     | `String`  | `tiny`, `small`, `medium`, `large` | Tamaño del botón                             | `undefined` |

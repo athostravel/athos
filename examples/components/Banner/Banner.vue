@@ -7,9 +7,7 @@
         data () {
             return {
                 atBanner: {
-                    atPicture: {
-                        src: 'https://source.unsplash.com/random/1920x1080'
-                    }
+                    src: 'https://source.unsplash.com/random/1920x1080'
                 }
             }
         }

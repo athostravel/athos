@@ -2,15 +2,15 @@
     <div
         class="c-input"
         :class="{
-            'c-input--has-icon': button,
-            'c-input--has-icon-left': button && iconAlign === 'left',
+            'c-input--has-icon': icon,
+            'c-input--has-icon-left': icon && iconAlign === 'left',
             'c-input--has-icon-detail': iconDetail,
             'c-input--has-label': label,
             'c-input--is-disabled': disabled,
-            'c-input--tiny' : size && size === 'tiny',
-            'c-input--small' : size && size === 'small',
-            'c-input--medium' : size && size === 'medium',
-            'c-input--large' : size && size === 'large',
+            'c-input--tiny' : size === 'tiny',
+            'c-input--small' : size === 'small',
+            'c-input--medium' : size === 'medium',
+            'c-input--large' : size === 'large',
         }"
     >
         <div class="c-input__inner">
@@ -39,32 +39,35 @@
                 </span>
             </label>
 
-            <Button
-                v-if="button"
+            <AtButton
+                v-if="icon"
+                v-bind="icon.atButton"
                 class="c-input__icon"
-                :class="{ 'c-input__icon--not-events': !(button.tag === 'a' || button.tag === 'button') }"
-                v-bind="button"
-            />
+                :class="{ 'c-input__icon--not-events': !(icon.atButton.tag === 'a' || icon.atButton.tag === 'button') }"
+            >
+                <AtIcon v-bind="icon.atIcon" />
+            </AtButton>
+
+            <!-- <AtButton
+                v-if="icon.atButton"
+                class="c-input__icon"
+                :class="{ 'c-input__icon--not-events': !(icon.atButton.tag === 'a' || icon.atButton.tag === 'button') }"
+                v-bind="icon.atButton"
+            /> -->
         </div>
     </div>
 </template>
 
 <script>
     import formControl from '@mixins/formControl'
-    import Button from '@components/Button/Button.vue'
+    import AtButton from '@components/Button/Button.vue'
 
     export default {
         name: 'AtInput',
         components: {
-            Button
+            AtButton
         },
-        mixins: [formControl],
-        props: {
-            button: {
-                type: Object,
-                default: () => {}
-            }
-        }
+        mixins: [formControl]
 
     }
 </script>
@@ -188,11 +191,6 @@
     }
 
     &__icon {
-      --c-button-icon-color: var(--c-input-icon-color);
-      --c-button-size: var(--c-input-icon-font-size, 1em);
-
-      border-top-right-radius: var(--c-input-radius);
-      border-bottom-right-radius: var(--c-input-radius);
       background-color: var(--c-input-icon-background-color);
       min-width: var(--c-input-min-height);
       grid-row: 1/3;
@@ -251,8 +249,6 @@
         grid-column: 1/2;
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
-        border-top-left-radius: var(--c-input-radius);
-        border-bottom-left-radius: var(--c-input-radius);
 
         &::after {
           left: auto;

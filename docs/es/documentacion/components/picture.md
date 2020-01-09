@@ -13,7 +13,7 @@
 | Nombre    | Tipo     | Descripción                    | Por defecto                                    |
 |-----------|----------|--------------------------------|------------------------------------------------|
 | `src`     | `String` | Url de la imagen               | `https://source.unsplash.com/random/1920x1080` |
-| `alt`     | `String` | Texto alternativo de la imagen | `empty`                                        |
+| `alt`     | `String` | Texto alternativo de la imagen | `''`                                        |
 | `title`   | `String` | Título de la imagen            | `undefined`                                    |
 | `sources` | `Array`  | Listado de sources             | `undefined`                                    |
 
@@ -25,7 +25,7 @@ El componente `PictureSource` se usa junto con el componente `Picture` para pint
 
 | Nombre   | Tipo     | Descripción                         | Por defecto |
 |----------|----------|-------------------------------------|-------------|
-| `srcset` | `String` | Url de la imagen                    | `empty`     |
+| `srcset` | `String` | Url de la imagen                    | `''`     |
 | `media`  | `String` | Tamaño en pixeles del la mediaquery | `undefined` |
 | `shim`   | `String` | Imagen de 1x1px en base64           | `undefined` |
 
