@@ -1,6 +1,6 @@
 <template>
     <div>
-        <AtSwitch class="c-switch-orion" v-bind="{ id: idElement, name, required, disabled, value, checked }">
+        <AtSwitch class="c-switch-orion" v-bind="input">
             <span slot="checked" class="c-switch-orion__checked">
                 {{ checkedText }}
             </span>
@@ -29,6 +29,10 @@
             uncheckedText: {
                 type: String,
                 default: 'No'
+            },
+            input: {
+                type: Object,
+                default: () => {}
             }
         }
     }

@@ -7,10 +7,10 @@
             'c-input--has-icon-detail': iconDetail,
             'c-input--has-label': label,
             'c-input--is-disabled': disabled,
-            'c-input--tiny' : size === 'tiny',
-            'c-input--small' : size === 'small',
-            'c-input--medium' : size === 'medium',
-            'c-input--large' : size === 'large',
+            'c-input--tiny': size === 'tiny',
+            'c-input--small': size === 'small',
+            'c-input--medium': size === 'medium',
+            'c-input--large': size === 'large',
         }"
     >
         <div class="c-input__inner">
@@ -41,19 +41,13 @@
 
             <AtButton
                 v-if="icon"
-                v-bind="icon.atButton"
                 class="c-input__icon"
-                :class="{ 'c-input__icon--not-events': !(icon.atButton.tag === 'a' || icon.atButton.tag === 'button') }"
+                tag="button"
+                color="primary"
+                :class="{ 'c-input__icon--not-events': true }"
             >
-                <AtIcon v-bind="icon.atIcon" />
+                <AtIcon v-bind="{ icon }" />
             </AtButton>
-
-            <!-- <AtButton
-                v-if="icon.atButton"
-                class="c-input__icon"
-                :class="{ 'c-input__icon--not-events': !(icon.atButton.tag === 'a' || icon.atButton.tag === 'button') }"
-                v-bind="icon.atButton"
-            /> -->
         </div>
     </div>
 </template>
@@ -68,7 +62,6 @@
             AtButton
         },
         mixins: [formControl]
-
     }
 </script>
 

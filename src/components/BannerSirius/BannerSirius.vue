@@ -81,12 +81,12 @@
                 cfg: {
                     banner: { radius: true },
                     video: {
-                        button: { rounded: true, size: 'tiny' },
+                        button: { rounded: true, icon: true, size: 'tiny' },
                         icon: { icon: 'heart' }
                     },
                     favourite: {
                         enabled: true,
-                        button: { tag: 'button', rounded: true, size: 'tiny' },
+                        button: { tag: 'button', rounded: true, icon: true, size: 'tiny' },
                         icon: { icon: 'heart' }
                     },
                     title: { background: true },

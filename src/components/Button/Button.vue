@@ -8,6 +8,8 @@
             'c-button--bordered' : bordered,
             'c-button--rounded' : rounded,
             'c-button--radiused' : radiused,
+            'c-button--icon' : icon,
+            'c-button--text' : text,
             'c-button--is-disabled' : disabled,
             'c-button--primary' : color === 'primary',
             'c-button--secondary' : color === 'secondary',
@@ -59,6 +61,14 @@
                 type: Boolean,
                 default: false
             },
+            icon: {
+                type: Boolean,
+                default: false
+            },
+            text: {
+                type: Boolean,
+                default: false
+            },
             disabled: {
                 type: Boolean,
                 default: false
@@ -99,7 +109,6 @@
 
 <style lang="scss" scoped>
   @mixin c-button-hover($this) {
-    #{$this}--is-active:not(:disabled):not(#{$this}--is-disabled),
     &:active:not(:disabled):not(#{$this}--is-disabled),
     &:focus:not(:disabled):not(#{$this}--is-disabled),
     &:hover:not(:disabled):not(#{$this}--is-disabled) {
@@ -157,6 +166,10 @@
     }
 
     &__box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       position: relative;
       z-index: 3;
     }
@@ -194,6 +207,27 @@
     &--rounded {
       --c-button-border-radius: calc(var(--c-button-min-height) / 2);
       --c-button-inner-border-radius: calc(var(--c-button-min-height) / 2);
+    }
+
+    &--icon {
+      --c-button-padding: #{em(4px)};
+      --c-button-font-size: #{em(24px)};
+    }
+
+    &--text {
+      &#{$this}--is-disabled,
+      &:disabled {
+        --c-button-color: currentColor;
+        --c-button-background-color: transparent;
+        --c-button-overlay-color: transparent;
+      }
+
+      :not(:hover):not(:focus):not(:active) {
+        --c-button-color: currentColor;
+        --c-button-border-color: transparent;
+        --c-button-background-color: transparent;
+        --c-button-overlay-color: transparent;
+      }
     }
 
     &--is-disabled,

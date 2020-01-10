@@ -336,5 +336,16 @@ div {
     > *:not(:last-child) {
       margin-bottom: 1rem;
     }
+
+    &-horizontal {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      margin: -1rem;
+
+      > * {
+        margin: 0.5rem;
+      }
+    }
   }
 }

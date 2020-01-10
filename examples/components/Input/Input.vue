@@ -6,6 +6,7 @@
         <AtInput v-bind="example3" />
         <AtInput v-bind="example4" />
         <AtInput v-bind="example5" />
+        <AtInput v-bind="example5" size="small" />
         <!-- <AtInput v-bind="example6" />
         <AtInput v-bind="example7" />
         <AtInput v-bind="example8" />
@@ -51,14 +52,7 @@
                     label: 'Fullname',
                     placeholder: 'Fullname',
                     value: 'Antonio Banderas',
-                    icon: {
-                        atButton: {
-                            tag: 'a'
-                        },
-                        atIcon: {
-                            icon: 'heart'
-                        }
-                    }
+                    icon: 'heart'
 
                 }
                 // example6: {

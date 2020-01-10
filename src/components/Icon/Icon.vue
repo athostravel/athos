@@ -38,6 +38,7 @@
     font-family: var(--c-icon-font-family) !important; /* Important is necessary */
     color: var(--c-icon-color);
     font-size: var(--c-icon-size);
+    transform: rotate(0.001deg); /* Fix blur pixel position */
 
     &--tiny {
       --c-icon-size: 0.6668em;

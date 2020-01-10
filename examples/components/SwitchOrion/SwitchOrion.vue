@@ -7,7 +7,9 @@
         data () {
             return {
                 atSwitchOrion: {
-                    id: 'example'
+                    input: {
+                        id: 'example'
+                    }
                 }
             }
         }
