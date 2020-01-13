@@ -27,7 +27,9 @@
                 v-if="price && price.value"
                 class="c-banner-sirius__price"
                 v-bind="[price, { href, config: cfg.priceButton }]"
-            />
+            >
+                <AtIcon v-bind="cfg.priceButton.icon" />
+            </AtPriceButton>
         </AtBannerContent>
     </AtBanner>
 </template>
@@ -90,7 +92,12 @@
                         icon: { icon: 'heart' }
                     },
                     title: { background: true },
-                    meta: { background: true }
+                    meta: { background: true },
+                    priceButton: {
+                        icon: {
+                            icon: 'angle-right'
+                        }
+                    }
                 }
             }
         }
