@@ -78,10 +78,10 @@
 
     &__text {
       font-size: var(--c-price-text-font-size);
-      margin-right: 0.5rem;
     }
 
     &__before {
+      margin-left: 0.5rem;
       text-decoration: line-through;
       font-size: var(--c-price-before-font-size);
     }

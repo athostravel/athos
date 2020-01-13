@@ -28,7 +28,9 @@
                 class="c-banner-sirius__price"
                 v-bind="[price, { href, config: cfg.priceButton }]"
             >
-                <AtIcon v-bind="cfg.priceButton.icon" />
+                <slot name="priceButton">
+                    <AtIcon v-bind="cfg.priceButton.icon" />
+                </slot>
             </AtPriceButton>
         </AtBannerContent>
     </AtBanner>

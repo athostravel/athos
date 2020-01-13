@@ -16,7 +16,8 @@
                     },
                     price: {
                         value: '300'
-                    }
+                    },
+                    buttonText: 'Ver oferta'
                 }
             }
         }

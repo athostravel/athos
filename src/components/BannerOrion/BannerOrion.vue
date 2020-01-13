@@ -5,10 +5,17 @@
         v-bind="[cfg.banner, image]"
     >
         <AtBannerContent class="c-banner-orion__content">
-            <div v-if="cfg.favourite.enabled" class="c-banner-orion__icons">
-                <AtButton v-bind="cfg.favourite.button" class="c-banner-sirius__button">
-                    <AtIcon v-bind="cfg.favourite.icon" :icon="cfg.favourite.icon.icon" />
-                </AtButton>
+            <div v-if="video || cfg.favourite.enabled" class="c-banner-orion__icons">
+                <div v-if="video" class="c-banner-orion__icon">
+                    <AtButton v-bind="cfg.video.button" :href="video" class="c-banner-orion__button">
+                        <AtIcon v-bind="cfg.video.icon" :icon="cfg.video.icon.icon" />
+                    </AtButton>
+                </div>
+                <div v-if="cfg.favourite.enabled" class="c-banner-orion__icon">
+                    <AtButton v-bind="cfg.favourite.button" class="c-banner-orion__button">
+                        <AtIcon v-bind="cfg.favourite.icon" :icon="cfg.favourite.icon.icon" />
+                    </AtButton>
+                </div>
             </div>
             <div v-if="meta || title" class="c-banner-orion__text">
                 <AtText v-if="meta" v-bind="cfg.meta" :text="meta" class="c-banner-orion__meta" />
@@ -16,9 +23,11 @@
             </div>
             <AtPriceButton
                 v-if="price && price.value"
-                class="c-banner-sirius__price"
+                class="c-banner-orion__price"
                 v-bind="[price, { href, config: cfg.priceButton }]"
-            />
+            >
+                {{ buttonText }}
+            </AtPriceButton>
         </AtBannerContent>
     </AtBanner>
 </template>
@@ -49,6 +58,10 @@
                 type: Object,
                 default: () => {}
             },
+            video: {
+                type: String,
+                default: undefined
+            },
             meta: {
                 type: String,
                 default: undefined
@@ -60,11 +73,19 @@
             href: {
                 type: String,
                 default: '#'
+            },
+            buttonText: {
+                type: String,
+                default: undefined
             }
         },
         data () {
             return {
                 cfg: {
+                    video: {
+                        button: { rounded: true, icon: true, size: 'tiny' },
+                        icon: { icon: 'heart' }
+                    },
                     banner: { radius: true },
                     favourite: {
                         enabled: true,
@@ -100,6 +121,12 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-end;
+    }
+
+    &__icon {
+      & + & {
+        margin-left: 0.5em;
+      }
     }
 
     &__title {
