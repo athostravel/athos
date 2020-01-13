@@ -19,6 +19,12 @@
 | `value`    | `String`, `Number` | Valor del precio                   | `undefined` |
 | `inverted` | `Boolean`          | Invierte el botón con la caja      | `false`     |
 
+## Slots
+
+| Nombre    | Descripción        |
+|-----------|--------------------|
+| `default` | Slot del boton |
+
 ### Configuración por defecto
 
 ```js
@@ -26,9 +32,6 @@
     button: {
         tag: 'div',
         color: 'secondary'
-    },
-    icon: {
-        icon: 'angle-right'
     }
 }
 ```
@@ -38,4 +41,3 @@
 | Clave    | Componente            |
 |----------|-----------------------|
 | `button` | [Button](./button.md) |
-| `icon`   | [Icon](./icon.md)     |
