@@ -12,7 +12,7 @@
         </div>
 
         <AtButton class="c-price-button__button" v-bind="cfg.button">
-            <AtIcon class="c-price-button__icon" v-bind="cfg.icon" />
+            <slot />
         </AtButton>
     </component>
 </template>
@@ -32,7 +32,7 @@
         props: {
             tag: {
                 type: String,
-                default: 'a'
+                default: 'button'
             },
             href: {
                 type: String,
@@ -61,9 +61,6 @@
                     button: {
                         tag: 'div',
                         color: 'secondary'
-                    },
-                    icon: {
-                        icon: 'angle-right'
                     }
                 }
             }
