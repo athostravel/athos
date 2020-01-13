@@ -1,36 +1,36 @@
 <template>
     <div>
         <div class="preview-items-horizontal">
-            <AtButton v-bind="atButton" size="diorite" text>
+            <AtButton v-bind="atButton" size="diorite" variant="text">
                 Button
             </AtButton>
-            <AtButton v-bind="atButton" size="basalt" text>
+            <AtButton v-bind="atButton" size="basalt" variant="text">
                 Button
             </AtButton>
-            <AtButton v-bind="atButton" text>
+            <AtButton v-bind="atButton" variant="text">
                 Button
             </AtButton>
-            <AtButton v-bind="atButton" size="obsidian" text>
+            <AtButton v-bind="atButton" size="obsidian" variant="text">
                 Button
             </AtButton>
-            <AtButton v-bind="atButton" size="tuff" text>
+            <AtButton v-bind="atButton" size="tuff" variant="text">
                 Button
             </AtButton>
         </div>
         <div class="preview-items-horizontal">
-            <AtButton v-bind="atButton" color="primary" size="diorite" text>
+            <AtButton v-bind="atButton" color="primary" size="diorite" variant="text">
                 Button
             </AtButton>
-            <AtButton v-bind="atButton" color="primary" size="basalt" text>
+            <AtButton v-bind="atButton" color="primary" size="basalt" variant="text">
                 Button
             </AtButton>
-            <AtButton v-bind="atButton" color="primary" text>
+            <AtButton v-bind="atButton" color="primary" variant="text">
                 Button
             </AtButton>
-            <AtButton v-bind="atButton" color="primary" size="obsidian" text>
+            <AtButton v-bind="atButton" color="primary" size="obsidian" variant="text">
                 Button
             </AtButton>
-            <AtButton v-bind="atButton" color="primary" size="tuff" text>
+            <AtButton v-bind="atButton" color="primary" size="tuff" variant="text">
                 Button
             </AtButton>
         </div>

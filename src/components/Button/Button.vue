@@ -4,11 +4,11 @@
         class="c-button"
         :href="tag === 'a' && href"
         :class="{
-            'c-button--outlined' : outlined,
-            'c-button--bordered' : bordered,
+            'c-button--outlined' : variant === 'outlined',
+            'c-button--bordered' : variant === 'bordered',
+            'c-button--filled' : variant === 'filled',
             'c-button--rounded' : rounded,
             'c-button--radiused' : radiused,
-            'c-button--filled' : filled,
             'c-button--icon' : icon,
             'c-button--is-disabled' : disabled,
             'c-button--primary' : color === 'primary',
@@ -45,13 +45,9 @@
                 type: String,
                 default: '#'
             },
-            outlined: {
-                type: Boolean,
-                default: false
-            },
-            bordered: {
-                type: Boolean,
-                default: false
+            variant: {
+                type: String,
+                default: 'filled'
             },
             rounded: {
                 type: Boolean,
@@ -62,10 +58,6 @@
                 default: false
             },
             icon: {
-                type: Boolean,
-                default: false
-            },
-            filled: {
                 type: Boolean,
                 default: false
             },
@@ -109,7 +101,7 @@
     --c-button-overlay-color: hsl(var(--color-neutral-hue), var(--color-neutral-saturation), 95%);
 
     // Colors Hover
-    --c-button-color-hover: var(--color-neutral);
+    --c-button-color-hover: var(--c-button-color);
     --c-button-background-color-hover: transparent;
     --c-button-border-color-hover: transparent;
   }
@@ -205,14 +197,14 @@
     // Colors
     &--primary {
       --c-button-color: var(--color-primary);
-      --c-button-color-hover: var(--color-primary);
       --c-button-overlay-color: hsl(var(--color-primary-hue), var(--color-primary-saturation), 95%);
       --c-button-border-color-hover: var(--c-button-overlay-color);
     }
 
     // Types
     &--filled {
-      --c-button-background-color: red;
+      --c-button-color: var(--c-color-shade-0);
+      --c-button-background-color: var(--c-button-color);
     }
 
     &--outlined {
