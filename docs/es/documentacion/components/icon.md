@@ -10,7 +10,8 @@
 
 ## Propiedades
 
-| Nombre | Tipo                | Descripción                  | Por defecto |
-|--------|---------------------|------------------------------|-------------|
-| `tag`  | `String`            | Etiqueta HTML del componente | `span`      |
-| `icon` | `String`, `Boolean` | Clase del icono a mostrar    | `false`     |
+| Nombre | Tipo                                    | Descripción                  | Por defecto |
+|--------|-----------------------------------------|------------------------------|-------------|
+| `tag`  | `String`                                | Etiqueta HTML del componente | `span`      |
+| `icon` | `String`, `Boolean`                     | Clase del icono a mostrar    | `false`     |
+| `size` | `diorite`, `basalt`, `obsidian`, `tuff` | Tamaño del icono             | `undefined` |
