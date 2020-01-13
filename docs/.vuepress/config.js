@@ -131,6 +131,7 @@ module.exports = {
                                 '/es/documentacion/components/banner-sirius',
                                 '/es/documentacion/components/banner',
                                 '/es/documentacion/components/button',
+                                '/es/documentacion/components/card-aries',
                                 '/es/documentacion/components/checkbox',
                                 '/es/documentacion/components/icon',
                                 '/es/documentacion/components/input',

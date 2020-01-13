@@ -1,6 +1,7 @@
 export { default as Banner } from '@components/Banner'
 export { default as BannerSirius } from '@components/BannerSirius'
 export { default as Button } from '@components/Button'
+export { default as CardAries } from '@components/CardAries'
 export { default as Checkbox } from '@components/Checkbox'
 export { default as Icon } from '@components/Icon'
 export { default as Input } from '@components/Input'
