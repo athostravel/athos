@@ -128,6 +128,7 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 2,
                             children: [
+                                '/es/documentacion/components/banner-orion',
                                 '/es/documentacion/components/banner-sirius',
                                 '/es/documentacion/components/banner',
                                 '/es/documentacion/components/button',

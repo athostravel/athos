@@ -1,4 +1,5 @@
 export { default as Banner } from '@components/Banner'
+export { default as BannerOrion } from '@components/BannerOrion'
 export { default as BannerSirius } from '@components/BannerSirius'
 export { default as Button } from '@components/Button'
 export { default as Checkbox } from '@components/Checkbox'
