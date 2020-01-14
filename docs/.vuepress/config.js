@@ -134,13 +134,15 @@ module.exports = {
                                 '/es/documentacion/components/checkbox',
                                 '/es/documentacion/components/icon',
                                 '/es/documentacion/components/input',
+                                '/es/documentacion/components/list',
                                 '/es/documentacion/components/picture',
                                 '/es/documentacion/components/price-button',
                                 '/es/documentacion/components/price',
                                 '/es/documentacion/components/radio',
                                 '/es/documentacion/components/switch-orion',
                                 '/es/documentacion/components/switch',
-                                '/es/documentacion/components/text'
+                                '/es/documentacion/components/text',
+                                '/es/documentacion/components/tetris-layout'
                             ]
                         }
                     ],
