@@ -4,7 +4,7 @@
         :class="{ 'c-card-aries--inverse': inverse }"
     >
         <AtPicture
-            v-if="cfg.picture.src"
+            v-if="src"
             class="c-card-aries__picture"
             v-bind="{ src, alt, title, sources }"
         />
@@ -49,7 +49,7 @@
             },
             src: {
                 type: String,
-                default: undefined
+                default: 'https://source.unsplash.com/random/80x80'
             },
             alt: {
                 type: String,
@@ -62,10 +62,6 @@
             sources: {
                 type: Array,
                 default: () => []
-            },
-            text: {
-                type: String,
-                default: undefined
             },
             category: {
                 type: Object,
@@ -81,9 +77,6 @@
                 cfg: {
                     meta: {
                         text: 'Hotel Joya'
-                    },
-                    picture: {
-                        src: 'https://source.unsplash.com/random/80x80'
                     },
                     icon: {
                         icon: 'heart'
@@ -160,7 +153,7 @@
       font-size: var(--c-card-aries-category-font-size);
       position: absolute;
       right: 0;
-      top: #{em(-4px)};
+      top: calc(-1 * var(--space-s));
     }
 
     &__icon {
