@@ -1,6 +1,8 @@
 <template>
-    <component :is="layout.component">
-        <router-view :layout.sync="layout.component"/>
+    <component :is="components.component">
+        <div>
+            <router-view :components.sync="components.component" />
+        </div>
     </component>
 </template>
 
@@ -9,7 +11,7 @@
         name: 'AtAlbedoLayout',
         data() {
             return {
-                layout: {
+                components: {
                     component: 'AtCardAries'
                 }
             }
