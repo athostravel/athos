@@ -9,14 +9,13 @@
             v-bind="{ src, alt, title, sources }"
         />
 
-        <div v-if="category" class="c-card-aries__category">
-            <template v-for="index in category.count">
-                <AtIcon :key="index.id" class="c-card-aries__icon" :icon="category.icon" />
-            </template>
-        </div>
-
         <div v-if="meta" class="c-card-aries__meta">
-            <AtText v-bind="cfg.meta" :text="meta" class="c-card-aries__meta-text" />
+            <AtText v-bind="cfg.meta" :text="meta" class="c-card-aries__text" />
+            <div v-if="category" class="c-card-aries__category">
+                <template v-for="index in category.count">
+                    <AtIcon :key="index.id" class="c-card-aries__icon" :icon="category.icon" />
+                </template>
+            </div>
         </div>
 
         <div v-if="price" class="c-card-aries__footer">
@@ -112,7 +111,9 @@
     --c-card-aries-ratio-height: 1;
     --c-card-aries-ratio-width: 1;
     --c-card-aries-category-font-size: var(--font-size-2xs);
-    --c-card-aries-meta-font-size: var(--font-size-l);
+    --c-card-aries-text-font-size: var(--font-size-l);
+    --c-card-aries-text-color: var(--color-primary);
+    --c-card-aries-icon-color: var(--color-secondary);
   }
 </style>
 
@@ -120,18 +121,16 @@
   .c-card-aries {
     display: grid;
     grid-template-columns: var(--c-card-aries-picture-width) 1fr;
-    grid-template-rows: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
     grid-column-gap: var(--c-card-aries-column-gap);
     grid-row-gap: var(--c-card-aries-row-gap);
     grid-template-areas:
-      "picture category"
       "picture meta"
       "picture footer";
 
     &--inverse {
       grid-template-columns: 1fr var(--c-card-aries-picture-width);
       grid-template-areas:
-        "category picture"
         "meta picture"
         "footer picture";
     }
@@ -145,19 +144,37 @@
       }
     }
 
-    &__category {
-      font-size: var(--c-card-aries-category-font-size);
-      grid-area: category;
-      text-align: right;
+    &__meta {
+      align-self: center;
+      grid-area: meta;
+      position: relative;
+      padding-right: var(--space-4xl);
     }
 
-    &__meta {
-      font-size: var(--c-card-aries-meta-font-size);
-      grid-area: meta;
+    &__text {
+      color: var(--c-card-aries-text-color);
+      font-size: var(--c-card-aries-text-font-size);
+    }
+
+    &__category {
+      font-size: var(--c-card-aries-category-font-size);
+      position: absolute;
+      right: 0;
+      top: #{em(-4px)};
+    }
+
+    &__icon {
+      color: var(--c-card-aries-icon-color);
+      margin-right: var(--space-3xs);
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
 
     &__footer {
       grid-area: footer;
+      align-self: end;
     }
   }
 </style>
