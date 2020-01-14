@@ -93,7 +93,7 @@
 
     &--inline {
       display: flex;
-      align-items: flex-end;
+      align-items: baseline;
       justify-content: flex-end;
 
       #{$this} {

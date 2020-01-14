@@ -1,26 +1,32 @@
 <template>
     <div
         class="c-card-aries"
-        :class="{ 'c-card-aries--inverse': inverse }"
+        :class="{ 'c-card-aries--inverted': inverted }"
     >
         <AtPicture
-            v-if="src"
             class="c-card-aries__picture"
-            v-bind="{ src, alt, title, sources }"
+            v-bind="[cfg.image, image]"
         />
 
-        <div v-if="meta" class="c-card-aries__meta">
-            <AtText v-bind="cfg.meta" :text="meta" class="c-card-aries__text" />
-            <div v-if="category" class="c-card-aries__category">
-                <template v-for="index in category.count">
-                    <AtIcon :key="index.id" class="c-card-aries__icon" :icon="category.icon" />
-                </template>
-            </div>
+        <AtText
+            :text="title"
+            class="c-card-aries__title"
+        />
+
+        <div class="c-card-aries__category">
+            <template v-for="index in category.count">
+                <AtIcon
+                    :key="index.id"
+                    class="c-card-aries__icon"
+                    v-bind="[cfg.category, category]"
+                />
+            </template>
         </div>
 
-        <div v-if="price" class="c-card-aries__footer">
-            <AtPrice v-bind="price" class="c-card-aries__price" />
-        </div>
+        <AtPrice
+            v-bind="[cfg.price,price]"
+            class="c-card-aries__price"
+        />
     </div>
 </template>
 
@@ -39,29 +45,17 @@
             AtText
         },
         props: {
-            inverse: {
+            inverted: {
                 type: Boolean,
                 default: false
             },
-            meta: {
-                type: String,
-                default: undefined
-            },
-            src: {
-                type: String,
-                default: 'https://source.unsplash.com/random/80x80'
-            },
-            alt: {
-                type: String,
-                default: ''
+            image: {
+                type: Object,
+                default: () => {}
             },
             title: {
                 type: String,
                 default: undefined
-            },
-            sources: {
-                type: Array,
-                default: () => []
             },
             category: {
                 type: Object,
@@ -75,20 +69,14 @@
         data () {
             return {
                 cfg: {
-                    meta: {
-                        text: 'Hotel Joya'
-                    },
-                    icon: {
+                    category: {
                         icon: 'heart'
                     },
                     price: {
-                        inline: true,
-                        text: 'Precio Medio',
-                        value: '200'
+                        inline: true
                     },
-                    category: {
-                        icon: 'heart',
-                        count: 5
+                    text: {
+                        tag: 'h3'
                     }
                 }
             }
@@ -114,18 +102,19 @@
   .c-card-aries {
     display: grid;
     grid-template-columns: var(--c-card-aries-picture-width) 1fr;
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: auto 1fr 1fr;
     grid-column-gap: var(--c-card-aries-column-gap);
     grid-row-gap: var(--c-card-aries-row-gap);
     grid-template-areas:
-      "picture meta"
-      "picture footer";
+      "picture category"
+      "picture title"
+      "picture price";
 
     &--inverse {
       grid-template-columns: 1fr var(--c-card-aries-picture-width);
       grid-template-areas:
-        "meta picture"
-        "footer picture";
+        "title picture"
+        "price picture";
     }
 
     &__picture {
@@ -137,23 +126,19 @@
       }
     }
 
-    &__meta {
-      align-self: center;
-      grid-area: meta;
+    &__title {
+      align-self: start;
+      grid-area: title;
       position: relative;
-      padding-right: var(--space-4xl);
-    }
-
-    &__text {
       color: var(--c-card-aries-text-color);
       font-size: var(--c-card-aries-text-font-size);
     }
 
     &__category {
+      grid-area: category;
       font-size: var(--c-card-aries-category-font-size);
-      position: absolute;
-      right: 0;
-      top: calc(-1 * var(--space-s));
+      margin-top: -0.5em;
+      justify-self: flex-end;
     }
 
     &__icon {
@@ -165,8 +150,8 @@
       }
     }
 
-    &__footer {
-      grid-area: footer;
+    &__price {
+      grid-area: price;
       align-self: end;
     }
   }
