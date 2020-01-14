@@ -11,7 +11,11 @@
                     src: 'https://source.unsplash.com/random/80x80',
                     text: 'Precio Medio',
                     value: '200',
-                    inline: true
+                    inline: true,
+                    category: {
+                        icon: 'heart',
+                        count: 5
+                    }
                 }
             }
         }

@@ -10,10 +10,9 @@
         />
 
         <div class="c-card-aries__category">
-            <AtIcon class="c-card-aries__icon" v-bind="cfg.icon" />
-            <AtIcon class="c-card-aries__icon" v-bind="cfg.icon" />
-            <AtIcon class="c-card-aries__icon" v-bind="cfg.icon" />
-            <AtIcon class="c-card-aries__icon" v-bind="cfg.icon" />
+            <template v-for="index in category.count">
+                <AtIcon :key="index.id" class="c-card-aries__icon" :icon="category.icon" />
+            </template>
         </div>
 
         <div v-if="meta" class="c-card-aries__meta">
@@ -72,6 +71,10 @@
             value: {
                 type: [String, Number],
                 default: undefined
+            },
+            category: {
+                type: Object,
+                default: () => {}
             }
         },
         data () {
@@ -102,7 +105,7 @@
   .c-card-aries {
     display: grid;
     grid-template-columns: var(--c-card-aries-picture-width) 1fr;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
     grid-column-gap: var(--c-card-aries-column-gap);
     grid-row-gap: var(--c-card-aries-row-gap);
     grid-template-areas:
@@ -110,13 +113,13 @@
       "picture meta"
       "picture footer";
 
-      &--inverse {
-          grid-template-columns: 1fr var(--c-card-aries-picture-width);
-          grid-template-areas:
-              "category picture"
-              "meta picture"
-              "footer picture";
-      }
+    &--inverse {
+      grid-template-columns: 1fr var(--c-card-aries-picture-width);
+      grid-template-areas:
+        "category picture"
+        "meta picture"
+        "footer picture";
+    }
 
     &__picture {
       grid-area: picture;
