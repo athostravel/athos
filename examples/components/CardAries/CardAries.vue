@@ -8,10 +8,14 @@
             return {
                 atCardAries: {
                     meta: 'Hotel Joya',
-                    src: 'https://source.unsplash.com/random/80x80',
-                    text: 'Precio Medio',
-                    value: '200',
-                    inline: true,
+                    picture: {
+                        src: 'https://source.unsplash.com/random/80x80',
+                    },
+                    price: {
+                        inline: true,
+                        text: 'Precio Medio',
+                        value: '200'
+                    },
                     category: {
                         icon: 'heart',
                         count: 5

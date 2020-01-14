@@ -4,12 +4,12 @@
         :class="{ 'c-card-aries--inverse': inverse }"
     >
         <AtPicture
-            v-if="src"
+            v-if="cfg.picture.src"
             class="c-card-aries__picture"
             v-bind="{ src, alt, title, sources }"
         />
 
-        <div class="c-card-aries__category">
+        <div v-if="category" class="c-card-aries__category">
             <template v-for="index in category.count">
                 <AtIcon :key="index.id" class="c-card-aries__icon" :icon="category.icon" />
             </template>
@@ -19,8 +19,8 @@
             <AtText v-bind="cfg.meta" :text="meta" class="c-card-aries__meta-text" />
         </div>
 
-        <div v-if="value" class="c-card-aries__footer">
-            <AtPrice v-bind="[cfg.price , { value, text }]" class="c-card-aries__price" />
+        <div v-if="price" class="c-card-aries__footer">
+            <AtPrice v-bind="price" class="c-card-aries__price" />
         </div>
     </div>
 </template>
@@ -68,11 +68,11 @@
                 type: String,
                 default: undefined
             },
-            value: {
-                type: [String, Number],
-                default: undefined
-            },
             category: {
+                type: Object,
+                default: () => {}
+            },
+            price: {
                 type: Object,
                 default: () => {}
             }
@@ -80,9 +80,24 @@
         data () {
             return {
                 cfg: {
-                    picture: { inline: true },
-                    icon: { icon: 'heart', color: 'secondary' },
-                    price: { inline: true }
+                    meta: {
+                        text: 'Hotel Joya'
+                    },
+                    picture: {
+                        src: 'https://source.unsplash.com/random/80x80'
+                    },
+                    icon: {
+                        icon: 'heart'
+                    },
+                    price: {
+                        inline: true,
+                        text: 'Precio Medio',
+                        value: '200'
+                    },
+                    category: {
+                        icon: 'heart',
+                        count: 5
+                    }
                 }
             }
         }
