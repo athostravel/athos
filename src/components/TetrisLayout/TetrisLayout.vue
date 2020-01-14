@@ -13,12 +13,8 @@
 </template>
 
 <script>
-  //  import BannerSirius from '@components/BannerSirius/BannerSirius'
     export default {
         name: 'AtTetrisLayout',
-        components: {
-            //  BannerSirius
-        },
         props: {
             items: {
                 type: Array,
