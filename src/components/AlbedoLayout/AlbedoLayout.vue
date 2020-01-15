@@ -1,18 +1,50 @@
 <template>
-    <component :is="components.component">
-        <div>
-            <router-view :components.sync="components.component" />
+    <div class="c-albedo-layout">
+        <div class="c-albedo-layout__inner">
+            <component
+                :is="item.component"
+                v-for="item in items"
+                :key="item.id"
+                class="c-albedo-layout__item"
+                v-bind="item"
+            />
         </div>
-    </component>
+    </div>
 </template>
 
 <script>
+    import AtCardAries from '@components/CardAries/CardAries'
+
     export default {
         name: 'AtAlbedoLayout',
-        data() {
+        components: {
+            AtCardAries
+        },
+        props: {
+            items: {
+                type: Object,
+                default: () => {}
+            }
+        },
+        data () {
             return {
-                components: {
-                    component: 'AtCardAries'
+                component: {
+                    items: [
+                    {
+                        component: 'AtCardAries',
+                        title: {
+                            text: 'Hotel Joya',
+                            tag: 'span'
+                        },
+                        image: {
+                            src: 'https://source.unsplash.com/random/80x80'
+                        },
+                        price: {
+                            value: '200',
+                            text: 'Precio Medio'
+                        }
+                    }
+                ]
                 }
             }
         }
