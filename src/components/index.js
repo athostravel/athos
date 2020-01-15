@@ -1,3 +1,4 @@
+export { default as Alert } from '@components/Alert'
 export { default as Banner } from '@components/Banner'
 export { default as BannerSirius } from '@components/BannerSirius'
 export { default as Button } from '@components/Button'
