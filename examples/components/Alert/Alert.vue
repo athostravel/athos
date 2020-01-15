@@ -1,9 +1,11 @@
 <template>
     <div class="preview-items">
-        <AtAlert v-bind="atAlertInfo" type="info" />
-        <AtAlert v-bind="atAlertError" type="error" />
-        <AtAlert v-bind="atAlertOk" type="ok" />
-        <AtAlert v-bind="atAlertWarning" type="warning" />
+        <AtAlert v-bind="atAlertInfo" variant="info" />
+        <AtAlert v-bind="atAlertError" variant="error" />
+        <AtAlert v-bind="atAlertOk" variant="ok" />
+        <AtAlert v-bind="atAlertWarning" variant="warning" />
+        <AtAlert v-bind="alertInfoWithTitle" variant="info" />
+        <AtAlert v-bind="alertInfoWithButtons" variant="info" />
     </div>
 </template>
 
@@ -22,6 +24,28 @@
                 },
                 atAlertOk: {
                     text: 'Enhorabuena'
+                },
+                alertInfoWithTitle: {
+                    title: 'Titulo',
+                    text: 'Esto no es importante, pero deberías saberlo'
+                },
+                alertInfoWithButtons: {
+                    title: 'Titulo',
+                    text: 'Esto no es importante, pero deberías saberlo',
+                    buttons: [
+                        {
+                            text: 'Button',
+                            button: {
+                                color: 'primary'
+                            }
+                        },
+                        {
+                            text: 'Button',
+                            button: {
+                                color: 'secondary'
+                            }
+                        }
+                    ]
                 }
             }
         }
