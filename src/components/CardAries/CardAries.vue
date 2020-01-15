@@ -1,5 +1,4 @@
 <template>
-
     <div
         class="c-card-aries"
         :class="{ 'c-card-aries--inverted': inverted }"
@@ -8,13 +7,12 @@
             class="c-card-aries__picture"
             v-bind="[cfg.image, image]"
         />
-        {{item}}
+
         <AtText
             v-bind="[cfg.title, title]"
             class="c-card-aries__title"
         />
 
-        <!--
         <div class="c-card-aries__category">
             <template v-for="index in category.count">
                 <AtIcon
@@ -24,7 +22,6 @@
                 />
             </template>
         </div>
-        -->
 
         <AtPrice
             v-bind="[cfg.price,price]"
@@ -122,6 +119,7 @@
     }
 
     &__picture {
+      align-self: start;
       grid-area: picture;
 
       &::before {
