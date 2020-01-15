@@ -14,7 +14,7 @@
                 {{ before }}{{ currency }}
             </div>
         </div>
-        <div class="c-price__value">
+        <div v-if="value" class="c-price__value">
             {{ value }}{{ currency }}
         </div>
     </div>
@@ -33,7 +33,7 @@
                 default: undefined
             },
             value: {
-                type: String,
+                type: [String, Number],
                 default: undefined
             },
             currency: {
@@ -93,7 +93,7 @@
 
     &--inline {
       display: flex;
-      align-items: flex-end;
+      align-items: baseline;
       justify-content: flex-end;
 
       #{$this} {

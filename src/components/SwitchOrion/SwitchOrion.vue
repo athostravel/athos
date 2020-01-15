@@ -1,15 +1,18 @@
 <template>
-    <AtSwitch class="c-switch-orion" v-bind="atSwitch">
-        <span slot="checked" class="c-switch-orion__checked">
-            {{ checkedText }}
-        </span>
-        <span slot="unchecked" class="c-switch-orion__unchecked">
-            {{ uncheckedText }}
-        </span>
-    </AtSwitch>
+    <div>
+        <AtSwitch class="c-switch-orion" v-bind="input">
+            <span slot="checked" class="c-switch-orion__checked">
+                {{ checkedText }}
+            </span>
+            <span slot="unchecked" class="c-switch-orion__unchecked">
+                {{ uncheckedText }}
+            </span>
+        </AtSwitch>
+    </div>
 </template>
 
 <script>
+    import formControl from '@mixins/formControl'
     import AtSwitch from '@components/Switch/Switch'
 
     export default {
@@ -17,11 +20,8 @@
         components: {
             AtSwitch
         },
+        mixins: [formControl],
         props: {
-            atSwitch: {
-                type: Object,
-                default: () => {}
-            },
             checkedText: {
                 type: String,
                 default: 'Si'
@@ -29,6 +29,10 @@
             uncheckedText: {
                 type: String,
                 default: 'No'
+            },
+            input: {
+                type: Object,
+                default: () => {}
             }
         }
     }

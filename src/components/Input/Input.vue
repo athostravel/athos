@@ -7,10 +7,10 @@
             'c-input--has-icon-detail': iconDetail,
             'c-input--has-label': label,
             'c-input--is-disabled': disabled,
-            'c-input--tiny' : size && size === 'tiny',
-            'c-input--small' : size && size === 'small',
-            'c-input--medium' : size && size === 'medium',
-            'c-input--large' : size && size === 'large',
+            'c-input--tiny': size === 'tiny',
+            'c-input--small': size === 'small',
+            'c-input--medium': size === 'medium',
+            'c-input--large': size === 'large',
         }"
     >
         <div class="c-input__inner">
@@ -39,23 +39,27 @@
                 </span>
             </label>
 
-            <Icon
+            <AtButton
                 v-if="icon"
                 class="c-input__icon"
-                :icon="icon"
-            />
+                tag="button"
+                color="primary"
+                :class="{ 'c-input__icon--not-events': true }"
+            >
+                <AtIcon v-bind="{ icon }" />
+            </AtButton>
         </div>
     </div>
 </template>
 
 <script>
     import formControl from '@mixins/formControl'
-    import Icon from '@components/Icon/Icon.vue'
+    import AtButton from '@components/Button/Button.vue'
 
     export default {
         name: 'AtInput',
         components: {
-            Icon
+            AtButton
         },
         mixins: [formControl]
     }
@@ -180,26 +184,26 @@
     }
 
     &__icon {
-      font-size: var(--c-input-icon-font-size, 1em);
-      border-top-right-radius: var(--c-input-radius);
-      border-bottom-right-radius: var(--c-input-radius);
       background-color: var(--c-input-icon-background-color);
-      color: var(--c-input-icon-color);
       min-width: var(--c-input-min-height);
       grid-row: 1/3;
       grid-column: 2/3;
-      pointer-events: none;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
       z-index: 2;
 
+      &--not-events {
+        pointer-events: none;
+      }
+
       &::after {
         display: var(--c-input-icon-detail);
         content: "";
         height: 2em;
         width: 0.0625em;
+        min-width: 1px;
         background-image: linear-gradient(to bottom, transparent, var(--c-input-icon-detail-color), transparent);
         position: absolute;
         left: 0;
@@ -238,8 +242,6 @@
         grid-column: 1/2;
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
-        border-top-left-radius: var(--c-input-radius);
-        border-bottom-left-radius: var(--c-input-radius);
 
         &::after {
           left: auto;

@@ -1,71 +1,3 @@
----
-{
-  "API": [
-    {
-      "title": "Propiedades",
-      "items": [
-        {
-          "Nombre": "tag",
-          "Tipo": "String",
-          "Descripción": "Etiqueta HTML para el componente",
-          "Por defecto": "div"
-        },
-        {
-          "Nombre" : "href",
-          "Tipo" : "String",
-          "Descripción": "Enlace del componente",
-          "Por defecto": "undefined"
-        },
-        {
-          "Nombre" : "shadow",
-          "Tipo" : "Boolean",
-          "Descripción": "Sombra de la caja",
-          "Por defecto": "false"
-        },
-        {
-          "Nombre" : "radius",
-          "Tipo" : "Boolean",
-          "Descripción": "Border radius de la caja",
-          "Por defecto": "false"
-        },
-        {
-          "Nombre" : "overlay",
-          "Tipo" : "Boolean",
-          "Descripción": "Capa de superposición sobre la imagen",
-          "Por defecto": "false"
-        },
-        {
-          "Nombre" : "picture",
-          "Tipo" : "Object",
-          "Descripción": "Propiedades del componente Picture",
-          "Por defecto": "empty"
-        }                                                                 
-      ] 
-    },
-    {
-      "title": "Slots",
-      "items": [
-        {
-          "Nombre" : "default",
-          "Descripción": "Slot por defecto"
-        }
-      ]
-    }
-  ],
-  "APIBannerContent": [
-    {
-      "title": "Slots",
-      "items": [
-        {
-          "Nombre" : "default",
-          "Descripción": "Slot del contenido"
-        }
-      ]
-    }
-  ]
-}
----
-
 # Banner
 
 <Preview>
@@ -76,17 +8,35 @@
   <<< @/examples/components/Banner/Banner.vue
 </Preview>
 
-## API
+## Propiedades
 
-<Api />
+| Nombre    | Tipo      | Descripción                           | Por defecto                                    |
+|-----------|-----------|---------------------------------------|------------------------------------------------|
+| `tag`     | `String`  | Etiqueta HTML del componente          | `div`                                          |
+| `href`    | `String`  | Enlace del componente                 | `undefined`                                    |
+| `src`     | `String`  | Url de la imagen                      | `https://source.unsplash.com/random/1920x1080` |
+| `alt`     | `String`  | Texto alternativo de la imagen        | `''`                                        |
+| `title`   | `String`  | Título de la imagen                   | `undefined`                                    |
+| `sources` | `Array`   | Listado de sources                    | `undefined`                                    |
+| `shadow`  | `Boolean` | Sombra de la caja                     | `false`                                        |
+| `radius`  | `Boolean` | Border radius de la caja              | `false`                                        |
+| `overlay` | `Boolean` | Capa de superposición sobre la imagen | `false`                                        |
+
+## Slots
+
+| Nombre    | Descripción        |
+|-----------|--------------------|
+| `default` | Slot del contenido |
 
 ## Banner Content
 
 El componente `BannerContent` se usa junto con el componente `Banner` para meter contenido.
 
-### API
+### Slots
 
-<Api :data="$page.frontmatter.APIBannerContent" />
+| Nombre    | Descripción        |
+|-----------|--------------------|
+| `default` | Slot del contenido |
 
 
 

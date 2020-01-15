@@ -1,12 +1,22 @@
 @mixin root-colors {
+  // Neutral
+  --color-neutral-hue: 0;
+  --color-neutral-saturation: 0%;
+  --color-neutral-lumnosity: 50%;
+  --color-neutral-hsl: var(--color-neutral-hue), var(--color-neutral-saturation), var(--color-neutral-lumnosity);
+  --color-neutral: hsl(var(--color-neutral-hsl));
+
+  // Primary
   --color-primary-hue: 288;
   --color-primary-saturation: 56%;
   --color-primary-lumnosity: 35%;
   --color-primary-hsl: var(--color-primary-hue), var(--color-primary-saturation), var(--color-primary-lumnosity);
   --color-primary: hsl(var(--color-primary-hsl));
-  --color-secondary-hue: 288;
-  --color-secondary-saturation: 76%;
-  --color-secondary-lumnosity: 65%;
+
+  // Secondary
+  --color-secondary-hue: 53;
+  --color-secondary-saturation: 100%;
+  --color-secondary-lumnosity: 48%;
   --color-secondary-hsl: var(--color-secondary-hue), var(--color-secondary-saturation), var(--color-secondary-lumnosity);
   --color-secondary: hsl(var(--color-secondary-hsl));
 

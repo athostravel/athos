@@ -1,45 +1,71 @@
 <template>
     <component
         :is="tag"
+        :href="href"
         class="c-price-button"
         :class="{
             'c-price-button--inverted' : inverted
         }"
     >
-        <div class="c-price-button__price">
-            <Price v-bind="price" />
+        <div v-if="value || text" class="c-price-button__price">
+            <AtPrice v-bind="[cfg.price , { before, value, text }]" />
         </div>
 
-        <Button class="c-price-button__button" v-bind="button" />
+        <AtButton class="c-price-button__button" v-bind="cfg.button">
+            <AtIcon class="c-price-button__icon" v-bind="cfg.icon" />
+        </AtButton>
     </component>
 </template>
 
 <script>
-    import Price from '@components/Price/Price'
-    import Button from '@components/Button/Button'
+    import AtPrice from '@components/Price/Price'
+    import AtButton from '@components/Button/Button'
+    import AtIcon from '@components/Icon/Icon'
 
     export default {
         name: 'AtPriceButton',
         components: {
-            Price,
-            Button
+            AtPrice,
+            AtButton,
+            AtIcon
         },
         props: {
             tag: {
                 type: String,
-                default: 'div'
+                default: 'a'
+            },
+            href: {
+                type: String,
+                default: '#'
+            },
+            text: {
+                type: String,
+                default: 'Desde'
+            },
+            before: {
+                type: String,
+                default: undefined
+            },
+            value: {
+                type: [String, Number],
+                default: undefined
             },
             inverted: {
                 type: Boolean,
                 default: false
-            },
-            button: {
-                type: Object,
-                default: () => {}
-            },
-            price: {
-                type: Object,
-                default: () => {}
+            }
+        },
+        data () {
+            return {
+                cfg: {
+                    button: {
+                        tag: 'div',
+                        color: 'secondary'
+                    },
+                    icon: {
+                        icon: 'angle-right'
+                    }
+                }
             }
         }
     }
@@ -50,6 +76,7 @@
     --c-price-button-background: #f6f6f6;
     --c-price-button-price-border-radius: #{em(4px)} 0 0 #{em(4px)};
     --c-price-button-price-padding: #{em(8px) em(16px)};
+    --c-price-button-icon-size: #{em(24px)};
   }
 </style>
 
@@ -70,10 +97,13 @@
     }
 
     &__button {
-      --c-button-icon-size: #{em(24px)};
       --c-button-padding: #{em(8px)} #{em(16px)};
       --c-button-min-height: auto;
       --c-button-border-radius: 0 #{em(4px)} #{em(4px)} 0;
+    }
+
+    &__icon {
+      font-size: var(--c-price-button-icon-size);
     }
 
     &--inverted {

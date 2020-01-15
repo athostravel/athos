@@ -14,6 +14,11 @@
                         { icon: 'map', size: 'tiny' },
                         { icon: 'heart', size: 'tiny' }
                     ],
+                    //actions: {
+                    //    enabled: true,
+                    //    button: { tag: 'button', rounded: true, icon: true, size: 'tiny' },
+                    //    icon: { icon: 'heart' }
+                    //},
                     meta: {
                         text: 'Marruecos'
                     },
@@ -39,7 +44,8 @@
                         price: {
                             text: 'Desde',
                             before: '499',
-                            value: '300'
+                            value: '300',
+                            href: '#'
                         },
                         button: {
                             icon: 'angle-right'

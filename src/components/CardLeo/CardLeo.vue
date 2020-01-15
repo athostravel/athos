@@ -8,22 +8,28 @@
         }"
     >
         <div class="c-card-leo__content">
-            <div v-if="icons" class="c-card-leo__icons">
-                <div v-for="icon in icons" :key="icon.id" class="c-card-leo__icon">
-                    <Button v-bind="icon" class="c-card-leo__button" />
+            <!--
+            <div v-if="buttons" class="c-card-leo__icons">
+                <div v-for="button in buttons" :key="button.id" class="c-card-leo__icon">
+                    <Button
+                        v-bind="button"
+                        class="c-card-leo__button"
+                        :icon="true"
+                    />
                 </div>
             </div>
-
+            -->
+            
             <div v-if="meta || text" class="c-card-leo__header">
-                <AtText v-if="meta" v-bind="meta" class="c-card-leo__meta" />
+                <AtText v-if="meta" v-bind="[cfg.meta, meta]" class="c-card-leo__meta" />
 
-                <AtText v-if="text" v-bind="text" class="c-card-leo__text" />
+                <AtText v-if="text" v-bind="[cfg.text, text]" class="c-card-leo__text" />
             </div>
 
             <Picture class="c-card-leo__picture" v-bind="picture" />
 
             <div v-if="title || description" class="c-card-leo__info">
-                <AtText v-if="title" v-bind="title" class="c-card-leo__title" />
+                <AtText v-if="title" v-bind="[cfg.title, title]" class="c-card-leo__title" />
 
                 <AtText v-if="description" v-bind="description" class="c-card-leo__description" />
             </div>
@@ -32,7 +38,7 @@
                 <PriceButton
                     v-if="priceButton"
                     class="c-card-leo__price"
-                    v-bind="priceButton"
+                    v-bind="[cfg.priceButton.price, priceButton.price]"
                 />
             </div>
         </div>
@@ -66,7 +72,7 @@
                 type: Boolean,
                 default: true
             },
-            icons: {
+            buttons: {
                 type: Array,
                 default: () => []
             },
@@ -93,6 +99,26 @@
             priceButton: {
                 type: Object,
                 default: () => {}
+            }
+        },
+        data () {
+            return {
+                cfg: {
+                    meta: {
+                        tag: 'h2'
+                    },
+                    text: {
+                        tag: 'h3'
+                    },
+                    title: {
+                        tag: 'h4'
+                    },
+                    priceButton: {
+                        price: {
+                            href: '#'
+                        }
+                    }
+                }
             }
         }
     }
