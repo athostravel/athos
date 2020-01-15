@@ -7,17 +7,19 @@
         data () {
             return {
                 atCardAries: {
-                    inverse: false,
-                    meta: 'Hotel Joya',
-                    src: 'https://dam.ngenespanol.com/wp-content/uploads/2019/03/luna-colores-nuevo.png',
+                    title: {
+                        text: 'Hotel Joya',
+                        tag: 'span'
+                    },
+                    image: {
+                        src: 'https://source.unsplash.com/random/80x80'
+                    },
                     price: {
-                        inline: true,
-                        text: 'Precio Medio',
-                        value: '200'
+                        value: '200',
+                        text: 'Precio Medio'
                     },
                     category: {
-                        icon: 'heart',
-                        count: 5
+                        count: 3
                     }
                 }
             }
