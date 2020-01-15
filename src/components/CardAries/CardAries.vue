@@ -9,7 +9,7 @@
         />
 
         <AtText
-            :text="title"
+            v-bind="[cfg.title, title]"
             class="c-card-aries__title"
         />
 
@@ -54,8 +54,8 @@
                 default: () => {}
             },
             title: {
-                type: String,
-                default: undefined
+                type: Object,
+                default: () => {}
             },
             category: {
                 type: Object,
@@ -75,7 +75,7 @@
                     price: {
                         inline: true
                     },
-                    text: {
+                    title: {
                         tag: 'h3'
                     }
                 }
@@ -113,6 +113,7 @@
     &--inverse {
       grid-template-columns: 1fr var(--c-card-aries-picture-width);
       grid-template-areas:
+        "category picture"
         "title picture"
         "price picture";
     }

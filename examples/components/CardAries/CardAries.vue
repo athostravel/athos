@@ -7,7 +7,10 @@
         data () {
             return {
                 atCardAries: {
-                    title: 'Hotel Joya',
+                    title: {
+                        text: 'Hotel Joya',
+                        tag: 'span'
+                    },
                     image: {
                         src: 'https://source.unsplash.com/random/80x80'
                     },
