@@ -155,7 +155,6 @@
                                 count: 3
                             }
                         },
-
                         {
                             title: {
                                 text: 'Hotel Carlos I',
@@ -204,7 +203,6 @@
                                 count: 3
                             }
                         },
-
                         {
                             title: {
                                 text: 'Hotel Carlos I',
