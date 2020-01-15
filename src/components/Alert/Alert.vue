@@ -56,7 +56,7 @@
 
 <style lang="scss">
   .c-alert {
-    --c-alert-padding: #{em(16px) em(8px)};
+    --c-alert-padding: #{em(16px)};
     --c-alert-radius: var(--radius-s);
     --c-alert-background: #fff;
     --c-alert-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
@@ -99,7 +99,12 @@
     }
 
     &__inner {
-      padding-left: #{em(16px)};
+      display: flex;
+      align-items: flex-start;
+    }
+
+    &__content {
+      flex: 1;
     }
   }
 </style>
