@@ -14,7 +14,7 @@
                 <div v-if="highlight || favourite.enabled" class="c-card-leo__header-actions">
                     <AtText v-if="highlight" v-bind="[cfg.highlight, highlight]" class="c-card-leo__highlight" />
 
-                    <div v-if="map.enabled" class="c-card-leo__icons">
+                    <div v-if="map.enabled || favourite.enabled" class="c-card-leo__icons">
                         <div v-if="map.enabled" class="c-card-leo__icon">
                             <AtButton v-bind="[cfg.map.button, map.button]" class="c-card-leo__button">
                                 <AtIcon v-bind="[cfg.map.icon, map.icon]" :icon="map.icon.icon" :rounded="map.button.rounded" />
