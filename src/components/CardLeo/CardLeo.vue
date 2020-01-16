@@ -181,7 +181,6 @@
     --c-card-leo-highlight-text-padding: var(--space-2xs);
     --c-card-leo-highlight-color: #fff;
     --c-card-leo-highlight-background: var(--color-secondary);
-    --c-card-leo-meta-display: block;
     --c-card-leo-previous-display: block;
     --c-card-leo-previous-color: var(--color-primary);
     --c-card-leo-previous-font-size: var(--font-size-m);
