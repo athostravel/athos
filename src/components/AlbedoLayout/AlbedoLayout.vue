@@ -81,7 +81,7 @@
     --c-albedo-layout-padding: 0;
     --c-albedo-layout-border-radius: 0;
     --c-albedo-layout-background: transparent;
-    --c-albedo-layout-align-items: var(--c-albedo-layout-align-items);
+    --c-albedo-layout-align-items: start;
     --c-albedo-layout-gap: var(--space-xl);
     --c-albedo-layout-col-gap: var(--space-s);
     --c-albedo-layout-item-border-size-top: 0;
