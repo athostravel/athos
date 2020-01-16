@@ -81,6 +81,7 @@
     --c-albedo-layout-padding: 0;
     --c-albedo-layout-border-radius: 0;
     --c-albedo-layout-background: transparent;
+    --c-albedo-layout-align-items: var(--c-albedo-layout-align-items);
     --c-albedo-layout-gap: var(--space-xl);
     --c-albedo-layout-col-gap: var(--space-s);
     --c-albedo-layout-item-border-size-top: 0;
@@ -115,6 +116,7 @@
     background-color: var(--c-albedo-layout-background);
 
     &__inner {
+      align-items: var(--c-albedo-layout-align-items);
       display: grid;
       grid-gap: var(--c-albedo-layout-gap);
       grid-auto-columns: 1fr;
