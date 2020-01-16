@@ -15,6 +15,7 @@
             >
                 <AtText
                     v-bind="[cfg.title, item.title]"
+                    v-if="item.title"
                     :text="item.title.text"
                     class="c-arcus-layout__title"
                 />
@@ -82,6 +83,7 @@
     --c-arcus-layout-border-radius: 0;
     --c-arcus-layout-background: transparent;
     --c-arcus-layout-gap: var(--space-m);
+    --c-arcus-layout-align-items: start;
     --c-arcus-layout-col-gap: var(--space-s);
     --c-arcus-layout-item-border-size-top: 0;
     --c-arcus-layout-item-border-size-left: 0;
@@ -115,6 +117,7 @@
     background-color: var(--c-arcus-layout-background);
 
     &__inner {
+      align-items: var(--c-arcus-layout-align-items);
       display: grid;
       grid-gap: var(--c-arcus-layout-gap);
       grid-auto-columns: 1fr;

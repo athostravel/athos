@@ -15,6 +15,7 @@
             >
                 <AtText
                     v-bind="[cfg.title, item.title]"
+                    v-if="item.title"
                     :text="item.title.text"
                     class="c-albedo-layout__title"
                 />
