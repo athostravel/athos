@@ -11,24 +11,30 @@
     >
         <div class="c-card-leo__inner">
             <div v-if="meta || text || favourite.enabled" class="c-card-leo__header">
-                <div v-if="favourite.enabled" class="c-card-leo__icons">
-                    <div v-if="map.enabled" class="c-card-leo__icon">
-                        <AtButton v-bind="[cfg.map.button, map.button]" class="c-card-leo__button">
-                            <AtIcon v-bind="[cfg.map.icon, map.icon]" :icon="map.icon.icon" :rounded="map.button.rounded" />
-                        </AtButton>
-                    </div>
-                    <div v-if="favourite.enabled" class="c-card-leo__icon">
-                        <AtButton v-bind="[cfg.favourite.button, favourite.button]" class="c-card-leo__button">
-                            <AtIcon v-bind="[cfg.favourite.icon, favourite.icon]" :icon="favourite.icon.icon" :rounded="favourite.button.rounded" />
-                        </AtButton>
+                <div v-if="highlight || favourite.enabled" class="c-card-leo__header-actions">
+                    <AtText v-if="highlight" v-bind="[cfg.highlight, highlight]" class="c-card-leo__highlight" />
+
+                    <div v-if="favourite.enabled" class="c-card-leo__icons">
+                        <div v-if="map.enabled" class="c-card-leo__icon">
+                            <AtButton v-bind="[cfg.map.button, map.button]" class="c-card-leo__button">
+                                <AtIcon v-bind="[cfg.map.icon, map.icon]" :icon="map.icon.icon" :rounded="map.button.rounded" />
+                            </AtButton>
+                        </div>
+                        <div v-if="favourite.enabled" class="c-card-leo__icon">
+                            <AtButton v-bind="[cfg.favourite.button, favourite.button]" class="c-card-leo__button">
+                                <AtIcon v-bind="[cfg.favourite.icon, favourite.icon]" :icon="favourite.icon.icon" :rounded="favourite.button.rounded" />
+                            </AtButton>
+                        </div>
                     </div>
                 </div>
 
-                <AtText v-if="previous" v-bind="[cfg.previous, previous]" class="c-card-leo__previous" />
+                <div v-if="previous || meta || text" class="c-card-leo__header-info">
+                    <AtText v-if="previous" v-bind="[cfg.previous, previous]" class="c-card-leo__previous" />
 
-                <AtText v-if="meta" v-bind="[cfg.meta, meta]" class="c-card-leo__meta" />
+                    <AtText v-if="meta" v-bind="[cfg.meta, meta]" class="c-card-leo__meta" />
 
-                <AtText v-if="text" v-bind="[cfg.text, text]" class="c-card-leo__text" />
+                    <AtText v-if="text" v-bind="[cfg.text, text]" class="c-card-leo__text" />
+                </div>
             </div>
 
             <Picture class="c-card-leo__picture" v-bind="[cfg.picture, picture]" />
@@ -40,7 +46,7 @@
                     <AtText v-if="description" v-bind="description" class="c-card-leo__description" />
                 </div>
 
-                <div v-if="priceButton" class="c-card-leo__actions">
+                <div v-if="priceButton" class="c-card-leo__footer-actions">
                     <PriceButton
                         v-if="priceButton"
                         class="c-card-leo__price"
@@ -84,6 +90,10 @@
                 default: () => {}
             },
             favourite: {
+                type: Object,
+                default: () => {}
+            },
+            highlight: {
                 type: Object,
                 default: () => {}
             },
@@ -133,6 +143,9 @@
                         button: { tag: 'button', rounded: false, icon: true, size: 'tiny' },
                         icon: { icon: 'heart' }
                     },
+                    highlight: {
+                        tag: 'div'
+                    },
                     previous: {
                         tag: 'div'
                     },
@@ -164,18 +177,25 @@
     --c-card-leo-border-radius: var(--radius-s);
     --c-card-leo-picture-ratio-width: 16;
     --c-card-leo-picture-ratio-height: 9;
+    --c-card-leo-highlight-font-size: var(--font-size-m);
+    --c-card-leo-highlight-text-padding: var(--space-2xs);
+    --c-card-leo-highlight-color: #fff;
+    --c-card-leo-highlight-background: var(--color-secondary);
     --c-card-leo-meta-display: block;
-      --c-card-leo-previous-display: block;
-      --c-card-leo-previous-color: var(--color-primary);
-      --c-card-leo-previous-line-height: var(--line-height-l);
+    --c-card-leo-previous-display: block;
+    --c-card-leo-previous-color: var(--color-primary);
+    --c-card-leo-previous-font-size: var(--font-size-m);
+    --c-card-leo-previous-line-height: var(--line-height-m);
     --c-card-leo-meta-display: block;
     --c-card-leo-meta-color: var(--color-secondary);
     --c-card-leo-meta-font-size: var(--font-size-xl);
+    --c-card-leo-meta-line-height: var(--line-height-xl);
     --c-card-leo-meta-font-weight: var(--font-weight-bold);
     --c-card-leo-meta-margin: 0 0 var(--space-2xs) 0;
     --c-card-leo-text-display: block;
     --c-card-leo-text-color: var(--color-primary);
-    --c-card-leo-text-line-height: var(--line-height-l);
+    --c-card-leo-text-line-height: var(--line-height-m);
+    --c-card-leo-text-font-size: var(--font-size-m);
     --c-card-leo-title-color: var(--color-primary);
     --c-card-leo-title-font-size: var(--font-size-2xl);
     --c-card-leo-title-font-weight: var(--font-weight-bold);
@@ -184,13 +204,13 @@
     --c-card-leo-description-color: var(--color-shade-800);
     --c-card-leo-header-padding: var(--space-s) var(--space-m);
     --c-card-leo-header-background: #fff;
+    --c-card-leo-header-actions-margin: 0 0 var(--space-xs) 0;
     --c-card-leo-footer-background: #fff;
     --c-card-leo-info-padding: var(--space-s) var(--space-m);
     --c-card-leo-actions-padding: 0;
     --c-card-leo-button-background-color: var(transparent);
     --c-card-leo-button-color: var(--color-primary);
     --c-card-leo-button-icon-size: var(--font-size-4xl);
-    --c-card-leo-icons-margin: 0 var(--space-s) 0 0;
     --c-card-leo-icon-margin: 0 0 0 var(--space-2xs);
     --c-card-leo-has-bg-img-padding: var(--space-s);
     --c-card-leo-has-bg-img-background-size: 400%;
@@ -235,7 +255,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-end;
-      margin: var(--c-card-leo-icons-margin);
+      flex-grow: 1;
     }
 
     &__button {
@@ -251,20 +271,42 @@
     }
 
     &__header {
-      padding: var(--c-card-leo-header-padding);
       background: var(--c-card-leo-header-background);
-    }
 
-      &__previous {
-          --c-text-color: var(--c-card-leo-previous-color);
-          --c-text-line-height: var(--c-card-leo-previous-line-height);
-
-          display: var(--c-card-leo-previous-display);
+      &-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: var(--c-card-leo-header-actions-margin);
       }
 
+      &-info {
+        padding: var(--c-card-leo-header-padding);
+      }
+    }
+
+    &__highlight {
+      --c-text-background: var(--c-card-leo-highlight-background);
+      --c-text-color: var(--c-card-leo-highlight-color);
+      --c-text-font-size: var(--c-card-leo-highlight-font-size);
+      --c-text-padding: var(--c-card-leo-highlight-text-padding);
+
+      margin-left: calc(var(--c-card-leo-padding) * -1);
+      top: 0;
+    }
+
+    &__previous {
+      --c-text-color: var(--c-card-leo-previous-color);
+      --c-text-font-size: var(--c-card-leo-previous-font-size);
+      --c-text-line-height: var(--c-card-leo-previous-line-height);
+
+      display: var(--c-card-leo-previous-display);
+    }
+
     &__meta {
-      --c-text-font-size: var(--c-card-leo-meta-font-size);
       --c-text-color: var(--c-card-leo-meta-color);
+      --c-text-font-size: var(--c-card-leo-meta-font-size);
+      --c-text-line-height: var(--c-card-leo-meta-line-height);
       --c-text-font-weight: var(--c-card-leo-meta-font-weight);
 
       display: var(--c-card-leo-meta-display);
@@ -273,6 +315,7 @@
 
     &__text {
       --c-text-color: var(--c-card-leo-text-color);
+      --c-text-font-size: var(--c-card-leo-text-font-size);
       --c-text-line-height: var(--c-card-leo-text-line-height);
 
       display: var(--c-card-leo-text-display);
@@ -301,7 +344,7 @@
       background: var(--c-card-leo-footer-background);
     }
 
-    &__actions {
+    &__footer-actions {
       display: flex;
       justify-content: flex-end;
       padding: var(--c-card-leo-actions-padding);

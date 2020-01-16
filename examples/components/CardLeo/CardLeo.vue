@@ -73,6 +73,11 @@
                         button: { tag: 'button', rounded: true, icon: true, size: 'tiny' },
                         icon: { icon: 'heart' }
                     },
+                    highlight: {
+                        text: 'Destacado',
+                        background: true,
+                        tag: 'span'
+                    },
                     previous: {
                         text: '9 días y 8 noches',
                         tag: 'span'

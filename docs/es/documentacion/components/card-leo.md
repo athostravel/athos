@@ -16,6 +16,7 @@
 | `shadow`        | `Boolean`     | Sombreado                                  | `true`       |
 | `radius`        | `Boolean`     | Equinas redondeadas                        | `true`       |
 | `icons`         | `Array`       | Botones con icono para realizar acciones   | `undefined`  |
+| `highlight`     | `Object`      | Texto con fondo                            | `undefined`  |
 | `previous`      | `Object`      | Texto previo al título en la cabecera      | `undefined`  |
 | `meta`          | `Object`      | Titulo en la cabecera                      | `undefined`  |
 | `text`          | `Object`      | Texto de la cabecera que acompaña a meta   | `undefined`  |
