@@ -204,7 +204,7 @@
     --c-card-leo-description-color: var(--color-shade-800);
     --c-card-leo-header-padding: var(--space-s) var(--space-m);
     --c-card-leo-header-background: #fff;
-    --c-card-leo-header-actions-margin: 0 0 var(--space-xs) 0;
+    --c-card-leo-header-actions-padding: var(--space-s) var(--space-s) 0 var(--space-s);
     --c-card-leo-footer-background: #fff;
     --c-card-leo-info-padding: var(--space-s) var(--space-m);
     --c-card-leo-actions-padding: 0;
@@ -214,6 +214,7 @@
     --c-card-leo-icon-margin: 0 0 0 var(--space-2xs);
     --c-card-leo-has-bg-img-padding: var(--space-s);
     --c-card-leo-has-bg-img-background-size: 400%;
+    --c-card-leo-has-bg-img-actions-padding: 0 0 var(--space-s) 0;
     --c-card-leo-has-bg-img-previous-color: #fff;
     --c-card-leo-has-bg-img-meta-color: #fff;
     --c-card-leo-has-bg-img-text-color: #fff;
@@ -277,7 +278,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin: var(--c-card-leo-header-actions-margin);
+        padding: var(--c-card-leo-header-actions-padding);
       }
 
       &-info {
@@ -367,6 +368,10 @@
       #{$this}__header {
         --c-card-leo-header-background: var(--c-card-leo-has-bg-img-header-background);
         --c-card-leo-header-padding: var(--c-card-leo-has-bg-img-header-padding);
+
+          &-actions {
+              --c-card-leo-header-actions-padding: var(--c-card-leo-has-bg-img-actions-padding);
+          }
       }
 
       #{$this}__previous {
