@@ -10,11 +10,11 @@
         :style="{backgroundImage:`url(${picture.src})`}"
     >
         <div class="c-card-leo__inner">
-            <div v-if="meta || text || favourite.enabled" class="c-card-leo__header">
+            <div v-if="meta || map.enabled || favourite.enabled" class="c-card-leo__header">
                 <div v-if="highlight || favourite.enabled" class="c-card-leo__header-actions">
                     <AtText v-if="highlight" v-bind="[cfg.highlight, highlight]" class="c-card-leo__highlight" />
 
-                    <div v-if="favourite.enabled" class="c-card-leo__icons">
+                    <div v-if="map.enabled" class="c-card-leo__icons">
                         <div v-if="map.enabled" class="c-card-leo__icon">
                             <AtButton v-bind="[cfg.map.button, map.button]" class="c-card-leo__button">
                                 <AtIcon v-bind="[cfg.map.icon, map.icon]" :icon="map.icon.icon" :rounded="map.button.rounded" />
@@ -368,9 +368,9 @@
         --c-card-leo-header-background: var(--c-card-leo-has-bg-img-header-background);
         --c-card-leo-header-padding: var(--c-card-leo-has-bg-img-header-padding);
 
-          &-actions {
-              --c-card-leo-header-actions-padding: var(--c-card-leo-has-bg-img-actions-padding);
-          }
+        &-actions {
+          --c-card-leo-header-actions-padding: var(--c-card-leo-has-bg-img-actions-padding);
+        }
       }
 
       #{$this}__previous {
