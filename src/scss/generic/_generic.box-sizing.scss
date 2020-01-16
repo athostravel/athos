@@ -1,8 +1,8 @@
 * {
-  box-sizing: border-box;
+  box-sizing: border-box !important;
 
   &::after,
   &::before {
-    box-sizing: border-box;
+    box-sizing: border-box !important;
   }
 }

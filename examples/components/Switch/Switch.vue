@@ -1,12 +1,12 @@
 <template>
-    <AtSwitch v-bind="example" />
+    <AtSwitch v-bind="atSwitch" />
 </template>
 
 <script>
     export default {
         data () {
             return {
-                example: {
+                atSwitch: {
                     id: 'example',
                     label: 'Lorem Ipsum'
                 }

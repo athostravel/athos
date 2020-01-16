@@ -1,62 +1,97 @@
 <template>
-    <Banner tag="article" class="c-banner-sirius" v-bind="banner">
-        <BannerContent class="c-banner-sirius__content">
-            <div v-if="icons" class="c-banner-sirius__icons">
-                <div v-for="icon in icons" :key="icon.id" class="c-banner-sirius__icon">
-                    <Button v-bind="icon" class="c-banner-sirius__button" />
+    <AtBanner
+        tag="article"
+        class="c-banner-sirius"
+        v-bind="[cfg.banner, image]"
+    >
+        <AtBannerContent class="c-banner-sirius__content">
+            <div v-if="video || cfg.favourite.enabled" class="c-banner-sirius__icons">
+                <div v-if="video" class="c-banner-sirius__icon">
+                    <AtButton v-bind="cfg.video.button" :href="video" class="c-banner-sirius__button">
+                        <AtIcon v-bind="cfg.video.icon" :icon="cfg.video.icon.icon" />
+                    </AtButton>
+                </div>
+                <div v-if="cfg.favourite.enabled" class="c-banner-sirius__icon">
+                    <AtButton v-bind="cfg.favourite.button" class="c-banner-sirius__button">
+                        <AtIcon v-bind="cfg.favourite.icon" :icon="cfg.favourite.icon.icon" />
+                    </AtButton>
                 </div>
             </div>
 
             <div v-if="meta || title" class="c-banner-sirius__text">
-                <AtText v-if="meta" v-bind="meta" class="c-banner-sirius__meta" />
-                <AtText v-if="title" v-bind="title" class="c-banner-sirius__title" />
+                <AtText v-if="meta" v-bind="cfg.meta" :text="meta" class="c-banner-sirius__meta" />
+                <AtText v-if="title" v-bind="cfg.title" :text="title" class="c-banner-sirius__title" />
             </div>
 
-            <PriceButton
-                v-if="priceButton"
+            <AtPriceButton
+                v-if="price && price.value"
                 class="c-banner-sirius__price"
-                v-bind="priceButton"
+                v-bind="[price, { href, config: cfg.priceButton }]"
             />
-        </BannerContent>
-    </Banner>
+        </AtBannerContent>
+    </AtBanner>
 </template>
 
 <script>
-    import Button from '@components/Button/Button'
-    import Banner from '@components/Banner/Banner'
-    import BannerContent from '@components/Banner/BannerContent'
-    import PriceButton from '@components/PriceButton/PriceButton'
+    import AtButton from '@components/Button/Button'
+    import AtIcon from '@components/Icon/Icon'
+    import AtBanner from '@components/Banner/Banner'
+    import AtBannerContent from '@components/Banner/BannerContent'
+    import AtPriceButton from '@components/PriceButton/PriceButton'
     import AtText from '@components/Text/Text'
 
     export default {
         name: 'AtBannerSirius',
         components: {
-            Button,
-            Banner,
-            BannerContent,
-            PriceButton,
+            AtIcon,
+            AtButton,
+            AtBanner,
+            AtBannerContent,
+            AtPriceButton,
             AtText
         },
         props: {
-            icons: {
-                type: Array,
-                default: () => []
+            image: {
+                type: Object,
+                default: () => {}
+            },
+            price: {
+                type: Object,
+                default: () => {}
+            },
+            video: {
+                type: String,
+                default: undefined
             },
             meta: {
-                type: Object,
-                default: () => {}
+                type: String,
+                default: undefined
             },
             title: {
-                type: Object,
-                default: () => {}
+                type: String,
+                default: undefined
             },
-            banner: {
-                type: Object,
-                default: () => {}
-            },
-            priceButton: {
-                type: Object,
-                default: () => {}
+            href: {
+                type: String,
+                default: '#'
+            }
+        },
+        data () {
+            return {
+                cfg: {
+                    banner: { radius: true },
+                    video: {
+                        button: { rounded: true, icon: true, size: 'tiny' },
+                        icon: { icon: 'heart' }
+                    },
+                    favourite: {
+                        enabled: true,
+                        button: { tag: 'button', rounded: true, icon: true, size: 'tiny' },
+                        icon: { icon: 'heart' }
+                    },
+                    title: { background: true },
+                    meta: { background: true }
+                }
             }
         }
     }
@@ -97,8 +132,8 @@
     }
 
     &__button {
-      --c-button-background-color: hsla(var(--color-shade-0-hsl), 0.5);
-      --c-button-icon-color: var(--color-secondary);
+      --c-button-background-color: hsla(var(--color-shade-0-hsl), 0.7);
+      --c-button-color: var(--color-secondary);
     }
 
     &__text {

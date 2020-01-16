@@ -128,19 +128,23 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 2,
                             children: [
+                                '/es/documentacion/components/albedo-layout',
+                                '/es/documentacion/components/arcus-layout',
                                 '/es/documentacion/components/banner',
-                                '/es/documentacion/components/banner-sirius',
                                 '/es/documentacion/components/banner-piscis',
+                                '/es/documentacion/components/banner-sirius',
                                 '/es/documentacion/components/button',
+                                '/es/documentacion/components/card-aries',
+                                '/es/documentacion/components/card-leo',
                                 '/es/documentacion/components/checkbox',
-                                '/es/documentacion/components/icon-list',
                                 '/es/documentacion/components/icon',
+                                '/es/documentacion/components/input',
                                 '/es/documentacion/components/picture',
                                 '/es/documentacion/components/price-button',
                                 '/es/documentacion/components/price',
                                 '/es/documentacion/components/radio',
-                                '/es/documentacion/components/switch',
                                 '/es/documentacion/components/switch-orion',
+                                '/es/documentacion/components/switch',
                                 '/es/documentacion/components/text'
                             ]
                         }

@@ -1,12 +1,12 @@
 <template>
-    <AtIcon v-bind="icon" />
+    <AtIcon v-bind="atIcon" />
 </template>
 
 <script>
     export default {
         data () {
             return {
-                icon: {
+                atIcon: {
                     icon: 'heart'
                 }
             }

@@ -24,7 +24,7 @@
             },
             text: {
                 type: String,
-                default: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                default: undefined
             }
         }
     }
@@ -32,8 +32,8 @@
 
 <style lang="scss">
   .c-text {
-    --c-text-background: none;
-    --c-text-padding: 0;
+    --c-text-background: var(--color-shade-0);
+    --c-text-padding: 0.5em;
     --c-text-color: currentColor;
     --c-text-font-size: 1em;
     --c-text-line-height: 1.4;
@@ -41,11 +41,9 @@
   }
 </style>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
   .c-text {
     color: var(--c-text-color);
-    background: var(--c-text-background);
-    padding: var(--c-text-padding);
 
     &__content {
       font-weight: var(--c-text-font-weight);
@@ -54,8 +52,8 @@
     }
 
     &--has-bg {
-      --c-text-padding: 0.5em;
-      --c-text-background: none;
+      background: var(--c-text-background);
+      padding: var(--c-text-padding);
     }
   }
 </style>
