@@ -129,6 +129,7 @@ module.exports = {
                             sidebarDepth: 2,
                             children: [
                                 '/es/documentacion/components/albedo-layout',
+                                '/es/documentacion/components/arcus-layout',
                                 '/es/documentacion/components/banner-sirius',
                                 '/es/documentacion/components/banner',
                                 '/es/documentacion/components/button',
