@@ -52,10 +52,6 @@
                 type: Array,
                 default: () => []
             },
-            cards: {
-                type: Array,
-                default: () => []
-            },
             component: {
                 type: String,
                 default: undefined
@@ -89,13 +85,13 @@
     --c-albedo-layout-item-border-size-right: 0;
     --c-albedo-layout-item-border-size-bottom: #{em(1px)};
     --c-albedo-layout-item-border-color: var(--color-shade-200);
-    --c-albedo-layout-item-padding: 0 0 0.6em 0;
+    --c-albedo-layout-item-padding: 0 0 0.5em 0;
     --c-albedo-layout-title-border-size-top: 0;
     --c-albedo-layout-title-border-size-left: 0;
     --c-albedo-layout-title-border-size-right: 0;
     --c-albedo-layout-title-border-size-bottom: #{em(1px)};
     --c-albedo-layout-title-border-color: var(--color-shade-200);
-    --c-albedo-layout-title-padding: 0 0 0.6em 0;
+    --c-albedo-layout-title-padding: 0 0 0.5em 0;
     --c-albedo-layout-title-text-align: center;
     --c-albedo-layout-title-font-size: var(--font-size-2xl);
     --c-albedo-layout-title-font-weight: 600;
