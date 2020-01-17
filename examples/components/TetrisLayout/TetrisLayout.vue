@@ -26,7 +26,6 @@
                                 before: '499',
                                 value: '300'
                             },
-                            banner: { radius: false },
                             config: {
                                 banner: { radius: false },
                                 favourite: {
@@ -84,7 +83,6 @@
                                 before: '499',
                                 value: '300'
                             },
-                            banner: { radius: false },
                             config: {
                                 banner: { radius: false },
                                 favourite: {
