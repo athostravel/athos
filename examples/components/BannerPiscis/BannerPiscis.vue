@@ -16,11 +16,11 @@
                             src: 'https://source.unsplash.com/random/1080x1920'
                         }
                     },
-                    textButton: 'Leer Más',
-                    hrefButton: '#',
-                    justifyContent: 'bottom',
-                    alignContent: 'center',
-                    overlayPosition: 'bottom'
+                    goButton: {
+                        outlined: true,
+                        href: 'http://www.google.es/',
+                        text: 'Leer Más'
+                    }
                 }
             }
         }

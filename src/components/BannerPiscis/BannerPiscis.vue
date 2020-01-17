@@ -1,49 +1,54 @@
 <template>
-    <Banner
+    <AtBanner
         tag="article"
         class="c-banner-piscis"
-        :class="{'c-banner-piscis--overlay-bottom': overlayPosition === 'bottom'}"
-        :overlay="true"
+        :class="{
+            'c-banner-piscis--overlay': cfg.overlay.enabled === true,
+            'c-banner-piscis--overlay-bottom': cfg.overlay.enabled === true && cfg.overlay.position === 'bottom'
+        }"
         v-bind="banner"
     >
-        <BannerContent
+        <AtBannerContent
             class="c-banner-piscis__content"
             :class="[
                 { 'c-banner-piscis__content--justify-bottom': justifyContent === 'bottom'},
                 { 'c-banner-piscis__content--justify-center': justifyContent === 'center'},
                 { 'c-banner-piscis__content--align-center': alignContent === 'center'},
-                { 'c-banner-piscis__content--align-right': alignContent === 'right'},
+                { 'c-banner-piscis__content--align-right': alignContent === 'right'}
             ]"
         >
             <div v-if="title" class="c-banner-piscis__text">
                 <AtText v-bind="title" class="c-banner-piscis__title" />
             </div>
 
-            <div v-if="textButton || title" class="c-banner-piscis__actions">
-                <Button
+            <div class="c-banner-piscis__actions">
+                <AtButton
                     class="c-banner-piscis__button"
-                    :text="textButton"
-                    :href="hrefButton"
-                    outlined
-                />
+                    :class="[
+                        { 'c-banner-piscis__button--outlined': goButton.outlined}
+                    ]"
+                    v-bind="[cfg.goButton, goButton]"
+                >
+                    {{ goButton.text }}
+                </AtButton>
             </div>
-        </BannerContent>
-    </Banner>
+        </AtBannerContent>
+    </AtBanner>
 </template>
 
 <script>
-    import Button from '@components/Button/Button'
-    import Banner from '@components/Banner/Banner'
-    import BannerContent from '@components/Banner/BannerContent'
+    import AtButton from '@components/Button/Button'
+    import AtBanner from '@components/Banner/Banner'
+    import AtBannerContent from '@components/Banner/BannerContent'
     import AtText from '@components/Text/Text'
 
     export default {
         name: 'AtBannerPiscis',
         components: {
             AtText,
-            Banner,
-            BannerContent,
-            Button
+            AtBanner,
+            AtBannerContent,
+            AtButton
         },
         props: {
             banner: {
@@ -62,17 +67,27 @@
                 type: [String, Boolean],
                 default: 'center'
             },
-            textButton: {
-                type: [String, Boolean],
-                default: 'Leer Más'
+            goButton: {
+                type: Object,
+                default: () => {}
             },
-            hrefButton: {
-                type: [String, Boolean],
-                default: '#'
-            },
-            overlayPosition: {
-                type: [String, Boolean],
-                default: 'bottom'
+            overlay: {
+                type: Object,
+                default: () => {}
+            }
+        },
+        data () {
+            return {
+                cfg: {
+                    overlay: {
+                        enabled: true,
+                        position: 'bottom'
+                    },
+                    goButton: {
+                        outlined: false,
+                        href: '#'
+                    }
+                }
             }
         }
     }
@@ -86,22 +101,43 @@
     --c-banner-piscis-title-font-size: var(--font-size-2xl);
     --c-banner-picture-ratio-width: 1;
     --c-banner-picture-ratio-height: 1.6;
-
-    &--overlay {
-      &-bottom {
-        --c-banner-overlay: linear-gradient(to bottom, transparent 60%, var(--color-primary) 100%);
-      }
-    }
+    --c-banner-overlay-bottom: linear-gradient(to bottom, transparent 60%, var(--color-primary) 100%);
+    --c-banner-button-color: #fff;
+    --c-banner-button-border-radius: 0;
+    --c-banner-button-border-color: #fff;
+    --c-banner-button-border-hover-color: #fff;
+    --c-banner-button-min-height: #{em(36px)};
+    --c-banner-button-min-width: #{em(80px)};
+    --c-banner-button-text-transform: capitalize;
   }
 </style>
 
 <style scoped lang="scss">
   .c-banner-piscis {
+    &--overlay {
+      position: relative;
+
+      &-bottom {
+        &::after {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          content: '';
+          display: block;
+          background: var(--c-banner-overlay-bottom);
+          z-index: 1;
+        }
+      }
+    }
+
     &__content {
       display: flex;
       flex-grow: 1;
       flex-direction: column;
       padding: var(--c-banner-piscis-content-padding);
+      z-index: 2;
 
       &--justify {
         &-bottom {
@@ -125,13 +161,20 @@
     }
 
     &__button {
-      --c-button-background-color: transparent;
-      --c-button-border-color: #fff;
-      --c-button-border-radius: 0;
-      --c-button-color: #fff;
-      --c-button-text-transform: capitalize;
-      --c-button-min-height: #{em(36px)};
-      --c-button-min-width: #{em(80px)};
+      &--outlined {
+        /*
+        --c-button-border-color: var(--c-banner-button-border-color);
+        --c-button-border-radius: var(--c-banner-button-border-radius);
+        --c-button-color: var(--c-banner-button-color);
+        --c-button-text-transform: var(--c-button-text-transform);
+        --c-button-min-height: var(--c-banner-button-min-height);
+        --c-button-min-width: var(--c-banner-button-min-width);
+
+        &:not(:hover):not(:focus):not(:active) {
+          --c-button-color: var(--c-banner-button-hover-color);
+        }
+        */
+      }
     }
 
     &__text {
