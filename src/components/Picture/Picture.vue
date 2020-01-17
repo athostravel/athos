@@ -61,14 +61,15 @@
     --c-picture-ratio-width: 16;
     --c-picture-ratio-height: 9;
     --c-picture-overlay: transparent;
+    --c-picture-filter: none;
     --c-picture-loading-background: #f6f6f6;
   }
 </style>
 
 <style scoped lang="scss">
   .c-picture {
-    overflow: hidden;
     position: relative;
+    overflow: hidden;
 
     &::before {
       display: block;
@@ -95,8 +96,9 @@
     }
 
     &::after {
-      content: "";
       background: var(--c-picture-overlay);
+      content: "";
+      filter: var(--c-picture-filter); //Nuevo: No funciona
       z-index: 2;
     }
 

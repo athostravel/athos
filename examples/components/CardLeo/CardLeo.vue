@@ -12,9 +12,7 @@
         data () {
             return {
                 simply: {
-                    tag: 'article',
-                    shadow: true,
-                    radius: true,
+                    href: '#simply',
                     map: {
                         enabled: true,
                         button: { tag: 'button', rounded: false, icon: true, size: 'tiny' },
@@ -33,7 +31,6 @@
                         text: 'Visitando: Marrakech, Tifeltoute, Zagora, dunas de Erg Lihoudi...',
                         tag: 'span'
                     },
-                    coverImage: false,
                     picture: {
                         title: 'Título',
                         alt: 'Alt',
@@ -49,22 +46,13 @@
                     description: {
                         text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci asperiores cupiditate eos esse natus perspiciatis placeat rerum tempore. A alias dignissimos illo quaerat? Aliquam cum minus neque officia saepe tempora.'
                     },
-                    priceButton: {
-                        price: {
-                            text: 'Desde',
-                            before: '499',
-                            value: '300',
-                            href: '#'
-                        },
-                        button: {
-                            icon: 'angle-right'
-                        }
+                    price: {
+                        before: '499',
+                        value: '300'
                     }
                 },
                 hasBackground: {
-                    tag: 'article',
-                    shadow: true,
-                    radius: true,
+                    href: '#hasBackground',
                     map: {
                         enabled: false
                     },
@@ -90,7 +78,6 @@
                         text: 'Visitando: Marrakech, Tifeltoute, Zagora, dunas de Erg Lihoudi...',
                         tag: 'span'
                     },
-                    coverImage: true,
                     picture: {
                         title: 'Título',
                         alt: 'Alt',
@@ -106,16 +93,9 @@
                     description: {
                         text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci asperiores cupiditate eos esse natus perspiciatis placeat rerum tempore. A alias dignissimos illo quaerat? Aliquam cum minus neque officia saepe tempora.'
                     },
-                    priceButton: {
-                        price: {
-                            text: 'Desde',
-                            before: '499',
-                            value: '300',
-                            href: '#'
-                        },
-                        button: {
-                            icon: 'angle-right'
-                        }
+                    price: {
+                        before: '499',
+                        value: '300'
                     }
                 }
             }

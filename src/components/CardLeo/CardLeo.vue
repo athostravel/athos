@@ -1,15 +1,13 @@
 <template>
-    <component
-        :is="tag"
+    <AtBanner
+        tag="article"
         class="c-card-leo"
         :class="{
-            'c-card-leo--has-shadow' : shadow,
-            'c-card-leo--has-radius' : radius,
-            'c-card-leo--has-bg-img' : coverImage
+            'c-card-leo--has-cover' : coverImage
         }"
-        :style="{backgroundImage:`url(${picture.src})`}"
+        v-bind="[cfg.banner, image]"
     >
-        <div class="c-card-leo__inner">
+        <AtBannerContent class="c-card-leo__content">
             <div v-if="meta || map.enabled || favourite.enabled" class="c-card-leo__header">
                 <div v-if="highlight || favourite.enabled" class="c-card-leo__header-actions">
                     <AtText v-if="highlight" v-bind="[cfg.highlight, highlight]" class="c-card-leo__highlight" />
@@ -37,53 +35,62 @@
                 </div>
             </div>
 
-            <Picture class="c-card-leo__picture" v-bind="[cfg.picture, picture]" />
+            <AtPicture class="c-card-leo__picture" />
 
-            <div v-if="title || description || priceButton" class="c-card-leo__footer">
+            <div v-if="title || description || price" class="c-card-leo__footer">
                 <div v-if="title || description" class="c-card-leo__info">
                     <AtText v-if="title" v-bind="[cfg.title, title]" class="c-card-leo__title" />
 
                     <AtText v-if="description" v-bind="description" class="c-card-leo__description" />
                 </div>
 
-                <div v-if="priceButton" class="c-card-leo__footer-actions">
-                    <PriceButton
-                        v-if="priceButton"
+                <div v-if="price" class="c-card-leo__footer-actions">
+                    <AtPriceButton
+                        v-if="price && price.value"
                         class="c-card-leo__price"
-                        v-bind="[cfg.priceButton.price, priceButton.price]"
+                        v-bind="[price, { href, config: cfg.priceButton }]"
                     />
                 </div>
             </div>
-        </div>
-    </component>
+        </AtBannerContent>
+    </AtBanner>
+
 </template>
 
 <script>
+    import AtBanner from '@components/Banner/Banner'
+    import AtBannerContent from '@components/Banner/BannerContent'
+    import AtButton from '@components/Button/Button'
+    import AtPicture from '@components/Picture/Picture.vue'
+    import AtPriceButton from '@components/PriceButton/PriceButton'
     import AtText from '@components/Text/Text'
-    import Button from '@components/Button/Button'
-    import Picture from '@components/Picture/Picture.vue'
-    import PriceButton from '@components/PriceButton/PriceButton'
 
     export default {
         name: 'AtCardLeo',
         components: {
-            AtText,
-            Button,
-            Picture,
-            PriceButton
+            AtBanner,
+            AtBannerContent,
+            AtButton,
+            AtPicture,
+            AtPriceButton,
+            AtText
         },
         props: {
-            tag: {
+            coverImage: {
+                type: Boolean,
+                default: true
+            },
+            image: {
+                type: Object,
+                default: () => {}
+            },
+            price: {
+                type: Object,
+                default: () => {}
+            },
+            href: {
                 type: String,
-                default: 'article'
-            },
-            shadow: {
-                type: Boolean,
-                default: true
-            },
-            radius: {
-                type: Boolean,
-                default: true
+                default: '#'
             },
             map: {
                 type: Object,
@@ -109,14 +116,6 @@
                 type: Object,
                 default: () => {}
             },
-            coverImage: {
-                type: Boolean,
-                default: true
-            },
-            picture: {
-                type: Object,
-                default: () => {}
-            },
             title: {
                 type: Object,
                 default: () => {}
@@ -124,15 +123,16 @@
             description: {
                 type: Object,
                 default: () => {}
-            },
-            priceButton: {
-                type: Object,
-                default: () => {}
             }
         },
         data () {
             return {
                 cfg: {
+                    banner: {
+                        radius: true,
+                        shadow: false,
+                        blur: true
+                    },
                     map: {
                         enabled: false,
                         button: { tag: 'button', rounded: false, icon: true, size: 'tiny' },
@@ -157,11 +157,6 @@
                     },
                     title: {
                         tag: 'h4'
-                    },
-                    priceButton: {
-                        price: {
-                            href: '#'
-                        }
                     }
                 }
             }
@@ -173,8 +168,6 @@
   .c-card-leo {
     --c-card-leo-padding: 0;
     --c-card-leo-background: transparent;
-    --c-card-leo-box-shadow: var(--shadow-distant);
-    --c-card-leo-border-radius: var(--radius-s);
     --c-card-leo-picture-ratio-width: 16;
     --c-card-leo-picture-ratio-height: 9;
     --c-card-leo-highlight-font-size: var(--font-size-m);
@@ -211,16 +204,16 @@
     --c-card-leo-button-color: var(--color-primary);
     --c-card-leo-button-icon-size: var(--font-size-4xl);
     --c-card-leo-icon-margin: 0 0 0 var(--space-2xs);
-    --c-card-leo-has-bg-img-padding: var(--space-s);
-    --c-card-leo-has-bg-img-background-size: 400%;
-    --c-card-leo-has-bg-img-actions-padding: 0 0 var(--space-s) 0;
-    --c-card-leo-has-bg-img-previous-color: #fff;
-    --c-card-leo-has-bg-img-meta-color: #fff;
-    --c-card-leo-has-bg-img-text-color: #fff;
-    --c-card-leo-has-bg-img-header-background: transparent;
-    --c-card-leo-has-bg-img-header-padding: 0 var(--space-s) var(--space-s) var(--space-m);
-    --c-card-leo-has-bg-img-button-color: #fff;
-    --c-card-leo-has-bg-img-button-background: hsla(var(--color-shade-900-hsl), 0.7);
+    --c-card-leo-has-cover-filter: blur(8px);
+    --c-card-leo-has-cover-padding: var(--space-s);
+    --c-card-leo-has-cover-actions-padding: 0 0 var(--space-s) 0;
+    --c-card-leo-has-cover-previous-color: #fff;
+    --c-card-leo-has-cover-meta-color: #fff;
+    --c-card-leo-has-cover-text-color: #fff;
+    --c-card-leo-has-cover-header-background: transparent;
+    --c-card-leo-has-cover-header-padding: 0 var(--space-s) var(--space-s) var(--space-m);
+    --c-card-leo-has-cover-button-color: #fff;
+    --c-card-leo-has-cover-button-background: hsla(var(--color-shade-900-hsl), 0.7);
   }
 </style>
 
@@ -230,26 +223,6 @@
 
     background-color: var(--c-card-leo-background);
     padding: var(--c-card-leo-padding);
-
-    &--has-shadow {
-      box-shadow: var(--c-card-leo-box-shadow);
-    }
-
-    &--has-radius {
-      border-radius: var(--c-card-leo-border-radius);
-
-      #{$this}__inner {
-        border-radius: var(--c-card-leo-border-radius);
-      }
-
-      #{$this}__footer {
-        border-radius: 0 0 var(--c-card-leo-border-radius) var(--c-card-leo-border-radius);
-      }
-    }
-
-    &__inner {
-      margin: var(--c-card-leo-inner-margin);
-    }
 
     &__icons {
       display: flex;
@@ -354,35 +327,33 @@
       align-self: flex-end;
     }
 
-    &--has-bg-img {
-      --c-card-leo-padding: var(--c-card-leo-has-bg-img-padding);
-
-      background-size: var(--c-card-leo-has-bg-img-background-size);
+    &--has-cover {
+      --c-banner-picture-filter: var(--c-card-leo-has-cover-filter); //Nuevo: No funciona
 
       #{$this}__button {
-        --c-card-leo-button-background-color: var(--c-card-leo-has-bg-img-button-background);
-        --c-card-leo-button-color: var(--c-card-leo-has-bg-img-button-color);
+        --c-card-leo-button-background-color: var(--c-card-leo-has-cover-button-background);
+        --c-card-leo-button-color: var(--c-card-leo-has-cover-button-color);
       }
 
       #{$this}__header {
-        --c-card-leo-header-background: var(--c-card-leo-has-bg-img-header-background);
-        --c-card-leo-header-padding: var(--c-card-leo-has-bg-img-header-padding);
+        --c-card-leo-header-background: var(--c-card-leo-has-cover-header-background);
+        --c-card-leo-header-padding: var(--c-card-leo-has-cover-header-padding);
 
         &-actions {
-          --c-card-leo-header-actions-padding: var(--c-card-leo-has-bg-img-actions-padding);
+          --c-card-leo-header-actions-padding: var(--c-card-leo-has-cover-actions-padding);
         }
       }
 
       #{$this}__previous {
-        --c-text-color: var(--c-card-leo-has-bg-img-previous-color);
+        --c-text-color: var(--c-card-leo-has-cover-previous-color);
       }
 
       #{$this}__meta {
-        --c-text-color: var(--c-card-leo-has-bg-img-meta-color);
+        --c-text-color: var(--c-card-leo-has-cover-meta-color);
       }
 
       #{$this}__text {
-        --c-text-color: var(--c-card-leo-has-bg-img-text-color);
+        --c-text-color: var(--c-card-leo-has-cover-text-color);
       }
     }
   }
