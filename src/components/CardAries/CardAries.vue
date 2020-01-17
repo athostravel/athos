@@ -18,7 +18,7 @@
                 <AtIcon
                     :key="index.id"
                     class="c-card-aries__icon"
-                    v-bind="[cfg.category, category]"
+                    v-bind="[cfg.category.icon, category.icon]"
                 />
             </template>
         </div>
@@ -70,7 +70,9 @@
             return {
                 cfg: {
                     category: {
-                        icon: 'heart'
+                        icon: {
+                            icon: 'heart'
+                        }
                     },
                     price: {
                         inline: true

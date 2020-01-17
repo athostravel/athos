@@ -11,7 +11,6 @@
                 v-for="item in items"
                 :key="item.id"
                 class="c-albedo-layout__col"
-                v-bind="item"
             >
                 <AtText
                     v-bind="[cfg.title, item.title]"
