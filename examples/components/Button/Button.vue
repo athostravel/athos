@@ -1,43 +1,111 @@
 <template>
     <div>
         <div class="preview-items-horizontal">
-            <AtButton v-bind="atButton" variant="" size="dunite">
+            <AtButton v-bind="atButton">
                 Button
             </AtButton>
-            <AtButton v-bind="atButton" variant="" size="diorite">
+            <AtButton v-bind="atButton" radiused>
                 Button
             </AtButton>
-            <AtButton v-bind="atButton" variant="" size="basalt">
+            <AtButton v-bind="atButton" rounded>
                 Button
             </AtButton>
-            <AtButton v-bind="atButton" variant="" size="">
-                Default
+            <AtButton v-bind="atButton" icon>
+                <AtIcon icon="heart" />
             </AtButton>
-            <AtButton v-bind="atButton" variant="" size="obsidian">
-                Button
+            <AtButton v-bind="atButton" icon radiused>
+                <AtIcon icon="heart" />
             </AtButton>
-            <AtButton v-bind="atButton" variant="" size="tuff">
-                Button
+            <AtButton v-bind="atButton" icon rounded>
+                <AtIcon icon="heart" />
             </AtButton>
         </div>
         <div class="preview-items-horizontal">
-            <AtButton v-bind="atButton" variant="" color="primary" size="dunite">
-                Button
+            <AtButton v-bind="atButton" variant="text">
+                Text
             </AtButton>
-            <AtButton v-bind="atButton" variant="" color="primary" size="diorite">
-                Button
+            <AtButton v-bind="atButton" variant="text" radiused>
+                Text
             </AtButton>
-            <AtButton v-bind="atButton" variant="" color="primary" size="basalt">
-                Button
+            <AtButton v-bind="atButton" variant="text" rounded>
+                Text
             </AtButton>
-            <AtButton v-bind="atButton" variant="" color="primary" size="">
-                Default
+            <AtButton v-bind="atButton" variant="text" icon>
+                <AtIcon icon="heart" />
             </AtButton>
-            <AtButton v-bind="atButton" variant="" color="primary" size="obsidian">
-                Button
+            <AtButton v-bind="atButton" variant="text" radiused icon>
+                <AtIcon icon="heart" />
             </AtButton>
-            <AtButton v-bind="atButton" variant="" color="primary" size="tuff">
-                Button
+            <AtButton v-bind="atButton" variant="text" rounded icon>
+                <AtIcon icon="heart" />
+            </AtButton>
+        </div>
+        <div class="preview-items-horizontal">
+            <AtButton v-bind="atButton" variant="outlined">
+                Outlined
+            </AtButton>
+            <AtButton v-bind="atButton" variant="outlined" radiused>
+                Outlined
+            </AtButton>
+            <AtButton v-bind="atButton" variant="outlined" rounded>
+                Outlined
+            </AtButton>
+            <AtButton v-bind="atButton" variant="outlined" icon>
+                <AtIcon icon="heart" />
+            </AtButton>
+            <AtButton v-bind="atButton" variant="outlined" radiused icon>
+                <AtIcon icon="heart" />
+            </AtButton>
+            <AtButton v-bind="atButton" variant="outlined" rounded icon>
+                <AtIcon icon="heart" />
+            </AtButton>
+        </div>
+        <div class="preview-items-horizontal">
+            <AtButton v-bind="atButton" variant="bordered">
+                Bordered
+            </AtButton>
+            <AtButton v-bind="atButton" variant="bordered" radiused>
+                Bordered
+            </AtButton>
+            <AtButton v-bind="atButton" variant="bordered" rounded>
+                Bordered
+            </AtButton>
+            <AtButton v-bind="atButton" variant="bordered" icon>
+                <AtIcon icon="heart" />
+            </AtButton>
+            <AtButton v-bind="atButton" variant="bordered" radiused icon>
+                <AtIcon icon="heart" />
+            </AtButton>
+            <AtButton v-bind="atButton" variant="bordered" rounded icon>
+                <AtIcon icon="heart" />
+            </AtButton>
+        </div>
+        <div class="preview-items-horizontal">
+            <AtButton v-bind="atButton" size="dunite">
+                Dunite Size
+            </AtButton>
+            <AtButton v-bind="atButton" size="diorite">
+                Diorite Size
+            </AtButton>
+            <AtButton v-bind="atButton" size="basalt">
+                Basalt Size
+            </AtButton>
+            <AtButton v-bind="atButton" size="">
+                Default Size
+            </AtButton>
+            <AtButton v-bind="atButton" size="obsidian">
+                Obsidian Size
+            </AtButton>
+            <AtButton v-bind="atButton" size="tuff">
+                Tuff Size
+            </AtButton>
+        </div>
+        <div class="preview-items-horizontal">
+            <AtButton v-bind="atButton" color="primary">
+                Primary
+            </AtButton>
+            <AtButton v-bind="atButton" color="secondary">
+                Secondary
             </AtButton>
         </div>
     </div>

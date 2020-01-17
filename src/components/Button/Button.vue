@@ -207,6 +207,12 @@
       --c-button-main-color-saturation: var(--color-primary-saturation);
     }
 
+    &--secondary {
+      --c-button-main-color: var(--color-secondary);
+      --c-button-main-color-hue: var(--color-secondary-hue);
+      --c-button-main-color-saturation: var(--color-secondary-saturation);
+    }
+
     // Types
     &--text {
       // Colors
@@ -222,7 +228,7 @@
     }
 
     &--outlined {
-      --c-button-border-width: 1px;
+      --c-button-border-width: #{rem(1px)};
       --c-button-background-color: transparent;
       --c-button-background-color-hover: transparent;
       --c-button-color: var(--c-button-main-color);
@@ -231,8 +237,8 @@
     }
 
     &--bordered {
-      --c-button-border-width: 1px;
-      --c-button-inner-padding: 3px;
+      --c-button-border-width: #{rem(1px)};
+      --c-button-inner-padding: #{rem(4px)};
       --c-button-background-color: var(--c-button-main-color);
       --c-button-background-color-hover: var(--c-button-main-color);
       --c-button-color: var(--color-shade-0);
