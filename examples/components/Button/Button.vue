@@ -1,106 +1,42 @@
 <template>
     <div>
         <div class="preview-items-horizontal">
-            <AtButton v-bind="atButton" size="diorite" variant="text">
+            <AtButton v-bind="atButton" variant="" size="dunite">
                 Button
             </AtButton>
-            <AtButton v-bind="atButton" size="basalt" variant="text">
+            <AtButton v-bind="atButton" variant="" size="diorite">
                 Button
             </AtButton>
-            <AtButton v-bind="atButton" variant="text">
+            <AtButton v-bind="atButton" variant="" size="basalt">
                 Button
             </AtButton>
-            <AtButton v-bind="atButton" size="obsidian" variant="text">
+            <AtButton v-bind="atButton" variant="" size="">
+                Default
+            </AtButton>
+            <AtButton v-bind="atButton" variant="" size="obsidian">
                 Button
             </AtButton>
-            <AtButton v-bind="atButton" size="tuff" variant="text">
-                Button
-            </AtButton>
-        </div>
-        <div class="preview-items-horizontal">
-            <AtButton v-bind="atButton" color="primary" size="diorite" variant="text">
-                Button
-            </AtButton>
-            <AtButton v-bind="atButton" color="primary" size="basalt" variant="text">
-                Button
-            </AtButton>
-            <AtButton v-bind="atButton" color="primary" variant="text">
-                Button
-            </AtButton>
-            <AtButton v-bind="atButton" color="primary" size="obsidian" variant="text">
-                Button
-            </AtButton>
-            <AtButton v-bind="atButton" color="primary" size="tuff" variant="text">
-                Button
-            </AtButton>
-        </div>
-
-        <div class="preview-items-horizontal">
-            <AtButton v-bind="atButton" size="diorite">
-                Button
-            </AtButton>
-            <AtButton v-bind="atButton" size="basalt">
-                Button
-            </AtButton>
-            <AtButton v-bind="atButton">
-                Button
-            </AtButton>
-            <AtButton v-bind="atButton" size="obsidian">
-                Button
-            </AtButton>
-            <AtButton v-bind="atButton" size="tuff">
+            <AtButton v-bind="atButton" variant="" size="tuff">
                 Button
             </AtButton>
         </div>
         <div class="preview-items-horizontal">
-            <AtButton v-bind="atButton" color="primary" size="diorite">
+            <AtButton v-bind="atButton" variant="" color="primary" size="dunite">
                 Button
             </AtButton>
-            <AtButton v-bind="atButton" color="primary" size="basalt">
+            <AtButton v-bind="atButton" variant="" color="primary" size="diorite">
                 Button
             </AtButton>
-            <AtButton v-bind="atButton" color="primary">
+            <AtButton v-bind="atButton" variant="" color="primary" size="basalt">
                 Button
             </AtButton>
-            <AtButton v-bind="atButton" color="primary" size="obsidian">
+            <AtButton v-bind="atButton" variant="" color="primary" size="">
+                Default
+            </AtButton>
+            <AtButton v-bind="atButton" variant="" color="primary" size="obsidian">
                 Button
             </AtButton>
-            <AtButton v-bind="atButton" color="primary" size="tuff">
-                Button
-            </AtButton>
-        </div>
-
-        <div class="preview-items-horizontal">
-            <AtButton v-bind="atButton" color="z" outlined size="diorite">
-                Button
-            </AtButton>
-            <AtButton v-bind="atButton" color="z" outlined size="basalt">
-                Button
-            </AtButton>
-            <AtButton v-bind="atButton" color="z" outlined>
-                Button
-            </AtButton>
-            <AtButton v-bind="atButton" color="z" outlined size="obsidian">
-                Button
-            </AtButton>
-            <AtButton v-bind="atButton" color="z" outlined size="tuff">
-                Button
-            </AtButton>
-        </div>
-        <div class="preview-items-horizontal">
-            <AtButton v-bind="atButton" color="primary" outlined size="diorite">
-                Button
-            </AtButton>
-            <AtButton v-bind="atButton" color="primary" outlined size="basalt">
-                Button
-            </AtButton>
-            <AtButton v-bind="atButton" color="primary" outlined>
-                Button
-            </AtButton>
-            <AtButton v-bind="atButton" color="primary" outlined size="obsidian">
-                Button
-            </AtButton>
-            <AtButton v-bind="atButton" color="primary" outlined size="tuff">
+            <AtButton v-bind="atButton" variant="" color="primary" size="tuff">
                 Button
             </AtButton>
         </div>
