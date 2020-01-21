@@ -13,7 +13,11 @@
             return {
                 simply: {
                     href: '#simply',
-                    bannerInfo: {
+                    banner: {
+                        radius: true,
+                        shadow: true,
+                    },
+                    info: {
                         title: {
                             text: 'Visita a Marruecos y alrededores (Puente de Diciembre)'
                         },
@@ -30,12 +34,12 @@
                     },
                     map: {
                         enabled: true,
-                        button: { tag: 'button', rounded: false, icon: true, size: 'tiny' },
+                        button: { rounded: true },
                         icon: { icon: 'heart' }
                     },
                     favourite: {
                         enabled: true,
-                        button: { tag: 'button', rounded: false, icon: true, size: 'tiny' },
+                        button: { rounded: true },
                         icon: { icon: 'heart' }
                     },
                     meta: {
@@ -58,7 +62,11 @@
                 },
                 hasBackground: {
                     href: '#hasBackground',
-                    bannerInfo: {
+                    banner: {
+                        radius: true,
+                        filter: 'blur'
+                    },
+                    info: {
                         title: {
                             text: 'Visita a Marruecos y alrededores (Puente de Diciembre)'
                         },
@@ -78,7 +86,7 @@
                     },
                     favourite: {
                         enabled: true,
-                        button: { tag: 'button', rounded: true, icon: true, size: 'tiny' },
+                        button: { rounded: true },
                         icon: { icon: 'heart' }
                     },
                     highlight: {

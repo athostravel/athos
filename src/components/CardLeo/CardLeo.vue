@@ -14,12 +14,12 @@
                 <div v-if="map.enabled || favourite.enabled" class="c-card-leo__icons">
                     <div v-if="map.enabled" class="c-card-leo__icon">
                         <AtButton v-bind="[cfg.map.button, map.button]" class="c-card-leo__button">
-                            <AtIcon v-bind="[cfg.map.icon, map.icon]" :icon="map.icon.icon" :rounded="map.button.rounded" />
+                            <AtIcon v-bind="[cfg.map.icon, map.icon]" :icon="map.icon.icon" :rounded="[cfg.map.button.rounded, map.button.rounded]" />
                         </AtButton>
                     </div>
                     <div v-if="favourite.enabled" class="c-card-leo__icon">
                         <AtButton v-bind="[cfg.favourite.button, favourite.button]" class="c-card-leo__button">
-                            <AtIcon v-bind="[cfg.favourite.icon, favourite.icon]" :icon="favourite.icon.icon" :rounded="favourite.button.rounded" />
+                            <AtIcon v-bind="[cfg.favourite.icon, favourite.icon]" :icon="favourite.icon.icon" :rounded="[cfg.favourite.button.rounded, favourite.button.rounded]" />
                         </AtButton>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
 
         <AtCardPegasus
             class="c-card-leo__content"
-            v-bind="[cfg.bannerInfo, bannerInfo]"
+            v-bind="[cfg.info, info]"
         />
     </AtBanner>
 </template>
@@ -100,7 +100,7 @@
                 type: Object,
                 default: () => {}
             },
-            bannerInfo: {
+            info: {
                 type: Object,
                 default: () => {}
             }
@@ -112,18 +112,18 @@
                         enabled: true
                     },
                     banner: {
-                        radius: true,
+                        radius: false,
                         shadow: false,
-                        filter: 'blur'
+                        filter: undefined
                     },
                     map: {
                         enabled: false,
-                        button: { tag: 'button', rounded: false, icon: true, size: 'tiny' },
+                        button: { variant: 'text', rounded: false, icon: true, size: 'diorite' },
                         icon: { icon: 'heart' }
                     },
                     favourite: {
                         enabled: false,
-                        button: { tag: 'button', rounded: false, icon: true, size: 'tiny' },
+                        button: { variant: 'text', rounded: false, icon: true, size: 'diorite' },
                         icon: { icon: 'heart' }
                     },
                     highlight: {
@@ -174,13 +174,10 @@
     --c-card-leo-header-actions-padding: var(--space-s) var(--space-s) 0 var(--space-s);
     --c-card-leo-info-padding: var(--space-s) var(--space-m);
     --c-card-leo-actions-padding: 0;
-    --c-card-leo-button-background-color: var(transparent);
-    --c-card-leo-button-color: var(--color-primary);
-    --c-card-leo-button-icon-size: var(--font-size-4xl);
     --c-card-leo-icon-margin: 0 0 0 var(--space-2xs);
     --c-card-leo-has-filter-padding: var(--space-s);
     --c-card-leo-has-filter-filter: blur(8px);
-    --c-card-leo-has-filter-actions-padding: 0 0 var(--space-s) 0;
+    --c-card-leo-has-filter-actions-padding: var(--space-s);
     --c-card-leo-has-filter-previous-color: #fff;
     --c-card-leo-has-filter-meta-color: #fff;
     --c-card-leo-has-filter-text-color: #fff;
@@ -206,12 +203,6 @@
       flex-wrap: wrap;
       justify-content: flex-end;
       flex-grow: 1;
-    }
-
-    &__button {
-      --c-button-background-color: var(--c-card-leo-button-background-color);
-      --c-button-color: var(--c-card-leo-button-color);
-      --c-button-icon-size: var(--c-card-leo-button-icon-size);
     }
 
     &__icon {
@@ -272,11 +263,6 @@
     }
 
     &--has-filter {
-      #{$this}__button {
-        --c-card-leo-button-background-color: var(--c-card-leo-has-filter-button-background);
-        --c-card-leo-button-color: var(--c-card-leo-has-filter-button-color);
-      }
-
       #{$this}__header {
         --c-card-leo-header-background: var(--c-card-leo-has-filter-header-background);
         --c-card-leo-header-padding: var(--c-card-leo-has-filter-header-padding);
@@ -284,6 +270,14 @@
         &-actions {
           --c-card-leo-header-actions-padding: var(--c-card-leo-has-filter-actions-padding);
         }
+      }
+
+      #{$this}__highlight {
+        margin-left: calc(var(--c-card-leo-has-filter-padding) * -1);
+      }
+
+      #{$this}__content {
+        --c-card-leo-padding: var(--c-card-leo-has-filter-padding);
       }
 
       #{$this}__previous {
@@ -296,10 +290,6 @@
 
       #{$this}__text {
         --c-text-color: var(--c-card-leo-has-filter-text-color);
-      }
-
-      #{$this}__content {
-        --c-card-leo-padding: var(--c-card-leo-has-filter-padding);
       }
     }
   }
