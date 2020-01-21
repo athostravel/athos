@@ -137,7 +137,6 @@ module.exports = {
                                 '/es/documentacion/components/card-pegasus',
                                 '/es/documentacion/components/checkbox',
                                 '/es/documentacion/components/icon',
-                                '/es/documentacion/components/input',
                                 '/es/documentacion/components/picture',
                                 '/es/documentacion/components/price-button',
                                 '/es/documentacion/components/price',
