@@ -41,12 +41,11 @@
 
             <AtButton
                 v-if="icon"
+                v-bind="cfg.button"
                 class="c-input__icon"
-                tag="button"
-                color="primary"
-                :class="{ 'c-input__icon--not-events': true }"
+                :class="{ 'c-input__icon--not-events': !(cfg.button.tag === 'a' || cfg.button.tag === 'button') }"
             >
-                <AtIcon v-bind="{ icon }" />
+                <AtIcon v-bind="icon" />
             </AtButton>
         </div>
     </div>
@@ -61,7 +60,18 @@
         components: {
             AtButton
         },
-        mixins: [formControl]
+        mixins: [formControl],
+        data () {
+            return {
+                cfg: {
+                    button: {
+                        tag: 'span',
+                        variant: 'text',
+                        color: 'primary'
+                    }
+                }
+            }
+        }
     }
 </script>
 
@@ -91,8 +101,8 @@
     --c-input-padding-left: 1em;
     --c-input-font-weight: 400;
     --c-input-background-color: var(--color-shade-0);
-    --c-input-radius: var(--radius-s);
-    --c-input-border-width: 0.0625em;
+    --c-input-radius: 0;
+    --c-input-border-width: #{rem(1px)};
     --c-input-border-style: solid;
     --c-input-border-color: var(--color-shade-400);
     --c-input-border-color-focus: var(--color-primary);
@@ -186,6 +196,7 @@
     &__icon {
       background-color: var(--c-input-icon-background-color);
       min-width: var(--c-input-min-height);
+      margin: var(--c-input-border-width);
       grid-row: 1/3;
       grid-column: 2/3;
       display: flex;

@@ -238,7 +238,7 @@
 
     &--bordered {
       --c-button-border-width: #{rem(1px)};
-      --c-button-inner-padding: #{rem(4px)};
+      --c-button-inner-padding: #{rem(2px)};
       --c-button-background-color: var(--c-button-main-color);
       --c-button-background-color-hover: var(--c-button-main-color);
       --c-button-color: var(--color-shade-0);
