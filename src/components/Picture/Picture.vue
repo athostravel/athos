@@ -10,6 +10,7 @@
         />
         <img
             class="c-picture__img"
+            :class="{ 'c-picture__img--blur': filter === 'blur'}"
             :src="shim"
             :data-src="src"
             :alt="alt"
@@ -46,6 +47,10 @@
             sources: {
                 type: Array,
                 default: () => []
+            },
+            filter: {
+                type: String,
+                default: undefined
             }
         },
         data () {
@@ -61,8 +66,8 @@
     --c-picture-ratio-width: 16;
     --c-picture-ratio-height: 9;
     --c-picture-overlay: transparent;
-    --c-picture-filter: none;
     --c-picture-loading-background: #f6f6f6;
+    --c-picture-blur: 8px;
   }
 </style>
 
@@ -79,7 +84,7 @@
       background: var(--c-picture-loading-background);
     }
 
-    img,
+    &__img,
     &::after {
       position: absolute;
       left: 0;
@@ -89,16 +94,19 @@
       z-index: 1;
     }
 
-    img {
+    &__img {
       opacity: 0;
       transition: 0.3s opacity;
       will-change: opacity;
+
+      &--blur {
+        filter: blur(var(--c-picture-blur));
+      }
     }
 
     &::after {
       background: var(--c-picture-overlay);
       content: "";
-      filter: var(--c-picture-filter); //Nuevo: No funciona
       z-index: 2;
     }
 

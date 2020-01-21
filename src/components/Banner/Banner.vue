@@ -6,11 +6,10 @@
         :class="{
             'c-banner--has-shadow' : shadow,
             'c-banner--has-radius' : radius,
-            'c-banner--has-overlay' : overlay,
-            'c-banner--has-filter' : filter
+            'c-banner--has-overlay' : overlay
         }"
     >
-        <AtPicture class="c-banner__picture" v-bind="{ src, alt, title, sources }" />
+        <AtPicture class="c-banner__picture" v-bind="{ src, alt, title, sources, filter }" />
 
         <div v-if="$slots.default" class="c-banner__box">
             <slot />
@@ -51,15 +50,15 @@
                 type: Array,
                 default: () => []
             },
+            filter: {
+                type: String,
+                default: undefined
+            },
             shadow: {
                 type: Boolean,
                 default: false
             },
             radius: {
-                type: Boolean,
-                default: false
-            },
-            filter: {
                 type: Boolean,
                 default: false
             },
@@ -76,7 +75,6 @@
     --c-banner-box-shadow: var(--shadow-distant);
     --c-banner-border-radius: var(--radius-s);
     --c-banner-overlay: transparent;
-    --c-banner-picture-filter: none;
     --c-banner-picture-ratio-width: 16;
     --c-banner-picture-ratio-height: 9;
     --c-banner-content-padding: #{em(32px)};
@@ -105,12 +103,6 @@
     &--has-overlay {
       #{$this}__picture {
         --c-picture-overlay: var(--c-banner-overlay);
-      }
-    }
-
-    &--has-filter {
-      #{$this}__picture {
-        --c-picture-filter: var(--c-banner-picture-filter); //Nuevo: No funciona
       }
     }
 

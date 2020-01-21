@@ -13,6 +13,21 @@
             return {
                 simply: {
                     href: '#simply',
+                    bannerInfo: {
+                        title: {
+                            text: 'Visita a Marruecos y alrededores (Puente de Diciembre)'
+                        },
+                        description: {
+                            text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci asperiores cupiditate eos esse natus perspiciatis placeat rerum tempore. A alias dignissimos illo quaerat? Aliquam cum minus neque officia saepe tempora.'
+                        },
+                        price: {
+                            before: '499',
+                            value: '300'
+                        }
+                    },
+                    filterImage: {
+                        enabled: false
+                    },
                     map: {
                         enabled: true,
                         button: { tag: 'button', rounded: false, icon: true, size: 'tiny' },
@@ -40,19 +55,24 @@
                             { srcset: 'https://source.unsplash.com/random/320x200', media: '320px' }
                         ]
                     },
-                    title: {
-                        text: 'Visita a Marruecos y alrededores (Puente de Diciembre)'
-                    },
-                    description: {
-                        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci asperiores cupiditate eos esse natus perspiciatis placeat rerum tempore. A alias dignissimos illo quaerat? Aliquam cum minus neque officia saepe tempora.'
-                    },
-                    price: {
-                        before: '499',
-                        value: '300'
-                    }
                 },
                 hasBackground: {
                     href: '#hasBackground',
+                    bannerInfo: {
+                        title: {
+                            text: 'Visita a Marruecos y alrededores (Puente de Diciembre)'
+                        },
+                        description: {
+                            text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci asperiores cupiditate eos esse natus perspiciatis placeat rerum tempore. A alias dignissimos illo quaerat? Aliquam cum minus neque officia saepe tempora.'
+                        },
+                        price: {
+                            before: '499',
+                            value: '300'
+                        }
+                    },
+                    filterImage: {
+                        enabled: true
+                    },
                     map: {
                         enabled: false
                     },
@@ -86,16 +106,6 @@
                             { srcset: 'https://source.unsplash.com/random/600x400', media: '480px' },
                             { srcset: 'https://source.unsplash.com/random/320x200', media: '320px' }
                         ]
-                    },
-                    title: {
-                        text: 'Visita a Marruecos y alrededores (Puente de Diciembre)'
-                    },
-                    description: {
-                        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci asperiores cupiditate eos esse natus perspiciatis placeat rerum tempore. A alias dignissimos illo quaerat? Aliquam cum minus neque officia saepe tempora.'
-                    },
-                    price: {
-                        before: '499',
-                        value: '300'
                     }
                 }
             }
