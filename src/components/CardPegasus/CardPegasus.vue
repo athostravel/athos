@@ -1,34 +1,58 @@
 <template>
-    <AtBanner
-        :is="tag"
-        class="c-card-pegasus"
-        v-bind="[cfg.banner, image]"
-    >
-        <AtBannerContent class="c-card-pegasus__content">
-            <AtPicture class="c-card-pegasus__picture" />
-            <div v-if="title || description || price" class="c-card-pegasus__footer">
-                <div v-if="title || description" class="c-card-pegasus__info">
-                    <AtText v-if="title" v-bind="[cfg.title, title]" class="c-card-pegasus__title" />
+    <div class="c-card-pegasus">
+        <div
+            class="c-card-pegasus__header"
+            :class="{
+                'c-card-pegasus__header--no-bg' : headerTransparent
+            }"
+        >
+            <div v-if="cfg.highlight.enabled" class="c-card-pegasus__header-actions">
+                <AtText v-if="cfg.highlight.enabled" v-bind="[cfg.highlight, highlight]" class="c-card-pegasus__highlight" />
 
-                    <AtText v-if="description" v-bind="description" class="c-card-pegasus__description" />
-                </div>
+                <div v-if="cfg.map.enabled || cfg.map.enabled" class="c-card-pegasus__icons">
+                    <div v-if="cfg.map.enabled" class="c-card-pegasus__icon">
+                        <AtButton v-bind="cfg.map.button" class="c-card-pegasus__button">
+                            <AtIcon v-bind="cfg.map.icon" :icon="cfg.map.icon.icon" :rounded="cfg.map.button.rounded" />
+                        </AtButton>
+                    </div>
 
-                <div v-if="price" class="c-card-pegasus__footer-actions">
-                    <AtPriceButton
-                        v-if="price && price.value"
-                        class="c-card-pegasus__price"
-                        v-bind="[price, { href, config: cfg.priceButton }]"
-                    />
+                    <div v-if="cfg.favourite.enabled" class="c-card-pegasus__icon">
+                        <AtButton v-bind="cfg.favourite.button" class="c-card-pegasus__button">
+                            <AtIcon v-bind="cfg.favourite.icon" :icon="cfg.favourite.icon.icon" :rounded="cfg.favourite.button.rounded" />
+                        </AtButton>
+                    </div>
                 </div>
             </div>
-        </AtBannerContent>
-    </AtBanner>
+
+            <div v-if="previous || meta || text" class="c-card-pegasus__header-info">
+                <AtText v-if="previous" v-bind="[cfg.previous, previous]" class="c-card-pegasus__previous" />
+
+                <AtText v-if="meta" v-bind="[cfg.meta, meta]" class="c-card-pegasus__meta" />
+
+                <AtText v-if="text" v-bind="[cfg.text, text]" class="c-card-pegasus__text" />
+            </div>
+        </div>
+
+        <AtBanner v-bind="[cfg.banner, image]" />
+
+        <div class="c-card-pegasus__inner">
+            <div v-if="title || description" class="c-card-pegasus__box">
+                <AtText v-if="title" v-bind="[cfg.title, title]" class="c-card-pegasus__title" />
+                <AtText v-if="description" v-bind="description" class="c-card-pegasus__description" />
+            </div>
+
+            <div v-if="price" class="c-card-pegasus__actions">
+                <AtPriceButton
+                    v-if="price && price.value"
+                    v-bind="[price, { href, config: cfg.priceButton }]"
+                />
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
     import AtBanner from '@components/Banner/Banner'
-    import AtBannerContent from '@components/Banner/BannerContent'
-    import AtPicture from '@components/Picture/Picture.vue'
     import AtPriceButton from '@components/PriceButton/PriceButton'
     import AtText from '@components/Text/Text'
 
@@ -36,8 +60,6 @@
         name: 'AtCardPegasus',
         components: {
             AtBanner,
-            AtBannerContent,
-            AtPicture,
             AtPriceButton,
             AtText
         },
@@ -45,6 +67,22 @@
             tag: {
                 type: String,
                 default: 'div'
+            },
+            headerTransparent: {
+                type: Boolean,
+                default: false
+            },
+            highlight: {
+                type: Object,
+                default: () => {}
+            },
+            map: {
+                type: Object,
+                default: () => {}
+            },
+            favourite: {
+                type: Object,
+                default: () => {}
             },
             image: {
                 type: Object,
@@ -57,6 +95,18 @@
             href: {
                 type: String,
                 default: '#'
+            },
+            previous: {
+                type: Object,
+                default: () => {}
+            },
+            meta: {
+                type: Object,
+                default: () => {}
+            },
+            text: {
+                type: Object,
+                default: () => {}
             },
             title: {
                 type: Object,
@@ -74,6 +124,29 @@
                         radius: false,
                         shadow: false
                     },
+                    highlight: {
+                        enabled: true,
+                        tag: 'div'
+                    },
+                    map: {
+                        enabled: true,
+                        button: { variant: 'text', rounded: true, icon: true, size: 'diorite' },
+                        icon: { icon: 'heart' }
+                    },
+                    favourite: {
+                        enabled: true,
+                        button: { variant: 'text', rounded: true, icon: true, size: 'diorite' },
+                        icon: { icon: 'heart' }
+                    },
+                    previous: {
+                        tag: 'div'
+                    },
+                    meta: {
+                        tag: 'h3'
+                    },
+                    text: {
+                        tag: 'h3'
+                    },
                     title: {
                         tag: 'h4'
                     }
@@ -85,66 +158,72 @@
 
 <style lang="scss">
   .c-card-pegasus {
-    --c-card-pegasus-padding: 0;
-    --c-card-pegasus-background: transparent;
-    --c-card-pegasus-picture-ratio-width: 16;
-    --c-card-pegasus-picture-ratio-height: 9;
-    --c-card-pegasus-title-color: var(--color-primary);
-    --c-card-pegasus-title-font-size: var(--font-size-2xl);
-    --c-card-pegasus-title-font-weight: var(--font-weight-bold);
-    --c-card-pegasus-title-line-height: var(--line-height-m);
-    --c-card-pegasus-title-margin: 0 0 var(--space-s) 0;
-    --c-card-pegasus-description-color: var(--color-shade-800);
     --c-card-pegasus-header-padding: var(--space-s) var(--space-m);
     --c-card-pegasus-header-background: #fff;
-    --c-card-pegasus-header-actions-padding: var(--space-s) var(--space-s) 0 var(--space-s);
-    --c-card-pegasus-footer-background: #fff;
-    --c-card-pegasus-info-padding: var(--space-s) var(--space-m);
-    --c-card-pegasus-actions-padding: 0;
+    --c-card-pegasus-header-actions-padding: var(--space-s) var(--space-m) 0 var(--space-m);
+    --c-card-pegasus-icon-margin: 0 0 0 var(--space-2xs);
+    --c-card-pegasus-box-padding: var(--space-s);
+    --c-card-pegasus-title-margin: 0 0 var(--space-s) 0;
+    --c-card-pegasus-inner-background: #fff;
   }
 </style>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
   .c-card-pegasus {
     $this: &;
 
-    background-color: var(--c-card-pegasus-background);
+    &__box {
+      padding: var(--c-card-pegasus-box-padding);
+    }
 
-    &__content {
-      padding: var(--c-card-pegasus-padding);
+    &__header {
+      background: var(--c-card-pegasus-header-background);
+
+      &--no-bg {
+        background: transparent;
+      }
+
+      &-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--c-card-pegasus-header-actions-padding);
+      }
+
+      &-info {
+        padding: var(--c-card-pegasus-header-padding);
+      }
+    }
+
+    &__icons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      flex-grow: 1;
+    }
+
+    &__icon {
+      & + & {
+        margin: var(--c-card-pegasus-icon-margin);
+      }
+    }
+
+    &__inner {
+      background: var(--c-card-pegasus-inner-background);
     }
 
     &__info {
       display: flex;
       flex-direction: column;
-      padding: var(--c-card-pegasus-info-padding);
     }
 
     &__title {
-      --c-text-font-size: var(--c-card-pegasus-title-font-size);
-      --c-text-color: var(--c-card-pegasus-title-color);
-      --c-text-font-weight: var(--c-card-pegasus-title-font-weight);
-      --c-text-line-height: var(--c-card-pegasus-title-line-height);
-
       margin: var(--c-card-pegasus-title-margin);
     }
 
-    &__description {
-      --c-text-color: var(--c-card-pegasus-description-color);
-    }
-
-    &__footer {
-      background: var(--c-card-pegasus-footer-background);
-    }
-
-    &__footer-actions {
+    &__actions {
       display: flex;
       justify-content: flex-end;
-      padding: var(--c-card-pegasus-actions-padding);
-    }
-
-    &__price {
-      align-self: flex-end;
     }
   }
 </style>

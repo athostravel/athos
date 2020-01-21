@@ -10,15 +10,23 @@
             return {
                 atCardPegasus: {
                     tag: 'div',
+                    highlight: {
+                        text: 'Destacado'
+                    },
                     href: '#',
-                    picture: {
+                    image: {
                         title: 'Título',
                         alt: 'Alt',
-                        src: 'https://source.unsplash.com/random/1920x1080',
-                        sources: [
-                            { srcset: 'https://source.unsplash.com/random/600x400', media: '480px' },
-                            { srcset: 'https://source.unsplash.com/random/320x200', media: '320px' }
-                        ]
+                        src: 'https://source.unsplash.com/random/1920x1080'
+                    },
+                    previous: {
+                        text: '9 días y 8 noches'
+                    },
+                    meta: {
+                        text: 'Marruecos'
+                    },
+                    text: {
+                        text: 'Visitando: Marrakech, Tifeltoute, Zagora, dunas de Erg Lihoudi...'
                     },
                     title: {
                         text: 'Visita a Marruecos y alrededores (Puente de Diciembre)'

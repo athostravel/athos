@@ -13,11 +13,31 @@
             return {
                 simply: {
                     href: '#simply',
-                    banner: {
-                        radius: true,
-                        shadow: true,
+                    image: {
+                        title: 'Título',
+                        alt: 'Alt',
+                        src: 'https://source.unsplash.com/random/1920x1080'
                     },
                     info: {
+                        tag: 'div',
+                        highlight: {
+                            text: 'Destacado'
+                        },
+                        href: '#',
+                        image: {
+                            title: 'Título',
+                            alt: 'Alt',
+                            src: 'https://source.unsplash.com/random/1920x1080'
+                        },
+                        previous: {
+                            text: '9 días y 8 noches'
+                        },
+                        meta: {
+                            text: 'Marruecos'
+                        },
+                        text: {
+                            text: 'Visitando: Marrakech, Tifeltoute, Zagora, dunas de Erg Lihoudi...'
+                        },
                         title: {
                             text: 'Visita a Marruecos y alrededores (Puente de Diciembre)'
                         },
@@ -28,45 +48,36 @@
                             before: '499',
                             value: '300'
                         }
-                    },
-                    filterImage: {
-                        enabled: false
-                    },
-                    map: {
-                        enabled: true,
-                        button: { rounded: true },
-                        icon: { icon: 'heart' }
-                    },
-                    favourite: {
-                        enabled: true,
-                        button: { rounded: true },
-                        icon: { icon: 'heart' }
-                    },
-                    meta: {
-                        text: 'Marruecos',
-                        tag: 'span'
-                    },
-                    text: {
-                        text: 'Visitando: Marrakech, Tifeltoute, Zagora, dunas de Erg Lihoudi...',
-                        tag: 'span'
-                    },
-                    picture: {
-                        title: 'Título',
-                        alt: 'Alt',
-                        src: 'https://source.unsplash.com/random/1920x1080',
-                        sources: [
-                            { srcset: 'https://source.unsplash.com/random/600x400', media: '480px' },
-                            { srcset: 'https://source.unsplash.com/random/320x200', media: '320px' }
-                        ]
-                    },
+                    }
                 },
                 hasBackground: {
                     href: '#hasBackground',
-                    banner: {
-                        radius: true,
-                        filter: 'blur'
+                    image: {
+                        title: 'Título',
+                        alt: 'Alt',
+                        src: 'https://source.unsplash.com/random/1920x1080'
                     },
                     info: {
+                        headerTransparent: true,
+                        tag: 'div',
+                        highlight: {
+                            text: 'Destacado'
+                        },
+                        href: '#',
+                        image: {
+                            title: 'Título',
+                            alt: 'Alt',
+                            src: 'https://source.unsplash.com/random/1920x1080'
+                        },
+                        previous: {
+                            text: '9 días y 8 noches'
+                        },
+                        meta: {
+                            text: 'Marruecos'
+                        },
+                        text: {
+                            text: 'Visitando: Marrakech, Tifeltoute, Zagora, dunas de Erg Lihoudi...'
+                        },
                         title: {
                             text: 'Visita a Marruecos y alrededores (Puente de Diciembre)'
                         },
@@ -78,42 +89,14 @@
                             value: '300'
                         }
                     },
-                    filterImage: {
-                        enabled: true
-                    },
-                    map: {
-                        enabled: false
-                    },
-                    favourite: {
-                        enabled: true,
-                        button: { rounded: true },
-                        icon: { icon: 'heart' }
-                    },
-                    highlight: {
-                        text: 'Destacado',
-                        background: true,
-                        tag: 'span'
-                    },
-                    previous: {
-                        text: '9 días y 8 noches',
-                        tag: 'span'
-                    },
-                    meta: {
-                        text: 'Marruecos',
-                        tag: 'span'
-                    },
-                    text: {
-                        text: 'Visitando: Marrakech, Tifeltoute, Zagora, dunas de Erg Lihoudi...',
-                        tag: 'span'
-                    },
-                    picture: {
-                        title: 'Título',
-                        alt: 'Alt',
-                        src: 'https://source.unsplash.com/random/1920x1080',
-                        sources: [
-                            { srcset: 'https://source.unsplash.com/random/600x400', media: '480px' },
-                            { srcset: 'https://source.unsplash.com/random/320x200', media: '320px' }
-                        ]
+                    config: {
+                        banner: {
+                            filter: 'blur',
+                            shadow: false
+                        },
+                        filterImage: {
+                            enabled: true
+                        }
                     }
                 }
             }
