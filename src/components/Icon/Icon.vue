@@ -2,7 +2,15 @@
     <component
         :is="tag"
         class="c-icon"
-        :class="icon && `c-icon--${icon}`"
+        :class="[
+            icon && `c-icon--${icon}`,
+            {
+                'c-icon--diorite' : size === 'diorite',
+                'c-icon--basalt' : size === 'basalt',
+                'c-icon--obsidian' : size === 'obsidian',
+                'c-icon--tuff' : size === 'tuff'
+            }
+        ]"
     >
         <slot />
     </component>
@@ -19,6 +27,10 @@
             tag: {
                 type: String,
                 default: 'span'
+            },
+            size: {
+                type: String,
+                default: undefined
             }
         }
     }
@@ -26,7 +38,7 @@
 
 <style lang="scss">
   .c-icon {
-    --c-icon-size: 1em;
+    --c-icon-size: #{em(16px)};
     --c-icon-font-family: var(--font-family-icons);
     --c-icon-color: currentColor;
   }
@@ -38,21 +50,22 @@
     font-family: var(--c-icon-font-family) !important; /* Important is necessary */
     color: var(--c-icon-color);
     font-size: var(--c-icon-size);
+    transform: rotate(0.001deg); /* Fix blur pixel position */
 
-    &--tiny {
-      --c-icon-size: 0.6668em;
+    &--diorite {
+      --c-icon-size: #{em(8px)};
     }
 
-    &--small {
-      --c-icon-size: 0.8336em;
+    &--basalt {
+      --c-icon-size: #{em(12px)};
     }
 
-    &--medium {
-      --c-icon-size: 1.1668em;
+    &--obsidian {
+      --c-icon-size: #{em(24px)};
     }
 
-    &--large {
-      --c-icon-size: 1.3334em;
+    &--tuff {
+      --c-icon-size: #{em(32px)};
     }
   }
 </style>

@@ -1,12 +1,12 @@
 <template>
-    <AtPicture v-bind="picture" />
+    <AtPicture v-bind="atPicture" />
 </template>
 
 <script>
     export default {
         data () {
             return {
-                picture: {
+                atPicture: {
                     title: 'Titulo',
                     alt: 'Alt',
                     src: 'https://source.unsplash.com/random/1920x1080',

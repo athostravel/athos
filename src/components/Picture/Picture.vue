@@ -1,6 +1,6 @@
 <template>
     <picture v-lazy class="c-picture">
-        <PictureSource
+        <AtPictureSource
             v-for="source in sources"
             :key="source.id"
             :shim="shim"
@@ -20,12 +20,12 @@
 
 <script>
     import LazyLoadDirective from '@directives/LazyLoadDirective'
-    import PictureSource from '@components/Picture/PictureSource.vue'
+    import AtPictureSource from '@components/Picture/PictureSource.vue'
 
     export default {
         name: 'AtPicture',
         components: {
-            PictureSource
+            AtPictureSource
         },
         directives: {
             lazy: LazyLoadDirective

@@ -1,4 +1,5 @@
 import { use } from '@utils/plugins'
+import globalMixin from '@mixins/global'
 import * as components from '@components'
 import * as layouts from '@layouts'
 import * as pages from '@pages'
@@ -20,6 +21,8 @@ import * as pages from '@pages'
 
 const Athos = {
     install (Vue, options) {
+        Vue.mixin(globalMixin)
+
         for (const componentName in components) {
             const component = components[componentName]
             Vue.use(component)

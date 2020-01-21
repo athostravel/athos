@@ -1,101 +1,3 @@
----
-{
-  "API": [
-    {
-      "title": "Propiedades",
-      "items": [
-        {
-          "Nombre": "tag",
-          "Tipo": "String",
-          "Parámetros": "",
-          "Descripción": "Etiqueta HTML del componente",
-          "Por defecto": "a"
-        },
-        {
-          "Nombre" : "text",
-          "Tipo" : "String",
-          "Parámetros": "",
-          "Descripción": "Texto a mostrar",
-          "Por defecto": "undefined"
-        },
-        {
-          "Nombre" : "href",
-          "Tipo" : "String",
-          "Parámetros": "",
-          "Descripción": "Enlace del botón",
-          "Por defecto": "#"
-        },
-        {
-          "Nombre" : "icon",
-          "Tipo" : "String, Boolean",
-          "Parámetros": "",
-          "Descripción": "Clase del icono a mostrar",
-          "Por defecto": "undefined"
-        },
-        {
-          "Nombre" : "iconAlign",
-          "Tipo" : "String",
-          "Parámetros": "left, right",
-          "Descripción": "Posición del icono",
-          "Por defecto": "left"
-        },
-        {
-          "Nombre" : "outlined",
-          "Tipo" : "Boolean",
-          "Parámetros": "",
-          "Descripción": "Muestra una apariencia alternativa del botón",
-          "Por defecto": "false"
-        },
-        {
-          "Nombre" : "casper",
-          "Tipo" : "Boolean",
-          "Parámetros": "",
-          "Descripción": "Muestra una apariencia alternativa del botón",
-          "Por defecto": "false"
-        },
-        {
-          "Nombre" : "rounded",
-          "Tipo" : "Boolean",
-          "Parámetros": "",
-          "Descripción": "Redondea el botón",
-          "Por defecto": "false"
-        },
-        {
-          "Nombre" : "flat",
-          "Tipo" : "Boolean",
-          "Parámetros": "",
-          "Descripción": "Quita el aspecto de botón",
-          "Por defecto": "false"
-        },
-        {
-          "Nombre" : "size",
-          "Tipo" : "String",
-          "Parámetros": "tiny, small, medium, large",
-          "Descripción": "Tamaño del botón",
-          "Por defecto": "undefined"
-        },
-        {
-          "Nombre" : "disabled",
-          "Tipo" : "Boolean",
-          "Parámetros": "",
-          "Descripción": "Deshabilita el botón",
-          "Por defecto": "false"
-        }                                                             
-      ] 
-    },
-    {
-      "title": "Slots",
-      "items": [
-        {
-          "Nombre" : "default",
-          "Descripción": "Slot del contenido. Al usar el slot no estarán disponibles los parámetros de icon y text."
-        }
-      ]
-    }
-  ]
-}
----
-
 # Button
 
 <Preview>
@@ -106,7 +8,23 @@
   <<< @/examples/components/Button/Button.vue
 </Preview>
 
-## API
+## Propiedades
 
-<Api />
+| Nombre     | Tipo      | Parámetros                                        | Descripción                      | Por defecto |
+|------------|-----------|---------------------------------------------------|----------------------------------|-------------|
+| `tag`      | `String`  |                                                   | Etiqueta HTML del componente     | `a`         |
+| `href`     | `String`  |                                                   | Enlace del botón                 | `#`         |
+| `rounded`  | `Boolean` |                                                   | Redondea el botón                | `false`     |
+| `radiused` | `Boolean` |                                                   | Añade un pequeño radio al botón  | `false`     |
+| `disabled` | `Boolean` |                                                   | Deshabilita el botón             | `false`     |
+| `icon`     | `Boolean` |                                                   | Para botones con icono sin texto | `false`     |
+| `variant`  | `String`  | `text`, `outlined`, `bordered`                    | Cambia el aspecto del botón      | `undefined` |
+| `color`    | `String`  | `primary`, `secondary`                            | Cambia el color del botón        | `undefined` |
+| `size`     | `String`  | `dunite`, `diorite`, `basalt`, `obsidian`, `tuff` | Tamaño del botón                 | `undefined` |
+
+## Slots
+
+| Nombre    | Descripción        |
+|-----------|--------------------|
+| `default` | Slot del contenido |
 

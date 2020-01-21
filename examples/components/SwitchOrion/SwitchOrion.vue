@@ -1,13 +1,13 @@
 <template>
-    <AtSwitchOrion v-bind="example" />
+    <AtSwitchOrion v-bind="atSwitchOrion" />
 </template>
 
 <script>
     export default {
         data () {
             return {
-                example: {
-                    atSwitch: {
+                atSwitchOrion: {
+                    input: {
                         id: 'example'
                     }
                 }

@@ -70,12 +70,6 @@
 
 <script>
     export default {
-        props: {
-            options: {
-                type: Object,
-                default: () => {}
-            }
-        },
         data () {
             return {
                 codeIsVisible: false,

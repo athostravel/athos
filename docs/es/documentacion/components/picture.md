@@ -1,64 +1,3 @@
----
-{
-  "API": [
-    {
-      "title": "Propiedades",
-      "items": [
-        {
-          "Nombre": "src",
-          "Tipo": "String",
-          "Descripción": "Url de la imagen",
-          "Por defecto": "https://source.unsplash.com/random/1920x1080"
-        },
-        {
-          "Nombre" : "alt",
-          "Tipo" : "String",
-          "Descripción": "Texto alternativo de la imagen",
-          "Por defecto": "empty"
-        },
-        {
-          "Nombre" : "title",
-          "Tipo" : "String",
-          "Descripción": "Título de la imagen",
-          "Por defecto": "undefined"
-        },
-        {
-          "Nombre" : "sources",
-          "Tipo" : "Array",
-          "Descripción": "Listado de sources",
-          "Por defecto": "undefined"
-        }                
-      ] 
-    }
-  ],
-  "APIPictureSource": [
-    {
-      "title": "Propiedades",
-      "items": [
-        {
-          "Nombre": "srcset",
-          "Tipo": "String",
-          "Descripción": "Url de la imagen",
-          "Por defecto": "empty"
-        },
-        {
-          "Nombre": "srcset",
-          "Tipo": "media",
-          "Descripción": "Tamaño en pixeles del la mediaquery",
-          "Por defecto": "undefined"
-        },
-        {
-          "Nombre": "shim",
-          "Tipo": "String",
-          "Descripción": "Imagen en base64",
-          "Por defecto": "undefined"
-        }
-      ]
-    }
-  ]
-}
----
-
 # Picture
 
 <Preview>
@@ -69,17 +8,26 @@
   <<< @/examples/components/Picture/Picture.vue
 </Preview>
 
-## API 
+## Propiedades
 
-<Api />
+| Nombre    | Tipo     | Descripción                    | Por defecto                                    |
+|-----------|----------|--------------------------------|------------------------------------------------|
+| `src`     | `String` | Url de la imagen               | `https://source.unsplash.com/random/1920x1080` |
+| `alt`     | `String` | Texto alternativo de la imagen | `''`                                        |
+| `title`   | `String` | Título de la imagen            | `undefined`                                    |
+| `sources` | `Array`  | Listado de sources             | `undefined`                                    |
 
 ## Picture Source
 
 El componente `PictureSource` se usa junto con el componente `Picture` para pintar los sources del picture.
 
-### API
+### Propiedades
 
-<Api :data="$page.frontmatter.APIPictureSource" />
+| Nombre   | Tipo     | Descripción                         | Por defecto |
+|----------|----------|-------------------------------------|-------------|
+| `srcset` | `String` | Url de la imagen                    | `''`     |
+| `media`  | `String` | Tamaño en pixeles del la mediaquery | `undefined` |
+| `shim`   | `String` | Imagen de 1x1px en base64           | `undefined` |
 
 
 
