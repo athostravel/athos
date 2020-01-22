@@ -5,7 +5,8 @@
             color && `u-color-${color}`,
             {
                 'c-price--inline' : inline,
-                'c-price--align-left' : align === 'left'
+                'c-price--align-left' : align === 'left',
+                'c-price--align-center' : align === 'center'
             }
         ]"
     >
@@ -88,12 +89,12 @@
 
     &__text {
       font-size: var(--c-price-text-font-size);
-      margin-right: 0.5rem;
     }
 
     &__before {
       text-decoration: line-through;
       font-size: var(--c-price-before-font-size);
+      margin-left: 0.5em;
       margin-right: var(--c-price-before-margin-right);
     }
 
@@ -116,6 +117,13 @@
       --c-price-box-justify-content: flex-start;
 
       justify-content: flex-start;
+    }
+
+    &--align-center {
+      --c-price-text-align: center;
+      --c-price-box-justify-content: center;
+
+      justify-content: center;
     }
   }
 </style>
