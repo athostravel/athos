@@ -7,7 +7,14 @@
             }"
         >
             <div v-if="cfg.highlight.enabled" class="c-card-pegasus__header-actions">
-                <AtText v-if="cfg.highlight.enabled" v-bind="[cfg.highlight, highlight]" class="c-card-pegasus__highlight" />
+                <AtText
+                    v-if="cfg.highlight.enabled"
+                    v-bind="[cfg.highlight, highlight]"
+                    class="c-card-pegasus__highlight"
+                    :class="cfg.highlight.background && `u-bg-color-${cfg.highlight.background}`"
+                >
+                    {{highlight.text}}
+                </AtText>
 
                 <div v-if="cfg.map.enabled || cfg.map.enabled" class="c-card-pegasus__icons">
                     <div v-if="cfg.map.enabled" class="c-card-pegasus__icon">
@@ -25,11 +32,17 @@
             </div>
 
             <div v-if="previous || meta || text" class="c-card-pegasus__header-info">
-                <AtText v-if="previous" v-bind="[cfg.previous, previous]" class="c-card-pegasus__previous" />
+                <AtText v-if="previous" v-bind="[cfg.previous, previous]" class="c-card-pegasus__previous">
+                    {{previous.text}}
+                </AtText>
 
-                <AtText v-if="meta" v-bind="[cfg.meta, meta]" class="c-card-pegasus__meta" />
+                <AtText v-if="meta" v-bind="[cfg.meta, meta]" class="c-card-pegasus__meta">
+                    {{meta.text}}
+                </AtText>
 
-                <AtText v-if="text" v-bind="[cfg.text, text]" class="c-card-pegasus__text" />
+                <AtText v-if="text" v-bind="[cfg.text, text]" class="c-card-pegasus__text">
+                    {{text.text}}
+                </AtText>
             </div>
         </div>
 
@@ -37,8 +50,12 @@
 
         <div class="c-card-pegasus__inner">
             <div v-if="title || description" class="c-card-pegasus__box">
-                <AtText v-if="title" v-bind="[cfg.title, title]" class="c-card-pegasus__title" />
-                <AtText v-if="description" v-bind="description" class="c-card-pegasus__description" />
+                <AtText v-if="title" v-bind="[cfg.title, title]" class="c-card-pegasus__title">
+                    {{title.text}}
+                </AtText>
+                <AtText v-if="description" v-bind="description" class="c-card-pegasus__description">
+                    {{description.text}}
+                </AtText>
             </div>
 
             <div v-if="price" class="c-card-pegasus__actions">
@@ -126,29 +143,44 @@
                     },
                     highlight: {
                         enabled: true,
+                        background: 'secondary',
+                        color: 'white',
                         tag: 'div'
                     },
                     map: {
                         enabled: true,
-                        button: { variant: 'text', rounded: true, icon: true, size: 'diorite' },
+                        button: { color: 'white', rounded: true, icon: true, size: 'basalt' },
                         icon: { icon: 'heart' }
                     },
                     favourite: {
                         enabled: true,
-                        button: { variant: 'text', rounded: true, icon: true, size: 'diorite' },
+                        button: { color: 'white', rounded: true, icon: true, size: 'basalt' },
                         icon: { icon: 'heart' }
                     },
                     previous: {
+                        //color: 'white',
+                        size: 'dacite',
                         tag: 'div'
                     },
                     meta: {
-                        tag: 'h3'
+                        color: 'secondary',
+                        tag: 'h3',
+                        size: 'basalt',
+                        weight: 'bold'
                     },
                     text: {
+                        //color: 'white',
+                        size: 'dacite',
                         tag: 'h3'
                     },
                     title: {
+                        color: 'primary',
+                        size: 'obsidian',
+                        weight: 'bold',
                         tag: 'h4'
+                    },
+                    description: {
+                        size: 'dunite'
                     }
                 }
             }
@@ -163,7 +195,7 @@
     --c-card-pegasus-header-actions-padding: var(--space-s) var(--space-m) 0 var(--space-m);
     --c-card-pegasus-icon-margin: 0 0 0 var(--space-2xs);
     --c-card-pegasus-box-padding: var(--space-s);
-    --c-card-pegasus-title-margin: 0 0 var(--space-s) 0;
+    --c-card-pegasus-title-margin: 0 0 var(--space-xs) 0;
     --c-card-pegasus-inner-background: #fff;
   }
 </style>
