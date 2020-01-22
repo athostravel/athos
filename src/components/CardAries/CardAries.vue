@@ -8,10 +8,9 @@
             v-bind="[cfg.image, image]"
         />
 
-        <AtText
-            v-bind="[cfg.title, title]"
-            class="c-card-aries__title"
-        />
+        <AtText v-bind="[cfg.title, title]" class="c-card-aries__title">
+            {{title.text}}
+        </AtText>
 
         <div class="c-card-aries__category">
             <template v-for="index in category.count">
@@ -70,13 +69,15 @@
             return {
                 cfg: {
                     category: {
-                        icon: 'heart'
+                        icon: 'heart',
+                        color: 'secondary'
                     },
                     price: {
                         inline: true
                     },
                     title: {
-                        tag: 'h3'
+                        tag: 'h3',
+                        size: 'diorite'
                     }
                 }
             }
@@ -92,9 +93,9 @@
     --c-card-aries-ratio-height: 1;
     --c-card-aries-ratio-width: 1;
     --c-card-aries-category-font-size: var(--font-size-2xs);
-    --c-card-aries-text-font-size: var(--font-size-l);
-    --c-card-aries-text-color: var(--color-primary);
-    --c-card-aries-icon-color: var(--color-secondary);
+    //--c-card-aries-text-font-size: var(--font-size-l);
+    //--c-card-aries-text-color: var(--color-primary);
+    //--c-card-aries-icon-color: var(--color-secondary);
   }
 </style>
 
@@ -131,8 +132,8 @@
       align-self: start;
       grid-area: title;
       position: relative;
-      color: var(--c-card-aries-text-color);
-      font-size: var(--c-card-aries-text-font-size);
+      //color: var(--c-card-aries-text-color);
+      //font-size: var(--c-card-aries-text-font-size);
     }
 
     &__category {
@@ -143,7 +144,7 @@
     }
 
     &__icon {
-      color: var(--c-card-aries-icon-color);
+      //color: var(--c-card-aries-icon-color);
       margin-right: var(--space-3xs);
 
       &:last-child {
