@@ -53,7 +53,8 @@
                     title: {
                         tag: 'h4',
                         size: 'scoria',
-                        weight: 'bold'
+                        weight: 'bold',
+                        color: 'white'
                     },
                     button: {
                         icon: true,
