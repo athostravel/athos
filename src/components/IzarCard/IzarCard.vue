@@ -1,7 +1,7 @@
 <template>
     <div class="c-izar-card">
         <div class="c-izar-card__inner">
-            <ul class="c-izar-card__list" v-if="rrss">
+            <ul v-if="rrss" class="c-izar-card__list">
                 <li v-for="rs in rrss" :key="rs.id" class="c-izar-card__item">
                     <AtButton class="c-izar-card__button" :text="rs.name" :href="rs.url" v-bind="[cfg.button, rs]">
                         <AtIcon class="c-izar-card__icon" :icon="rs.iconCustom" />
@@ -49,7 +49,7 @@
                     button: {
                         icon: true,
                         rounded: true,
-                        color: "secondary"
+                        color: 'secondary'
                     }
                 }
             }
@@ -58,38 +58,38 @@
 </script>
 
 <style lang="scss">
-    .c-izar-card {
-        --c-izar-card-margin-list: 0 var(--space-l) 0 0;
-        --c-izar-card-padding-list: 0;
-        --c-izar-card-margin-item: 0 0 var(--space-m) 0;
-        --c-izar-card-margin-title: 0 0 var(--space-m) 0;
-        --c-izar-card-margin-text: 0 0 var(--space-s) 0;
-    }
+  .c-izar-card {
+    --c-izar-card-margin-list: 0 var(--space-l) 0 0;
+    --c-izar-card-padding-list: 0;
+    --c-izar-card-margin-item: 0 0 var(--space-m) 0;
+    --c-izar-card-margin-title: 0 0 var(--space-m) 0;
+    --c-izar-card-margin-text: 0 0 var(--space-s) 0;
+  }
 </style>
 
 <style lang="scss" scoped>
-    .c-izar-card {
-        &__inner {
-            display: flex;
-        }
-
-        &__list {
-            margin: var(--c-izar-card-margin-list);
-            padding: var(--c-izar-card-padding-list);
-        }
-
-        &__item {
-            margin: var(--c-izar-card-margin-item);
-        }
-
-        &__title {
-            margin: var(--c-izar-card-margin-title);
-        }
-
-        &__text {
-            > * {
-                margin: var(--c-izar-card-margin-text);
-            }
-        }
+  .c-izar-card {
+    &__inner {
+      display: flex;
     }
+
+    &__list {
+      margin: var(--c-izar-card-margin-list);
+      padding: var(--c-izar-card-padding-list);
+    }
+
+    &__item {
+      margin: var(--c-izar-card-margin-item);
+    }
+
+    &__title {
+      margin: var(--c-izar-card-margin-title);
+    }
+
+    &__text {
+      > * {
+        margin: var(--c-izar-card-margin-text);
+      }
+    }
+  }
 </style>
