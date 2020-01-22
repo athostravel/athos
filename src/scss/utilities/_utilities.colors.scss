@@ -1,4 +1,5 @@
 $u-colors: (
+  'transparent': transparent,
   'white': var(--color-shade-0),
   'neutral': var(--color-neutral),
   'primary': var(--color-primary),
@@ -8,5 +9,9 @@ $u-colors: (
 @each $name, $var in $u-colors {
   .u-color-#{$name} {
     color: $var !important;
+  }
+
+  .u-bg-color-#{$name} {
+    background-color: $var !important;
   }
 }

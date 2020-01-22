@@ -8,8 +8,22 @@
   </template>
 </Preview>
 
-| Nombre      | Clase                | Propiedad CSS |
-|-------------|----------------------|---------------|
-| `neutral`   | `.u-color-neutral`   | `color`       |
-| `primary`   | `.u-color-primary`   | `color`       |
-| `secondary` | `.u-color-secondary` | `color`       |
+## Color 
+
+| Nombre        | Clase                  | Propiedad CSS |
+|---------------|------------------------|---------------|
+| `transparent` | `.u-color-transparent` | `color`       |
+| `white`       | `.u-color-white`       | `color`       |
+| `neutral`     | `.u-color-neutral`     | `color`       |
+| `primary`     | `.u-color-primary`     | `color`       |
+| `secondary`   | `.u-color-secondary`   | `color`       |
+
+## Background color
+
+| Nombre        | Clase                     | Propiedad CSS      |
+|---------------|---------------------------|--------------------|
+| `transparent` | `.u-bg-color-transparent` | `background-color` |
+| `white`       | `.u-bg-color-white`       | `background-color` |
+| `neutral`     | `.u-bg-color-neutral`     | `background-color` |
+| `primary`     | `.u-bg-color-primary`     | `background-color` |
+| `secondary`   | `.u-bg-color-secondary`   | `background-color` |

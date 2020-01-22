@@ -7,7 +7,11 @@
             'c-price-button--inverted' : inverted
         }"
     >
-        <div v-if="value || text" class="c-price-button__price">
+        <div
+            v-if="value || text"
+            class="c-price-button__price"
+            :class="bgColor && `u-bg-color-${bgColor}`"
+        >
             <AtPrice v-bind="[cfg.price , { before, value, text }]" />
         </div>
 
@@ -53,6 +57,10 @@
             inverted: {
                 type: Boolean,
                 default: false
+            },
+            bgColor: {
+                type: String,
+                default: 'white'
             }
         },
         data () {
@@ -73,7 +81,6 @@
 
 <style lang="scss">
   .c-price-button {
-    --c-price-button-background: #f6f6f6;
     --c-price-button-price-border-radius: #{em(4px)} 0 0 #{em(4px)};
     --c-price-button-price-padding: #{em(8px) em(16px)};
     --c-price-button-icon-size: #{em(24px)};
@@ -91,7 +98,6 @@
       justify-content: center;
       display: flex;
       flex-direction: column;
-      background: var(--c-price-button-background);
       padding: var(--c-price-button-price-padding);
       border-radius: var(--c-price-button-price-border-radius);
     }
