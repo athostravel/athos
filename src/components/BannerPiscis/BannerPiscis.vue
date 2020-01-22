@@ -83,8 +83,9 @@
                         position: 'bottom'
                     },
                     goButton: {
-                        variant: 'outlined',
-                        size: 'basalt'
+                        color: 'white',
+                        size: 'basalt',
+                        variant: 'casper'
                     },
                     title: {
                         color: 'white',
