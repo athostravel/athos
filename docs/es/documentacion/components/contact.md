@@ -1,11 +1,11 @@
-# Izar Card
+# Contact
 
 <Preview>
   <template slot="demo">
-    <components-IzarCard-IzarCard /> 
+    <components-Contact-Contact /> 
   </template>
 
-  <<< @/examples/components/IzarCard/IzarCard.vue
+  <<< @/examples/components/Contact/Contact.vue
 </Preview>
 
 ## Propiedades

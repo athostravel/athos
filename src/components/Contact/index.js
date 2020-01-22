@@ -1,9 +1,9 @@
-import IzarCard from './IzarCard.vue'
+import Contact from './Contact.vue'
 import { use, registerComponent } from '@utils/plugins'
 
 const Plugin = {
     install (Vue) {
-        registerComponent(Vue, IzarCard)
+        registerComponent(Vue, Contact)
     }
 }
 
