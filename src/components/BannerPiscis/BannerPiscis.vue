@@ -18,15 +18,14 @@
             ]"
         >
             <div v-if="title" class="c-banner-piscis__text">
-                <AtText v-bind="title" class="c-banner-piscis__title" />
+                <AtText v-bind="[cfg.title, title]" class="c-banner-piscis__title">
+                    {{ title.text }}
+                </AtText>
             </div>
 
             <div class="c-banner-piscis__actions">
                 <AtButton
                     class="c-banner-piscis__button"
-                    :class="[
-                        { 'c-banner-piscis__button--outlined': goButton.outlined}
-                    ]"
                     v-bind="[cfg.goButton, goButton]"
                 >
                     {{ goButton.text }}
@@ -84,8 +83,12 @@
                         position: 'bottom'
                     },
                     goButton: {
-                        outlined: false,
-                        href: '#'
+                        variant: 'outlined',
+                        size: 'basalt'
+                    },
+                    title: {
+                        color: 'white',
+                        size: 'obsidian'
                     }
                 }
             }
@@ -109,6 +112,7 @@
     --c-banner-button-min-height: #{em(36px)};
     --c-banner-button-min-width: #{em(80px)};
     --c-banner-button-text-transform: capitalize;
+    --c-banner-button-text-align: center;
   }
 </style>
 
@@ -160,36 +164,13 @@
       }
     }
 
-    &__button {
-      &--outlined {
-        /*
-        --c-button-border-color: var(--c-banner-button-border-color);
-        --c-button-border-radius: var(--c-banner-button-border-radius);
-        --c-button-color: var(--c-banner-button-color);
-        --c-button-text-transform: var(--c-button-text-transform);
-        --c-button-min-height: var(--c-banner-button-min-height);
-        --c-button-min-width: var(--c-banner-button-min-width);
-
-        &:not(:hover):not(:focus):not(:active) {
-          --c-button-color: var(--c-banner-button-hover-color);
-        }
-        */
-      }
-    }
-
     &__text {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       margin-top: 1em;
       margin-bottom: 1em;
-    }
-
-    &__title {
-      --c-text-background: var(--c-banner-piscis-title-background);
-      --c-text-color: var(--c-banner-piscis-title-color);
-      --c-text-font-size: var(--c-banner-piscis-title-font-size);
-      --c-text-padding: 0;
+      text-align: var(--c-banner-button-text-align);
     }
   }
 </style>

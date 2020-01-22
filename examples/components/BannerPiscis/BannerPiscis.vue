@@ -17,7 +17,6 @@
                         }
                     },
                     goButton: {
-                        outlined: true,
                         href: 'http://www.google.es/',
                         text: 'Leer Más'
                     }
