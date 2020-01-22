@@ -11,7 +11,7 @@
             <div class="c-izar-card__content">
                 <AtText v-if="title" :text="title" class="c-izar-card__title" v-bind="cfg.title" />
                 <div class="c-izar-card__text">
-                    <slot name="info" />
+                    <slot />
                 </div>
             </div>
         </div>
@@ -32,14 +32,6 @@
         },
         props: {
             title: {
-                type: String,
-                default: undefined
-            },
-            text: {
-                type: String,
-                default: undefined
-            },
-            text2: {
                 type: String,
                 default: undefined
             },
@@ -95,7 +87,7 @@
         }
 
         &__text {
-            > div > * {
+            > * {
                 margin: var(--c-izar-card-margin-text);
             }
         }

@@ -1,10 +1,8 @@
 <template>
     <div class="preview-items">
         <AtIzarCard v-bind="atIzarCard">
-            <div slot="info">
-                <p>Llámalos al 91 846 048 de lunes a viernes de 9:00h a 20:00h, a sábados de 9:00h a 14:00h</p>
-                <p>Email de atención al viajero: <a href="mailto:reservas@muchoviaje.com">reservas@muchoviaje.com</a></p>
-            </div>
+            <p>Llámalos al 91 846 048 de lunes a viernes de 9:00h a 20:00h, a sábados de 9:00h a 14:00h</p>
+            <p>Email de atención al viajero: <a href="mailto:reservas@muchoviaje.com">reservas@muchoviaje.com</a></p>
         </AtIzarCard>
     </div>
 </template>
