@@ -1,21 +1,13 @@
 <template>
     <div>
-        <div
-            ref="basePopoverContent"
-            class="base-popover"
-            @click.stop="destroyPopover"
-        >
+        <div ref="basePopoverContent" class="base-popover">
             <slot />
         </div>
-        <div
-            ref="basePopoverOverlay"
-            class="base-popover__overlay"
-        />
     </div>
 </template>
 
 <script>
-    import Popper from 'popper.js'
+    import { createPopper } from '@popperjs/core'
 
     export default {
         name: 'AtPopover',
@@ -24,32 +16,32 @@
             popoverOptions: {
                 type: Object,
                 required: true
+            },
+            opened: {
+                type: Boolean,
+                default: false
             }
         },
 
         data () {
             return {
+                show: false,
                 popperInstance: null
             }
         },
+
         mounted () {
             this.initPopper()
-            this.updateOverlayPosition()
-        },
-        methods: {
-            destroyPopover () {
-                if (this.popperInstance) {
-                    this.popperInstance.destroy()
-                    this.popperInstance = null
-                    this.$emit('closePopover')
-                }
-            },
-            updateOverlayPosition () {
-                const overlayElement = this.$refs.basePopoverOverlay
-                const overlayPosition = overlayElement.getBoundingClientRect()
 
-                overlayElement.style.transform = <code>translate(-${overlayPosition.x}px, -${overlayPosition.y
-                }px)`</code>
+            this.$root.$on('openPopover', ({ id }) => {
+                console.log('eo')
+                this.open()
+            })
+        },
+
+        methods: {
+            open () {
+                this.show = true
             },
             initPopper () {
                 const modifiers = {}
@@ -65,21 +57,41 @@
                     modifiers.placement = placement
                 }
 
-                this.popperInstance = new Popper(
+                this.popperInstance = createPopper(
                     popoverReference,
-                    this.$refs.basePopoverContent,
-                    {
-                        placement,
-                        modifiers: {
-                            ...modifiers,
-                            preventOverflow: {
-                                boundariesElement: 'viewport'
-                            }
-                        }
-                    }
+                    this.$refs.basePopoverContent
                 )
+            },
+
+            destroyPopover () {
+                if (this.popperInstance) {
+                    this.popperInstance.destroy()
+                    this.popperInstance = null
+                    this.$emit('closePopover')
+                }
             }
 
         }
     }
 </script>
+
+<style lang="scss" scoped>
+  .base-popover {
+    position: relative;
+    z-index: 50;
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 40;
+      width: 100%;
+      height: 100vh;
+    }
+  }
+</style>

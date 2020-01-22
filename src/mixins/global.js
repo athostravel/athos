@@ -12,10 +12,16 @@ export default {
             cfg: {}
         }
     },
+
     beforeMount () {
         this.cfg = merge(this.cfg, this.config)
     },
     methods: {
+        // Popover Component
+        openPopover (id) {
+            console.log('click')
+            this.$root.$emit('openPopover', { id })
+        },
         // Modal Component
         openModal (id) {
             this.$root.$emit('openModal', { id })
