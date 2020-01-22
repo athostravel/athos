@@ -25,6 +25,7 @@
     "url": "git+https://github.com/avoristravel/athos.git"
   },
   "dependencies": {
+    "@popperjs/core": "^2.0.0-rc.3",
     "deepmerge": "^4.2.2",
     "lodash": "^4.17.15",
     "vuex": "^3.1.2"

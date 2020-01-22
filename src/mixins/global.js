@@ -14,5 +14,14 @@ export default {
     },
     beforeMount () {
         this.cfg = merge(this.cfg, this.config)
+    },
+    methods: {
+        // Modal Component
+        openModal (id) {
+            this.$root.$emit('openModal', { id })
+        },
+        closeModal (id) {
+            this.$root.$emit('closeModal', { id })
+        }
     }
 }
