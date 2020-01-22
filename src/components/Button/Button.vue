@@ -82,8 +82,6 @@
   .c-button {
     --c-button-size: #{em(16px)};
     --c-button-text-align: center;
-    --c-button-font-size: #{em(16px)};
-    --c-button-font-weight: 400;
     --c-button-text-transform: uppercase;
     --c-button-padding: #{rem(4px) em(16px)};
     --c-button-border-radius: 0;
@@ -149,7 +147,6 @@
       background-color: var(--c-button-background-color);
       text-transform: var(--c-button-text-transform);
       padding: var(--c-button-padding);
-      font-weight: var(--c-button-font-weight);
       border-radius: var(--c-button-inner-border-radius);
       z-index: 1;
       transition: all 0.3s;
@@ -177,7 +174,6 @@
       align-items: center;
       position: relative;
       z-index: 3;
-      font-size: var(--c-button-font-size);
     }
 
     @include c-button-hover($this) {

@@ -19,8 +19,12 @@
             </div>
 
             <div v-if="meta || title" class="c-banner-sirius__text">
-                <AtText v-if="meta" v-bind="cfg.meta" :text="meta" class="c-banner-sirius__meta" />
-                <AtText v-if="title" v-bind="cfg.title" :text="title" class="c-banner-sirius__title" />
+                <AtText v-if="meta" v-bind="cfg.meta" class="c-banner-sirius__meta">
+                    {{ meta }}
+                </AtText>
+                <AtText v-if="title" v-bind="cfg.title" class="c-banner-sirius__title">
+                    {{ title }}
+                </AtText>
             </div>
 
             <AtPriceButton
@@ -89,8 +93,8 @@
                         button: { tag: 'button', rounded: true, icon: true, size: 'diorite' },
                         icon: { icon: 'heart' }
                     },
-                    title: { background: true },
-                    meta: { background: true }
+                    title: { size: 'diorite' },
+                    meta: { color: 'white' }
                 }
             }
         }
@@ -101,11 +105,7 @@
   .c-banner-sirius {
     --c-banner-sirius-content-padding: 1em 1em 1em 0;
     --c-banner-sirius-meta-background: var(--color-primary);
-    --c-banner-sirius-meta-color: var(--color-shade-0);
-    --c-banner-sirius-meta-font-size: 0.875em;
     --c-banner-sirius-title-background: var(--color-shade-0);
-    --c-banner-sirius-title-color: var(--color-primary);
-    --c-banner-sirius-title-font-size: 1.125em;
     --c-banner-sirius-price-button-color: var(--color-secondary);
   }
 </style>
@@ -145,17 +145,13 @@
     }
 
     &__meta {
-      --c-text-background: var(--c-banner-sirius-meta-background);
-      --c-text-color: var(--c-banner-sirius-meta-color);
-      --c-text-font-size: var(--c-banner-sirius-meta-font-size);
-      --c-text-padding: 0.25em 1em;
+      background: var(--c-banner-sirius-meta-background);
+      padding: 0.25em 1em;
     }
 
     &__title {
-      --c-text-background: var(--c-banner-sirius-title-background);
-      --c-text-color: var(--c-banner-sirius-title-color);
-      --c-text-font-size: var(--c-banner-sirius-title-font-size);
-      --c-text-padding: 0.5em 1em;
+      padding: 0.5em 1em;
+      background: var(--c-banner-sirius-title-background);
     }
 
     &__price {
