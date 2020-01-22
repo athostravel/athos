@@ -20,22 +20,28 @@
   --color-secondary-hsl: var(--color-secondary-hue), var(--color-secondary-saturation), var(--color-secondary-lumnosity);
   --color-secondary: hsl(var(--color-secondary-hsl));
 
-  // Status colors
+  // Status success
   --color-success-hue: 98;
   --color-success-saturation: 52%;
   --color-success-lumnosity: 55%;
   --color-success-hsl: var(--color-success-hue), var(--color-success-saturation), var(--color-success-lumnosity);
   --color-success: hsl(var(--color-success-hsl));
+
+  // Status info
   --color-info-hue: 199;
   --color-info-saturation: 91%;
   --color-info-lumnosity: 64%;
   --color-info-hsl: var(--color-info-hue), var(--color-info-saturation), var(--color-info-lumnosity);
   --color-info: hsl(var(--color-info-hsl));
+
+  // Status warning
   --color-warning-hue: 52;
   --color-warning-saturation: 100%;
   --color-warning-lumnosity: 65%;
   --color-warning-hsl: var(--color-warning-hue), var(--color-warning-saturation), var(--color-warning-lumnosity);
   --color-warning: hsl(var(--color-warning-hsl));
+
+  // Status error
   --color-error-hue: 4;
   --color-error-saturation: 88%;
   --color-error-lumnosity: 58%;

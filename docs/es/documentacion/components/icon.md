@@ -10,7 +10,9 @@
 
 ## Propiedades
 
-| Nombre | Tipo                | Descripción                  | Por defecto |
-|--------|---------------------|------------------------------|-------------|
-| `tag`  | `String`            | Etiqueta HTML del componente | `span`      |
-| `icon` | `String`, `Boolean` | Clase del icono a mostrar    | `false`     |
+| Nombre  | Tipo                | Parámetros                                                               | Descripción                  | Por defecto |
+|---------|---------------------|--------------------------------------------------------------------------|------------------------------|-------------|
+| `tag`   | `String`            |                                                                          | Etiqueta HTML del componente | `span`      |
+| `icon`  | `String`, `Boolean` |                                                                          | Clase del icono a mostrar    | `false`     |
+| `size`  | `String`            | `diorite`, `basalt`, `obsidian`, `tuff`                                  | Tamaño del icono             | `undefined` |
+| `color` | `String`            | [Nombre de clases disponibles](../estilos/clases-de-utilidad/colores.md) | Color del icono              | `undefined` |
