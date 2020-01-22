@@ -14,6 +14,7 @@
 |------------|----------|-----------------------------------------------|-------------|
 | `title`    | `String` | Título del componente                         | `undefined` |
 | `rrss`     | `Array`  | Redes sociales                                | `undefined` |
+| `icon`     | `String` | Clase del icono a mostrar                     | `undefined` |
 
 ## Slots
 

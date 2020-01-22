@@ -95,7 +95,7 @@
       margin: var(--c-contact-margin-item);
 
       &:last-child {
-        margin: 0;
+        margin-bottom: 0;
       }
     }
 
