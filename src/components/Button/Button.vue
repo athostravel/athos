@@ -7,10 +7,12 @@
             'c-button--outlined' : variant === 'outlined',
             'c-button--bordered' : variant === 'bordered',
             'c-button--text' : variant === 'text',
+            'c-button--casper' : variant === 'casper',
             'c-button--rounded' : rounded,
             'c-button--radiused' : radiused,
             'c-button--icon' : icon,
             'c-button--is-disabled' : disabled,
+            'c-button--white' : color === 'white',
             'c-button--primary' : color === 'primary',
             'c-button--secondary' : color === 'secondary',
             'c-button--dunite' : size === 'dunite',
@@ -82,8 +84,6 @@
   .c-button {
     --c-button-size: #{em(16px)};
     --c-button-text-align: center;
-    --c-button-font-size: #{em(16px)};
-    --c-button-font-weight: 400;
     --c-button-text-transform: uppercase;
     --c-button-padding: #{rem(4px) em(16px)};
     --c-button-border-radius: 0;
@@ -99,9 +99,10 @@
     --c-button-main-color: var(--color-neutral);
     --c-button-main-color-hue: var(--color-neutral-hue);
     --c-button-main-color-saturation: var(--color-neutral-saturation);
+    --c-button-secondary-color: var(--color-shade-0);
 
     // Set colors
-    --c-button-color: var(--color-shade-0);
+    --c-button-color: var(--c-button-secondary-color);
     --c-button-background-color: var(--c-button-main-color);
     --c-button-border-color: var(--c-button-main-color);
     --c-button-overlay-color: hsla(var(--color-shade-0-hsl), 0.2);
@@ -149,7 +150,6 @@
       background-color: var(--c-button-background-color);
       text-transform: var(--c-button-text-transform);
       padding: var(--c-button-padding);
-      font-weight: var(--c-button-font-weight);
       border-radius: var(--c-button-inner-border-radius);
       z-index: 1;
       transition: all 0.3s;
@@ -177,7 +177,6 @@
       align-items: center;
       position: relative;
       z-index: 3;
-      font-size: var(--c-button-font-size);
     }
 
     @include c-button-hover($this) {
@@ -201,6 +200,13 @@
     }
 
     // Colors
+    &--white {
+      --c-button-main-color: var(--color-shade-0);
+      --c-button-main-color-hue: var(--color-shade-0-hue);
+      --c-button-main-color-saturation: var(--color-shade-0-saturation);
+      --c-button-secondary-color: currentColor;
+    }
+
     &--primary {
       --c-button-main-color: var(--color-primary);
       --c-button-main-color-hue: var(--color-primary-hue);
@@ -216,13 +222,13 @@
     // Types
     &--text {
       // Colors
-      --c-button-color: var(--c-button-main-color);
+      --c-button-secondary-color: var(--c-button-main-color);
       --c-button-background-color: transparent;
       --c-button-border-color: transparent;
       --c-button-overlay-color: hsl(var(--c-button-main-color-hue), var(--c-button-main-color-saturation), 95%);
 
       // Colors Hover
-      --c-button-color-hover: var(--c-button-color);
+      --c-button-color-hover: var(--c-button-secondary-color);
       --c-button-background-color-hover: transparent;
       --c-button-border-color-hover: var(--c-button-overlay-color);
     }
@@ -233,7 +239,7 @@
       --c-button-background-color-hover: transparent;
       --c-button-color: var(--c-button-main-color);
       --c-button-overlay-color: var(--c-button-main-color);
-      --c-button-color-hover: var(--color-shade-0);
+      --c-button-color-hover: var(--c-button-secondary-color);
     }
 
     &--bordered {
@@ -241,7 +247,14 @@
       --c-button-inner-padding: #{rem(2px)};
       --c-button-background-color: var(--c-button-main-color);
       --c-button-background-color-hover: var(--c-button-main-color);
-      --c-button-color: var(--color-shade-0);
+    }
+
+    &--casper {
+      --c-button-border-width: #{rem(1px)};
+      --c-button-background-color: transparent;
+      --c-button-background-color-hover: transparent;
+      --c-button-color: var(--c-button-main-color);
+      --c-button-overlay-color: hsla(var(--color-shade-0-hsl), 0.5);
     }
 
     &--radiused {
