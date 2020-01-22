@@ -14,7 +14,9 @@
                 </AtButton>
             </div>
             <div class="c-contact__content">
-                <AtText v-if="title" :text="title" class="c-contact__title" v-bind="cfg.title" />
+                <AtText v-if="title" class="c-contact__title" v-bind="cfg.title">
+                    {{ title }}
+                </AtText>
                 <div class="c-contact__text">
                     <slot />
                 </div>
@@ -49,7 +51,9 @@
             return {
                 cfg: {
                     title: {
-                        tag: 'h4'
+                        tag: 'h4',
+                        size: 'scoria',
+                        weight: 'bold'
                     },
                     button: {
                         icon: true,
@@ -68,9 +72,9 @@
 <style lang="scss">
   .c-contact {
     --c-contact-margin-list: 0 var(--space-l) 0 0;
-    --c-contact-margin-item: 0 0 var(--space-m) 0;
-    --c-contact-margin-title: 0 0 var(--space-m) 0;
-    --c-contact-margin-text: 0 0 var(--space-s) 0;
+    --c-contact-margin-item: 0 0 var(--space-s) 0;
+    --c-contact-margin-title: 0 0 var(--space-s) 0;
+    --c-contact-margin-text: 0 0 var(--space-xs) 0;
   }
 </style>
 
