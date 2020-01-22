@@ -10,7 +10,7 @@
                     :href="rs.url"
                     v-bind="[cfg.button, rs]"
                 >
-                    <AtIcon class="c-contact__icon" :icon="rs.iconCustom" :size="cfg.icon.size" />
+                    <AtIcon :icon="rs.icon" :size="cfg.icon.size" />
                 </AtButton>
             </div>
             <div class="c-contact__content">
@@ -93,6 +93,10 @@
 
     &__button {
       margin: var(--c-contact-margin-item);
+
+      &:last-child {
+        margin: 0;
+      }
     }
 
     &__title {
@@ -100,8 +104,12 @@
     }
 
     &__text {
-      > * {
+      .c-text {
         margin: var(--c-contact-margin-text);
+
+        &:last-child {
+          margin: 0;
+        }
       }
     }
   }

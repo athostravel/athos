@@ -16,19 +16,19 @@
         data () {
             return {
                 atContact: {
-                    title: "¡Síguenos!",
+                    title: '¡Síguenos!',
                     rrss: [
                         {
                             url: 'https://instagram.com/muchoviaje',
-                            iconCustom: 'heart'
+                            icon: 'heart'
                         },
                         {
                             url: 'https://twitter.com/muchoviaje',
-                            iconCustom: 'heart'
+                            icon: 'heart'
                         },
                         {
                             url: 'https://facebook.com/muchoviaje',
-                            iconCustom: 'heart'
+                            icon: 'heart'
                         }
                     ]
                 }
