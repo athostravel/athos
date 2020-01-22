@@ -1,0 +1,11 @@
+$u-colors: (
+  'neutral': var(--color-neutral),
+  'primary': var(--color-primary),
+  'secondary': var(--color-secondary)
+);
+
+@each $name, $var in $u-colors {
+  .u-color-#{$name} {
+    color: $var !important;
+  }
+}

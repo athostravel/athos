@@ -1,0 +1,16 @@
+$u-gaps: (
+  'dunite': #{em(16px)},
+  'diorite': #{em(24px)},
+  'basalt': #{em(32px)},
+  'obsidian': #{em(40px)},
+  'tuff': #{em(48px)},
+  'pumice': #{em(56px)},
+  'scoria': #{em(72px)},
+  'coal': #{em(80px)}
+);
+
+@each $name, $var in $u-gaps {
+  .u-gap-#{$name} {
+    grid-gap: $var !important;
+  }
+}
