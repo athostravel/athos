@@ -50,6 +50,9 @@
 
   // Grey colors
   @for $i from 0 through 20 {
+    --color-shade-#{$i * 100}-hue: 0;
+    --color-shade-#{$i * 100}-saturation: 0%;
+    --color-shade-#{$i * 100}-lumnosity: #{100 - ($i * 5)}#{'%'};
     --color-shade-#{$i * 100}-hsl: 0, 0%, #{100 - ($i * 5)}#{'%'};
     --color-shade-#{$i * 100}: #{'hsl(var(--color-shade-#{$i * 100}-hsl))'};
   }
