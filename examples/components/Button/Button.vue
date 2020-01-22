@@ -5,7 +5,9 @@
                 Button
             </AtButton>
             <AtButton v-bind="atButton" radiused>
-                Button
+                <AtIconCard icon="heart">
+                    Button
+                </AtIconCard>
             </AtButton>
             <AtButton v-bind="atButton" rounded>
                 Button
@@ -25,7 +27,9 @@
                 Text
             </AtButton>
             <AtButton v-bind="atButton" variant="text" radiused>
-                Text
+                <AtIconCard icon="heart">
+                    Text
+                </AtIconCard>
             </AtButton>
             <AtButton v-bind="atButton" variant="text" rounded>
                 Text
@@ -45,7 +49,9 @@
                 Outlined
             </AtButton>
             <AtButton v-bind="atButton" variant="outlined" radiused>
-                Outlined
+                <AtIconCard icon="heart">
+                    Outlined
+                </AtIconCard>
             </AtButton>
             <AtButton v-bind="atButton" variant="outlined" rounded>
                 Outlined
@@ -65,7 +71,9 @@
                 Bordered
             </AtButton>
             <AtButton v-bind="atButton" variant="bordered" radiused>
-                Bordered
+                <AtIconCard icon="heart">
+                    Bordered
+                </AtIconCard>
             </AtButton>
             <AtButton v-bind="atButton" variant="bordered" rounded>
                 Bordered
