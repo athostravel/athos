@@ -5,7 +5,7 @@
             v-bind="[cfg.header, header]"
             class="c-arcus-layout__header"
         >
-            {{header.text}}
+            {{ header.text }}
         </AtText>
 
         <div class="c-arcus-layout__inner">
@@ -19,7 +19,7 @@
                     v-bind="[cfg.title, item.title]"
                     class="c-arcus-layout__title"
                 >
-                    {{item.title.text}}
+                    {{ item.title.text }}
                 </AtText>
 
                 <component

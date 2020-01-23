@@ -210,7 +210,7 @@
     }
 
     &__highlight {
-        padding: var(--c-card-pegasus-highlight-padding);
+      padding: var(--c-card-pegasus-highlight-padding);
     }
 
     &__header {
