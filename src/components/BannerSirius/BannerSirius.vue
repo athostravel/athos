@@ -19,15 +19,30 @@
             </div>
 
             <div v-if="meta || title" class="c-banner-sirius__text">
-                <AtText v-if="meta" v-bind="cfg.meta" :text="meta" class="c-banner-sirius__meta" />
-                <AtText v-if="title" v-bind="cfg.title" :text="title" class="c-banner-sirius__title" />
+                <AtText
+                    v-if="meta"
+                    v-bind="cfg.meta.text"
+                    class="c-banner-sirius__meta"
+                    :class="cfg.meta.bgColor && `u-bg-color-${cfg.meta.bgColor}`"
+                >
+                    {{ meta }}
+                </AtText>
+                <AtText
+                    v-if="title"
+                    v-bind="cfg.title.text"
+                    class="c-banner-sirius__title"
+                    :class="cfg.title.bgColor && `u-bg-color-${cfg.title.bgColor}`"
+                >
+                    {{ title }}
+                </AtText>
             </div>
 
-            <AtPriceButton
-                v-if="price && price.value"
-                class="c-banner-sirius__price"
-                v-bind="[price, { href, config: cfg.priceButton }]"
-            />
+            <div class="c-banner-sirius__price">
+                <AtPriceButton
+                    v-if="price && price.value"
+                    v-bind="[price, { href, config: cfg.priceButton }]"
+                />
+            </div>
         </AtBannerContent>
     </AtBanner>
 </template>
@@ -79,18 +94,49 @@
         data () {
             return {
                 cfg: {
-                    banner: { radius: true },
+                    banner: {
+                        radius: true
+                    },
                     video: {
-                        button: { rounded: true, icon: true, size: 'tiny' },
-                        icon: { icon: 'heart' }
+                        button: {
+                            rounded: true,
+                            icon: true,
+                            size: 'diorite',
+                            variant: 'ghost',
+                            color: 'secondary'
+                        },
+                        icon: {
+                            icon: 'heart'
+                        }
                     },
                     favourite: {
                         enabled: true,
-                        button: { tag: 'button', rounded: true, icon: true, size: 'tiny' },
-                        icon: { icon: 'heart' }
+                        button: {
+                            tag: 'button',
+                            rounded: true,
+                            icon: true,
+                            size: 'diorite',
+                            variant: 'ghost',
+                            color: 'secondary'
+                        },
+                        icon: {
+                            icon: 'heart'
+                        }
                     },
-                    title: { background: true },
-                    meta: { background: true }
+                    title: {
+                        bgColor: 'white',
+                        text: {
+                            size: 'diorite',
+                            color: 'primary'
+                        }
+                    },
+                    meta: {
+                        bgColor: 'primary',
+                        text: {
+                            size: 'dacite',
+                            color: 'white'
+                        }
+                    }
                 }
             }
         }
@@ -100,13 +146,6 @@
 <style lang="scss">
   .c-banner-sirius {
     --c-banner-sirius-content-padding: 1em 1em 1em 0;
-    --c-banner-sirius-meta-background: var(--color-primary);
-    --c-banner-sirius-meta-color: var(--color-shade-0);
-    --c-banner-sirius-meta-font-size: 0.875em;
-    --c-banner-sirius-title-background: var(--color-shade-0);
-    --c-banner-sirius-title-color: var(--color-primary);
-    --c-banner-sirius-title-font-size: 1.125em;
-    --c-banner-sirius-price-button-color: var(--color-secondary);
   }
 </style>
 
@@ -127,41 +166,30 @@
 
     &__icon {
       & + & {
-        margin-left: 0.5em;
+        margin-left: em(8px);
       }
-    }
-
-    &__button {
-      --c-button-background-color: hsla(var(--color-shade-0-hsl), 0.7);
-      --c-button-color: var(--color-secondary);
     }
 
     &__text {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      margin-top: 1em;
-      margin-bottom: 1em;
+      margin-top: em(16px);
+      margin-bottom: em(16px);
     }
 
     &__meta {
-      --c-text-background: var(--c-banner-sirius-meta-background);
-      --c-text-color: var(--c-banner-sirius-meta-color);
-      --c-text-font-size: var(--c-banner-sirius-meta-font-size);
-      --c-text-padding: 0.25em 1em;
+      padding: em(2px) em(16px);
     }
 
     &__title {
-      --c-text-background: var(--c-banner-sirius-title-background);
-      --c-text-color: var(--c-banner-sirius-title-color);
-      --c-text-font-size: var(--c-banner-sirius-title-font-size);
-      --c-text-padding: 0.5em 1em;
+      padding: em(4px) em(16px);
     }
 
     &__price {
-      color: var(--c-banner-sirius-price-button-color);
       align-self: flex-end;
       margin-top: auto;
+      padding-top: 4rem;
     }
   }
 </style>
