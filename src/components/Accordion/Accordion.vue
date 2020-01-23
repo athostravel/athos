@@ -5,25 +5,21 @@
             class="c-accordion__header"
             id="accordion"
         >
-            <AtButton slot="icon" v-bind="[cfg.icon, icon]">
-                <AtIcon icon="heart"/>
-            </AtButton>
-
             <AtText class="c-accordion__header-text" v-bind="[cfg.header, header]">
                 {{ header.text }}
             </AtText>
         </AtIconCard>
 
-        <AtText
+        <div
             class="c-accordion__content"
-            v-bind="[cfg.content, content]"
+            v-bind="content"
             v-toggle
             toggle-class="is-active"
             toggle-trigger-class="is-active"
             toggle-trigger="#accordion"
         >
             <slot />
-        </AtText>
+        </div>
     </div>
 </template>
 
@@ -66,10 +62,6 @@
                         weight: 'bold',
                         inline: true
                     },
-                    content: {
-                        size: 'dacite',
-                        tag: 'div'
-                    },
                     icon: {
                         rounded: true,
                         icon: true,
@@ -95,10 +87,7 @@
         &__header {
             cursor: pointer;
             justify-self: center;
-
-            &.c-icon-card {
-                align-items: center;
-            }
+            align-items: center;
 
             .c-icon {
                 transition: transform .3s;
