@@ -111,6 +111,28 @@
             </AtButton>
         </div>
         <div class="preview-items-horizontal">
+            <AtButton v-bind="atButton" variant="ghost">
+                Ghost
+            </AtButton>
+            <AtButton v-bind="atButton" variant="ghost" radiused>
+                <AtIconCard icon="heart">
+                    Ghost
+                </AtIconCard>
+            </AtButton>
+            <AtButton v-bind="atButton" variant="ghost" rounded>
+                Ghost
+            </AtButton>
+            <AtButton v-bind="atButton" variant="ghost" icon>
+                <AtIcon icon="heart" />
+            </AtButton>
+            <AtButton v-bind="atButton" variant="ghost" radiused icon>
+                <AtIcon icon="heart" />
+            </AtButton>
+            <AtButton v-bind="atButton" variant="ghost" rounded icon>
+                <AtIcon icon="heart" />
+            </AtButton>
+        </div>
+        <div class="preview-items-horizontal">
             <AtButton v-bind="atButton" size="dunite">
                 Dunite Size
             </AtButton>
@@ -146,6 +168,9 @@
             <AtButton v-bind="atButton" variant="casper" color="primary">
                 Primary
             </AtButton>
+            <AtButton v-bind="atButton" variant="ghost" color="primary">
+                Primary
+            </AtButton>
             <AtButton v-bind="atButton" color="primary" icon>
                 <AtIcon icon="heart" />
             </AtButton>
@@ -175,6 +200,9 @@
             <AtButton v-bind="atButton" variant="casper" color="secondary">
                 Secondary
             </AtButton>
+            <AtButton v-bind="atButton" variant="ghost" color="secondary">
+                Secondary
+            </AtButton>
             <AtButton v-bind="atButton" color="secondary" icon>
                 <AtIcon icon="heart" />
             </AtButton>
@@ -202,6 +230,9 @@
                 White
             </AtButton>
             <AtButton v-bind="atButton" variant="casper" color="white">
+                White
+            </AtButton>
+            <AtButton v-bind="atButton" variant="ghost" color="white">
                 White
             </AtButton>
             <AtButton v-bind="atButton" color="white" icon>
