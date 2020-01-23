@@ -1,5 +1,5 @@
 <template>
-    <picture v-lazy class="c-picture">
+    <picture v-lazy class="c-picture" :style="customRatio">
         <AtPictureSource
             v-for="source in sources"
             :key="source.id"
@@ -46,11 +46,25 @@
             sources: {
                 type: Array,
                 default: () => []
+            },
+            ratio: {
+                type: Object,
+                default: () => {}
             }
         },
         data () {
             return {
                 shim: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='
+            }
+        },
+        computed: {
+            customRatio () {
+                const ratio = {}
+
+                if (this.ratio && this.ratio.width) { ratio['--c-picture-ratio-width'] = this.ratio.width }
+                if (this.ratio && this.ratio.height) { ratio['--c-picture-ratio-height'] = this.ratio.height }
+
+                return ratio
             }
         }
     }

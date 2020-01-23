@@ -25,7 +25,11 @@
 ```js
 {
     banner: {
-        radius: true
+        radius: true,
+        ratio: {
+            width: 4,
+            height: 3
+        }
     },
     video: {
         button: {
