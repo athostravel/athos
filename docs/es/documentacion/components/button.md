@@ -18,8 +18,8 @@
 | `radiused` | `Boolean` |                                                   | Añade un pequeño radio al botón  | `false`     |
 | `disabled` | `Boolean` |                                                   | Deshabilita el botón             | `false`     |
 | `icon`     | `Boolean` |                                                   | Para botones con icono sin texto | `false`     |
-| `variant`  | `String`  | `text`, `outlined`, `bordered`                    | Cambia el aspecto del botón      | `undefined` |
-| `color`    | `String`  | `primary`, `secondary`                            | Cambia el color del botón        | `undefined` |
+| `variant`  | `String`  | `text`, `outlined`, `bordered`, `casper`, `ghost` | Cambia el aspecto del botón      | `undefined` |
+| `color`    | `String`  | `white`, `primary`, `secondary`                   | Cambia el color del botón        | `undefined` |
 | `size`     | `String`  | `dunite`, `diorite`, `basalt`, `obsidian`, `tuff` | Tamaño del botón                 | `undefined` |
 
 ## Slots

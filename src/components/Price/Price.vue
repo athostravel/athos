@@ -1,10 +1,14 @@
 <template>
     <div
         class="c-price"
-        :class="{
-            'c-price--inline' : inline,
-            'c-price--align-left' : align === 'left'
-        }"
+        :class="[
+            color && `u-color-${color}`,
+            {
+                'c-price--inline' : inline,
+                'c-price--align-left' : align === 'left',
+                'c-price--align-center' : align === 'center'
+            }
+        ]"
     >
         <div class="c-price__box">
             <div v-if="text" class="c-price__text">
@@ -47,6 +51,10 @@
             inline: {
                 type: Boolean,
                 default: false
+            },
+            color: {
+                type: String,
+                default: 'primary'
             }
         }
     }
@@ -56,10 +64,13 @@
   .c-price {
     --c-price-text-align: right;
     --c-price-color: var(--color-primary);
-    --c-price-text-font-size: 0.875em;
-    --c-price-before-font-size: 0.875em;
-    --c-price-value-font-size: 1.375em;
-    --c-price-value-font-weight: 700;
+    --c-price-box-display: flex;
+    --c-price-box-justify-content: flex-end;
+    --c-price-text-font-size: var(--font-size-s);
+    --c-price-before-font-size: var(--font-size-s);
+    --c-price-before-margin-right: 0;
+    --c-price-value-font-size: var(--font-size-2xl);
+    --c-price-value-font-weight: var(--font-weight-bold);
   }
 </style>
 
@@ -71,19 +82,20 @@
     text-align: var(--c-price-text-align);
 
     &__box {
-      display: flex;
+      display: var(--c-price-box-display);
       align-items: flex-end;
-      justify-content: flex-end;
+      justify-content: var(--c-price-box-justify-content);
     }
 
     &__text {
       font-size: var(--c-price-text-font-size);
-      margin-right: 0.5rem;
     }
 
     &__before {
       text-decoration: line-through;
       font-size: var(--c-price-before-font-size);
+      margin-left: 0.5em;
+      margin-right: var(--c-price-before-margin-right);
     }
 
     &__value {
@@ -92,31 +104,26 @@
     }
 
     &--inline {
+      --c-price-box-display: contents;
+      --c-price-before-margin-right: 0.5rem;
+
       display: flex;
       align-items: flex-end;
       justify-content: flex-end;
-
-      #{$this} {
-        &__box {
-          display: contents;
-        }
-
-        &__before {
-          margin-right: 0.5rem;
-        }
-      }
     }
 
     &--align-left {
       --c-price-text-align: left;
+      --c-price-box-justify-content: flex-start;
 
       justify-content: flex-start;
+    }
 
-      #{$this} {
-        &__box {
-          justify-content: flex-start;
-        }
-      }
+    &--align-center {
+      --c-price-text-align: center;
+      --c-price-box-justify-content: center;
+
+      justify-content: center;
     }
   }
 </style>
