@@ -128,6 +128,7 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 2,
                             children: [
+                                '/es/documentacion/components/accordion',
                                 '/es/documentacion/components/albedo-layout',
                                 '/es/documentacion/components/arcus-layout',
                                 '/es/documentacion/components/banner-sirius',

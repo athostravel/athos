@@ -1,3 +1,4 @@
+export { default as Accordion } from '@components/Accordion'
 export { default as AlbedoLayout } from '@components/AlbedoLayout'
 export { default as ArcusLayout } from '@components/ArcusLayout'
 export { default as Banner } from '@components/Banner'
