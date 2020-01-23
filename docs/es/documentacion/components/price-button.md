@@ -18,6 +18,7 @@
 | `before`   | `String`           |                                                                                           | Añade un precio anterior al actual   | `undefined` |
 | `value`    | `String`, `Number` |                                                                                           | Valor del precio                     | `undefined` |
 | `inverted` | `Boolean`          |                                                                                           | Invierte el botón con la caja        | `false`     |
+| `radiused` | `Boolean`          |                                                                                           | Añade radio a los bordes             | `false`     |
 | `bgColor`  | `String`           | [Nombre de clases disponibles](../estilos/clases-de-utilidad/colores.md#background-color) | Color de fondo de la caja del precio | `undefined` |
 
 ### Configuración por defecto

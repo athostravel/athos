@@ -4,7 +4,8 @@
         :href="href"
         class="c-price-button"
         :class="{
-            'c-price-button--inverted' : inverted
+            'c-price-button--inverted' : inverted,
+            'c-price-button--radiused' : radiused
         }"
     >
         <div
@@ -58,6 +59,10 @@
                 type: Boolean,
                 default: false
             },
+            radiused: {
+                type: Boolean,
+                default: false
+            },
             bgColor: {
                 type: String,
                 default: 'white'
@@ -68,8 +73,7 @@
                 cfg: {
                     button: {
                         tag: 'div',
-                        color: 'secondary',
-                        radiused: true
+                        color: 'secondary'
                     },
                     icon: {
                         icon: 'angle-right'
@@ -82,6 +86,12 @@
 
 <style lang="scss">
   .c-price-button {
+    --c-price-radius: 0;
+    --c-price-top-left-border-radius: var(--c-price-radius);
+    --c-price-top-right-border-radius: var(--c-price-radius);
+    --c-price-bottom-left-border-radius: var(--c-price-radius);
+    --c-price-bottom-right-border-radius: var(--c-price-radius);
+    --c-price-border-radius: var(--c-price-top-left-border-radius) var(--c-price-top-right-border-radius) var(--c-price-bottom-left-border-radius) var(--c-price-bottom-right-border-radius);
     --c-price-button-price-padding: #{em(8px) em(16px)};
     --c-price-button-icon-size: #{em(24px)};
   }
@@ -93,31 +103,32 @@
 
     cursor: pointer;
     display: inline-flex;
+    border-radius: var(--c-price-border-radius);
+    overflow: hidden;
 
     &__price {
       justify-content: center;
       display: flex;
       flex-direction: column;
       padding: var(--c-price-button-price-padding);
-      border-top-left-radius: var(--radius-s);
-      border-bottom-left-radius: var(--radius-s);
     }
 
     &__button {
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
+      --c-button-min-height: auto;
+      --c-button-border-radius: 0;
+      --c-button-inner-border-radius: 0;
     }
 
     &__icon {
       font-size: var(--c-price-button-icon-size);
     }
 
+    &--radiused {
+      --c-price-radius: var(--radius-s);
+    }
+
     &--inverted {
-      --c-price-button-price-border-radius: 0 #{em(4px)} #{em(4px)} 0;
-
       #{$this}__button {
-        --c-button-border-radius: #{em(4px)} 0 0 #{em(4px)};
-
         order: -1;
       }
     }

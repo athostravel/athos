@@ -40,7 +40,7 @@
             <div class="c-banner-sirius__price">
                 <AtPriceButton
                     v-if="price && price.value"
-                    v-bind="[price, { href, config: cfg.priceButton }]"
+                    v-bind="[cfg.priceButton, price, { href }]"
                 />
             </div>
         </AtBannerContent>
@@ -140,6 +140,9 @@
                             size: 'dacite',
                             color: 'white'
                         }
+                    },
+                    priceButton: {
+                        radiused: true
                     }
                 }
             }
