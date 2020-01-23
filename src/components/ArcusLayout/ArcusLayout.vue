@@ -13,7 +13,6 @@
                 v-for="item in items"
                 :key="item.id"
                 class="c-arcus-layout__col"
-                v-bind="item"
             >
                 <AtText
                     v-if="item.title"
@@ -70,7 +69,7 @@
                 cfg: {
                     header: {
                         color: 'primary',
-                        size: 'obsidian',
+                        size: 'scoria',
                         tag: 'h2',
                         weight: 'bold'
                     },
@@ -134,10 +133,6 @@
     }
 
     &__header {
-      //--c-text-color: var(--c-arcus-layout-header-color);
-      //--c-text-font-size: var(--c-arcus-layout-header-font-size);
-      //--c-text-font-weight: var(--c-arcus-layout-header-font-weight);
-
       display: var(--c-arcus-layout-header-display);
       margin: var(--c-arcus-layout-header-margin);
       text-align: var(--c-arcus-layout-header-text-align);
@@ -153,20 +148,15 @@
       border-left: var(--c-arcus-layout-item-border-size-left) solid var(--c-arcus-layout-item-border-color);
       border-right: var(--c-arcus-layout-item-border-size-right) solid var(--c-arcus-layout-item-border-color);
       border-bottom: var(--c-arcus-layout-item-border-size-bottom) solid var(--c-arcus-layout-item-border-color);
-      padding: var(--c-arcus-layout-item-padding);
     }
 
     &__title {
-      //--c-text-font-size: var(--c-arcus-layout-title-font-size);
-      //--c-text-font-weight: var(--c-arcus-layout-title-font-weight);
-      //--c-text-color: var(--c-arcus-layout-title-color);
-
       border-top: var(--c-arcus-layout-item-border-size-top) solid var(--c-arcus-layout-item-border-color);
       border-left: var(--c-arcus-layout-item-border-size-left) solid var(--c-arcus-layout-item-border-color);
       border-right: var(--c-arcus-layout-item-border-size-right) solid var(--c-arcus-layout-item-border-color);
       border-bottom: var(--c-arcus-layout-item-border-size-bottom) solid var(--c-arcus-layout-item-border-color);
       text-align: var(--c-arcus-layout-title-text-align);
-      padding: var(--c-arcus-layout-item-padding);
+      padding: var(--c-arcus-layout-title-padding);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
