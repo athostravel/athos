@@ -5,6 +5,10 @@
             class="c-accordion__header"
             id="accordion"
         >
+            <AtButton slot="icon" v-bind="[cfg.icon, icon]">
+                <AtIcon icon="heart"/>
+            </AtButton>
+
             <AtText class="c-accordion__header-text" v-bind="[cfg.header, header]">
                 {{ header.text }}
             </AtText>
@@ -24,7 +28,9 @@
 </template>
 
 <script>
+    import AtIcon from '@components/Icon/Icon'
     import AtIconCard from '@components/IconCard/IconCard'
+    import AtButton from '@components/Button/Button'
     import AtText from '@components/Text/Text'
     import ToggleDirective from '@directives/ToggleDirective'
 
@@ -34,7 +40,9 @@
             toggle: ToggleDirective
         },
         components: {
+            AtIcon,
             AtIconCard,
+            AtButton,
             AtText
         },
         props: {
@@ -53,14 +61,19 @@
                     header: {
                         icon: 'heart',
                         color: 'primary',
-                        align: 'center',
                         position: 'right',
                         gap: 'dunite',
-                        weight: 'bold'
+                        weight: 'bold',
+                        inline: true
                     },
                     content: {
                         size: 'dacite',
                         tag: 'div'
+                    },
+                    icon: {
+                        rounded: true,
+                        icon: true,
+                        size: 'diorite'
                     }
                 }
             }
@@ -70,14 +83,22 @@
 
 <style lang="scss">
     .c-accordion {
-        --c-accordion-content-padding: var(--space-s);
+        --c-accordion-content-padding: var(--space-s) 0 0 0;
+        --c-accordion-content-margin-paragraphs: 0 0 var(--space-xs) 0;
     }
 </style>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .c-accordion {
+        display: grid;
+
         &__header {
             cursor: pointer;
+            justify-self: center;
+
+            &.c-icon-card {
+                align-items: center;
+            }
 
             .c-icon {
                 transition: transform .3s;
@@ -97,10 +118,6 @@
 
             &.is-active {
                 display: block;
-            }
-
-            p {
-                margin-bottom: 1em;
             }
         }
     }
