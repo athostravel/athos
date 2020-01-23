@@ -179,11 +179,11 @@
     }
 
     &__meta {
-      padding: em(4px) em(16px);
+      padding: em(2px) em(16px);
     }
 
     &__title {
-      padding: em(8px) em(16px);
+      padding: em(4px) em(16px);
     }
 
     &__price {
