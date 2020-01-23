@@ -68,7 +68,8 @@
                 cfg: {
                     button: {
                         tag: 'div',
-                        color: 'secondary'
+                        color: 'secondary',
+                        radiused: true
                     },
                     icon: {
                         icon: 'angle-right'
@@ -81,7 +82,6 @@
 
 <style lang="scss">
   .c-price-button {
-    --c-price-button-price-border-radius: #{em(4px)} 0 0 #{em(4px)};
     --c-price-button-price-padding: #{em(8px) em(16px)};
     --c-price-button-icon-size: #{em(24px)};
   }
@@ -99,13 +99,13 @@
       display: flex;
       flex-direction: column;
       padding: var(--c-price-button-price-padding);
-      border-radius: var(--c-price-button-price-border-radius);
+      border-top-left-radius: var(--radius-s);
+      border-bottom-left-radius: var(--radius-s);
     }
 
     &__button {
-      --c-button-padding: #{em(8px)} #{em(16px)};
-      --c-button-min-height: auto;
-      --c-button-border-radius: 0 #{em(4px)} #{em(4px)} 0;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
     }
 
     &__icon {
