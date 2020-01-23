@@ -18,9 +18,8 @@ export default {
     },
     methods: {
         // Popover Component
-        openPopover (id) {
-            console.log('click')
-            this.$root.$emit('openPopover', { id })
+        openPopover (id, event) {
+            this.$root.$emit('openPopover', { id, target: event.target })
         },
         // Modal Component
         openModal (id) {

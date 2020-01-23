@@ -1,7 +1,12 @@
 <template>
     <div>
-        <div ref="basePopoverContent" class="base-popover">
-            <slot />
+        <div :id="id" class="popover">
+            <div class="popover">
+                <div class="popover__arrow" />
+                <div class="popover__body">
+                    <slot />
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -13,53 +18,44 @@
         name: 'AtPopover',
 
         props: {
-            popoverOptions: {
-                type: Object,
-                required: true
+            id: {
+                type: String,
+                default: undefined
             },
-            opened: {
-                type: Boolean,
-                default: false
+            placement: {
+                type: String,
+                default: 'top'
+            },
+            offset: {
+                type: String,
+                default: '0,0'
             }
         },
 
         data () {
             return {
-                show: false,
                 popperInstance: null
             }
         },
 
         mounted () {
-            this.initPopper()
+            if (typeof window !== 'undefined') {
 
-            this.$root.$on('openPopover', ({ id }) => {
-                console.log('eo')
-                this.open()
+            }
+            this.$root.$on('openPopover', ({ id, target }) => {
+                this.initPopper(id, target)
             })
         },
 
         methods: {
-            open () {
-                this.show = true
-            },
-            initPopper () {
-                const modifiers = {}
-                const { popoverReference, offset, placement } = this.popoverOptions
-
-                if (offset) {
-                    modifiers.offset = {
-                        offset
-                    }
-                }
-
-                if (placement) {
-                    modifiers.placement = placement
-                }
-
+            initPopper (id, target) {
+                console.log(id, target)
+                const a = document.getElementById(id)
+                console.log(a)
                 this.popperInstance = createPopper(
-                    popoverReference,
-                    this.$refs.basePopoverContent
+                    target,
+                    a
+
                 )
             },
 
@@ -76,7 +72,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .base-popover {
+  .popover {
     position: relative;
     z-index: 50;
 
@@ -92,6 +88,94 @@
       z-index: 40;
       width: 100%;
       height: 100vh;
+    }
+  }
+
+  .popover {
+    z-index: 50;
+
+    &__arrow {
+      position: absolute;
+      border-color: #fff;
+    }
+
+    &__body {
+      display: inline-block;
+      flex: 1;
+      width: 100%;
+      text-align: center;
+      border-radius: 0.25rem;
+      user-select: none;
+      background-color: #fff;
+      -webkit-box-shadow:
+        0 15px 35px 0 rgba(51, 64, 82, 0.15),
+        0 5px 15px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow:
+        0 15px 35px 0 rgba(51, 64, 82, 0.15),
+        0 5px 15px rgba(0, 0, 0, 0.1);
+      box-shadow:
+        0 15px 35px 0 rgba(51, 64, 82, 0.15),
+        0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+  }
+</style>
+
+<style lang="scss">
+  .popover {
+    &[x-placement^="top"] {
+      margin-bottom: 8px;
+
+      .popover__arrow {
+        bottom: -8px;
+        left: calc(50% - 8px);
+        margin-top: 0;
+        margin-bottom: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 8px solid #fff;
+      }
+    }
+
+    &[x-placement^="bottom"] {
+      margin-top: 8px;
+
+      .popover__arrow {
+        top: -8px;
+        left: calc(50% - 8px);
+        margin-top: 0;
+        margin-bottom: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 8px solid #fff;
+      }
+    }
+
+    &[x-placement^="right"] {
+      margin-left: 8px;
+
+      .popover__arrow {
+        top: calc(50% - 8px);
+        left: -8px;
+        margin-right: 0;
+        margin-left: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-right: 8px solid #fff;
+      }
+    }
+
+    &[x-placement^="left"] {
+      margin-right: 8px;
+
+      .popover__arrow {
+        top: calc(50% - 8px);
+        right: -8px;
+        margin-right: 0;
+        margin-left: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-left: 8px solid #fff;
+      }
     }
   }
 </style>

@@ -1,20 +1,16 @@
 <template>
     <div>
         <div
-            ref="popoverReference"
-            @click="openPopover('eo')"
+            @click="openPopover(id, $event)"
         >
             Click
         </div>
 
         <AtPopover
-            :popover-options="popoverOptions"
+            :id="id"
+            v-bind="popoverOptions"
         >
-            <AtPopoverContent>
-                <div class="custom-content">
-                    Vue is Awesome!
-                </div>
-            </AtPopoverContent>
+            Vue is Awesome!
         </AtPopover>
     </div>
 </template>
@@ -23,11 +19,8 @@
     export default {
         data () {
             return {
-                isPopoverVisible: false,
+                id: 'popover1',
                 popoverOptions: {
-                    popoverReference: null,
-                    placement: 'top',
-                    offset: '0,0'
                 }
             }
         }
