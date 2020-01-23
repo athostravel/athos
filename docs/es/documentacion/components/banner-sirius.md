@@ -70,6 +70,9 @@
             size: 'dacite',
             color: 'white'
         }
+    },
+    priceButton: {
+        radiused: true
     }
 }
 ```
