@@ -61,11 +61,6 @@
                         gap: 'dunite',
                         weight: 'bold',
                         inline: true
-                    },
-                    icon: {
-                        rounded: true,
-                        icon: true,
-                        size: 'diorite'
                     }
                 }
             }
