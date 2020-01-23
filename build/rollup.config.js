@@ -44,7 +44,11 @@ export default [
                     { find: '@directives', replacement: path.resolve('src/directives') }
                 ]
             }),
-            commonjs(),
+            commonjs({
+                namedExports: {
+                    'node_modules/lodash/lodash.js': ['merge']
+                }
+            }),
             vue({
                 css: true, // Dynamically inject css as a <style> tag
                 style: {

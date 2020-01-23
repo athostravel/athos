@@ -135,9 +135,10 @@ module.exports = {
                                 '/es/documentacion/components/button',
                                 '/es/documentacion/components/card-aries',
                                 '/es/documentacion/components/card-leo',
+                                '/es/documentacion/components/card-pegasus',
                                 '/es/documentacion/components/checkbox',
                                 '/es/documentacion/components/icon',
-                                '/es/documentacion/components/input',
+                                '/es/documentacion/components/icon-card',
                                 '/es/documentacion/components/picture',
                                 '/es/documentacion/components/price-button',
                                 '/es/documentacion/components/price',
@@ -145,6 +146,23 @@ module.exports = {
                                 '/es/documentacion/components/switch-orion',
                                 '/es/documentacion/components/switch',
                                 '/es/documentacion/components/text'
+                            ]
+                        },
+                        {
+                            title: 'Estilos',
+                            collapsable: false,
+                            sidebarDepth: 2,
+                            children: [
+                                {
+                                    title: 'Clases de utilidad',
+                                    path: '/es/documentacion/estilos/clases-de-utilidad/',
+                                    collapsable: false,
+                                    sidebarDepth: 2,
+                                    children: [
+                                        '/es/documentacion/estilos/clases-de-utilidad/colores',
+                                        '/es/documentacion/estilos/clases-de-utilidad/gaps'
+                                    ]
+                                }
                             ]
                         }
                     ],
