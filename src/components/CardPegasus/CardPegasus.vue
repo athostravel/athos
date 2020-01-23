@@ -11,7 +11,7 @@
                     v-if="cfg.highlight.enabled"
                     v-bind="[cfg.highlight, highlight]"
                     class="c-card-pegasus__highlight"
-                    :class="cfg.highlight.background && `u-bg-color-${cfg.highlight.background}`"
+                    :class="cfg.highlight.bgColor && `u-bg-color-${cfg.highlight.bgColor}`"
                 >
                     {{highlight.text}}
                 </AtText>
@@ -143,7 +143,7 @@
                     },
                     highlight: {
                         enabled: true,
-                        background: 'secondary',
+                        bgColor: 'secondary',
                         color: 'white',
                         tag: 'div'
                     },
@@ -197,6 +197,7 @@
     --c-card-pegasus-box-padding: var(--space-s);
     --c-card-pegasus-title-margin: 0 0 var(--space-xs) 0;
     --c-card-pegasus-inner-background: #fff;
+    --c-card-pegasus-highlight-padding: 0.25em 1em;
   }
 </style>
 
@@ -206,6 +207,10 @@
 
     &__box {
       padding: var(--c-card-pegasus-box-padding);
+    }
+
+    &__highlight {
+        padding: var(--c-card-pegasus-highlight-padding);
     }
 
     &__header {
