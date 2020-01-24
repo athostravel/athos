@@ -97,7 +97,7 @@
                     banner: {
                         radius: true,
                         ratio: {
-                            width: 4,
+                            width: 8,
                             height: 3
                         }
                     },
@@ -186,11 +186,11 @@
     }
 
     &__meta {
-      padding: em(2px) em(16px);
+      padding: em(4px) em(16px);
     }
 
     &__title {
-      padding: em(4px) em(16px);
+      padding: em(8px) em(16px);
     }
 
     &__price {

@@ -10,13 +10,13 @@
 
 ## Propiedades
 
-| Nombre     | Tipo     | Parámetros                                                                    | Descripción                                   | Por defecto |
-|------------|----------|-------------------------------------------------------------------------------|-----------------------------------------------|-------------|
-| `tag`      | `String` |                                                                               | Etiqueta HTML del componente                  | `div`       |
-| `icon`     | `String` |                                                                               | Clase del icono a mostrar                     | `undefined` |
-| `position` | `String` | `top`, `right`, `bottom`, `left`                                              | Posición del icono                            | `left`      |
-| `align`    | `String` | `left`, `center`, `right`                                                     | Alineación del icono y contenido              | `left`      |
-| `gap`      | `String` | `dunite`, `diorite`, `basalt`, `obsidian`, `tuff`, `pumice`, `scoria`, `coal` | Tamaño de separación del icono y el contenido | `undefined` |
+| Nombre     | Tipo     | Parámetros                                                            | Descripción                                   | Por defecto |
+|------------|----------|-----------------------------------------------------------------------|-----------------------------------------------|-------------|
+| `tag`      | `String` |                                                                       | Etiqueta HTML del componente                  | `div`       |
+| `icon`     | `String` |                                                                       | Clase del icono a mostrar                     | `undefined` |
+| `position` | `String` | `top`, `right`, `bottom`, `left`                                      | Posición del icono                            | `left`      |
+| `align`    | `String` | `left`, `center`, `right`                                             | Alineación del icono y contenido              | `left`      |
+| `gap`      | `String` | [Nombre de clases disponibles](../estilos/clases-de-utilidad/gaps.md) | Tamaño de separación del icono y el contenido | `undefined` |
 
 ## Slots
 
