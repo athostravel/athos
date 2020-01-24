@@ -56,4 +56,7 @@
     --color-shade-#{$i * 100}-hsl: 0, 0%, #{100 - ($i * 5)}#{'%'};
     --color-shade-#{$i * 100}: #{'hsl(var(--color-shade-#{$i * 100}-hsl))'};
   }
+
+  // Borders
+  --color-border: var(--color-shade-400);
 }
