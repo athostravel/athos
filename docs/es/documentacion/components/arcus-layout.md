@@ -1,4 +1,4 @@
-# Arcus Layout
+# Arcus
 
 <Preview>
   <template slot="demo">
