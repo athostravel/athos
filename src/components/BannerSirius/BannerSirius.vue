@@ -40,7 +40,8 @@
             <div class="c-banner-sirius__price">
                 <AtPriceButton
                     v-if="price && price.value"
-                    v-bind="[cfg.priceButton, price, { href }]"
+                    v-bind="[price, { href }]"
+                    :config="cfg.priceButton"
                 />
             </div>
         </AtBannerContent>
