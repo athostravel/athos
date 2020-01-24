@@ -1,6 +1,7 @@
 <template>
     <div class="c-collapse">
         <AtIconCard
+            id="collapse"
             v-bind="[cfg.header, header]"
             class="c-collapse__header"
             :class="[
@@ -10,9 +11,7 @@
                     'c-collapse__header--center': align === 'center'
                 }
             ]"
-            id="collapse"
         >
-
             <AtIcon
                 slot="icon"
                 v-bind="cfg.icon"
@@ -26,9 +25,9 @@
         </AtIconCard>
 
         <div
+            v-toggle
             class="c-collapse__content"
             v-bind="content"
-            v-toggle
             toggle-class="is-active"
             toggle-trigger-class="is-active"
             toggle-trigger="#collapse"
@@ -41,7 +40,6 @@
 <script>
     import AtIcon from '@components/Icon/Icon'
     import AtIconCard from '@components/IconCard/IconCard'
-    import AtButton from '@components/Button/Button'
     import AtText from '@components/Text/Text'
     import ToggleDirective from '@directives/ToggleDirective'
 
@@ -53,7 +51,6 @@
         components: {
             AtIcon,
             AtIconCard,
-            AtButton,
             AtText
         },
         props: {
@@ -90,50 +87,50 @@
 </script>
 
 <style lang="scss">
-    .c-collapse {
-        --c-collapse-content-padding: var(--space-s) 0 0 0;
-        --c-collapse-content-margin-paragraphs: 0 0 var(--space-xs) 0;
-    }
+  .c-collapse {
+    --c-collapse-content-padding: var(--space-s) 0 0 0;
+    --c-collapse-content-margin-paragraphs: 0 0 var(--space-xs) 0;
+  }
 </style>
 
 <style lang="scss" scoped>
-    .c-collapse {
-        $this: &;
+  .c-collapse {
+    $this: &;
 
-        display: grid;
+    display: grid;
 
-        &__header {
-            cursor: pointer;
-            align-items: center;
-            justify-self: start;
+    &__header {
+      cursor: pointer;
+      align-items: center;
+      justify-self: start;
 
-            &--right {
-                justify-self: end;
-            }
+      &--right {
+        justify-self: end;
+      }
 
-            &--center {
-                justify-self: center;
-            }
+      &--center {
+        justify-self: center;
+      }
 
-            &.is-active {
-                #{$this}__icon {
-                    transform: rotate(180deg);
-                }
-            }
+      &.is-active {
+        #{$this}__icon {
+          transform: rotate(180deg);
         }
-
-        &__icon {
-            transition: transform .3s;
-            transform: rotate(0deg);
-        }
-
-        &__content {
-            display: none;
-            padding: var(--c-collapse-content-padding);
-
-            &.is-active {
-                display: block;
-            }
-        }
+      }
     }
+
+    &__icon {
+      transition: transform 0.3s;
+      transform: rotate(0deg);
+    }
+
+    &__content {
+      display: none;
+      padding: var(--c-collapse-content-padding);
+
+      &.is-active {
+        display: block;
+      }
+    }
+  }
 </style>

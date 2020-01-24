@@ -5,7 +5,7 @@
             v-bind="[cfg.header, header]"
             class="c-albedo-layout__header"
         >
-            {{header.text}}
+            {{ header.text }}
         </AtText>
 
         <div class="c-albedo-layout__inner">
@@ -14,13 +14,12 @@
                 :key="item.id"
                 class="c-albedo-layout__col"
             >
-
                 <AtText
                     v-if="item.title"
                     v-bind="[cfg.title, item.title]"
                     class="c-albedo-layout__title"
                 >
-                    {{item.title.text}}
+                    {{ item.title.text }}
                 </AtText>
 
                 <component

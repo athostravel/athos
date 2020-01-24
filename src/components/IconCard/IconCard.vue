@@ -33,11 +33,6 @@
         components: {
             AtIcon
         },
-        computed: {
-          computedIcon () {
-              return typeof this.icon === 'object' ? this.icon : { icon: this.icon }
-          }
-        },
         props: {
             tag: {
                 type: String,
@@ -69,6 +64,11 @@
                 cfg: {
                     icon: {}
                 }
+            }
+        },
+        computed: {
+            computedIcon () {
+                return typeof this.icon === 'object' ? this.icon : { icon: this.icon }
             }
         }
     }
