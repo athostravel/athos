@@ -4,7 +4,9 @@
             v-if="header"
             v-bind="[cfg.header, header]"
             class="c-albedo-layout__header"
-        />
+        >
+            {{header.text}}
+        </AtText>
 
         <div class="c-albedo-layout__inner">
             <div
@@ -12,11 +14,13 @@
                 :key="item.id"
                 class="c-albedo-layout__col"
             >
+
                 <AtText
                     v-bind="[cfg.title, item.title]"
-                    :text="item.title.text"
                     class="c-albedo-layout__title"
-                />
+                >
+                    {{item.title.text}}
+                </AtText>
 
                 <component
                     :is="component"
@@ -60,10 +64,12 @@
             return {
                 cfg: {
                     header: {
-                        tag: 'h2'
+                        tag: 'h2',
+                        color: 'primary'
                     },
                     title: {
-                        tag: 'h3'
+                        tag: 'h3',
+                        color: 'secondary'
                     }
                 }
             }

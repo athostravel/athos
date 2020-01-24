@@ -1,4 +1,4 @@
-# Albedo
+# Albedo Layout
 
 <Preview>
   <template slot="demo">
