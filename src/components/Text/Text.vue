@@ -77,7 +77,7 @@
 <style lang="scss">
   .c-text {
     --c-text-font-size: var(--font-size-m);
-    --c-text-line-height: var(--line-height-xl);
+    --c-text-line-height: var(--line-height-2xl);
     --c-text-font-weight: var(--font-weight-regular);
   }
 </style>
@@ -141,34 +141,42 @@
 
     &--lignite {
       --c-text-font-size: var(--font-size-7xl);
+      --c-text-line-height: var(--line-height-xl);
     }
 
     &--limestone {
       --c-text-font-size: var(--font-size-8xl);
+      --c-text-line-height: var(--line-height-xl);
     }
 
     &--sandstone {
       --c-text-font-size: var(--font-size-9xl);
+      --c-text-line-height: var(--line-height-xl);
     }
 
     &--andesite {
       --c-text-font-size: var(--font-size-10xl);
+      --c-text-line-height: var(--line-height-xl);
     }
 
     &--bauxite {
       --c-text-font-size: var(--font-size-11xl);
+      --c-text-line-height: var(--line-height-xl);
     }
 
     &--chalk {
       --c-text-font-size: var(--font-size-12xl);
+      --c-text-line-height: var(--line-height-xl);
     }
 
     &--evaporite {
       --c-text-font-size: var(--font-size-13xl);
+      --c-text-line-height: var(--line-height-xl);
     }
 
     &--gritstone {
       --c-text-font-size: var(--font-size-14xl);
+      --c-text-line-height: var(--line-height-xl);
     }
 
     &--thin {

@@ -10,6 +10,7 @@
         />
         <img
             class="c-picture__img"
+            :class="{ 'c-picture__img--blur': filter === 'blur'}"
             :src="shim"
             :data-src="src"
             :alt="alt"
@@ -46,6 +47,10 @@
             sources: {
                 type: Array,
                 default: () => []
+            },
+            filter: {
+                type: String,
+                default: undefined
             }
         },
         data () {
@@ -62,13 +67,14 @@
     --c-picture-ratio-height: 9;
     --c-picture-overlay: transparent;
     --c-picture-loading-background: #f6f6f6;
+    --c-picture-blur: 8px;
   }
 </style>
 
 <style scoped lang="scss">
   .c-picture {
-    overflow: hidden;
     position: relative;
+    overflow: hidden;
 
     &::before {
       display: block;
@@ -78,7 +84,7 @@
       background: var(--c-picture-loading-background);
     }
 
-    img,
+    &__img,
     &::after {
       position: absolute;
       left: 0;
@@ -88,15 +94,19 @@
       z-index: 1;
     }
 
-    img {
+    &__img {
       opacity: 0;
       transition: 0.3s opacity;
       will-change: opacity;
+
+      &--blur {
+        filter: blur(var(--c-picture-blur));
+      }
     }
 
     &::after {
-      content: "";
       background: var(--c-picture-overlay);
+      content: "";
       z-index: 2;
     }
 

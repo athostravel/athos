@@ -1,4 +1,4 @@
-# Arcus Layout
+# Arcus
 
 <Preview>
   <template slot="demo">
@@ -10,11 +10,35 @@
 
 ## Propiedades
 
-| Nombre    | Tipo      | Descripción                           | Por defecto                                    |
-|-----------|-----------|---------------------------------------|------------------------------------------------|
+| Nombre      | Tipo      | Descripción                                                             | Por defecto |
+|-------------|-----------|-------------------------------------------------------------------------|-------------|
+| `header`    | `Object`  | Propiedades del componente [Text](./text.md)                            | `{}`        |
+| `meta`      | `Object`  | Propiedades del componente [Text](./text.md)                            | `{}`        |
+| `items`     | `Array`   | Array con componentes [CardLeo](./card-leo.md)                          | `[]`        |
+| `cards`     | `Array`   | Array con la configuración de los componentes [CardLeo](./card-leo.md)  | `[]`        |
+| `component` | `Array`   | Nombre del componente a pintar                                          | `undefined` |
+            
+### Configuración por defecto
+```js
+{
+    header: {
+        color: 'primary',
+        size: 'scoria',
+        tag: 'h2',
+        weight: 'bold'
+    },
+    title: {
+        color: 'secondary',
+        tag: 'h3',
+        size: 'basalt',
+        weight: 'bold'
+    }
+}
+```
 
-## Slots
+#### Referencias
 
-| Nombre    | Descripción        |
-|-----------|--------------------|
-| `default` | Slot del contenido |
+| Clave              | Componente            |
+|--------------------|-----------------------|
+| `header`           | [Text](./text.md)     |
+| `title`            | [Text](./text.md)     |

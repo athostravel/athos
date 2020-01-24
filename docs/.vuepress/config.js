@@ -136,7 +136,9 @@ module.exports = {
                                 '/es/documentacion/components/button',
                                 '/es/documentacion/components/card-aries',
                                 '/es/documentacion/components/card-leo',
+                                '/es/documentacion/components/card-pegasus',
                                 '/es/documentacion/components/checkbox',
+                                '/es/documentacion/components/collapse',
                                 '/es/documentacion/components/icon',
                                 '/es/documentacion/components/icon-card',
                                 '/es/documentacion/components/picture',
@@ -145,7 +147,8 @@ module.exports = {
                                 '/es/documentacion/components/radio',
                                 '/es/documentacion/components/switch-orion',
                                 '/es/documentacion/components/switch',
-                                '/es/documentacion/components/text'
+                                '/es/documentacion/components/text',
+                                '/es/documentacion/components/toggle'
                             ]
                         },
                         {

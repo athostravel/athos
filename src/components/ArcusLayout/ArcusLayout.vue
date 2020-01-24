@@ -4,21 +4,23 @@
             v-if="header"
             v-bind="[cfg.header, header]"
             class="c-arcus-layout__header"
-        />
+        >
+            {{ header.text }}
+        </AtText>
 
         <div class="c-arcus-layout__inner">
             <div
                 v-for="item in items"
                 :key="item.id"
                 class="c-arcus-layout__col"
-                v-bind="item"
             >
                 <AtText
                     v-if="item.title"
                     v-bind="[cfg.title, item.title]"
-                    :text="item.title.text"
                     class="c-arcus-layout__title"
-                />
+                >
+                    {{ item.title.text }}
+                </AtText>
 
                 <component
                     :is="component"
@@ -66,10 +68,16 @@
             return {
                 cfg: {
                     header: {
-                        tag: 'h2'
+                        color: 'primary',
+                        size: 'scoria',
+                        tag: 'h2',
+                        weight: 'bold'
                     },
                     title: {
-                        tag: 'h3'
+                        color: 'secondary',
+                        tag: 'h3',
+                        size: 'basalt',
+                        weight: 'bold'
                     }
                 }
             }
@@ -98,12 +106,12 @@
     --c-arcus-layout-title-border-color: var(--color-shade-200);
     --c-arcus-layout-title-padding: 0 0 0.6em 0;
     --c-arcus-layout-title-text-align: center;
-    --c-arcus-layout-title-font-size: var(--font-size-2xl);
-    --c-arcus-layout-title-font-weight: 600;
+    //--c-arcus-layout-title-font-size: var(--font-size-2xl);
+    //--c-arcus-layout-title-font-weight: 600;
     --c-arcus-layout-title-color: var(--color-secondary);
     --c-arcus-layout-header-text-align: center;
-    --c-arcus-layout-header-font-size: var(--font-size-5xl);
-    --c-arcus-layout-header-font-weight: 900;
+    //--c-arcus-layout-header-font-size: var(--font-size-5xl);
+    //--c-arcus-layout-header-font-weight: 900;
     --c-arcus-layout-header-color: var(--color-primary);
     --c-arcus-layout-header-margin: 0 0 1em 0;
     --c-arcus-layout-header-display: block;
@@ -125,10 +133,6 @@
     }
 
     &__header {
-      --c-text-color: var(--c-arcus-layout-header-color);
-      --c-text-font-size: var(--c-arcus-layout-header-font-size);
-      --c-text-font-weight: var(--c-arcus-layout-header-font-weight);
-
       display: var(--c-arcus-layout-header-display);
       margin: var(--c-arcus-layout-header-margin);
       text-align: var(--c-arcus-layout-header-text-align);
@@ -144,20 +148,15 @@
       border-left: var(--c-arcus-layout-item-border-size-left) solid var(--c-arcus-layout-item-border-color);
       border-right: var(--c-arcus-layout-item-border-size-right) solid var(--c-arcus-layout-item-border-color);
       border-bottom: var(--c-arcus-layout-item-border-size-bottom) solid var(--c-arcus-layout-item-border-color);
-      padding: var(--c-arcus-layout-item-padding);
     }
 
     &__title {
-      --c-text-font-size: var(--c-arcus-layout-title-font-size);
-      --c-text-font-weight: var(--c-arcus-layout-title-font-weight);
-      --c-text-color: var(--c-arcus-layout-title-color);
-
       border-top: var(--c-arcus-layout-item-border-size-top) solid var(--c-arcus-layout-item-border-color);
       border-left: var(--c-arcus-layout-item-border-size-left) solid var(--c-arcus-layout-item-border-color);
       border-right: var(--c-arcus-layout-item-border-size-right) solid var(--c-arcus-layout-item-border-color);
       border-bottom: var(--c-arcus-layout-item-border-size-bottom) solid var(--c-arcus-layout-item-border-color);
       text-align: var(--c-arcus-layout-title-text-align);
-      padding: var(--c-arcus-layout-item-padding);
+      padding: var(--c-arcus-layout-title-padding);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;

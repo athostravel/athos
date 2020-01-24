@@ -8,10 +8,9 @@
             v-bind="[cfg.image, image]"
         />
 
-        <AtText
-            v-bind="[cfg.title, title]"
-            class="c-card-aries__title"
-        />
+        <AtText v-bind="[cfg.title, title]" class="c-card-aries__title">
+            {{ title.text }}
+        </AtText>
 
         <div class="c-card-aries__category">
             <template v-for="index in category.count">
@@ -24,7 +23,7 @@
         </div>
 
         <AtPrice
-            v-bind="[cfg.price,price]"
+            v-bind="[cfg.price, price]"
             class="c-card-aries__price"
         />
     </div>
@@ -70,13 +69,16 @@
             return {
                 cfg: {
                     category: {
-                        icon: 'heart'
+                        icon: 'heart',
+                        color: 'secondary',
+                        size: 'basalt'
                     },
                     price: {
                         inline: true
                     },
                     title: {
-                        tag: 'h3'
+                        tag: 'h3',
+                        size: 'diorite'
                     }
                 }
             }
@@ -91,10 +93,6 @@
     --c-card-aries-picture-width: var(--space-6xl);
     --c-card-aries-ratio-height: 1;
     --c-card-aries-ratio-width: 1;
-    --c-card-aries-category-font-size: var(--font-size-2xs);
-    --c-card-aries-text-font-size: var(--font-size-l);
-    --c-card-aries-text-color: var(--color-primary);
-    --c-card-aries-icon-color: var(--color-secondary);
   }
 </style>
 
@@ -119,7 +117,6 @@
     }
 
     &__picture {
-      align-self: start;
       grid-area: picture;
 
       &::before {
@@ -132,19 +129,15 @@
       align-self: start;
       grid-area: title;
       position: relative;
-      color: var(--c-card-aries-text-color);
-      font-size: var(--c-card-aries-text-font-size);
     }
 
     &__category {
       grid-area: category;
-      font-size: var(--c-card-aries-category-font-size);
       margin-top: -0.5em;
       justify-self: flex-end;
     }
 
     &__icon {
-      color: var(--c-card-aries-icon-color);
       margin-right: var(--space-3xs);
 
       &:last-child {

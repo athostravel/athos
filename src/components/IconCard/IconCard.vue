@@ -5,6 +5,7 @@
         :class="[
             gap && `u-gap-${gap}`,
             {
+                'c-icon-card--inline': inline,
                 'c-icon-card--icon-left': position === 'left',
                 'c-icon-card--icon-bottom': position === 'bottom',
                 'c-icon-card--icon-right': position === 'right',
@@ -13,7 +14,11 @@
             }
         ]"
     >
-        <AtIcon class="c-icon-card__icon" v-bind="[cfg.icon, { icon }]" />
+        <div class="c-icon-card__icon">
+            <slot name="icon">
+                <AtIcon v-bind="[cfg.icon, computedIcon]" />
+            </slot>
+        </div>
         <div class="c-icon-card__box">
             <slot />
         </div>
@@ -34,7 +39,7 @@
                 default: 'div'
             },
             icon: {
-                type: String,
+                type: [String, Object],
                 default: undefined
             },
             position: {
@@ -48,6 +53,10 @@
             gap: {
                 type: String,
                 default: undefined
+            },
+            inline: {
+                type: Boolean,
+                default: false
             }
         },
         data () {
@@ -55,6 +64,11 @@
                 cfg: {
                     icon: {}
                 }
+            }
+        },
+        computed: {
+            computedIcon () {
+                return typeof this.icon === 'object' ? this.icon : { icon: this.icon }
             }
         }
     }
@@ -70,6 +84,10 @@
     align-items: start;
     align-content: start;
     grid-gap: 0.5em;
+
+    &--inline {
+      display: inline-grid;
+    }
 
     &__icon {
       grid-area: icon;

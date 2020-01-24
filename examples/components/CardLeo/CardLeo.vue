@@ -12,109 +12,90 @@
         data () {
             return {
                 simply: {
-                    tag: 'article',
-                    shadow: true,
-                    radius: true,
-                    map: {
-                        enabled: true,
-                        button: { tag: 'button', rounded: false, icon: true, size: 'tiny' },
-                        icon: { icon: 'heart' }
-                    },
-                    favourite: {
-                        enabled: true,
-                        button: { tag: 'button', rounded: false, icon: true, size: 'tiny' },
-                        icon: { icon: 'heart' }
-                    },
-                    meta: {
-                        text: 'Marruecos',
-                        tag: 'span'
-                    },
-                    text: {
-                        text: 'Visitando: Marrakech, Tifeltoute, Zagora, dunas de Erg Lihoudi...',
-                        tag: 'span'
-                    },
-                    coverImage: false,
-                    picture: {
+                    href: '#simply',
+                    image: {
                         title: 'Título',
                         alt: 'Alt',
-                        src: 'https://source.unsplash.com/random/1920x1080',
-                        sources: [
-                            { srcset: 'https://source.unsplash.com/random/600x400', media: '480px' },
-                            { srcset: 'https://source.unsplash.com/random/320x200', media: '320px' }
-                        ]
+                        src: 'https://source.unsplash.com/random/1920x1080'
                     },
-                    title: {
-                        text: 'Visita a Marruecos y alrededores (Puente de Diciembre)'
-                    },
-                    description: {
-                        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci asperiores cupiditate eos esse natus perspiciatis placeat rerum tempore. A alias dignissimos illo quaerat? Aliquam cum minus neque officia saepe tempora.'
-                    },
-                    priceButton: {
-                        price: {
-                            text: 'Desde',
-                            before: '499',
-                            value: '300',
-                            href: '#'
+                    info: {
+                        tag: 'div',
+                        highlight: {
+                            text: 'Destacado'
                         },
-                        button: {
-                            icon: 'angle-right'
+                        href: '#',
+                        image: {
+                            title: 'Título',
+                            alt: 'Alt',
+                            src: 'https://source.unsplash.com/random/1920x1080'
+                        },
+                        previous: {
+                            text: '9 días y 8 noches'
+                        },
+                        meta: {
+                            text: 'Marruecos'
+                        },
+                        text: {
+                            text: 'Visitando: Marrakech, Tifeltoute, Zagora, dunas de Erg Lihoudi...'
+                        },
+                        title: {
+                            text: 'Visita a Marruecos y alrededores (Puente de Diciembre)'
+                        },
+                        description: {
+                            text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci asperiores cupiditate eos esse natus perspiciatis placeat rerum tempore. A alias dignissimos illo quaerat? Aliquam cum minus neque officia saepe tempora.'
+                        },
+                        price: {
+                            before: '499',
+                            value: '300'
                         }
                     }
                 },
                 hasBackground: {
-                    tag: 'article',
-                    shadow: true,
-                    radius: true,
-                    map: {
-                        enabled: false
-                    },
-                    favourite: {
-                        enabled: true,
-                        button: { tag: 'button', rounded: true, icon: true, size: 'tiny' },
-                        icon: { icon: 'heart' }
-                    },
-                    highlight: {
-                        text: 'Destacado',
-                        background: true,
-                        tag: 'span'
-                    },
-                    previous: {
-                        text: '9 días y 8 noches',
-                        tag: 'span'
-                    },
-                    meta: {
-                        text: 'Marruecos',
-                        tag: 'span'
-                    },
-                    text: {
-                        text: 'Visitando: Marrakech, Tifeltoute, Zagora, dunas de Erg Lihoudi...',
-                        tag: 'span'
-                    },
-                    coverImage: true,
-                    picture: {
+                    href: '#hasBackground',
+                    image: {
                         title: 'Título',
                         alt: 'Alt',
-                        src: 'https://source.unsplash.com/random/1920x1080',
-                        sources: [
-                            { srcset: 'https://source.unsplash.com/random/600x400', media: '480px' },
-                            { srcset: 'https://source.unsplash.com/random/320x200', media: '320px' }
-                        ]
+                        src: 'https://source.unsplash.com/random/1920x1080'
                     },
-                    title: {
-                        text: 'Visita a Marruecos y alrededores (Puente de Diciembre)'
-                    },
-                    description: {
-                        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci asperiores cupiditate eos esse natus perspiciatis placeat rerum tempore. A alias dignissimos illo quaerat? Aliquam cum minus neque officia saepe tempora.'
-                    },
-                    priceButton: {
-                        price: {
-                            text: 'Desde',
-                            before: '499',
-                            value: '300',
-                            href: '#'
+                    info: {
+                        headerTransparent: true,
+                        tag: 'div',
+                        highlight: {
+                            text: 'Destacado'
                         },
-                        button: {
-                            icon: 'angle-right'
+                        href: '#',
+                        image: {
+                            title: 'Título',
+                            alt: 'Alt',
+                            src: 'https://source.unsplash.com/random/1920x1080'
+                        },
+                        previous: {
+                            text: '9 días y 8 noches'
+                        },
+                        meta: {
+                            text: 'Marruecos'
+                        },
+                        text: {
+                            text: 'Visitando: Marrakech, Tifeltoute, Zagora, dunas de Erg Lihoudi...'
+                        },
+                        title: {
+                            text: 'Visita a Marruecos y alrededores (Puente de Diciembre)'
+                        },
+                        description: {
+                            text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci asperiores cupiditate eos esse natus perspiciatis placeat rerum tempore. A alias dignissimos illo quaerat? Aliquam cum minus neque officia saepe tempora.'
+                        },
+                        price: {
+                            before: '499',
+                            value: '300'
+                        }
+                    },
+                    config: {
+                        banner: {
+                            filter: 'blur',
+                            shadow: false
+                        },
+                        filterImage: {
+                            enabled: true
                         }
                     }
                 }

@@ -1,4 +1,4 @@
-# Albedo Layout
+# Albedo
 
 <Preview>
   <template slot="demo">
@@ -10,11 +10,30 @@
 
 ## Propiedades
 
-| Nombre    | Tipo      | Descripción                           | Por defecto                                    |
-|-----------|-----------|---------------------------------------|------------------------------------------------|
+| Nombre      | Tipo      | Descripción                                         | Por defecto |
+|-------------|-----------|-----------------------------------------------------|-------------|
+| `header`    | `Object`  | Propiedades del componente [Text](./text.md)        | `{}`        |
+| `meta`      | `Object`  | Propiedades del componente [Text](./text.md)        | `{}`        |
+| `items`     | `Array`   | Array con componentes [CardAries](./card-aries.md)  | `[]`        |
+| `component` | `Array`   | Nombre del componente a pintar                      | `undefined` |
+            
+### Configuración por defecto
+```js
+{
+    header: {
+        tag: 'h2',
+        color: 'primary'
+    },
+    title: {
+        tag: 'h3',
+        color: 'secondary'
+    }
+}
+```
 
-## Slots
+#### Referencias
 
-| Nombre    | Descripción        |
-|-----------|--------------------|
-| `default` | Slot del contenido |
+| Clave              | Componente            |
+|--------------------|-----------------------|
+| `header`           | [Text](./text.md)     |
+| `title`            | [Text](./text.md)     |
