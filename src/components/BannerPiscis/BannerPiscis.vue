@@ -3,18 +3,17 @@
         tag="article"
         class="c-banner-piscis"
         :class="{
-            'c-banner-piscis--overlay': cfg.overlay.enabled === true,
-            'c-banner-piscis--overlay-bottom': cfg.overlay.enabled === true && cfg.overlay.position === 'bottom'
+            'c-banner-piscis--overlay-bottom': cfg.overlay === 'bottom'
         }"
         v-bind="banner"
     >
         <AtBannerContent
             class="c-banner-piscis__content"
             :class="[
-                { 'c-banner-piscis__content--justify-bottom': justifyContent === 'bottom'},
-                { 'c-banner-piscis__content--justify-center': justifyContent === 'center'},
-                { 'c-banner-piscis__content--align-center': alignContent === 'center'},
-                { 'c-banner-piscis__content--align-right': alignContent === 'right'}
+                { 'c-banner-piscis__content--justify-bottom': cfg.justifyContent === 'bottom'},
+                { 'c-banner-piscis__content--justify-center': cfg.justifyContent === 'center'},
+                { 'c-banner-piscis__content--align-center': cfg.alignContent === 'center'},
+                { 'c-banner-piscis__content--align-right': cfg.alignContent === 'right'}
             ]"
         >
             <div v-if="title" class="c-banner-piscis__text">
@@ -59,29 +58,28 @@
                 default: () => {}
             },
             justifyContent: {
-                type: [String, Boolean],
-                default: 'bottom'
+                type: String,
+                default: undefined
             },
             alignContent: {
-                type: [String, Boolean],
-                default: 'center'
+                type: String,
+                default: undefined
             },
             goButton: {
                 type: Object,
                 default: () => {}
             },
             overlay: {
-                type: Object,
-                default: () => {}
+                type: String,
+                default: undefined
             }
         },
         data () {
             return {
                 cfg: {
-                    overlay: {
-                        enabled: true,
-                        position: 'bottom'
-                    },
+                    justifyContent: 'bottom',
+                    alignContent: 'center',
+                    overlay: 'bottom',
                     goButton: {
                         color: 'white',
                         size: 'basalt',
@@ -120,9 +118,9 @@
 <style scoped lang="scss">
   .c-banner-piscis {
     &--overlay {
-      position: relative;
-
       &-bottom {
+        position: relative;
+
         &::after {
           position: absolute;
           top: 0;
