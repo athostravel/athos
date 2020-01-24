@@ -128,7 +128,6 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 2,
                             children: [
-                                '/es/documentacion/components/accordion',
                                 '/es/documentacion/components/albedo-layout',
                                 '/es/documentacion/components/arcus-layout',
                                 '/es/documentacion/components/banner-sirius',
@@ -138,6 +137,7 @@ module.exports = {
                                 '/es/documentacion/components/card-leo',
                                 '/es/documentacion/components/card-pegasus',
                                 '/es/documentacion/components/checkbox',
+                                '/es/documentacion/components/collapse',
                                 '/es/documentacion/components/icon',
                                 '/es/documentacion/components/icon-card',
                                 '/es/documentacion/components/picture',

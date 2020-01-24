@@ -1,9 +1,9 @@
-import Accordion from './Accordion.vue'
+import Collapse from './Collapse.vue'
 import { use, registerComponent } from '@utils/plugins'
 
 const Plugin = {
     install (Vue) {
-        registerComponent(Vue, Accordion)
+        registerComponent(Vue, Collapse)
     }
 }
 

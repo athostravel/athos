@@ -16,7 +16,7 @@
     >
         <div class="c-icon-card__icon">
             <slot name="icon">
-                <AtIcon v-bind="[cfg.icon, { icon }]" />
+                <AtIcon v-bind="[cfg.icon, computedIcon]" />
             </slot>
         </div>
         <div class="c-icon-card__box">
@@ -33,13 +33,18 @@
         components: {
             AtIcon
         },
+        computed: {
+          computedIcon () {
+              return typeof this.icon === 'object' ? this.icon : { icon: this.icon }
+          }
+        },
         props: {
             tag: {
                 type: String,
                 default: 'div'
             },
             icon: {
-                type: String,
+                type: [String, Object],
                 default: undefined
             },
             position: {

@@ -1,22 +1,37 @@
 <template>
-    <div class="c-accordion">
+    <div class="c-collapse">
         <AtIconCard
             v-bind="[cfg.header, header]"
-            class="c-accordion__header"
-            id="accordion"
+            class="c-collapse__header"
+            :class="[
+                {
+                    'c-collapse__header--left': position === 'left',
+                    'c-collapse__header--right': position === 'right',
+                    'c-collapse__header--center': position === 'center'
+                }
+            ]"
+            id="collapse"
         >
-            <AtText class="c-accordion__header-text" v-bind="[cfg.header, header]">
+
+            <AtIcon
+                slot="icon"
+                v-bind="cfg.icon"
+                :icon="cfg.icon.icon"
+                class="c-collapse__icon"
+            />
+
+            <AtText class="c-collapse__header-text" v-bind="[cfg.header, header]">
                 {{ header.text }}
             </AtText>
         </AtIconCard>
 
         <div
-            class="c-accordion__content"
+            class="c-collapse__content"
             v-bind="content"
             v-toggle
             toggle-class="is-active"
             toggle-trigger-class="is-active"
-            toggle-trigger="#accordion"
+            toggle-trigger="#collapse"
         >
             <slot />
         </div>
@@ -31,7 +46,7 @@
     import ToggleDirective from '@directives/ToggleDirective'
 
     export default {
-        name: 'AtAccordion',
+        name: 'AtCollapse',
         directives: {
             toggle: ToggleDirective
         },
@@ -49,18 +64,24 @@
             content: {
                 type: Object,
                 default: () => {}
+            },
+            position: {
+                type: String,
+                default: 'left'
             }
         },
         data () {
             return {
                 cfg: {
                     header: {
-                        icon: 'heart',
                         color: 'primary',
                         position: 'right',
                         gap: 'dunite',
                         weight: 'bold',
                         inline: true
+                    },
+                    icon: {
+                        icon: 'heart'
                     }
                 }
             }
@@ -69,36 +90,46 @@
 </script>
 
 <style lang="scss">
-    .c-accordion {
-        --c-accordion-content-padding: var(--space-s) 0 0 0;
-        --c-accordion-content-margin-paragraphs: 0 0 var(--space-xs) 0;
+    .c-collapse {
+        --c-collapse-content-padding: var(--space-s) 0 0 0;
+        --c-collapse-content-margin-paragraphs: 0 0 var(--space-xs) 0;
     }
 </style>
 
 <style lang="scss" scoped>
-    .c-accordion {
+    .c-collapse {
+        $this: &;
+
         display: grid;
 
         &__header {
             cursor: pointer;
-            justify-self: center;
             align-items: center;
+            justify-self: start;
 
-            .c-icon {
-                transition: transform .3s;
-                transform: rotate(0deg);
+            &--right {
+                justify-self: end;
+            }
+
+            &--center {
+                justify-self: center;
             }
 
             &.is-active {
-                .c-icon {
+                #{$this}__icon {
                     transform: rotate(180deg);
                 }
             }
         }
 
+        &__icon {
+            transition: transform .3s;
+            transform: rotate(0deg);
+        }
+
         &__content {
             display: none;
-            padding: var(--c-accordion-content-padding);
+            padding: var(--c-collapse-content-padding);
 
             &.is-active {
                 display: block;

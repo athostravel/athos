@@ -1,6 +1,6 @@
 <template>
     <div>
-        <AtAccordion v-bind="conf">
+        <AtCollapse v-bind="conf">
             <p><strong>INFORMACIÓN BÁSICA SOBRE PROTECCIÓN DE DATOS</strong></p>
 
             <p><strong>Responsable:</strong> Avoris Retail Division, S.L.</p>
@@ -14,7 +14,7 @@
             <p><strong>Derechos:</strong> El cliente podrá revocar en cualquier momento su consentimiento, así como ejercitar, los derechos de oposición, acceso, portabilidad, rectificación, limitación supresión de datos y a no ser objeto de una decisión basada únicamente en el tratamiento automatizado de sus datos, remitiendo una comunicación por escrito a Avoris Retail Division S.L. a las direcciones indicadas.</p>
 
             <p><strong>Más información:</strong> <a href="#">Clique aquí</a></p>
-        </AtAccordion>
+        </AtCollapse>
     </div>
 </template>
 
@@ -23,6 +23,7 @@
         data () {
             return {
                 conf: {
+                    position: 'center',
                     header: {
                         text: 'Ver información básica sobre protección de datos'
                     }
