@@ -198,6 +198,7 @@
     --c-card-pegasus-title-margin: 0 0 var(--space-xs) 0;
     --c-card-pegasus-inner-background: #fff;
     --c-card-pegasus-highlight-padding: 0.25em 1em;
+    --c-card-pegasus-highlight-margin-left: calc(var(--space-m) * -1);
   }
 </style>
 
@@ -211,6 +212,7 @@
 
     &__highlight {
         padding: var(--c-card-pegasus-highlight-padding);
+        margin-left: var(--c-card-pegasus-highlight-margin-left);
     }
 
     &__header {
