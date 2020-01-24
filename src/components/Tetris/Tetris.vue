@@ -1,9 +1,10 @@
 <template>
     <div class="c-tetris" :class="gap && `u-gap-${gap}`">
         <AtBannerSirius
-            v-for="item in items"
+            v-for="(item, index) in items"
             :key="item.id"
             v-bind="item"
+            :config="cfg.items[index]"
             class="c-tetris__item"
             :class="{
                 'c-tetris__item--mosaic': variant === 'mosaic'
@@ -32,6 +33,13 @@
             variant: {
                 type: String,
                 default: 'mosaic'
+            }
+        },
+        data () {
+            return {
+                cfg: {
+                    items: []
+                }
             }
         }
     }
