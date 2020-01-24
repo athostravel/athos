@@ -10,15 +10,39 @@
 
 ## Propiedades
 
-| Nombre     | Tipo                                   | Descripción                                                                                                                                             | Por defecto |
-|------------|----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------|
-| `inverse`  | `Boolean`                              | Para poner la imagen a la derecha                                                                                                                       | `false`                                    |
-| `meta`     | `String`                               | Texto principal                                                                                                                                         | `undefined`                                |
-| `category` | `Array`                                | Categoría del producto                                                                                                                                  | `undefined`                                |
-| `src`      | `String`                               | Url de la imagen                                                                                                                                        | `https://source.unsplash.com/random/80x80` |
-| `alt`      | `String`                               | Texto alternativo de la imagen                                                                                                                          | `''`                                       |
-| `title`    | `String`                               | Título de la imagen                                                                                                                                     | `undefined`                                |
-| `tag`      | `String`                               | Etiqueta HTML del componente                                                                                                                            | `h3`                                       |
-| `sources`  | `Array`                                | Listado de sources                                                                                                                                      | `undefined`                                |
-| `text`     | `String`                               | Texto que acompaña al precio                                                                                                                            | `undefined`                                |
-| `value`    | `String`, `Number`                     | Precio                                                                                                                                                  | `undefined`                                |
+| Nombre      | Tipo                | Descripción                                                     | Por defecto  |
+|-------------|---------------------|-----------------------------------------------------------------|--------------|
+| `inverted`  | `Boolean`           | Para poner la imagen a la derecha                               | `false`      |
+| `image`     | `Object`            | Propiedades del componente [Banner](./banner.md)                | `{}`         |
+| `title`     | `Object`            | Propiedades del componente [Text](./text.md)                    | `{}`         |
+| `category`  | `Object`            | Propiedades del componente [Icon](./icon.md)                    | `{}`         |
+| `price`     | `Object`            | Propiedades del componente [Price](./price.md)                  | `{}`         |
+
+### Configuración por defecto
+```js
+{
+    category: {
+        icon: 'heart',
+        color: 'secondary',
+        size: 'basalt'
+    },
+    price: {
+        inline: true
+    },
+    title: {
+        tag: 'h3',
+        size: 'diorite'
+    }
+}
+```
+
+#### Referencias
+
+| Clave              | Componente            |
+|--------------------|-----------------------|
+| `category.icon`    | [Text](./text.md)     |
+| `category.color`   | [Text](./text.md)     |
+| `category.size`    | [Text](./text.md)     |
+| `price.inline`     | [Price](./price.md)   |
+| `title.tag`        | [Text](./text.md)     |
+| `title.size`       | [Text](./text.md)     |
