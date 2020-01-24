@@ -25,7 +25,11 @@
 ```js
 {
     banner: {
-        radius: true
+        radius: true,
+        ratio: {
+            width: 4,
+            height: 3
+        }
     },
     video: {
         button: {
@@ -66,18 +70,22 @@
             size: 'dacite',
             color: 'white'
         }
+    },
+    priceButton: {
+        radiused: true
     }
 }
 ```
 
 #### Referencias
 
-| Clave              | Componente            |
-|--------------------|-----------------------|
-| `banner`           | [Banner](./banner.md) |
-| `video.button`     | [Button](./button.md) |
-| `video.icon`       | [Icon](./icon.md)     |
-| `favourite.button` | [Button](./button.md) |
-| `favourite.icon`   | [Icon](./icon.md)     |
-| `title.text`       | [Text](./text.md)     |
-| `meta.text`        | [Text](./text.md)     |
+| Clave              | Componente                       |
+|--------------------|----------------------------------|
+| `banner`           | [Banner](./banner.md)            |
+| `video.button`     | [Button](./button.md)            |
+| `video.icon`       | [Icon](./icon.md)                |
+| `favourite.button` | [Button](./button.md)            |
+| `favourite.icon`   | [Icon](./icon.md)                |
+| `title.text`       | [Text](./text.md)                |
+| `meta.text`        | [Text](./text.md)                |
+| `priceButton`      | [PriceButton](./price-button.md) |

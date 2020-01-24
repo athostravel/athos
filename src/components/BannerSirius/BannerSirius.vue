@@ -40,7 +40,8 @@
             <div class="c-banner-sirius__price">
                 <AtPriceButton
                     v-if="price && price.value"
-                    v-bind="[price, { href, config: cfg.priceButton }]"
+                    v-bind="[price, { href }]"
+                    :config="cfg.priceButton"
                 />
             </div>
         </AtBannerContent>
@@ -95,7 +96,11 @@
             return {
                 cfg: {
                     banner: {
-                        radius: true
+                        radius: true,
+                        ratio: {
+                            width: 8,
+                            height: 3
+                        }
                     },
                     video: {
                         button: {
@@ -136,6 +141,9 @@
                             size: 'dacite',
                             color: 'white'
                         }
+                    },
+                    priceButton: {
+                        radiused: true
                     }
                 }
             }
@@ -179,11 +187,11 @@
     }
 
     &__meta {
-      padding: em(2px) em(16px);
+      padding: em(4px) em(16px);
     }
 
     &__title {
-      padding: em(4px) em(16px);
+      padding: em(8px) em(16px);
     }
 
     &__price {

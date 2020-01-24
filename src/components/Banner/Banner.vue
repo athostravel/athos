@@ -9,7 +9,7 @@
             'c-banner--has-overlay' : overlay
         }"
     >
-        <AtPicture class="c-banner__picture" v-bind="{ src, alt, title, sources }" />
+        <AtPicture class="c-banner__picture" v-bind="{ src, alt, title, sources, ratio }" />
 
         <div v-if="$slots.default" class="c-banner__box">
             <slot />
@@ -49,6 +49,10 @@
             sources: {
                 type: Array,
                 default: () => []
+            },
+            ratio: {
+                type: Object,
+                default: () => {}
             },
             shadow: {
                 type: Boolean,
