@@ -10,12 +10,12 @@
 
 ## Propiedades
 
-| Nombre      | Tipo      | Descripción                                     | Por defecto |
-|-------------|-----------|-------------------------------------------------|-------------|
-| `header`    | `Object`  | Propiedades del componente [Text](./text.md)    | `{}`        |
-| `meta`      | `Object`  | Propiedades del componente [Text](./text.md)    | `{}`        |
-| `items`     | `Array`   | Array con componentes [CardLeo](./card-leo.md)  | `[]`        |
-| `component` | `Array`   | Nombre del componente a pintar                  | `undefined` |
+| Nombre      | Tipo      | Descripción                                         | Por defecto |
+|-------------|-----------|-----------------------------------------------------|-------------|
+| `header`    | `Object`  | Propiedades del componente [Text](./text.md)        | `{}`        |
+| `meta`      | `Object`  | Propiedades del componente [Text](./text.md)        | `{}`        |
+| `items`     | `Array`   | Array con componentes [CardAries](./card-aries.md)  | `[]`        |
+| `component` | `Array`   | Nombre del componente a pintar                      | `undefined` |
             
 ### Configuración por defecto
 ```js
