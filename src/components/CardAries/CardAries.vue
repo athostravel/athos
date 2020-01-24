@@ -1,0 +1,153 @@
+<template>
+    <div
+        class="c-card-aries"
+        :class="{ 'c-card-aries--inverted': inverted }"
+    >
+        <AtPicture
+            class="c-card-aries__picture"
+            v-bind="[cfg.image, image]"
+        />
+
+        <AtText v-bind="[cfg.title, title]" class="c-card-aries__title">
+            {{ title.text }}
+        </AtText>
+
+        <div class="c-card-aries__category">
+            <template v-for="index in category.count">
+                <AtIcon
+                    :key="index.id"
+                    class="c-card-aries__icon"
+                    v-bind="[cfg.category, category]"
+                />
+            </template>
+        </div>
+
+        <AtPrice
+            v-bind="[cfg.price, price]"
+            class="c-card-aries__price"
+        />
+    </div>
+</template>
+
+<script>
+    import AtIcon from '@components/Icon/Icon.vue'
+    import AtPicture from '@components/Picture/Picture.vue'
+    import AtPrice from '@components/Price/Price.vue'
+    import AtText from '@components/Text/Text'
+
+    export default {
+        name: 'AtCardAries',
+        components: {
+            AtIcon,
+            AtPicture,
+            AtPrice,
+            AtText
+        },
+        props: {
+            inverted: {
+                type: Boolean,
+                default: false
+            },
+            image: {
+                type: Object,
+                default: () => {}
+            },
+            title: {
+                type: Object,
+                default: () => {}
+            },
+            category: {
+                type: Object,
+                default: () => {}
+            },
+            price: {
+                type: Object,
+                default: () => {}
+            }
+        },
+        data () {
+            return {
+                cfg: {
+                    category: {
+                        icon: 'heart',
+                        color: 'secondary',
+                        size: 'basalt'
+                    },
+                    price: {
+                        inline: true
+                    },
+                    title: {
+                        tag: 'h3',
+                        size: 'diorite'
+                    }
+                }
+            }
+        }
+    }
+</script>
+
+<style lang="scss">
+  .c-card-aries {
+    --c-card-aries-column-gap: var(--space-s);
+    --c-card-aries-row-gap: var(--space-2xs);
+    --c-card-aries-picture-width: var(--space-6xl);
+    --c-card-aries-ratio-height: 1;
+    --c-card-aries-ratio-width: 1;
+  }
+</style>
+
+<style lang="scss" scoped>
+  .c-card-aries {
+    display: grid;
+    grid-template-columns: var(--c-card-aries-picture-width) 1fr;
+    grid-template-rows: auto 1fr 1fr;
+    grid-column-gap: var(--c-card-aries-column-gap);
+    grid-row-gap: var(--c-card-aries-row-gap);
+    grid-template-areas:
+      "picture category"
+      "picture title"
+      "picture price";
+
+    &--inverse {
+      grid-template-columns: 1fr var(--c-card-aries-picture-width);
+      grid-template-areas:
+        "category picture"
+        "title picture"
+        "price picture";
+    }
+
+    &__picture {
+      grid-area: picture;
+
+      &::before {
+        --c-picture-ratio-height: var(--c-card-aries-ratio-height);
+        --c-picture-ratio-width: var(--c-card-aries-ratio-width);
+      }
+    }
+
+    &__title {
+      align-self: start;
+      grid-area: title;
+      position: relative;
+    }
+
+    &__category {
+      grid-area: category;
+      margin-top: -0.5em;
+      justify-self: flex-end;
+    }
+
+    &__icon {
+      margin-right: var(--space-3xs);
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &__price {
+      grid-area: price;
+      align-self: end;
+    }
+  }
+</style>

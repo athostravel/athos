@@ -1,39 +1,3 @@
----
-{
-  "API": [
-    {
-      "title": "Propiedades",
-      "items": [
-        {
-          "Nombre": "tag",
-          "Tipo": "String",
-          "Descripción": "Etiqueta HTML del componente",
-          "Por defecto": "a"
-        },
-        {
-          "Nombre": "text",
-          "Tipo": "String",
-          "Descripción": "Número de página",
-          "Por defecto": "1"
-        },
-        {
-          "Nombre": "href",
-          "Tipo": "String",
-          "Descripción": "Añade el enlace para dirigirte a la página elegida",
-          "Por defecto": "#"
-        },
-        {
-          "Nombre": "disabled",
-          "Tipo": "String",
-          "Descripción": "Añade una class para desabilitar la búsqueda en una página en concreto",
-          "Por defecto": "false"
-        }                     
-      ] 
-    }
-  ]
-}
----
-
 # Pagination
 
 <Preview>
@@ -44,6 +8,36 @@
   <<< @/examples/components/Pagination/Pagination.vue
 </Preview>
   
-## API
+## Propiedades
 
-<Api />
+| Nombre          | Tipo                | Descripción                                  | Por defecto |
+|-----------------|---------------------|----------------------------------------------|-------------|
+| `navFirst`      | `String`, `Boolean` | Opción para navegar a la primera página      | `false`     |
+| `navLast`       | `String`, `Boolean` | Opción para navegar a la última página       | `false`     |
+| `pages`         | `Array`             | Enlaces a mostrar en la páginación           | `[]`        |
+
+### Configuración por defecto
+
+```js
+{
+    navFirst: {
+        type: [String, Boolean],
+        default: false
+    },
+    navLast: {
+        type: [String, Boolean],
+        default: false
+    },
+    pages: {
+        type: Array,
+        default: () => []
+    }
+}
+```
+
+#### Referencias
+
+| Clave              | Componente             |
+|--------------------|------------------------|
+| `navFirst.icon`    | [Icon](./icon.md)      |
+| `navLast.icon`     | [Icon](./icon.md)      |

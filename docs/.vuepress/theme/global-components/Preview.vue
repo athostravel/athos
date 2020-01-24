@@ -38,10 +38,16 @@
                     <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm-1 4l6 6v10c0 1.1-.9 2-2 2H7.99C6.89 23 6 22.1 6 21l.01-14c0-1.1.89-2 1.99-2h7zm-1 7h5.5L14 6.5V12z" />
                 </svg>
             </button>
-            <button class="preview__action" :class="{ 'is-active': codeIsVisible }" @click.prevent="toggleCode">
+            <button v-if="$slots.default" class="preview__action" :class="{ 'is-active': codeIsVisible }" @click.prevent="toggleCode">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <path fill="none" d="M0 0h24v24H0V0z" />
                     <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
+                </svg>
+            </button>
+            <button class="preview__action" :class="{ 'is-active': changedColor }" @click.prevent="toggleColor">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M24 0H0v24h24z" fill="none" />
+                    <path d="M17.66 7.93L12 2.27 6.34 7.93c-3.12 3.12-3.12 8.19 0 11.31C7.9 20.8 9.95 21.58 12 21.58c2.05 0 4.1-.78 5.66-2.34 3.12-3.12 3.12-8.19 0-11.31zM12 19.59c-1.6 0-3.11-.62-4.24-1.76C6.62 16.69 6 15.19 6 13.59s.62-3.11 1.76-4.24L12 5.1v14.49z" />
                 </svg>
             </button>
             <button class="preview__action" @click.prevent="toggleDemo">
@@ -70,12 +76,6 @@
 
 <script>
     export default {
-        props: {
-            options: {
-                type: Object,
-                default: () => {}
-            }
-        },
         data () {
             return {
                 codeIsVisible: false,
@@ -85,7 +85,8 @@
                 themeClass: '',
                 showApplyBtn: false,
                 iconsTheme: '',
-                fontsTheme: []
+                fontsTheme: [],
+                changedColor: false
             }
         },
         computed: {
@@ -173,6 +174,15 @@
             },
             escapePress () {
                 document.addEventListener('keydown', (e) => e.keyCode === 27 && this.demoIsFullscreen && this.toggleDemo())
+            },
+            toggleColor () {
+                if (!this.changedColor) {
+                    this.$el.style.setProperty('--bg-color', '#383838')
+                } else {
+                    this.$el.style.setProperty('--bg-color', 'transparent')
+                }
+
+                this.changedColor = !this.changedColor
             }
         },
         metaInfo () {
@@ -188,6 +198,8 @@
 
 <style lang="scss" scoped>
   .preview {
+    --bg-color: transparent;
+
     margin-bottom: 4rem;
 
     &__actions {
@@ -208,8 +220,6 @@
       justify-content: center;
       align-items: center;
 
-      &:active:not(&--close):not(.is-active),
-      &:focus:not(&--close):not(.is-active),
       &:hover:not(&--close):not(.is-active) {
         fill: var(--docs-color-primary);
       }
@@ -320,6 +330,7 @@
 
     &__demo {
       padding: 2rem;
+      background: var(--bg-color);
 
       &.is-active {
         position: fixed;

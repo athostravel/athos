@@ -1,18 +1,21 @@
 <template>
-    <AtPagination v-bind="pagination" />
+    <AtPagination v-bind="atPagination" />
 </template>
 
 <script>
     export default {
         data () {
             return {
-                pagination: {
-                    items: [
+                atPagination: {
+                    navFirst: true,
+                    navLast: true,
+                    pages: [
                         {
                             text: '1',
                             tag: 'a',
                             href: '#1',
-                            disabled: false
+                            disabled: false,
+                            selected: true
                         },
                         {
                             text: '2',
@@ -29,7 +32,7 @@
                         {
                             text: '...',
                             tag: 'span',
-                            disabled: false
+                            disabled: true
                         },
                         {
                             text: '22',

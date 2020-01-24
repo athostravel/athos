@@ -1,33 +1,3 @@
----
-{
-  "API": [
-    {
-      "title": "Propiedades",
-      "items": [
-        {
-          "Nombre": "tag",
-          "Tipo": "String",
-          "Descripción": "Etiqueta HTML para el componente",
-          "Por defecto": "p"
-        },
-        {
-          "Nombre": "background",
-          "Tipo": "Boolean",
-          "Descripción": "Fondo para el texto",
-          "Por defecto": "false"
-        },
-        {
-          "Nombre": "text",
-          "Tipo": "String",
-          "Descripción": "Texto a mostrar",
-          "Por defecto": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        }                
-      ] 
-    }
-  ]
-}
----
-
 # Text
 
 <Preview>
@@ -38,8 +8,15 @@
   <<< @/examples/components/Text/Text.vue
 </Preview>
 
-## API
+## Propiedades
 
-<Api/>
+| Nombre      | Tipo      | Parámetros                                                                                                                                                                                                | Descripción                  | Por defecto |
+|-------------|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------|-------------|
+| `tag`       | `String`  |                                                                                                                                                                                                           | Etiqueta HTML del componente | `p`         |
+| `uppercase` | `Boolean` |                                                                                                                                                                                                           | Pone el texto en mayúsculas  | `false`     |
+| `align`     | `String`  | `left`, `center`, `right`                                                                                                                                                                                 | Alineación del texto         | `left`      |
+| `weight`    | `String`  | `thin`, `light`, `medium`, `semi-bold`, `bold`, `black`                                                                                                                                                   | Grosor del texto             | `regular`   |
+| `size`      | `String`  | `marble`, `flint`, `dacite`, `dunite`, `diorite`, `basalt`, `obsidian`, `tuff`, `pumice`, `scoria`, `coal`, `lignite`, `limestone`, `sandstone`, `andesite`, `bauxite`, `chalk`, `evaporite`, `gritstone` | Tamaño del texto             | `undefined` |
+| `color`     | `String`  | [Nombre de clases disponibles](../estilos/clases-de-utilidad/colores.md)                                                                                                                                  | Color del texto              | `undefined` |
   
   

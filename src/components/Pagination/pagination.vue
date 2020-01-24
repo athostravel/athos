@@ -2,108 +2,82 @@
     <nav class="c-pagination">
         <a
             v-if="navFirst"
+            v-bind="[cfg.navFirst, navFirst]"
             class="c-pagination__nav c-pagination__nav--first"
-            :href="navFirstHref"
+            :href="firstPage"
         >
-            <Icon :icon="navFirst" />
+            <AtIcon v-bind="[cfg.navFirst, navFirst]" class="c-pagination__icon c-pagination__icon--first" />
         </a>
         <ul class="c-pagination__list">
             <li
-                v-for="(value, index) in pagination.items"
-                :key="index"
+                v-for="page in pages"
+                :key="page.id"
                 class="c-pagination__item"
             >
                 <component
-                    :is="value.tag"
+                    :is="page.tag"
                     class="c-pagination__link"
                     :class="{
-                        'c-pagination__link--is-active' : value.active,
-                        'c-pagination__link--is-disabled' : value.disabled
+                        'c-pagination__link--selected' : page.selected,
+                        'c-pagination__link--is-disabled' : page.disabled
                     }"
-                    :disabled="value.tag === 'button' && value.disabled"
-                    :href="value.tag === 'a' && value.href"
+                    :disabled="page.tag === page.disabled"
+                    :href="page.href"
                 >
-                    {{ value.text }}
+                    {{ page.text }}
                 </component>
             </li>
         </ul>
         <a
             v-if="navLast"
+            v-bind="[cfg.navLast, navLast]"
             class="c-pagination__nav c-pagination__nav--first"
-            :href="navLastHref"
+            :href="lastPage"
         >
-            <Icon :icon="navLast" />
+            <AtIcon v-bind="[cfg.navLast, navLast]" class="c-pagination__icon c-pagination__icon--last" />
         </a>
     </nav>
 </template>
 
 <script>
-    import Icon from '@components/Icon/Icon.vue'
+    import AtIcon from '@components/Icon/Icon.vue'
 
     export default {
         name: 'AtPagination',
         components: {
-            Icon
+            AtIcon
+        },
+        computed: {
+            firstPage() {
+                return this.pages[0].href;
+            },
+            lastPage() {
+                return this.pages[this.pages.length - 1].href;
+            }
         },
         props: {
             navFirst: {
                 type: [String, Boolean],
-                default: 'arrow-left'
-            },
-            navFirstHref: {
-                type: [String, Boolean],
-                default: '#1'
+                default: false
             },
             navLast: {
                 type: [String, Boolean],
-                default: 'arrow-right'
+                default: false
             },
-            navLastHref: {
-                type: [String, Boolean],
-                default: '#24'
+            pages: {
+                type: Array,
+                default: () => []
             }
         },
-        data: function () {
+        data () {
             return {
-                pagination: {
-                    items: [
-                        {
-                            text: '1',
-                            tag: 'a',
-                            href: '#1',
-                            active: true
-                        },
-                        {
-                            text: '2',
-                            tag: 'a',
-                            href: '#2'
-                        },
-                        {
-                            text: '3',
-                            tag: 'a',
-                            href: '#3'
-                        },
-                        {
-                            text: '...',
-                            tag: 'span'
-                        },
-                        {
-                            text: '22',
-                            tag: 'a',
-                            href: '#22'
-                        },
-                        {
-                            text: '23',
-                            tag: 'a',
-                            href: '#23'
-                        },
-                        {
-                            text: '24',
-                            tag: 'a',
-                            href: '#24',
-                            disabled: true
-                        }
-                    ]
+                cfg: {
+                    navFirst: {
+                        icon: 'arrow-left'
+                    },
+                    navLast: {
+                        icon: 'arrow-right'
+                    }
                 }
             }
         }
@@ -112,8 +86,8 @@
 
 <style lang="scss" scoped>
   .c-pagination {
-    --c-pagination-active-background: #000;
-    --c-pagination-active-color: #fff;
+    --c-pagination-selected-background: #000;
+    --c-pagination-selected-color: #fff;
     --c-pagination-disabled-opacity: 0.7;
     --c-pagination-nav-first-margin-right: var(--space-xs);
     --c-pagination-nav-last-margin-left: var(--space-xs);
@@ -154,9 +128,9 @@
     &__link {
       padding: var(--c-pagination-link-padding);
 
-      &--is-active {
-        background-color: var(--c-pagination-active-background);
-        color: var(--c-pagination-active-color);
+      &--selected {
+        background-color: var(--c-pagination-selected-background);
+        color: var(--c-pagination-selected-color);
       }
 
       &--is-disabled {

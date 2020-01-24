@@ -1,27 +1,3 @@
----
-{
-  "API": [
-    {
-      "title": "Propiedades",
-      "items": [
-        {
-          "Nombre": "icon",
-          "Tipo": "String, Boolean",
-          "Descripción": "Clase del icono a mostrar",
-          "Por defecto": "false"
-        },
-        {
-          "Nombre" : "tag",
-          "Tipo" : "String",
-          "Descripción": "Etiqueta HTML del componente",
-          "Por defecto": "span"
-        }                    
-      ] 
-    }
-  ]
-}
----
-
 # Icon
 
 <Preview>
@@ -32,6 +8,11 @@
   <<< @/examples/components/Icon/Icon.vue
 </Preview>
 
-## API
+## Propiedades
 
-<Api />
+| Nombre  | Tipo                | Parámetros                                                               | Descripción                  | Por defecto |
+|---------|---------------------|--------------------------------------------------------------------------|------------------------------|-------------|
+| `tag`   | `String`            |                                                                          | Etiqueta HTML del componente | `span`      |
+| `icon`  | `String`, `Boolean` |                                                                          | Clase del icono a mostrar    | `false`     |
+| `size`  | `String`            | `diorite`, `basalt`, `obsidian`, `tuff`                                  | Tamaño del icono             | `undefined` |
+| `color` | `String`            | [Nombre de clases disponibles](../estilos/clases-de-utilidad/colores.md) | Color del icono              | `undefined` |

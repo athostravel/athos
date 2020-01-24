@@ -1,15 +1,13 @@
 <template>
-    <AtBanner v-bind="banner" />
+    <AtBanner v-bind="atBanner" />
 </template>
 
 <script>
     export default {
         data () {
             return {
-                banner: {
-                    picture: {
-                        src: 'https://source.unsplash.com/random/1920x1080'
-                    }
+                atBanner: {
+                    src: 'https://source.unsplash.com/random/1920x1080'
                 }
             }
         }

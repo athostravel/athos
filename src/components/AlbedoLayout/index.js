@@ -1,9 +1,9 @@
-import Input from './Input.vue'
+import AlbedoLayout from './AlbedoLayout.vue'
 import { use, registerComponent } from '@utils/plugins'
 
 const Plugin = {
     install (Vue) {
-        registerComponent(Vue, Input)
+        registerComponent(Vue, AlbedoLayout)
     }
 }
 

@@ -1,12 +1,12 @@
 <template>
-    <AtCheckbox v-bind="checkbox" />
+    <AtCheckbox v-bind="atCheckbox" />
 </template>
 
 <script>
     export default {
         data () {
             return {
-                checkbox: {
+                atCheckbox: {
                     name: 'example',
                     label: 'Lorem Ipsum'
                 }

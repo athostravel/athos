@@ -1,6 +1,6 @@
 <template>
     <div>
-        <AtRadio v-bind="radio" />
+        <AtRadio v-bind="atRadio" />
     </div>
 </template>
 
@@ -8,7 +8,7 @@
     export default {
         data () {
             return {
-                radio: {
+                atRadio: {
                     name: 'example',
                     label: 'Lorem Ipsum'
                 }

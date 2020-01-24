@@ -1,35 +1,22 @@
 <template>
-    <AtBannerSirius v-bind="bannerSirius" />
+    <AtBannerSirius v-bind="atBannerSirius" />
 </template>
 
 <script>
     export default {
         data () {
             return {
-                bannerSirius: {
-                    tag: 'a',
-                    href: '#',
-                    title: { text: 'Punta Cana y Playa Bávaro', background: true },
-                    meta: { text: '9 días y 7 noches', background: true },
-                    icons: [
-                        { icon: 'heart', rounded: true, size: 'tiny' },
-                        { icon: 'heart', rounded: true, size: 'tiny' }
-                    ],
-                    priceButton: {
-                        price: {
-                            text: 'Desde',
-                            before: '499',
-                            value: '300'
-                        },
-                        button: {
-                            icon: 'angle-right'
-                        }
+                atBannerSirius: {
+                    href: '#asdas',
+                    title: 'Punta Cana y Playa Bávaro',
+                    meta: '9 días y 7 noches',
+                    video: '#',
+                    image: {
+                        src: 'https://source.unsplash.com/random/1920x1080'
                     },
-                    banner: {
-                        radius: true,
-                        picture: {
-                            src: 'https://source.unsplash.com/random/1920x1080'
-                        }
+                    price: {
+                        before: '499',
+                        value: '300'
                     }
                 }
             }

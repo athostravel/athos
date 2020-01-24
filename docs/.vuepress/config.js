@@ -128,20 +128,45 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 2,
                             children: [
-                                '/es/documentacion/components/banner-sirius',
+                                '/es/documentacion/components/albedo-layout',
+                                '/es/documentacion/components/arcus-layout',
                                 '/es/documentacion/components/banner',
+                                '/es/documentacion/components/banner-piscis',
+                                '/es/documentacion/components/banner-sirius',
                                 '/es/documentacion/components/button',
+                                '/es/documentacion/components/card-aries',
+                                '/es/documentacion/components/card-leo',
+                                '/es/documentacion/components/card-pegasus',
                                 '/es/documentacion/components/checkbox',
-                                '/es/documentacion/components/icon-list',
+                                '/es/documentacion/components/collapse',
                                 '/es/documentacion/components/icon',
+                                '/es/documentacion/components/icon-card',
                                 '/es/documentacion/components/pagination',
                                 '/es/documentacion/components/picture',
                                 '/es/documentacion/components/price-button',
                                 '/es/documentacion/components/price',
                                 '/es/documentacion/components/radio',
-                                '/es/documentacion/components/switch',
                                 '/es/documentacion/components/switch-orion',
-                                '/es/documentacion/components/text'
+                                '/es/documentacion/components/switch',
+                                '/es/documentacion/components/text',
+                                '/es/documentacion/components/toggle'
+                            ]
+                        },
+                        {
+                            title: 'Estilos',
+                            collapsable: false,
+                            sidebarDepth: 2,
+                            children: [
+                                {
+                                    title: 'Clases de utilidad',
+                                    path: '/es/documentacion/estilos/clases-de-utilidad/',
+                                    collapsable: false,
+                                    sidebarDepth: 2,
+                                    children: [
+                                        '/es/documentacion/estilos/clases-de-utilidad/colores',
+                                        '/es/documentacion/estilos/clases-de-utilidad/gaps'
+                                    ]
+                                }
                             ]
                         }
                     ],
