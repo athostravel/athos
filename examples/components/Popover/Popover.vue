@@ -1,16 +1,18 @@
 <template>
     <div>
-        <div
-            @click="openPopover(id, $event)"
+        <AtButton
+            ref="button"
+            @mouseenter.native="openPopover(id, $event)"
+            @mouseleave.native="openPopover(id, $event)"
         >
             Click
-        </div>
+        </AtButton>
 
         <AtPopover
             :id="id"
             v-bind="popoverOptions"
         >
-            Vue is Awesome!
+            PopOver
         </AtPopover>
     </div>
 </template>
@@ -21,6 +23,9 @@
             return {
                 id: 'popover1',
                 popoverOptions: {
+                    placement: 'bottom',
+                    arrow: false,
+                    tooltip: true
                 }
             }
         }

@@ -17,9 +17,10 @@ export default {
         this.cfg = merge(this.cfg, this.config)
     },
     methods: {
-        // Popover Component
-        openPopover (id, event) {
-            this.$root.$emit('openPopover', { id, target: event.target })
+        // Popper Component
+        togglePopper (id, event) {
+            console.log(event.target.offsetParent)
+            this.$root.$emit('togglePopper', { id, trigger: event.target })
         },
         // Modal Component
         openModal (id) {

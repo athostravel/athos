@@ -1,22 +1,21 @@
 <template>
-    <div>
-        <div :id="id" class="popover">
-            <div class="popover">
-                <div class="popover__arrow" />
-                <div class="popover__body">
-                    <slot />
-                </div>
-            </div>
+    <div
+        v-show="show"
+        class="popover"
+    >
+        <div v-if="arrow" class="popover__arrow" data-popper-arrow />
+        <div class="popover__body">
+            <slot />
         </div>
     </div>
 </template>
 
 <script>
+
     import { createPopper } from '@popperjs/core'
 
     export default {
         name: 'AtPopover',
-
         props: {
             id: {
                 type: String,
@@ -24,47 +23,71 @@
             },
             placement: {
                 type: String,
-                default: 'top'
+                default: 'bottom'
             },
             offset: {
-                type: String,
-                default: '0,0'
+                type: Array,
+                default: () => [0, 5]
+            },
+            opened: {
+                type: Boolean,
+                default: false
+            },
+            arrow: {
+                type: Boolean,
+                default: true
             }
+
         },
 
         data () {
             return {
+                show: false,
                 popperInstance: null
             }
         },
 
         mounted () {
-            if (typeof window !== 'undefined') {
-
+            if (this.opened) {
+                this.open(this.id)
             }
+
             this.$root.$on('openPopover', ({ id, target }) => {
-                this.initPopper(id, target)
+                this.togglePopper(id, target)
             })
         },
 
         methods: {
-            initPopper (id, target) {
-                console.log(id, target)
-                const a = document.getElementById(id)
-                console.log(a)
-                this.popperInstance = createPopper(
-                    target,
-                    a
-
-                )
-            },
-
-            destroyPopover () {
-                if (this.popperInstance) {
-                    this.popperInstance.destroy()
-                    this.popperInstance = null
-                    this.$emit('closePopover')
+            togglePopper (id, target) {
+                if (id === this.id) {
+                    this.show = !this.show
+                    if (this.popperInstance) {
+                        this.destroyPopover()
+                    } else {
+                        this.popperInstance = createPopper(
+                            target,
+                            this.$el, {
+                                placement: this.placement,
+                                modifiers: [
+                                    {
+                                        name: 'offset',
+                                        options: {
+                                            offset: this.offset
+                                        }
+                                    }
+                                ]
+                            }
+                        )
+                    }
                 }
+            },
+            onClose  () {
+                console.log('close')
+            },
+            destroyPopover () {
+                this.popperInstance.destroy()
+                this.popperInstance = null
+                this.$emit('closePopover')
             }
 
         }
@@ -73,46 +96,23 @@
 
 <style lang="scss" scoped>
   .popover {
-    position: relative;
     z-index: 50;
-
-    &__content {
-      display: flex;
-      flex-direction: column;
-    }
-
-    &__overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 40;
-      width: 100%;
-      height: 100vh;
-    }
-  }
-
-  .popover {
-    z-index: 50;
+    // margin: #{em(16px)};
 
     &__arrow {
       position: absolute;
       border-color: #fff;
+      top: 0;
     }
 
     &__body {
-      display: inline-block;
+      padding: 8px;
       flex: 1;
       width: 100%;
       text-align: center;
       border-radius: 0.25rem;
       user-select: none;
       background-color: #fff;
-      -webkit-box-shadow:
-        0 15px 35px 0 rgba(51, 64, 82, 0.15),
-        0 5px 15px rgba(0, 0, 0, 0.1);
-      -moz-box-shadow:
-        0 15px 35px 0 rgba(51, 64, 82, 0.15),
-        0 5px 15px rgba(0, 0, 0, 0.1);
       box-shadow:
         0 15px 35px 0 rgba(51, 64, 82, 0.15),
         0 5px 15px rgba(0, 0, 0, 0.1);
@@ -122,7 +122,7 @@
 
 <style lang="scss">
   .popover {
-    &[x-placement^="top"] {
+    &[data-popper-placement^="top"] {
       margin-bottom: 8px;
 
       .popover__arrow {
@@ -136,7 +136,7 @@
       }
     }
 
-    &[x-placement^="bottom"] {
+    &[data-popper-placement^="bottom"] {
       margin-top: 8px;
 
       .popover__arrow {
@@ -150,7 +150,7 @@
       }
     }
 
-    &[x-placement^="right"] {
+    &[data-popper-placement^="right"] {
       margin-left: 8px;
 
       .popover__arrow {
@@ -164,7 +164,7 @@
       }
     }
 
-    &[x-placement^="left"] {
+    &[data-popper-placement^="left"] {
       margin-right: 8px;
 
       .popover__arrow {
