@@ -19,7 +19,6 @@ export default {
     methods: {
         // Popper Component
         togglePopper (id, event) {
-            console.log(event.target.offsetParent)
             this.$root.$emit('togglePopper', { id, trigger: event.target })
         },
         // Modal Component

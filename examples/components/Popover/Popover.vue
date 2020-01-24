@@ -1,16 +1,14 @@
 <template>
     <div>
         <AtButton
-            ref="button"
-            @mouseenter.native="openPopover(id, $event)"
-            @mouseleave.native="openPopover(id, $event)"
+            @click.native="togglePopper(popper.id, $event)"
         >
-            Click
+            Click Me
         </AtButton>
 
         <AtPopover
-            :id="id"
-            v-bind="popoverOptions"
+            :popper="popper"
+            v-bind="options"
         >
             PopOver
         </AtPopover>
@@ -21,11 +19,12 @@
     export default {
         data () {
             return {
-                id: 'popover1',
-                popoverOptions: {
-                    placement: 'bottom',
-                    arrow: false,
-                    tooltip: true
+                popper: {
+                    id: 'tooltip'
+                },
+                options: {
+                    bordered: true,
+                    arrow: true
                 }
             }
         }

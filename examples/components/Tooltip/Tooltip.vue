@@ -1,14 +1,14 @@
 <template>
     <div>
         <AtButton
-            @mouseenter.native="togglePopper(options.id, $event)"
-            @mouseleave.native="togglePopper(options.id, $event)"
+            @mouseenter.native="togglePopper(popper.id, $event)"
+            @mouseleave.native="togglePopper(popper.id, $event)"
         >
-            Click
+            Hover Me !
         </AtButton>
 
         <AtTooltip
-            :popper="options"
+            :popper="popper"
         >
             Tooltip Content
         </AtTooltip>
@@ -19,7 +19,7 @@
     export default {
         data () {
             return {
-                options: {
+                popper: {
                     id: 'tooltip'
                 }
             }

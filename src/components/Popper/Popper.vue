@@ -26,12 +26,7 @@
             opened: {
                 type: Boolean,
                 default: false
-            },
-            arrow: {
-                type: Boolean,
-                default: true
             }
-
         },
 
         data () {
