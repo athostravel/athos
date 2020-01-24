@@ -5,9 +5,9 @@
             class="c-collapse__header"
             :class="[
                 {
-                    'c-collapse__header--left': position === 'left',
-                    'c-collapse__header--right': position === 'right',
-                    'c-collapse__header--center': position === 'center'
+                    'c-collapse__header--left': align === 'left',
+                    'c-collapse__header--right': align === 'right',
+                    'c-collapse__header--center': align === 'center'
                 }
             ]"
             id="collapse"
@@ -65,7 +65,7 @@
                 type: Object,
                 default: () => {}
             },
-            position: {
+            align: {
                 type: String,
                 default: 'left'
             }

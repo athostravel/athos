@@ -23,7 +23,7 @@
         data () {
             return {
                 conf: {
-                    position: 'center',
+                    align: 'center',
                     header: {
                         text: 'Ver información básica sobre protección de datos'
                     }

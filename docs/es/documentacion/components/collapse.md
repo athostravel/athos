@@ -15,7 +15,7 @@
 | `header`  | `Object` | Texto del collapse                                  |                            | `undefined` |
 | `Icon`    | `Object` | Icono del collapse                                  |                            | `undefined` |
 | `content` | `Object` | Texto dentro del collapse                           |                            | `undefined` |
-| `position`| `String` | Colocación del texto de la cabecera del collapse    | `left`, `right`, `center`  | `left`      |
+| `align`   | `String` | Colocación del texto de la cabecera del collapse    | `left`, `right`, `center`  | `left`      |
 
 ## Slots
 
