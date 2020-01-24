@@ -47,14 +47,6 @@
         components: {
             AtIcon
         },
-        computed: {
-            firstPage() {
-                return this.pages[0].href;
-            },
-            lastPage() {
-                return this.pages[this.pages.length - 1].href;
-            }
-        },
         props: {
             navFirst: {
                 type: [String, Boolean],
@@ -79,6 +71,14 @@
                         icon: 'arrow-right'
                     }
                 }
+            }
+        },
+        computed: {
+            firstPage () {
+                return this.pages[0].href
+            },
+            lastPage () {
+                return this.pages[this.pages.length - 1].href
             }
         }
     }
