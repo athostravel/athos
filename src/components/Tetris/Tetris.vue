@@ -1,6 +1,7 @@
 <template>
     <div class="c-tetris" :class="gap && `u-gap-${gap}`">
-        <AtBannerSirius
+        <component
+            :is="component"
             v-for="(item, index) in items"
             :key="item.id"
             v-bind="item"
@@ -14,14 +15,13 @@
 </template>
 
 <script>
-    import AtBannerSirius from '@components/BannerSirius/BannerSirius'
-
     export default {
         name: 'AtTetris',
-        components: {
-            AtBannerSirius
-        },
         props: {
+            component: {
+                type: String,
+                default: 'AtBannerSirius'
+            },
             items: {
                 type: Array,
                 default: () => []
