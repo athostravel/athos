@@ -10,12 +10,13 @@
 
 ## Propiedades
 
-| Nombre    | Tipo     | Descripción                                         |  Parámetros                | Por defecto |
-|-----------|----------|-----------------------------------------------------|----------------------------|-------------|
-| `header`  | `Object` | Texto del collapse                                  |                            | `undefined` |
-| `Icon`    | `Object` | Icono del collapse                                  |                            | `undefined` |
-| `content` | `Object` | Texto dentro del collapse                           |                            | `undefined` |
-| `align`   | `String` | Colocación del texto de la cabecera del collapse    | `left`, `right`, `center`  | `left`      |
+| Nombre    | Tipo     | Descripción                                            |  Parámetros                | Por defecto |
+|-----------|----------|--------------------------------------------------------|----------------------------|-------------|
+| `header`  | `Object` | Propiedades del componente [IconCard](./icon-card.md)  |                            | `undefined` |
+| `header`  | `Object` | Propiedades del componente [Text](./text.md)           |                            | `undefined` |
+| `Icon`    | `Object` | Propiedades del componente [Icon](./icon.md)           |                            | `undefined` |
+| `content` | `Object` | Contenido dentro del slot del collapse                 |                            | `undefined` |
+| `align`   | `String` | Colocación del texto de la cabecera del collapse       | `left`, `right`, `center`  | `left`      |
 
 ## Slots
 
@@ -28,16 +29,19 @@
 
 ```js
 {
-  header: {
-      color: 'primary',
-      position: 'right',
-      gap: 'dunite',
-      weight: 'bold',
-      inline: true
-  },
-  icon: {
-      icon: 'heart'
-  }
+    header: {
+        position: 'right',
+        gap: 'dunite',
+        inline: true
+    },
+    title: {
+        color: 'primary',
+        position: 'right',
+        weight: 'bold'
+    },
+    icon: {
+        icon: 'heart'
+    }
 }
 ```
 

@@ -19,7 +19,7 @@
                 class="c-collapse__icon"
             />
 
-            <AtText class="c-collapse__header-text" v-bind="[cfg.header, header]">
+            <AtText class="c-collapse__header-text" v-bind="[cfg.title, title]">
                 {{ header.text }}
             </AtText>
         </AtIconCard>
@@ -58,6 +58,10 @@
                 type: Object,
                 default: () => {}
             },
+            title: {
+                type: Object,
+                default: () => {}
+            },
             content: {
                 type: Object,
                 default: () => {}
@@ -71,11 +75,14 @@
             return {
                 cfg: {
                     header: {
-                        color: 'primary',
                         position: 'right',
                         gap: 'dunite',
-                        weight: 'bold',
                         inline: true
+                    },
+                    title: {
+                        color: 'primary',
+                        position: 'right',
+                        weight: 'bold'
                     },
                     icon: {
                         icon: 'heart'
