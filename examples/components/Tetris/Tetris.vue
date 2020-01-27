@@ -1,7 +1,5 @@
 <template>
-    <AtTetris v-bind="example">
-        <AtBanner />
-    </AtTetris>
+    <AtTetris v-bind="example" />
 </template>
 
 <script>

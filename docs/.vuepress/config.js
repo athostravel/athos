@@ -132,6 +132,7 @@ module.exports = {
                                 '/es/documentacion/components/banner',
                                 '/es/documentacion/components/button',
                                 '/es/documentacion/components/checkbox',
+                                '/es/documentacion/components/container',
                                 '/es/documentacion/components/icon-card',
                                 '/es/documentacion/components/icon',
                                 '/es/documentacion/components/picture',
