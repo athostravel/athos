@@ -52,12 +52,12 @@
                 atLinkSecondary: {
                     href: 'http://www.avoristravel.com/',
                     target: '_blank',
-                    secondary: true
+                    color: 'secondary'
                 },
                 atLinkUnderline: {
                     href: 'http://www.avoristravel.com/',
                     target: '_blank',
-                    underline: true
+                    decoration: 'underline'
                 }
             }
         }

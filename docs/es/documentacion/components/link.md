@@ -10,11 +10,12 @@
 
 ## Propiedades
 
-| Nombre      | Tipo      | Descripción                  | Por defecto |
-|-------------|-----------|------------------------------|-------------|
-| `underline` | `Boolean` | Subraya el enlace            | `false`     |
-| `secondary` | `Boolean` | Cambia el color del enlace   | `false`     |
-| `href`      | `String`  | Cambia el valor del href     | `undefined` |
+| Nombre        | Tipo      | Descripción                 | Por defecto   |
+|--------------|-----------|------------------------------|---------------|
+| `decoration` | `String`  | Decoración del enlace        | `undefined`   |
+| `color`      | `String`  | Cambia el color del enlace   | `primary`     |
+| `href`       | `String`  | Cambia el valor del href     | `undefined`   |
+| `target`     | `String`  | Cambia el valor del target   | `undefined`   |
   
 ## Slots
 

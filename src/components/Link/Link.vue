@@ -4,8 +4,8 @@
         :href="href"
         :target="target"
         :class="{
-            'c-link--underline': underline,
-            'c-link--secondary': secondary
+            'c-link--underline': decoration === 'underline',
+            'c-link--secondary': color === 'secondary'
         }"
     >
         <slot />
@@ -16,15 +16,19 @@
     export default {
         name: 'AtLink',
         props: {
-            underline: {
-                type: Boolean,
-                default: false
+            decoration: {
+                type: String,
+                default: undefined
             },
-            secondary: {
-                type: Boolean,
-                default: false
+            color: {
+                type: String,
+                default: 'primary'
             },
             href: {
+                type: String,
+                default: undefined
+            },
+            target: {
                 type: String,
                 default: undefined
             }
