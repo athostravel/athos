@@ -8,7 +8,7 @@
 
         <AtPopover
             :popper="popper"
-            v-bind="options"
+            :options="options"
         >
             PopOver
         </AtPopover>
