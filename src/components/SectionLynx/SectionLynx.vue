@@ -1,13 +1,6 @@
 <template>
     <AtContainer v-bind="cfg.container">
-        <AtSection v-bind="cfg.section">
-            <AtText
-                v-if="title"
-                slot="title"
-                v-bind="cfg.title"
-            >
-                {{ title }}
-            </AtText>
+        <AtSection v-bind="[cfg.section, { config: cfg.section, title, description }]">
             <AtTetris v-bind="{ config: cfg.tetris, items }" />
         </AtSection>
     </AtContainer>
@@ -30,6 +23,10 @@
                 type: String,
                 default: undefined
             },
+            description: {
+                type: String,
+                default: undefined
+            },
             items: {
                 type: Array,
                 default: () => []
@@ -39,15 +36,7 @@
             return {
                 cfg: {
                     container: {},
-                    section: {
-                        border: 'bottom'
-                    },
-                    title: {
-                        color: 'primary',
-                        weight: 'bold',
-                        size: 'coal',
-                        align: 'center'
-                    },
+                    section: {},
                     tetris: {}
                 }
             }
