@@ -149,12 +149,12 @@
                     },
                     map: {
                         enabled: true,
-                        button: { color: 'white', rounded: true, icon: true, size: 'basalt' },
+                        button: { variant:'text', color: 'primary', rounded: true, icon: true, size: 'obsidian' },
                         icon: { icon: 'heart' }
                     },
                     favourite: {
                         enabled: true,
-                        button: { color: 'white', rounded: true, icon: true, size: 'basalt' },
+                        button: { variant:'text', color: 'primary', rounded: true, icon: true, size: 'obsidian' },
                         icon: { icon: 'heart' }
                     },
                     previous: {
@@ -192,7 +192,7 @@
   .c-card-pegasus {
     --c-card-pegasus-header-padding: var(--space-s) var(--space-m);
     --c-card-pegasus-header-background: #fff;
-    --c-card-pegasus-header-actions-padding: var(--space-s) var(--space-m) 0 var(--space-m);
+    --c-card-pegasus-header-actions-padding: var(--space-s) 0 0 var(--space-m);
     --c-card-pegasus-icon-margin: 0 0 0 var(--space-2xs);
     --c-card-pegasus-box-padding: var(--space-s);
     --c-card-pegasus-title-margin: 0 0 var(--space-xs) 0;
@@ -239,12 +239,6 @@
       flex-wrap: wrap;
       justify-content: flex-end;
       flex-grow: 1;
-    }
-
-    &__icon {
-      & + & {
-        margin: var(--c-card-pegasus-icon-margin);
-      }
     }
 
     &__inner {
