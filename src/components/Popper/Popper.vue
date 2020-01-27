@@ -1,11 +1,12 @@
 <template>
-    <div v-show="show">
-        <slot />
-    </div>
+    <transition name="fade" @after-leave="destroyPopper">
+        <div v-show="show">
+            <slot />
+        </div>
+    </transition>
 </template>
 
 <script>
-
     import { createPopper } from '@popperjs/core'
 
     export default {
@@ -50,9 +51,7 @@
             togglePopper (id, trigger) {
                 if (id === this.id) {
                     this.show = !this.show
-                    if (this.popperInstance) {
-                        this.destroyPopper()
-                    } else {
+                    if (!this.popperInstance) {
                         this.popperInstance = createPopper(
                             trigger,
                             this.$el, {
@@ -70,9 +69,6 @@
                     }
                 }
             },
-            onClose  () {
-                console.log('close')
-            },
             destroyPopper () {
                 this.popperInstance.destroy()
                 this.popperInstance = null
@@ -81,3 +77,14 @@
         }
     }
 </script>
+<style lang="scss">
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.3s;
+  }
+
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
+  }
+</style>

@@ -1,6 +1,6 @@
 <template>
     <AtPopper v-bind="popper" class="c-tooltip">
-        <div class="c-tooltip__arrow" data-popper-arrow></div>
+        <div v-if="arrow" class="c-tooltip__arrow" data-popper-arrow></div>
         <div class="c-tooltip__content">
             <slot />
         </div>
@@ -18,92 +18,101 @@
             popper: {
                 type: Object,
                 default: () => {}
+            },
+            arrow: {
+                type: Boolean,
+                default: true
             }
         }
     }
 </script>
 
+<style lang="scss">
+  .c-tooltip {
+    --c-tooltip-color: #fff;
+    --c-tooltip-border-radius: var(--radius-s);
+    --c-tooltip-background: var(--color-secondary);
+    --c-tooltip-box-shadow: var(--shadow-distant);
+    --c-tooltip-border-radius: var(--radius-s);
+    --c-tooltip-arrow-width: 6px;
+    --c-tooltip-arrow-height: 12px;
+    --c-tooltip-arrow-color: var(--color-secondary);
+  }
+
+</style>
+
 <style lang="scss" scoped>
   .c-tooltip {
-    z-index: 50;
-    // margin: #{em(16px)};
+    z-index: var(--z-index-bishop);
+    background: var(--c-tooltip-background);
+    box-shadow: var(--c-tooltip-box-shadow);
+    border-radius: var(--c-tooltip-border-radius);
 
     &__arrow {
       position: absolute;
-      border-color: #fff;
-      top: 0;
+      border-color: var(--c-tooltip-arrow-color);
     }
 
     &__content {
-      padding: 8px;
-      flex: 1;
+      padding: em(8px) em(16px);
       width: 100%;
       text-align: center;
-      border-radius: 0.25rem;
-      user-select: none;
-      background-color: #fff;
-      box-shadow:
-        0 15px 35px 0 rgba(51, 64, 82, 0.15),
-        0 5px 15px rgba(0, 0, 0, 0.1);
+      color: var(--c-tooltip-color);
     }
-  }
-</style>
 
-<style lang="scss">
-  .c-tooltip {
     &[data-popper-placement^="top"] {
-      margin-bottom: 8px;
+      margin-bottom: var(--c-tooltip-arrow-height);
 
       .c-tooltip__arrow {
-        bottom: -8px;
-        left: calc(50% - 8px);
+        bottom: calc(#{var(--c-tooltip-arrow-height)} * -1);
+        left: calc(50% - #{var(--c-tooltip-arrow-height)});
         margin-top: 0;
         margin-bottom: 0;
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-top: 8px solid #fff;
+        border-left: var(--c-tooltip-arrow-width) solid transparent;
+        border-right: var(--c-tooltip-arrow-width) solid transparent;
+        border-top: var(--c-tooltip-arrow-height) solid var(--c-tooltip-arrow-color);
       }
     }
 
     &[data-popper-placement^="bottom"] {
-      margin-top: 8px;
+      margin-top: var(--c-tooltip-arrow-height);
 
       .c-tooltip__arrow {
-        top: -8px;
-        left: calc(50% - 8px);
+        top: calc(#{var(--c-tooltip-arrow-height)} * -1);
+        left: calc(50% - #{var(--c-tooltip-arrow-height)});
         margin-top: 0;
         margin-bottom: 0;
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-bottom: 8px solid #fff;
+        border-left: var(--c-tooltip-arrow-width) solid transparent;
+        border-right: var(--c-tooltip-arrow-width) solid transparent;
+        border-bottom: var(--c-tooltip-arrow-height) solid var(--c-tooltip-arrow-color);
       }
     }
 
     &[data-popper-placement^="right"] {
-      margin-left: 8px;
+      margin-left: var(--c-tooltip-arrow-height);
 
       .c-tooltip__arrow {
-        top: calc(50% - 8px);
-        left: -8px;
+        left: calc(#{var(--c-tooltip-arrow-height)} * -1);
+        top: calc(50% - #{var(--c-tooltip-arrow-height)});
         margin-right: 0;
         margin-left: 0;
-        border-top: 10px solid transparent;
-        border-bottom: 10px solid transparent;
-        border-right: 8px solid #fff;
+        border-top: var(--c-tooltip-arrow-width) solid transparent;
+        border-bottom: var(--c-tooltip-arrow-width) solid transparent;
+        border-right: var(--c-tooltip-arrow-height) solid var(--c-tooltip-arrow-color);
       }
     }
 
     &[data-popper-placement^="left"] {
-      margin-right: 8px;
+      margin-right: var(--c-tooltip-arrow-height);
 
       .c-tooltip__arrow {
-        top: calc(50% - 8px);
-        right: -8px;
+        top: calc(50% - #{var(--c-tooltip-arrow-height)});
+        right: calc(#{var(--c-tooltip-arrow-height)} * -1);
         margin-right: 0;
         margin-left: 0;
-        border-top: 10px solid transparent;
-        border-bottom: 10px solid transparent;
-        border-left: 8px solid #fff;
+        border-top: var(--c-tooltip-arrow-width) solid transparent;
+        border-bottom: var(--c-tooltip-arrow-width) solid transparent;
+        border-left: var(--c-tooltip-arrow-height) solid var(--c-tooltip-arrow-color);
       }
     }
   }

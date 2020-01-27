@@ -9,6 +9,7 @@
 
         <AtTooltip
             :popper="popper"
+            v-bind="options"
         >
             Tooltip Content
         </AtTooltip>
@@ -20,7 +21,12 @@
         data () {
             return {
                 popper: {
-                    id: 'tooltip'
+                    id: 'tooltip',
+                    offset: [0, 10]
+                },
+                options: {
+                    arrow: true
+
                 }
             }
         }

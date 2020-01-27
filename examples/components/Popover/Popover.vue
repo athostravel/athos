@@ -24,7 +24,11 @@
                 },
                 options: {
                     bordered: true,
-                    arrow: true
+                    arrow: true,
+                    size: {
+                        width: '20em',
+                        height: '200px'
+                    }
                 }
             }
         }

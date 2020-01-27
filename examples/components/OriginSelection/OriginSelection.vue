@@ -1,8 +1,8 @@
 <template>
     <div>
-        <button @click="openModal('origin-selection')">
+        <AtButton @click.native="openModal('origin-selection')">
             Abrir
-        </button>
+        </AtButton>
         <AtOriginSelection :items="items" />
     </div>
 </template>

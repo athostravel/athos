@@ -1,5 +1,5 @@
 <template>
-    <AtPopper v-bind="popper" class="c-popover" :class="{'c-popover--has-border': bordered}">
+    <AtPopper v-bind="popper" class="c-popover" :class="{'c-popover--has-border': bordered}" :style="customSize">
         <div v-if="arrow" class="c-popover__arrow" data-popper-arrow></div>
         <div class="c-popover__content">
             <slot />
@@ -26,25 +26,52 @@
             bordered: {
                 type: Boolean,
                 default: false
+            },
+            size: {
+                type: Object,
+                default: () => {}
+            }
+        },
+        computed: {
+            customSize () {
+                const size = {}
+                if (this.size && this.size.width) {
+                    size['--c-popover-max-width'] = this.size.width
+                    size['--c-popover-width'] = '100%'
+                }
+                if (this.size && this.size.height) {
+                    size['--c-popover-max-heigth'] = this.size.height
+                }
+                return size
             }
         }
     }
 </script>
 
+<style lang="scss">
+  .c-popover {
+    --c-popover-width: auto;
+    --c-popover-max-width: 100%;
+    --c-popover-max-heigth: auto;
+    --c-popover-border-radius: var(--radius-s);
+    --c-popover-background: #fff;
+    --c-popover-box-shadow: var(--shadow-distant);
+  }
+</style>
 <style lang="scss" scoped>
   .c-popover {
-    border-radius: 0.25rem;
-    background-color: #fff;
-    box-shadow:
-      0 15px 35px 0 rgba(51, 64, 82, 0.15),
-      0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: var(--z-index-bishop);
+    width: var(--c-popover-width);
+    border-radius: var(--c-popover-border-radius);
+    background-color: var(--c-popover-background);
+    box-shadow: var(--c-popover-box-shadow);
+    max-height: var(--c-popover-max-heigth);
+    max-width: var(--c-popover-max-width);
+    overflow-y: auto;
 
     &--has-border {
       border-left: #{em(4px)} solid var(--color-secondary);
     }
-
-    z-index: 50;
-    // margin: #{em(16px)};
 
     &__arrow {
       position: absolute;
@@ -53,14 +80,10 @@
     }
 
     &__content {
-      padding: #{em(16px)};
+      padding: em(16px);
       width: 100%;
     }
-  }
-</style>
 
-<style lang="scss">
-  .c-popover {
     &[data-popper-placement^="top"] {
       margin-bottom: 8px;
 
