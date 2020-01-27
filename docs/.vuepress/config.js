@@ -133,15 +133,36 @@ module.exports = {
                                 '/es/documentacion/components/banner',
                                 '/es/documentacion/components/button',
                                 '/es/documentacion/components/checkbox',
+                                '/es/documentacion/components/container',
+                                '/es/documentacion/components/icon-card',
                                 '/es/documentacion/components/icon',
-                                '/es/documentacion/components/input',
                                 '/es/documentacion/components/picture',
                                 '/es/documentacion/components/price-button',
                                 '/es/documentacion/components/price',
                                 '/es/documentacion/components/radio',
+                                '/es/documentacion/components/section-lynx',
+                                '/es/documentacion/components/section',
                                 '/es/documentacion/components/switch-orion',
                                 '/es/documentacion/components/switch',
+                                '/es/documentacion/components/tetris',
                                 '/es/documentacion/components/text'
+                            ]
+                        },
+                        {
+                            title: 'Estilos',
+                            collapsable: false,
+                            sidebarDepth: 2,
+                            children: [
+                                {
+                                    title: 'Clases de utilidad',
+                                    path: '/es/documentacion/estilos/clases-de-utilidad/',
+                                    collapsable: false,
+                                    sidebarDepth: 2,
+                                    children: [
+                                        '/es/documentacion/estilos/clases-de-utilidad/colores',
+                                        '/es/documentacion/estilos/clases-de-utilidad/gaps'
+                                    ]
+                                }
                             ]
                         }
                     ],

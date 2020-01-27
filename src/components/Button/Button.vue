@@ -6,13 +6,17 @@
         :class="{
             'c-button--outlined' : variant === 'outlined',
             'c-button--bordered' : variant === 'bordered',
-            'c-button--filled' : variant === 'filled',
+            'c-button--text' : variant === 'text',
+            'c-button--casper' : variant === 'casper',
+            'c-button--ghost' : variant === 'ghost',
             'c-button--rounded' : rounded,
             'c-button--radiused' : radiused,
             'c-button--icon' : icon,
             'c-button--is-disabled' : disabled,
+            'c-button--white' : color === 'white',
             'c-button--primary' : color === 'primary',
             'c-button--secondary' : color === 'secondary',
+            'c-button--dunite' : size === 'dunite',
             'c-button--diorite' : size === 'diorite',
             'c-button--basalt' : size === 'basalt',
             'c-button--obsidian' : size === 'obsidian',
@@ -47,7 +51,7 @@
             },
             variant: {
                 type: String,
-                default: 'filled'
+                default: undefined
             },
             rounded: {
                 type: Boolean,
@@ -81,29 +85,33 @@
   .c-button {
     --c-button-size: #{em(16px)};
     --c-button-text-align: center;
-    --c-button-font-size: #{em(16px)};
-    --c-button-font-weight: 400;
     --c-button-text-transform: uppercase;
-    --c-button-padding: #{em(8px) em(16px)};
+    --c-button-padding: #{rem(4px) em(16px)};
     --c-button-border-radius: 0;
     --c-button-border-style: solid;
-    --c-button-border-width: 1px;
+    --c-button-border-width: 0;
     --c-button-min-height: #{em(40px)};
     --c-button-min-width: var(--c-button-min-height);
     --c-button-inner-padding: 0;
     --c-button-inner-border-radius: 0;
-    --c-button-overlay-start-width: 104%;
+    --c-button-overlay-start-width: 0;
 
     // Colors
-    --c-button-color: var(--color-neutral);
-    --c-button-background-color: transparent;
-    --c-button-border-color: transparent;
-    --c-button-overlay-color: hsl(var(--color-neutral-hue), var(--color-neutral-saturation), 95%);
+    --c-button-main-color: var(--color-neutral);
+    --c-button-main-color-hue: var(--color-neutral-hue);
+    --c-button-main-color-saturation: var(--color-neutral-saturation);
+    --c-button-secondary-color: var(--color-shade-0);
+
+    // Set colors
+    --c-button-color: var(--c-button-secondary-color);
+    --c-button-background-color: var(--c-button-main-color);
+    --c-button-border-color: var(--c-button-main-color);
+    --c-button-overlay-color: hsla(var(--color-shade-0-hsl), 0.2);
 
     // Colors Hover
     --c-button-color-hover: var(--c-button-color);
-    --c-button-background-color-hover: transparent;
-    --c-button-border-color-hover: transparent;
+    --c-button-background-color-hover: var(--c-button-main-color);
+    --c-button-border-color-hover: var(--c-button-main-color);
   }
 </style>
 
@@ -138,12 +146,12 @@
       align-items: center;
       justify-content: center;
       position: relative;
+      overflow: hidden;
       color: var(--c-button-color);
       text-align: var(--c-button-text-align);
       background-color: var(--c-button-background-color);
       text-transform: var(--c-button-text-transform);
       padding: var(--c-button-padding);
-      font-weight: var(--c-button-font-weight);
       border-radius: var(--c-button-inner-border-radius);
       z-index: 1;
       transition: all 0.3s;
@@ -154,10 +162,10 @@
         left: 50%;
         top: 50%;
         width: var(--c-button-overlay-start-width);
-        height: 104%;
+        height: 120%;
         transform: translate(-50%, -50%);
         position: absolute;
-        opacity: 0;
+        opacity: var(--c-button-overlay-opacity, 0);
         z-index: 2;
         transition: all 0.3s;
         background-color: var(--c-button-overlay-color);
@@ -171,7 +179,6 @@
       align-items: center;
       position: relative;
       z-index: 3;
-      font-size: var(--c-button-font-size);
     }
 
     @include c-button-hover($this) {
@@ -182,8 +189,8 @@
         background-color: var(--c-button-background-color-hover);
 
         &::before {
-          width: 104%;
-          opacity: 1;
+          opacity: var(--c-button-overlay-opacity-hover, 1);
+          width: 120%;
         }
       }
     }
@@ -195,45 +202,109 @@
     }
 
     // Colors
+    &--white {
+      --c-button-main-color: var(--color-shade-0);
+      --c-button-main-color-hue: var(--color-shade-0-hue);
+      --c-button-main-color-saturation: var(--color-shade-0-saturation);
+      --c-button-secondary-color: currentColor;
+      --c-button-main-color-lumnosity: 70%;
+    }
+
     &--primary {
-      --c-button-color: var(--color-primary);
-      --c-button-overlay-color: hsl(var(--color-primary-hue), var(--color-primary-saturation), 95%);
-      --c-button-border-color-hover: var(--c-button-overlay-color);
+      --c-button-main-color: var(--color-primary);
+      --c-button-main-color-hue: var(--color-primary-hue);
+      --c-button-main-color-saturation: var(--color-primary-saturation);
+    }
+
+    &--secondary {
+      --c-button-main-color: var(--color-secondary);
+      --c-button-main-color-hue: var(--color-secondary-hue);
+      --c-button-main-color-saturation: var(--color-secondary-saturation);
     }
 
     // Types
-    &--filled {
-      --c-button-color: var(--c-color-shade-0);
-      --c-button-background-color: var(--c-button-color);
+    &--text {
+      // Colors
+      --c-button-secondary-color: var(--c-button-main-color);
+      --c-button-background-color: transparent;
+      --c-button-border-color: transparent;
+      --c-button-overlay-color: hsl(var(--c-button-main-color-hue), var(--c-button-main-color-saturation), var(--c-button-main-color-lumnosity, 95%));
+
+      // Colors Hover
+      --c-button-color-hover: var(--c-button-secondary-color);
+      --c-button-background-color-hover: transparent;
+      --c-button-border-color-hover: var(--c-button-overlay-color);
     }
 
     &--outlined {
-      --c-button-overlay-start-width: 0;
-      --c-button-color-hover: var(--color-shade-0);
-      --c-button-border-color: var(--c-button-color);
-      --c-button-border-color-hover: var(--c-button-color);
-      --c-button-overlay-color: var(--c-button-color);
+      --c-button-border-width: #{rem(1px)};
+      --c-button-background-color: transparent;
+      --c-button-background-color-hover: transparent;
+      --c-button-color: var(--c-button-main-color);
+      --c-button-overlay-color: var(--c-button-main-color);
+      --c-button-color-hover: var(--c-button-secondary-color);
+    }
+
+    &--bordered {
+      --c-button-border-width: #{rem(1px)};
+      --c-button-inner-padding: #{rem(2px)};
+      --c-button-background-color: var(--c-button-main-color);
+      --c-button-background-color-hover: var(--c-button-main-color);
+    }
+
+    &--casper {
+      --c-button-border-width: #{rem(1px)};
+      --c-button-background-color: transparent;
+      --c-button-background-color-hover: transparent;
+      --c-button-color: var(--c-button-main-color);
+      --c-button-overlay-color: hsla(var(--color-shade-0-hsl), 0.5);
+    }
+
+    &--ghost {
+      --c-button-color: var(--c-button-main-color);
+      --c-button-background-color: hsla(var(--color-shade-0-hsl), 0.8);
+      --c-button-background-color-hover: hsla(var(--color-shade-0-hsl), 0.8);
+      --c-button-overlay-color: hsla(var(--color-shade-0-hsl), 1);
+    }
+
+    &--radiused {
+      --c-button-border-radius: var(--radius-s);
+      --c-button-inner-border-radius: calc(var(--radius-s) / 2);
     }
 
     &--rounded {
       --c-button-border-radius: calc(var(--c-button-min-height) / 2);
+      --c-button-inner-border-radius: calc(var(--c-button-min-height) / 2);
+    }
+
+    &--icon {
+      --c-button-padding: #{em(4px)};
     }
 
     // Sizes
+    &--dunite {
+      --c-button-size: #{em(10px)};
+      --c-button-min-height: #{em(28px, 10px)};
+    }
+
     &--diorite {
       --c-button-size: #{em(12px)};
+      --c-button-min-height: #{em(32px, 12px)};
     }
 
     &--basalt {
       --c-button-size: #{em(14px)};
+      --c-button-min-height: #{em(36px, 14px)};
     }
 
     &--obsidian {
       --c-button-size: #{em(18px)};
+      --c-button-min-height: #{em(44px, 18px)};
     }
 
     &--tuff {
       --c-button-size: #{em(20px)};
+      --c-button-min-height: #{em(48px, 20px)};
     }
   }
 </style>

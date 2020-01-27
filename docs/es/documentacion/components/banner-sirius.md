@@ -24,29 +24,68 @@
 
 ```js
 {
-    banner: { radius: true },
+    banner: {
+        radius: true,
+        ratio: {
+            width: 4,
+            height: 3
+        }
+    },
     video: {
-        button: { rounded: true, size: 'tiny' },
-        icon: { icon: 'heart' }
+        button: {
+            rounded: true,
+            icon: true,
+            size: 'diorite',
+            variant: 'ghost',
+            color: 'secondary'
+        },
+        icon: {
+            icon: 'heart'
+        }
     },
     favourite: {
         enabled: true,
-        button: { tag: 'button', rounded: true, size: 'tiny' },
-        icon: { icon: 'heart' }
+        button: {
+            tag: 'button',
+            rounded: true,
+            icon: true,
+            size: 'diorite',
+            variant: 'ghost',
+            color: 'secondary'
+        },
+        icon: {
+            icon: 'heart'
+        }
     },
-    title: { background: true },
-    meta: { background: true }
+    title: {
+        bgColor: 'white',
+        text: {
+            size: 'diorite',
+            color: 'primary'
+        }
+    },
+    meta: {
+        bgColor: 'primary',
+        text: {
+            size: 'dacite',
+            color: 'white'
+        }
+    },
+    priceButton: {
+        radiused: true
+    }
 }
 ```
 
 #### Referencias
 
-| Clave              | Componente            |
-|--------------------|-----------------------|
-| `banner`           | [Banner](./banner.md) |
-| `video.button`     | [Button](./button.md) |
-| `video.icon`       | [Icon](./icon.md)     |
-| `favourite.button` | [Button](./button.md) |
-| `favourite.icon`   | [Icon](./icon.md)     |
-| `title`            | [Text](./text.md)     |
-| `meta`             | [Text](./text.md)     |
+| Clave              | Componente                       |
+|--------------------|----------------------------------|
+| `banner`           | [Banner](./banner.md)            |
+| `video.button`     | [Button](./button.md)            |
+| `video.icon`       | [Icon](./icon.md)                |
+| `favourite.button` | [Button](./button.md)            |
+| `favourite.icon`   | [Icon](./icon.md)                |
+| `title.text`       | [Text](./text.md)                |
+| `meta.text`        | [Text](./text.md)                |
+| `priceButton`      | [PriceButton](./price-button.md) |

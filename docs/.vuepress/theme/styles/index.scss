@@ -22,7 +22,7 @@
   --docs-sidebar-background: #f5f7fb;
   --docs-blockquote-background: #f5f7fb;
   --docs-table-td-background: #f5f7fb;
-  --docs-container-width: 85.63rem;
+  --docs-container-width: 112.5rem;
 
   // Spaces
   --docs-gutter: 1rem;
@@ -154,16 +154,16 @@ div {
   }
 }
 
-@mixin encapsulated ($tag) {
-  > #{$tag} {
-    &:not(.preview) {
+@mixin encapsulated ($tags) {
+  @each $tag in $tags {
+    > #{$tag}:not(.preview) {
       @content;
     }
-  }
 
-  > *:not(.preview) {
-    #{$tag} {
-      @content;
+    > *:not(.preview) {
+      #{$tag} {
+        @content;
+      }
     }
   }
 }
@@ -182,12 +182,12 @@ div {
     line-height: var(--docs-line-height);
   }
 
-  @include encapsulated ('a') {
+  @include encapsulated (a) {
     text-decoration: underline;
     color: var(--docs-color-primary);
   }
 
-  @include encapsulated ('ul, ol') {
+  @include encapsulated (ul ol) {
     list-style: none;
     padding-left: 2rem;
 
@@ -210,7 +210,7 @@ div {
     }
   }
 
-  @include encapsulated ('ol') {
+  @include encapsulated (ol) {
     counter-reset: orderList;
 
     li {
@@ -222,7 +222,7 @@ div {
     }
   }
 
-  @include encapsulated ('h1, h2, h3, h4, h5, h6') {
+  @include encapsulated (h1 h2 h3 h4 h5 h6) {
     display: flex;
     font-weight: 500;
 
@@ -241,31 +241,31 @@ div {
     }
   }
 
-  @include encapsulated ('h1') {
+  @include encapsulated (h1) {
     font-size: 1.8em;
   }
 
-  @include encapsulated ('h2') {
+  @include encapsulated (h2) {
     font-size: 1.4em;
   }
 
-  @include encapsulated ('h3') {
+  @include encapsulated (h3) {
     font-size: 1.3em;
   }
 
-  @include encapsulated ('h4') {
+  @include encapsulated (h4) {
     font-size: 1.2em;
   }
 
-  @include encapsulated ('h5') {
+  @include encapsulated (h5) {
     font-size: 1.1em;
   }
 
-  @include encapsulated ('h6') {
+  @include encapsulated (h6) {
     font-size: 1em;
   }
 
-  @include encapsulated ('blockquote') {
+  @include encapsulated (blockquote) {
     background-color: var(--docs-blockquote-background);
     padding: 2rem;
     margin-left: 0;
@@ -292,7 +292,7 @@ div {
     }
   }
 
-  @include encapsulated ('table') {
+  @include encapsulated (table) {
     width: 100%;
     overflow-x: auto;
     display: block;
@@ -300,11 +300,11 @@ div {
     border-spacing: 0;
   }
 
-  @include encapsulated ('th') {
+  @include encapsulated (th) {
     text-align: left;
   }
 
-  @include encapsulated ('tr') {
+  @include encapsulated (tr) {
     &:nth-child(2n) {
       td {
         background-color: var(--docs-table-td-background);
@@ -312,7 +312,7 @@ div {
     }
   }
 
-  @include encapsulated ('th, td') {
+  @include encapsulated (th td) {
     padding: 0.5rem 1rem;
     border: 1px solid var(--docs-color-border);
   }

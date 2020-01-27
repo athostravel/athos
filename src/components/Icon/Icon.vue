@@ -4,6 +4,7 @@
         class="c-icon"
         :class="[
             icon && `c-icon--${icon}`,
+            color && `u-color-${color}`,
             {
                 'c-icon--diorite' : size === 'diorite',
                 'c-icon--basalt' : size === 'basalt',
@@ -29,6 +30,10 @@
                 default: 'span'
             },
             size: {
+                type: String,
+                default: undefined
+            },
+            color: {
                 type: String,
                 default: undefined
             }
