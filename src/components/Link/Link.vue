@@ -37,32 +37,32 @@
 </script>
 
 <style lang="scss">
-    .c-link {
-        --c-link--color-primary: var(--color-primary);
-        --c-link--color-secondary: var(--color-secondary);
-    }
+  .c-link {
+    --c-link--color-primary: var(--color-primary);
+    --c-link--color-secondary: var(--color-secondary);
+  }
 </style>
 
 <style lang="scss" scoped>
-    .c-link {
-        $this: &;
+  .c-link {
+    $this: &;
 
+    color: var(--c-link--color-primary);
+    transition: 0.3s;
+
+    &--secondary,
+    &:hover {
+      color: var(--c-link--color-secondary);
+    }
+
+    &--secondary {
+      &:hover {
         color: var(--c-link--color-primary);
-        transition: .3s;
+      }
+    }
 
-        &--secondary,
-        &:hover {
-            color: var(--c-link--color-secondary);
-        }
-
-        &--secondary {
-            &:hover {
-                color: var(--c-link--color-primary);
-            }
-        }
-
-        &--underline {
-            text-decoration: underline;
-        }
-     }
+    &--underline {
+      text-decoration: underline;
+    }
+  }
 </style>
