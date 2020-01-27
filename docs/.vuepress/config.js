@@ -132,6 +132,7 @@ module.exports = {
                                 '/es/documentacion/components/banner',
                                 '/es/documentacion/components/button',
                                 '/es/documentacion/components/checkbox',
+                                '/es/documentacion/components/dialogbox',
                                 '/es/documentacion/components/dropdown',
                                 '/es/documentacion/components/icon',
                                 '/es/documentacion/components/input',
