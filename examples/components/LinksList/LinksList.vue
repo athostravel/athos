@@ -9,12 +9,14 @@
         data () {
             return {
                 atLink: {
-                    list: {
-                        link: {
-                            href: 'http://www.avoristravel.com/',
-                            target: '_blank'
+                    list: [
+                        {
+                            item: {
+                                href: 'http://www.avoristravel.com/',
+                                target: '_blank'
+                            }
                         }
-                    }
+                    ]
                 }
             }
         }

@@ -5,12 +5,15 @@
             'c-links-list--separate': separate
         }"
     >
-        {{list}}
-
-        <div v-for="item in list" v-bind="list">
-
-            <AtLink v-bind="[cfg.link, link]" />
-        </div>
+<!--
+        <component
+            :is="component"
+            v-for="link in list.item"
+            :key="link.id"
+            class="c-links-list__item"
+            v-bind="link"
+        />
+        -->
     </div>
 </template>
 
@@ -23,6 +26,10 @@
             AtLink
         },
         props: {
+            component: {
+                type: String,
+                default: 'AtLink'
+            },
             separate: {
                 type: Boolean,
                 default: true
