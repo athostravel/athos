@@ -20,4 +20,4 @@
 
 | Nombre      | Descripción        |
 |-------------|--------------------|
-| `defaulr`   | Slot por defecto   |
+| `default`   | Slot por defecto   |
