@@ -1,5 +1,6 @@
 <template>
     <AtPopper v-bind="popper" class="c-popover" :class="{'c-popover--has-border': bordered}" :style="customSize">
+        <AtIcon v-if="close" class="c-popover__close" icon="heart" />
         <div v-if="arrow" class="c-popover__arrow" data-popper-arrow></div>
         <div class="c-popover__content">
             <slot />
@@ -9,10 +10,12 @@
 
 <script>
     import AtPopper from '@components/Popper/Popper'
+    import AtIcon from '@components/Icon/Icon'
     export default {
         name: 'AtPopover',
         components: {
-            AtPopper
+            AtPopper,
+            AtIcon
         },
         props: {
             popper: {
@@ -22,6 +25,10 @@
             arrow: {
                 type: Boolean,
                 default: false
+            },
+            close: {
+                type: Boolean,
+                default: true
             },
             bordered: {
                 type: Boolean,
@@ -61,27 +68,31 @@
 <style lang="scss" scoped>
   .c-popover {
     z-index: var(--z-index-bishop);
-    width: var(--c-popover-width);
     border-radius: var(--c-popover-border-radius);
     background-color: var(--c-popover-background);
     box-shadow: var(--c-popover-box-shadow);
-    max-height: var(--c-popover-max-heigth);
-    max-width: var(--c-popover-max-width);
-    overflow-y: auto;
 
     &--has-border {
-      border-left: #{em(4px)} solid var(--color-secondary);
+      border-left: em(4px) solid var(--color-secondary);
     }
 
     &__arrow {
       position: absolute;
       border-color: #fff;
-      top: 0;
+    }
+
+    &__close {
+      position: absolute;
+      right: em(8px);
+      top: em(8px);
     }
 
     &__content {
       padding: em(16px);
-      width: 100%;
+      width: var(--c-popover-width);
+      max-height: var(--c-popover-max-heigth);
+      max-width: var(--c-popover-max-width);
+      overflow-y: auto;
     }
 
     &[data-popper-placement^="top"] {
