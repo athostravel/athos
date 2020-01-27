@@ -136,6 +136,7 @@ module.exports = {
                                 '/es/documentacion/components/icon-card',
                                 '/es/documentacion/components/icon',
                                 '/es/documentacion/components/link',
+                                '/es/documentacion/components/links-list',
                                 '/es/documentacion/components/picture',
                                 '/es/documentacion/components/price-button',
                                 '/es/documentacion/components/price',
