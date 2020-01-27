@@ -5,14 +5,15 @@
             'c-links-list--separate': separate
         }"
     >
-        {{list}}
-
-        <component
-            :is="component"
-            v-for="link in list.link"
-            :key="link.id"
+        <AtLink
+            v-for="item in items"
+            :key="item.id"
+            :href="item.href"
+            :target="item.target"
             class="c-links-list__item"
-        />
+        >
+            {{ item.text }}
+        </AtLink>
     </div>
 </template>
 
@@ -25,13 +26,13 @@
             AtLink
         },
         props: {
-            component: {
-                type: String,
-                default: 'AtLink'
-            },
             separate: {
                 type: Boolean,
                 default: true
+            },
+            items: {
+                type: Array,
+                default: () => []
             }
         }
     }
@@ -39,7 +40,7 @@
 
 <style lang="scss">
   .c-links-list {
-    --c-links-list--separate-color: var(--color-primary);
+    --c-links-list--separate-color: var(--color-secondary);
   }
 </style>
 
@@ -48,7 +49,12 @@
     $this: &;
 
     &--separate {
-      color: var(--c-links-list--separate-color);
+        #{$this}__item {
+            &:before {
+                color: var(--c-links-list--separate-color);
+                content: "|"
+            }
+        }
     }
   }
 </style>

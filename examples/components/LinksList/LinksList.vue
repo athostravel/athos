@@ -7,12 +7,20 @@
         data () {
             return {
                 atLinksList: {
-                    list: [{
-                        link: {
+                    items: [
+                        {
                             href: 'http://www.avoristravel.com/',
-                            target: '_blank'
+                            text: 'Text Link #1'
+                        },
+                        {
+                            href: 'http://www.avoristravel.com/',
+                            text: 'Text Link #2'
+                        },
+                        {
+                            href: 'http://www.avoristravel.com/',
+                            text: 'Text Link #3'
                         }
-                    }]
+                    ]
                 }
             }
         }
