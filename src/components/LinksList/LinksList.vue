@@ -41,6 +41,7 @@
 <style lang="scss">
   .c-links-list {
     --c-links-list--separate-color: var(--color-secondary);
+    --c-links-list--separate-gap: 0 var(--space-2xs);
   }
 </style>
 
@@ -48,13 +49,27 @@
   .c-links-list {
     $this: &;
 
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+      display: inline-flex;
+    }
+
     &--separate {
-        #{$this}__item {
-            &:before {
-                color: var(--c-links-list--separate-color);
-                content: "|"
-            }
+      #{$this}__item {
+        &::before {
+          color: var(--c-links-list--separate-color);
+          content: "|";
+          margin: var(--c-links-list--separate-gap);
         }
+
+        &:first-child {
+          &::before {
+            content: "";
+          }
+        }
+      }
     }
   }
 </style>
