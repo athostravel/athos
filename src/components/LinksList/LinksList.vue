@@ -2,65 +2,47 @@
     <div
         class="c-links-list"
         :class="{
-            'c-links-list--separate': separate,
-            'c-links-list--vertical': orientation === 'vertical',
-            'c-links-list--separate-color-secondary': separateColor === 'secondary',
-            'c-links-list--separate-color-white': separateColor === 'white'
+            'c-links-list--separate': separate
         }"
     >
-        <slot />
+        {{list}}
+
+        <div v-for="item in list" v-bind="list">
+
+            <AtLink v-bind="[cfg.link, link]" />
+        </div>
     </div>
 </template>
 
 <script>
+    import AtLink from '@components/Link/Link'
+
     export default {
         name: 'AtLink',
+        components: {
+            AtLink
+        },
         props: {
             separate: {
                 type: Boolean,
                 default: true
-            },
-            orientation: {
-                type: String,
-                default: 'horizontal'
-            },
-            separateColor: {
-                type: String,
-                default: 'primary'
             }
         }
     }
 </script>
 
 <style lang="scss">
-    .c-links-list {
-        --c-links-list--color-primary: var(--color-primary);
-        --c-links-list--separate-color-primary: var(--color-primary);
-        --c-links-list--separate-color-secondary: var(--color-secondary);
-        --c-links-list--separate-color-white: var(--color-primary);
-    }
+  .c-links-list {
+    --c-links-list--separate-color: var(--color-primary);
+  }
 </style>
 
 <style lang="scss" scoped>
-    .c-link {
-        $this: &;
+  .c-links-list {
+    $this: &;
 
-        color: var(--c-link--color-primary);
-        transition: .3s;
-
-        &--secondary,
-        &:hover {
-            color: var(--c-link--color-secondary);
-        }
-
-        &--secondary {
-            &:hover {
-                color: var(--c-link--color-primary);
-            }
-        }
-
-        &--underline {
-            text-decoration: underline;
-        }
-     }
+    &--separate {
+      color: var(--c-links-list--separate-color);
+    }
+  }
 </style>
