@@ -1,9 +1,9 @@
 <template>
-    <AtDialogBox v-bind="options" :style="customSize">
-        <AtPopper v-bind="popper">
+    <AtPopper v-bind="popper">
+        <AtDialogBox v-bind="options" :style="customSize">
             <slot />
-        </AtPopper>
-    </AtDialogBox>
+        </AtDialogBox>
+    </AtPopper>
 </template>
 
 <script>
