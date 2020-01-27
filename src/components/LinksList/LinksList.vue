@@ -5,15 +5,14 @@
             'c-links-list--separate': separate
         }"
     >
-<!--
+        {{list}}
+
         <component
             :is="component"
-            v-for="link in list.item"
+            v-for="link in list.link"
             :key="link.id"
             class="c-links-list__item"
-            v-bind="link"
         />
-        -->
     </div>
 </template>
 
@@ -21,7 +20,7 @@
     import AtLink from '@components/Link/Link'
 
     export default {
-        name: 'AtLink',
+        name: 'AtLinksList',
         components: {
             AtLink
         },

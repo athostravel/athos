@@ -1,22 +1,18 @@
 <template>
-    <div>
-
-    </div>
+    <AtLinksList v-bind="atLinksList" />
 </template>
 
 <script>
     export default {
         data () {
             return {
-                atLink: {
-                    list: [
-                        {
-                            item: {
-                                href: 'http://www.avoristravel.com/',
-                                target: '_blank'
-                            }
+                atLinksList: {
+                    list: [{
+                        link: {
+                            href: 'http://www.avoristravel.com/',
+                            target: '_blank'
                         }
-                    ]
+                    }]
                 }
             }
         }
