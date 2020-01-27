@@ -1,14 +1,19 @@
 <template>
-    <div class="c-dialog-box" :class="{'c-dialog-box--has-border': bordered}">
+    <div
+        class="c-dialog-box"
+        :class="{'c-dialog-box--has-border': bordered}"
+        :style="customSize"
+    >
         <div class="c-dialog-box__content">
-            <div class="c-dialog-box__arrow" data-popper-arrow></div>
-            <div class="c-dialog-box__close"></div>
+            <div v-if="arrow" class="c-dialog-box__arrow" data-popper-arrow></div>
+            <div v-if="close" class="c-dialog-box__close"></div>
             <slot />
         </div>
     </div>
 </template>
 
 <script>
+
     export default {
         name: 'AtDialogBox',
         props: {
@@ -23,6 +28,23 @@
             bordered: {
                 type: Boolean,
                 default: false
+            },
+            size: {
+                type: Object,
+                default: () => {}
+            }
+        },
+        computed: {
+            customSize () {
+                const size = {}
+                if (this.size && this.size.width) {
+                    size['--c-dialogbox-max-width'] = this.size.width
+                    size['--c-dialogbox-width'] = '100%'
+                }
+                if (this.size && this.size.height) {
+                    size['--c-dialogbox-max-heigth'] = this.size.height
+                }
+                return size
             }
         }
     }
@@ -49,6 +71,10 @@
     border-radius: var(--c-dialogbox-border-radius);
     background-color: var(--c-dialogbox-background);
     box-shadow: var(--c-dialogbox-box-shadow);
+    width: var(--c-dialogbox-width);
+    max-height: var(--c-dialogbox-max-heigth);
+    max-width: var(--c-dialogbox-max-width);
+    overflow-y: auto;
 
     &--has-border {
       border-left: em(4px) solid var(--color-secondary);
@@ -56,10 +82,6 @@
 
     &__content {
       padding: em(16px);
-      width: var(--c-popover-width);
-      max-height: var(--c-popover-max-heigth);
-      max-width: var(--c-popover-max-width);
-      overflow-y: auto;
     }
 
     &__close {
@@ -71,19 +93,19 @@
     &__arrow {
       position: absolute;
     }
+  }
 
-    &[data-popper-placement^="bottom"] {
-      margin-top: var(--c-tooltip-arrow-height);
+  [data-popper-placement^="bottom"] {
+    margin-top: var(--c-dialogbox-arrow-height);
 
-      .c-tooltip__arrow {
-        top: calc(#{var(--c-tooltip-arrow-height)} * -1);
-        left: calc(50% - #{var(--c-tooltip-arrow-height)});
-        margin-top: 0;
-        margin-bottom: 0;
-        border-left: var(--c-tooltip-arrow-width) solid transparent;
-        border-right: var(--c-tooltip-arrow-width) solid transparent;
-        border-bottom: var(--c-tooltip-arrow-height) solid var(--c-tooltip-arrow-color);
-      }
+    .c-dialog-box__arrow {
+      top: calc(#{var(--c-dialogbox-arrow-height)} * -1);
+      left: calc(50% - #{var(--c-dialogbox-arrow-height)});
+      margin-top: 0;
+      margin-bottom: 0;
+      border-left: var(--c-dialogbox-arrow-width) solid transparent;
+      border-right: var(--c-dialogbox-arrow-width) solid transparent;
+      border-bottom: var(--c-dialogbox-arrow-height) solid var(--c-dialogbox-arrow-color);
     }
   }
 </style>

@@ -26,7 +26,7 @@
                     bordered: true,
                     arrow: true,
                     size: {
-                        width: '50em',
+                        width: '600px',
                         height: '200px'
                     }
                 }
