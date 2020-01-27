@@ -1,11 +1,10 @@
 <template>
-    <div class="c-tetris" :class="gap && `u-gap-${gap}`">
+    <div v-if="items" class="c-tetris" :class="gap && `u-gap-${gap}`">
         <component
             :is="component"
             v-for="(item, index) in items"
             :key="item.id"
-            v-bind="item"
-            :config="cfg.items[index]"
+            v-bind="[{ config: cfg.items[index] }, item]"
             class="c-tetris__item"
             :class="{
                 'c-tetris__item--mosaic': variant === 'mosaic'
