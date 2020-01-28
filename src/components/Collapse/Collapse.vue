@@ -2,7 +2,6 @@
     <div class="c-collapse">
         <div
             id="c-collapse-header"
-            v-bind="[cfg.header, header]"
             class="c-collapse__header"
             :class="[
                 {
@@ -78,9 +77,7 @@
             return {
                 cfg: {
                     header: {
-                        align: 'center',
-                        gap: 'dunite',
-                        inline: true
+                        align: 'center'
                     },
                     title: {
                         color: 'primary',
