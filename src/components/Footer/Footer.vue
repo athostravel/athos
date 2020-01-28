@@ -26,6 +26,18 @@
                     />
                 </div>
             </div>
+            <div class="c-footer__footer">
+                <AtText v-if="copyright" v-bind="cfg.copyright" class="c-footer__text">
+                    {{ copyright.text }}
+                </AtText>
+
+                <AtPicture class="c-footer__logo"
+                           v-if="image"
+                           v-bind="cfg.image"
+                           :src="image.src"
+                           :ratio="cfg.image.ratio"
+                />
+            </div>
         </AtContainer>
     </div>
 </template>
@@ -34,13 +46,15 @@
     import AtContainer from '@components/Container/Container'
     import AtLinksList from '@components/LinksList/LinksList'
     import AtText from '@components/Text/Text'
+    import AtPicture from '@components/Picture/Picture'
 
     export default {
         name: 'AtFooter',
         components: {
             AtContainer,
             AtLinksList,
-            AtText
+            AtText,
+            AtPicture
         },
         props: {
             lists: {
@@ -54,6 +68,14 @@
             bgColor: {
                 type: String,
                 default: undefined
+            },
+            copyright: {
+                type: Object,
+                default: () => {}
+            },
+            image: {
+                type: Object,
+                default: () => {}
             }
         },
         data () {
@@ -74,6 +96,16 @@
                         },
                         link: {
                             color: 'white'
+                        }
+                    },
+                    copyright: {
+                        color: 'white',
+                        size: 'diorite'
+                    },
+                    image: {
+                        ratio: {
+                            height: 1,
+                            width: 2,
                         }
                     }
                 }
@@ -122,5 +154,15 @@
       padding: var(--footer-title-padding);
       margin: var(--footer-title-margin);
     }
+
+      &__footer {
+          border-top: 1px solid #fff;
+          margin-top: 26px;
+          padding: var(--footer-inner-padding);
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-column-gap: var(--footer-lists-column-gap);
+          grid-row-gap: var(--footer-lists-row-gap);
+      }
   }
 </style>
