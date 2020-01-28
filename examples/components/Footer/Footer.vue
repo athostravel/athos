@@ -1,11 +1,5 @@
 <template>
-    <div>
-        <AtFooter v-bind="atFooter">
-            <AtText size="basalt">
-                {{atFooter.items.text}}
-            </AtText>
-        </AtFooter>
-    </div>
+    <AtFooter v-bind="atFooter" />
 </template>
 
 <script>
@@ -13,9 +7,40 @@
         data () {
             return {
                 atFooter: {
-                    items: {
-                        text: 'lorem ipsum'
-                    }
+                    lists: [
+                        {
+                            links: [
+                                {
+                                    href: 'http://www.avoristravel.com/',
+                                    text: 'Text Link #1'
+                                },
+                                {
+                                    href: 'http://www.avoristravel.com/',
+                                    text: 'Text Link #2'
+                                },
+                                {
+                                    href: 'http://www.avoristravel.com/',
+                                    text: 'Text Link #3'
+                                }
+                            ]
+                        },
+                        {
+                            links: [
+                                {
+                                    href: 'http://www.avoristravel.com/',
+                                    text: 'Text Link #4'
+                                },
+                                {
+                                    href: 'http://www.avoristravel.com/',
+                                    text: 'Text Link #5'
+                                },
+                                {
+                                    href: 'http://www.avoristravel.com/',
+                                    text: 'Text Link #6'
+                                }
+                            ]
+                        }
+                    ]
                 }
             }
         }
