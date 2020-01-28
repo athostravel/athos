@@ -6,10 +6,10 @@
         }"
     >
         <AtText
-            class="c-links-list__text"
-            v-bind="cfg.text"
             v-for="link in items"
             :key="link.id"
+            class="c-links-list__text"
+            v-bind="cfg.text"
         >
             <AtLink
                 v-bind="cfg.link"
