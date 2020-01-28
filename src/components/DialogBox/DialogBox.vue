@@ -2,7 +2,6 @@
     <div
         class="c-dialog-box"
         :class="{'c-dialog-box--has-border': bordered}"
-        :style="customSize"
     >
         <div class="c-dialog-box__content">
             <div v-if="arrow" class="c-dialog-box__arrow" data-popper-arrow></div>
@@ -33,28 +32,12 @@
                 type: Object,
                 default: () => {}
             }
-        },
-        computed: {
-            customSize () {
-                const size = {}
-                if (this.size && this.size.width) {
-                    size['--c-dialogbox-max-width'] = this.size.width
-                    size['--c-dialogbox-width'] = '100%'
-                }
-                if (this.size && this.size.height) {
-                    size['--c-dialogbox-max-heigth'] = this.size.height
-                }
-                return size
-            }
         }
     }
 </script>
 
 <style lang="scss">
   .c-dialog-box {
-    --c-dialogbox-width: auto;
-    --c-dialogbox-max-width: 100%;
-    --c-dialogbox-max-heigth: auto;
     --c-dialogbox-background: #fff;
     --c-dialogbox-border-radius: var(--radius-s);
     --c-dialogbox-box-shadow: var(--shadow-distant);
@@ -71,10 +54,6 @@
     border-radius: var(--c-dialogbox-border-radius);
     background-color: var(--c-dialogbox-background);
     box-shadow: var(--c-dialogbox-box-shadow);
-    width: var(--c-dialogbox-width);
-    max-height: var(--c-dialogbox-max-heigth);
-    max-width: var(--c-dialogbox-max-width);
-    overflow-y: auto;
 
     &--has-border {
       border-left: em(4px) solid var(--color-secondary);

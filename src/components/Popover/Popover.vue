@@ -1,6 +1,6 @@
 <template>
-    <AtPopper v-bind="popper">
-        <AtDialogBox v-bind="options">
+    <AtPopper v-bind="[popper,{size: options.size}]">
+        <AtDialogBox v-bind="[options,cfg.options]">
             <slot />
         </AtDialogBox>
     </AtPopper>
@@ -24,6 +24,13 @@
             options: {
                 type: Object,
                 default: () => {}
+            }
+        },
+        data () {
+            return {
+                cfg: {
+                    // Propiedas por defecto
+                }
             }
         }
     }

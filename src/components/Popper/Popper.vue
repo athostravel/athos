@@ -1,7 +1,9 @@
 <template>
     <transition name="fade" @after-leave="destroyPopper">
-        <div v-show="show">
-            <slot />
+        <div v-show="show" class="c-popper" :style="customSize">
+            <div class="c-popper__content">
+                <slot />
+            </div>
         </div>
     </transition>
 </template>
@@ -27,6 +29,10 @@
             opened: {
                 type: Boolean,
                 default: false
+            },
+            size: {
+                type: Object,
+                default: () => {}
             }
         },
 
@@ -34,6 +40,19 @@
             return {
                 show: false,
                 popperInstance: null
+            }
+        },
+        computed: {
+            customSize () {
+                const size = {}
+                if (this.size && this.size.width) {
+                    size['--c-popper-max-width'] = this.size.width
+                    size['--c-popper-width'] = '100%'
+                }
+                if (this.size && this.size.height) {
+                    size['--c-popper-max-heigth'] = this.size.height
+                }
+                return size
             }
         },
 
@@ -46,7 +65,6 @@
                 this.togglePopper(id, trigger)
             })
         },
-
         methods: {
             togglePopper (id, trigger) {
                 if (id === this.id) {
@@ -78,6 +96,24 @@
     }
 </script>
 <style lang="scss">
+
+  .c-popper {
+    --c-popper-width: auto;
+    --c-popper-max-width: 100%;
+    --c-popper-max-heigth: auto;
+
+    width: var(--c-popper-width);
+    max-height: var(--c-popper-max-heigth);
+    max-width: var(--c-popper-max-width);
+
+    &__content {
+      overflow-y: auto;
+      width: var(--c-popper-width);
+      max-height: var(--c-popper-max-heigth);
+      max-width: var(--c-popper-max-width);
+    }
+  }
+
   .fade-enter-active,
   .fade-leave-active {
     transition: opacity 0.3s;
