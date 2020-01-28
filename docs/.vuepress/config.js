@@ -145,7 +145,8 @@ module.exports = {
                                 '/es/documentacion/components/switch-orion',
                                 '/es/documentacion/components/switch',
                                 '/es/documentacion/components/tetris',
-                                '/es/documentacion/components/text'
+                                '/es/documentacion/components/text',
+                                '/es/documentacion/components/tip'
                             ]
                         },
                         {

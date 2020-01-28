@@ -9,7 +9,8 @@
                 'c-icon--diorite' : size === 'diorite',
                 'c-icon--basalt' : size === 'basalt',
                 'c-icon--obsidian' : size === 'obsidian',
-                'c-icon--tuff' : size === 'tuff'
+                'c-icon--tuff' : size === 'tuff',
+                'c-icon--pumice' : size === 'pumice'
             }
         ]"
     >
@@ -71,6 +72,10 @@
 
     &--tuff {
       --c-icon-size: #{em(32px)};
+    }
+
+    &--pumice {
+      --c-icon-size: #{em(40px)};
     }
   }
 </style>

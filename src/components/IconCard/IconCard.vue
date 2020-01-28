@@ -86,6 +86,7 @@
 
     &__icon {
       grid-area: icon;
+      line-height: 1;
     }
 
     &__box {
