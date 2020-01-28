@@ -77,7 +77,7 @@
 
     &--separate {
       #{$this}__text {
-        &::before {
+        &::after {
           align-items: center;
           color: var(--c-links-list--separate-color);
           content: "|";
@@ -86,8 +86,8 @@
           margin: var(--c-links-list--separate-gap);
         }
 
-        &:first-child {
-          &::before {
+        &:last-child {
+          &::after {
             content: "";
             margin: var(--c-links-list--separate-gap-first-item);
           }
