@@ -59,7 +59,7 @@
 <style lang="scss">
   .c-links-list {
     --c-links-list--separate-color: var(--color-secondary);
-    --c-links-list--separate-gap: 0 var(--space-2xs);
+    --c-links-list--separate-gap: 0 var(--space-xs);
     --c-links-list--separate-gap-first-item: 0;
   }
 </style>
