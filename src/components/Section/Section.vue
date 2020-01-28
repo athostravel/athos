@@ -6,11 +6,19 @@
         }"
     >
         <header class="c-section__header">
-            <div v-if="$slots.title" class="c-section__title">
-                <slot name="title" />
+            <div v-if="$slots.title || title" class="c-section__title">
+                <slot name="title">
+                    <AtText v-bind="cfg.title">
+                        {{ title }}
+                    </AtText>
+                </slot>
             </div>
-            <div v-if="$slots.description" class="c-section__description">
-                <slot name="description" />
+            <div v-if="$slots.description || description" class="c-section__description">
+                <slot name="description">
+                    <AtText v-bind="cfg.description">
+                        {{ description }}
+                    </AtText>
+                </slot>
             </div>
         </header>
 
@@ -19,12 +27,43 @@
 </template>
 
 <script>
+    import AtText from '@components/Text/Text'
+
     export default {
         name: 'AtSection',
+        components: {
+            AtText
+        },
         props: {
+            title: {
+                type: String,
+                default: undefined
+            },
+            description: {
+                type: String,
+                default: undefined
+            },
             border: {
                 type: String,
                 default: undefined
+            }
+        },
+        data () {
+            return {
+                cfg: {
+                    title: {
+                        color: 'primary',
+                        weight: 'bold',
+                        size: 'coal',
+                        align: 'center'
+                    },
+                    description: {
+                        color: 'primary',
+                        weight: 'light',
+                        size: 'obsidian',
+                        align: 'center'
+                    }
+                }
             }
         }
     }
