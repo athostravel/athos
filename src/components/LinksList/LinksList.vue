@@ -41,14 +41,14 @@
 <style lang="scss">
   .c-links-list {
     --c-links-list--separate-color: var(--color-secondary);
-    --c-links-list--separate-gap: 0 var(--space-2xs);
+    --c-links-list--separate-gap: 0 var(--space-xs);
+    --c-links-list--separate-size: var(--font-size-xs);
   }
 </style>
 
 <style lang="scss" scoped>
   .c-links-list {
     $this: &;
-
     display: flex;
     flex-wrap: wrap;
 
@@ -59,8 +59,11 @@
     &--separate {
       #{$this}__item {
         &::before {
+          align-items: center;
           color: var(--c-links-list--separate-color);
           content: "|";
+          display: flex;
+          font-size: var(--c-links-list--separate-size);
           margin: var(--c-links-list--separate-gap);
         }
 
