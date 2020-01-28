@@ -5,6 +5,7 @@
         <AtIcon v-bind="atIcon" />
         <AtIcon v-bind="atIcon" size="obsidian" />
         <AtIcon v-bind="atIcon" size="tuff" />
+        <AtIcon v-bind="atIcon" size="pumice" />
     </div>
 </template>
 

@@ -13,7 +13,11 @@
             }
         ]"
     >
-        <AtIcon class="c-icon-card__icon" v-bind="[cfg.icon, { icon }]" />
+        <div class="c-icon-card__icon">
+            <slot name="icon">
+                <AtIcon v-bind="[cfg.icon, { icon }]" />
+            </slot>
+        </div>
         <div class="c-icon-card__box">
             <slot />
         </div>
@@ -73,6 +77,7 @@
 
     &__icon {
       grid-area: icon;
+      line-height: 1;
     }
 
     &__box {
