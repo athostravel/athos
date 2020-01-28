@@ -5,7 +5,8 @@
         :target="target"
         :class="{
             'c-link--underline': decoration === 'underline',
-            'c-link--secondary': color === 'secondary'
+            'c-link--secondary': color === 'secondary',
+            'c-link--white': color === 'white'
         }"
     >
         <slot />
@@ -40,6 +41,8 @@
   .c-link {
     --c-link--color-primary: var(--color-primary);
     --c-link--color-secondary: var(--color-secondary);
+    --c-link--color-white: #fff;
+    --c-link--color-white-hover-decoration: underline;
   }
 </style>
 
@@ -50,14 +53,24 @@
     color: var(--c-link--color-primary);
     transition: 0.3s;
 
-    &--secondary,
     &:hover {
       color: var(--c-link--color-secondary);
     }
 
     &--secondary {
+      color: var(--c-link--color-secondary);
+
       &:hover {
         color: var(--c-link--color-primary);
+      }
+    }
+
+    &--white {
+      color: var(--c-link--color-white);
+
+      &:hover {
+        color: var(--c-link--color-white);
+        text-decoration: var(--c-link--color-white-hover-decoration);
       }
     }
 
