@@ -5,25 +5,33 @@
             'c-links-list--separate': separate
         }"
     >
-        <AtLink
-            v-for="item in items"
-            :key="item.id"
-            :href="item.href"
-            :target="item.target"
-            class="c-links-list__item"
+        <AtText
+            v-for="link in items"
+            :key="link.id"
+            class="c-links-list__text"
+            v-bind="cfg.text"
         >
-            {{ item.text }}
-        </AtLink>
+            <AtLink
+                v-bind="cfg.link"
+                :href="link.href"
+                :target="link.target"
+                class="c-links-list__link"
+            >
+                {{ link.text }}
+            </AtLink>
+        </AtText>
     </div>
 </template>
 
 <script>
+    import AtText from '@components/Text/Text'
     import AtLink from '@components/Link/Link'
 
     export default {
         name: 'AtLinksList',
         components: {
-            AtLink
+            AtLink,
+            AtText
         },
         props: {
             separate: {
@@ -34,6 +42,16 @@
                 type: Array,
                 default: () => []
             }
+        },
+        data () {
+            return {
+                cfg: {
+                    text: {
+                        tag: 'span'
+                    },
+                    link: {}
+                }
+            }
         }
     }
 </script>
@@ -42,22 +60,23 @@
   .c-links-list {
     --c-links-list--separate-color: var(--color-secondary);
     --c-links-list--separate-gap: 0 var(--space-xs);
-    --c-links-list--separate-size: var(--font-size-xs);
+    --c-links-list--separate-gap-first-item: 0;
   }
 </style>
 
 <style lang="scss" scoped>
   .c-links-list {
     $this: &;
+
     display: flex;
     flex-wrap: wrap;
 
-    &__item {
+    &__text {
       display: inline-flex;
     }
 
     &--separate {
-      #{$this}__item {
+      #{$this}__text {
         &::before {
           align-items: center;
           color: var(--c-links-list--separate-color);
@@ -70,6 +89,7 @@
         &:first-child {
           &::before {
             content: "";
+            margin: var(--c-links-list--separate-gap-first-item);
           }
         }
       }
