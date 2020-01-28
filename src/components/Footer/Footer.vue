@@ -1,25 +1,46 @@
 <template>
-    <div class="c-footer">
-        <div class="c-footer__inner">
-            <AtLinksList
-                class="c-footer__links-list"
-                v-for="list in lists"
-                :key="list.id"
-                items="list"
-            >
-                {{list.items}}
-            </AtLinksList>
-        </div>
+    <div
+        class="c-footer"
+        :class="{
+            'c-footer--bg-color-primary' : cfg.bgColor === 'primary',
+            'c-footer--bg-color-secondary' : cfg.bgColor === 'secondary'
+        }"
+    >
+        <AtContainer v-bind="cfg.container">
+            <div class="c-footer__inner">
+                <div
+                    v-for="item in lists"
+                    :key="item.id"
+                    class="c-footer__list"
+                >
+                    <AtText v-bind="cfg.title" class="c-footer__title">
+                        {{ item.title }}
+                    </AtText>
+
+                    <AtLinksList
+                        v-for="list in item.links"
+                        :key="list.id"
+                        v-bind="[cfg.linkList, { config: cfg.linkList }]"
+                        class="c-footer__links-list"
+                        :items="list"
+                    />
+                </div>
+            </div>
+        </AtContainer>
     </div>
 </template>
 
 <script>
+    import AtContainer from '@components/Container/Container'
     import AtLinksList from '@components/LinksList/LinksList'
+    import AtText from '@components/Text/Text'
 
     export default {
         name: 'AtFooter',
         components: {
-            AtLinksList
+            AtContainer,
+            AtLinksList,
+            AtText
         },
         props: {
             lists: {
@@ -29,24 +50,76 @@
             links: {
                 type: Array,
                 default: () => []
+            },
+            bgColor: {
+                type: String,
+                default: undefined
+            }
+        },
+        data () {
+            return {
+                cfg: {
+                    bgColor: 'primary',
+                    container: {},
+                    section: {},
+                    title: {
+                        size: 'basalt',
+                        color: 'white'
+                    },
+                    linkList: {
+                        text: {
+                            size: 'tuff',
+                            tag: 'span'
+                        },
+                        link: {
+                            color: 'white'
+                        }
+                    }
+                }
             }
         }
     }
 </script>
 
 <style lang="scss">
-    .c-footer {
-        --footer-background: var(--color-primary);
-    }
+  .c-footer {
+    --footer-bg-color-primary: var(--color-primary);
+    --footer-bg-color-secondary: var(--color-secondary);
+    --footer-padding: 0;
+    --footer-inner-padding: var(--space-m) 0;
+    --footer-lists-row-gap: var(--space-xl);
+    --footer-lists-column-gap: var(--space-7xl);
+    --footer-title-padding: 0 0 var(--space-xs) 0;
+    --footer-title-margin: 0 0 var(--space-s) 0;
+    --footer-title-border-color: #fff;
+  }
 </style>
 
 <style lang="scss" scoped>
-    .c-footer {
-        //background: var(--footer-background);
+  .c-footer {
+    padding: var(--footer-padding);
 
-        &__inner {
-            padding: 0 30px;
-        }
+    &--bg-color-primary {
+      background: var(--footer-bg-color-primary);
     }
-</style>
 
+    &--bg-color-secondary {
+      background: var(--footer-bg-color-secondary);
+    }
+
+    &__inner {
+      display: grid;
+      padding: var(--footer-inner-padding);
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: var(--footer-lists-column-gap);
+      grid-row-gap: var(--footer-lists-row-gap);
+    }
+
+    &__title {
+      display: inline-block;
+      border-bottom: 1px solid var(--footer-title-border-color);
+      padding: var(--footer-title-padding);
+      margin: var(--footer-title-margin);
+    }
+  }
+</style>

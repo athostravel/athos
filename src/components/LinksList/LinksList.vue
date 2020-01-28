@@ -6,24 +6,29 @@
         }"
     >
         <AtLink
-            v-for="item in items"
-            :key="item.id"
-            :href="item.href"
-            :target="item.target"
+            v-for="link in items"
+            :key="link.id"
+            v-bind="cfg.link"
+            :href="link.href"
+            :target="link.target"
             class="c-links-list__item"
         >
-            {{ item.text }}
+            <AtText v-bind="cfg.text">
+                {{ link.text }}
+            </AtText>
         </AtLink>
     </div>
 </template>
 
 <script>
+    import AtText from '@components/Text/Text'
     import AtLink from '@components/Link/Link'
 
     export default {
         name: 'AtLinksList',
         components: {
-            AtLink
+            AtLink,
+            AtText
         },
         props: {
             separate: {
@@ -34,6 +39,16 @@
                 type: Array,
                 default: () => []
             }
+        },
+        data () {
+            return {
+                cfg: {
+                    text: {
+                        tag: 'span'
+                    },
+                    link: {}
+                }
+            }
         }
     }
 </script>
@@ -42,6 +57,7 @@
   .c-links-list {
     --c-links-list--separate-color: var(--color-secondary);
     --c-links-list--separate-gap: 0 var(--space-2xs);
+    --c-links-list--separate-gap-first-item: 0;
   }
 </style>
 
@@ -67,6 +83,7 @@
         &:first-child {
           &::before {
             content: "";
+            margin: var(--c-links-list--separate-gap-first-item);
           }
         }
       }

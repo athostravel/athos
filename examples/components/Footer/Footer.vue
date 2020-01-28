@@ -9,35 +9,95 @@
                 atFooter: {
                     lists: [
                         {
+                            title: "Sobre Nosotros",
                             links: [
-                                {
-                                    href: 'http://www.avoristravel.com/',
-                                    text: 'Text Link #1'
-                                },
-                                {
-                                    href: 'http://www.avoristravel.com/',
-                                    text: 'Text Link #2'
-                                },
-                                {
-                                    href: 'http://www.avoristravel.com/',
-                                    text: 'Text Link #3'
-                                }
+                                [
+                                    {
+                                        href: '#',
+                                        text: 'Condiciones Generales'
+                                    },
+                                    {
+                                        href: '#',
+                                        text: 'Política de privacidad'
+                                    },
+                                    {
+                                        href: '#',
+                                        text: 'Política de Cookies'
+                                    },
+                                    {
+                                        href: '#',
+                                        text: 'Contacto'
+                                    }
+                                ]
                             ]
                         },
                         {
+                            title: "Sobre Nosotros 2",
                             links: [
-                                {
-                                    href: 'http://www.avoristravel.com/',
-                                    text: 'Text Link #4'
-                                },
-                                {
-                                    href: 'http://www.avoristravel.com/',
-                                    text: 'Text Link #5'
-                                },
-                                {
-                                    href: 'http://www.avoristravel.com/',
-                                    text: 'Text Link #6'
-                                }
+                                [
+                                    {
+                                        href: '#',
+                                        text: 'Condiciones Generales'
+                                    },
+                                    {
+                                        href: '#',
+                                        text: 'Política de privacidad'
+                                    },
+                                    {
+                                        href: '#',
+                                        text: 'Política de Cookies'
+                                    },
+                                    {
+                                        href: '#',
+                                        text: 'Contacto'
+                                    },
+                                    {
+                                        href: '#',
+                                        text: 'Lorem ipsum'
+                                    },
+                                    {
+                                        href: '#',
+                                        text: 'Lore'
+                                    }
+                                ]
+                            ]
+                        },
+                        {
+                            title: "Sobre Nosotros 3",
+                            links: [
+                                [
+                                    {
+                                        href: '#',
+                                        text: 'Condiciones Generales'
+                                    },
+                                    {
+                                        href: '#',
+                                        text: 'Política de privacidad'
+                                    }
+                                ]
+                            ]
+                        },
+                        {
+                            title: "Sobre Nosotros 4",
+                            links: [
+                                [
+                                    {
+                                        href: '#',
+                                        text: 'Condiciones Generales'
+                                    },
+                                    {
+                                        href: '#',
+                                        text: 'Política de privacidad'
+                                    },
+                                    {
+                                        href: '#',
+                                        text: 'Política de Cookies'
+                                    },
+                                    {
+                                        href: '#',
+                                        text: 'Contacto'
+                                    }
+                                ]
                             ]
                         }
                     ]
