@@ -15,7 +15,13 @@
             </div>
             <div v-if="$slots.description || description" class="c-section__description">
                 <slot name="description">
-                    <AtText v-bind="cfg.description">
+                    <template v-if="description.length && typeof description !== 'string'">
+                        <AtText v-for="paragraph in description" :key="paragraph.id" v-bind="cfg.description">
+                            {{ paragraph }}
+                        </AtText>
+                    </template>
+
+                    <AtText v-else v-bind="cfg.description">
                         {{ description }}
                     </AtText>
                 </slot>
@@ -40,7 +46,7 @@
                 default: undefined
             },
             description: {
-                type: String,
+                type: [String, Array],
                 default: undefined
             },
             border: {
@@ -60,7 +66,7 @@
                     description: {
                         color: 'primary',
                         weight: 'light',
-                        size: 'obsidian',
+                        size: 'tuff',
                         align: 'center'
                     }
                 }

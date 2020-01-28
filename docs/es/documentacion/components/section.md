@@ -10,11 +10,11 @@
 
 ## Propiedades
 
-| Nombre        | Tipo     | Parámetros | Descripción               | Por defecto |
-|---------------|----------|------------|---------------------------|-------------|
-| `title`       | `String` |            | Título de la sección      | `undefined` |
-| `description` | `String` |            | Descripción de la sección | `undefined` |
-| `border`      | `String` | `bottom`   | Añade borde a la sección  | `undefined` |
+| Nombre        | Tipo              | Parámetros | Descripción               | Por defecto |
+|---------------|-------------------|------------|---------------------------|-------------|
+| `title`       | `String`          |            | Título de la sección      | `undefined` |
+| `description` | `String`, `Array` |            | Descripción de la sección | `undefined` |
+| `border`      | `String`          | `bottom`   | Añade borde a la sección  | `undefined` |
 
 ## Slots
 
