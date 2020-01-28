@@ -149,12 +149,12 @@
                     },
                     map: {
                         enabled: true,
-                        button: { variant:'text', color: 'primary', rounded: true, icon: true, size: 'obsidian' },
+                        button: { variant: 'text', color: 'primary', rounded: true, icon: true, size: 'obsidian' },
                         icon: { icon: 'heart' }
                     },
                     favourite: {
                         enabled: true,
-                        button: { variant:'text', color: 'primary', rounded: true, icon: true, size: 'obsidian' },
+                        button: { variant: 'text', color: 'primary', rounded: true, icon: true, size: 'obsidian' },
                         icon: { icon: 'heart' }
                     },
                     previous: {

@@ -1,28 +1,27 @@
 <template>
     <div class="c-collapse">
-        <AtIconCard
-            id="collapse"
+        <div
+            id="c-collapse-header"
             v-bind="[cfg.header, header]"
             class="c-collapse__header"
             :class="[
                 {
-                    'c-collapse__header--left': align === 'left',
-                    'c-collapse__header--right': align === 'right',
-                    'c-collapse__header--center': align === 'center'
+                    'c-collapse__header--right': cfg.header.align === 'right',
+                    'c-collapse__header--center': cfg.header.align === 'center',
+                    'c-collapse__header--icon-right': cfg.symbol.icon.align === 'right'
                 }
             ]"
         >
-            <AtIcon
-                slot="icon"
-                v-bind="cfg.icon"
-                :icon="cfg.icon.icon"
-                class="c-collapse__icon"
-            />
+            <div v-if="cfg.symbol.enabled" class="c-collapse__icon">
+                <AtButton v-bind="cfg.symbol.button" class="c-collapse__button">
+                    <AtIcon v-bind="cfg.symbol.icon" :icon="cfg.symbol.icon.icon" />
+                </AtButton>
+            </div>
 
             <AtText class="c-collapse__header-text" v-bind="[cfg.title, title]">
                 {{ header.text }}
             </AtText>
-        </AtIconCard>
+        </div>
 
         <div
             v-toggle
@@ -30,7 +29,7 @@
             v-bind="content"
             toggle-class="is-active"
             toggle-trigger-class="is-active"
-            toggle-trigger="#collapse"
+            toggle-trigger="#c-collapse-header"
         >
             <slot />
         </div>
@@ -38,8 +37,8 @@
 </template>
 
 <script>
+    import AtButton from '@components/Button/Button'
     import AtIcon from '@components/Icon/Icon'
-    import AtIconCard from '@components/IconCard/IconCard'
     import AtText from '@components/Text/Text'
     import ToggleDirective from '@directives/ToggleDirective'
 
@@ -49,8 +48,8 @@
             toggle: ToggleDirective
         },
         components: {
+            AtButton,
             AtIcon,
-            AtIconCard,
             AtText
         },
         props: {
@@ -68,14 +67,18 @@
             },
             align: {
                 type: String,
-                default: 'left'
+                default: undefined
+            },
+            symbol: {
+                type: Object,
+                default: () => {}
             }
         },
         data () {
             return {
                 cfg: {
                     header: {
-                        position: 'right',
+                        align: 'center',
                         gap: 'dunite',
                         inline: true
                     },
@@ -84,8 +87,10 @@
                         position: 'right',
                         weight: 'bold'
                     },
-                    icon: {
-                        icon: 'heart'
+                    symbol: {
+                        enabled: true,
+                        button: { variant: 'icon', color: 'secondary', rounded: true, icon: true, size: 'dunite' },
+                        icon: { icon: 'heart', align: 'right' }
                     }
                 }
             }
@@ -97,6 +102,7 @@
   .c-collapse {
     --c-collapse-content-padding: var(--space-s) 0 0 0;
     --c-collapse-content-margin-paragraphs: 0 0 var(--space-xs) 0;
+    --c-collapse-header-gap: var(--space-xs);
   }
 </style>
 
@@ -107,6 +113,9 @@
     display: grid;
 
     &__header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      column-gap: var(--c-collapse-header-gap);
       cursor: pointer;
       align-items: center;
       justify-self: start;
@@ -117,6 +126,14 @@
 
       &--center {
         justify-self: center;
+      }
+
+      &--icon-right {
+        grid-template-columns: auto 1fr;
+
+        #{$this}__icon {
+          order: 2;
+        }
       }
 
       &.is-active {
