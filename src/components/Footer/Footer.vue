@@ -64,12 +64,13 @@
                     section: {},
                     title: {
                         size: 'basalt',
-                        color: 'white'
+                        color: 'white',
+                        weight: 'bold',
+                        tag: 'span'
                     },
                     linkList: {
                         text: {
-                            size: 'tuff',
-                            tag: 'span'
+                            size: 'diorite'
                         },
                         link: {
                             color: 'white'

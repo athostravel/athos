@@ -5,18 +5,21 @@
             'c-links-list--separate': separate
         }"
     >
-        <AtLink
+        <AtText
+            class="c-links-list__text"
+            v-bind="cfg.text"
             v-for="link in items"
             :key="link.id"
-            v-bind="cfg.link"
-            :href="link.href"
-            :target="link.target"
-            class="c-links-list__item"
         >
-            <AtText v-bind="cfg.text">
+            <AtLink
+                v-bind="cfg.link"
+                :href="link.href"
+                :target="link.target"
+                class="c-links-list__link"
+            >
                 {{ link.text }}
-            </AtText>
-        </AtLink>
+            </AtLink>
+        </AtText>
     </div>
 </template>
 
@@ -68,12 +71,12 @@
     display: flex;
     flex-wrap: wrap;
 
-    &__item {
+    &__text {
       display: inline-flex;
     }
 
     &--separate {
-      #{$this}__item {
+      #{$this}__text {
         &::before {
           align-items: center;
           color: var(--c-links-list--separate-color);
