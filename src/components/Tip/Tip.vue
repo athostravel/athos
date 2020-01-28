@@ -65,7 +65,7 @@
 <style lang="scss" scoped>
   .c-tip {
     &__title {
-      margin-bottom: em(2px);
+      margin-bottom: em(4px);
     }
   }
 </style>

@@ -85,7 +85,7 @@
     }
 
     &__description {
-      margin-top: em(16px);
+      margin-top: em(24px);
     }
 
     &--border {

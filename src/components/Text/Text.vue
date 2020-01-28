@@ -88,6 +88,9 @@
       font-weight: var(--c-text-font-weight);
       font-size: var(--c-text-font-size);
       line-height: var(--c-text-line-height);
+      margin-top: calc(((var(--c-text-font-size) * var(--c-text-line-height)) - var(--c-text-font-size)) / -2);
+      margin-bottom: calc(((var(--c-text-font-size) * var(--c-text-line-height)) - var(--c-text-font-size)) / -2);
+      display: inline-block;
     }
 
     &--has-bg {
