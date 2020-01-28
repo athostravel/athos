@@ -1,7 +1,7 @@
 <template>
     <AtContainer v-bind="cfg.container">
         <AtSection v-bind="[cfg.section, { config: cfg.section, title, description }]">
-            <AtTetris v-bind="{ config: cfg.tetris, items }" />
+            <AtTetris v-bind="[cfg.tetris, { config: cfg.tetris, items }]" />
         </AtSection>
     </AtContainer>
 </template>

@@ -148,6 +148,22 @@ module.exports = {
                             ]
                         },
                         {
+                            title: 'Layouts',
+                            collapsable: false,
+                            sidebarDepth: 2,
+                            children: [
+                                '/es/documentacion/layouts/layout-virgo'
+                            ]
+                        },
+                        {
+                            title: 'Páginas',
+                            collapsable: false,
+                            sidebarDepth: 2,
+                            children: [
+                                '/es/documentacion/pages/page-hydra'
+                            ]
+                        },
+                        {
                             title: 'Estilos',
                             collapsable: false,
                             sidebarDepth: 2,
