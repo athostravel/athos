@@ -75,8 +75,11 @@
     &--separate {
       #{$this}__item {
         &::before {
+          align-items: center;
           color: var(--c-links-list--separate-color);
           content: "|";
+          display: flex;
+          font-size: var(--c-links-list--separate-size);
           margin: var(--c-links-list--separate-gap);
         }
 
