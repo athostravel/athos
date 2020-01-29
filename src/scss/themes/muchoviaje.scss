@@ -13,6 +13,20 @@
   --color-secondary-hsl: var(--color-secondary-hue), var(--color-secondary-saturation), var(--color-secondary-lumnosity);
   --color-secondary: hsl(var(--color-secondary-hsl));
 
+  // Tertiary
+  --color-tertiary-hue: 203;
+  --color-tertiary-saturation: 77%;
+  --color-tertiary-lumnosity: 64%;
+  --color-tertiary-hsl: var(--color-tertiary-hue), var(--color-tertiary-saturation), var(--color-tertiary-lumnosity);
+  --color-tertiary: hsl(var(--color-tertiary-hsl));
+
+  // Quaternary
+  --color-quaternary-hue: 139;
+  --color-quaternary-saturation: 95%;
+  --color-quaternary-lumnosity: 76%;
+  --color-quaternary-hsl: var(--color-quaternary-hue), var(--color-quaternary-saturation), var(--color-quaternary-lumnosity);
+  --color-quaternary: hsl(var(--color-quaternary-hsl));
+
   // Fonts
   --font-family-primary: 'Source Sans Pro', sans-serif;
   --font-family-icons: 'MuchoviajeIcons';

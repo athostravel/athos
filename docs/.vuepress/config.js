@@ -131,21 +131,43 @@ module.exports = {
                                 '/es/documentacion/components/banner-sirius',
                                 '/es/documentacion/components/banner',
                                 '/es/documentacion/components/button',
+                                '/es/documentacion/components/card-aries',
                                 '/es/documentacion/components/checkbox',
                                 '/es/documentacion/components/card-alya',
                                 '/es/documentacion/components/container',
+                                '/es/documentacion/components/heading',
                                 '/es/documentacion/components/icon-card',
                                 '/es/documentacion/components/icon',
+                                '/es/documentacion/components/list-aries',
                                 '/es/documentacion/components/picture',
                                 '/es/documentacion/components/price-button',
                                 '/es/documentacion/components/price',
                                 '/es/documentacion/components/radio',
+                                '/es/documentacion/components/section-crux',
                                 '/es/documentacion/components/section-lynx',
                                 '/es/documentacion/components/section',
                                 '/es/documentacion/components/switch-orion',
                                 '/es/documentacion/components/switch',
                                 '/es/documentacion/components/tetris',
-                                '/es/documentacion/components/text'
+                                '/es/documentacion/components/text',
+                                '/es/documentacion/components/tip',
+                                '/es/documentacion/components/tips'
+                            ]
+                        },
+                        {
+                            title: 'Layouts',
+                            collapsable: false,
+                            sidebarDepth: 2,
+                            children: [
+                                '/es/documentacion/layouts/layout-virgo'
+                            ]
+                        },
+                        {
+                            title: 'Páginas',
+                            collapsable: false,
+                            sidebarDepth: 2,
+                            children: [
+                                '/es/documentacion/pages/page-hydra'
                             ]
                         },
                         {

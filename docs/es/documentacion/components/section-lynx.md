@@ -10,30 +10,24 @@
 
 ## Propiedades
 
-| Nombre  | Tipo     | Descripción                                      | Por defecto |
-|---------|----------|--------------------------------------------------|-------------|
-| `title` | `String` | Título de la sección                             | `undefined` |
-| `items` | `Array`  | Array de objetos con la información de cada item | `[]`        |
+| Nombre        | Tipo     | Descripción                                      | Por defecto |
+|---------------|----------|--------------------------------------------------|-------------|
+| `title`       | `String` | Título de la sección                             | `undefined` |
+| `description` | `String` | Descripción de la sección                        | `undefined` |
+| `items`       | `Array`  | Array de objetos con la información de cada item | `[]`        |
 
-### Configuración por defecto
+## Configuración por defecto
 
 ```js
 {
     container: {},
-    section: {
-        border: 'bottom'
-    },
-    title: {
-        color: 'primary',
-        weight: 'bold',
-        size: 'coal',
-        align: 'center'
-    },
+    section: {},
+    title: {},
     tetris: {}
 }
 ```
 
-#### Referencias
+### Referencias
 
 | Clave       | Componente                  |
 |-------------|-----------------------------|

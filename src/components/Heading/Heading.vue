@@ -1,22 +1,18 @@
 <template>
     <AtContainer v-bind="cfg.container">
-        <AtSection v-bind="[cfg.section, { config: cfg.section, title, description }]">
-            <AtTetris v-bind="[cfg.tetris, { config: cfg.tetris, items }]" />
-        </AtSection>
+        <AtSection v-bind="[cfg.section, { config: cfg.section, title, description }]" />
     </AtContainer>
 </template>
 
 <script>
     import AtContainer from '@components/Container/Container'
     import AtSection from '@components/Section/Section'
-    import AtTetris from '@components/Tetris/Tetris'
 
     export default {
-        name: 'AtSectionLynx',
+        name: 'AtHeading',
         components: {
             AtContainer,
-            AtSection,
-            AtTetris
+            AtSection
         },
         props: {
             title: {
@@ -24,20 +20,19 @@
                 default: undefined
             },
             description: {
-                type: String,
+                type: [String, Array],
                 default: undefined
-            },
-            items: {
-                type: Array,
-                default: () => []
             }
         },
         data () {
             return {
                 cfg: {
                     container: {},
-                    section: {},
-                    tetris: {}
+                    section: {
+                        title: {
+                            color: 'secondary'
+                        }
+                    }
                 }
             }
         }

@@ -20,6 +20,20 @@
   --color-secondary-hsl: var(--color-secondary-hue), var(--color-secondary-saturation), var(--color-secondary-lumnosity);
   --color-secondary: hsl(var(--color-secondary-hsl));
 
+  // Tertiary
+  --color-tertiary-hue: 253;
+  --color-tertiary-saturation: 100%;
+  --color-tertiary-lumnosity: 48%;
+  --color-tertiary-hsl: var(--color-tertiary-hue), var(--color-tertiary-saturation), var(--color-tertiary-lumnosity);
+  --color-tertiary: hsl(var(--color-tertiary-hsl));
+
+  // Quaternary
+  --color-quaternary-hue: 153;
+  --color-quaternary-saturation: 100%;
+  --color-quaternary-lumnosity: 48%;
+  --color-quaternary-hsl: var(--color-quaternary-hue), var(--color-quaternary-saturation), var(--color-quaternary-lumnosity);
+  --color-quaternary: hsl(var(--color-quaternary-hsl));
+
   // Status success
   --color-success-hue: 98;
   --color-success-saturation: 52%;
