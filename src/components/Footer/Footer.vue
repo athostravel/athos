@@ -32,7 +32,7 @@
                 </AtText>
 
                 <div class="c-footer__logo">
-                    <img class="c-footer__image" v-if="image" :src="image.src" :alt="image.src">
+                    <img v-if="image" class="c-footer__image" :src="image.src" :alt="image.src">
                 </div>
             </div>
         </AtContainer>
@@ -107,6 +107,7 @@
   .c-footer {
     --footer-bg-color-primary: var(--color-primary);
     --footer-bg-color-secondary: var(--color-secondary);
+    --footer-bg-color-figure: rgba(255, 255, 255, 0.1);
     --footer-padding: 0;
     --footer-inner-padding: var(--space-l) 0;
     --footer-lists-row-gap: var(--space-xl);
@@ -122,6 +123,23 @@
 <style lang="scss" scoped>
   .c-footer {
     padding: var(--footer-padding);
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+
+    &::before {
+      content: "";
+      border-radius: 3em;
+      display: block;
+      height: 32em;
+      width: 32em;
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: rotate(45deg);
+      position: absolute;
+      right: -6%;
+      top: 0;
+      z-index: -1;
+    }
 
     &--bg-color-primary {
       background: var(--footer-bg-color-primary);
@@ -155,8 +173,12 @@
       grid-row-gap: var(--footer-lists-row-gap);
     }
 
-      &__logo {
-          text-align: right;
-      }
+    &__logo {
+      text-align: right;
+    }
+
+    &__image {
+      max-width: #{em((120px))};
+    }
   }
 </style>
