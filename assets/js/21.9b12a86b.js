@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[21],{429:function(e,t,n){"use strict";n.r(t);var r={data:function(){return{atPrice:{text:"Desde",before:"300",value:"199",currency:"€"}}}},c=n(0),i=Object(c.a)(r,(function(){var e=this.$createElement;return(this._self._c||e)("AtPrice",this._b({},"AtPrice",this.atPrice,!1))}),[],!1,null,null,null);t.default=i.exports}}]);

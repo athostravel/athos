@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[23],{428:function(t,a,e){"use strict";e.r(a);var n={data:function(){return{atRadio:{name:"example",label:"Lorem Ipsum"}}}},i=e(0),o=Object(i.a)(n,(function(){var t=this.$createElement,a=this._self._c||t;return a("div",[a("AtRadio",this._b({},"AtRadio",this.atRadio,!1))],1)}),[],!1,null,null,null);a.default=o.exports}}]);

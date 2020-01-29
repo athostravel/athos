@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[22],{430:function(t,e,n){"use strict";n.r(e);var r={data:function(){return{atPriceButton:{href:"#",before:"300",value:"199"}}}},u=n(0),i=Object(u.a)(r,(function(){var t=this.$createElement;return(this._self._c||t)("AtPriceButton",this._b({},"AtPriceButton",this.atPriceButton,!1))}),[],!1,null,null,null);e.default=i.exports}}]);

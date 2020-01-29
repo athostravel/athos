@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[27],{416:function(t,e,n){"use strict";n.r(e);var i={data:function(){return{atSwitch:{id:"example",label:"Lorem Ipsum"}}}},a=n(0),c=Object(a.a)(i,(function(){var t=this.$createElement;return(this._self._c||t)("AtSwitch",this._b({},"AtSwitch",this.atSwitch,!1))}),[],!1,null,null,null);e.default=c.exports}}]);

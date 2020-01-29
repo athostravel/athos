@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[28],{413:function(t,n,i){"use strict";i.r(n);var e={data:function(){return{atSwitchOrion:{input:{id:"example"}}}}},r=i(0),c=Object(r.a)(e,(function(){var t=this.$createElement;return(this._self._c||t)("AtSwitchOrion",this._b({},"AtSwitchOrion",this.atSwitchOrion,!1))}),[],!1,null,null,null);n.default=c.exports}}]);
