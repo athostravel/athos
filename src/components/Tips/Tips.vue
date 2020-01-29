@@ -42,14 +42,7 @@
         data () {
             return {
                 cfg: {
-                    tips: [],
-                    tip: {
-                        iconCard: {
-                            icon: {}
-                        },
-                        title: {},
-                        description: {}
-                    }
+                    tips: []
                 }
             }
         }

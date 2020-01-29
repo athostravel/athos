@@ -75,10 +75,16 @@
     }
 </script>
 
+<style lang="scss">
+  .c-section {
+    --c-section-separation: #{em(80px)};
+  }
+</style>
+
 <style lang="scss" scoped>
   .c-section {
-    margin-top: em(54px);
-    margin-bottom: em(54px);
+    margin-top: var(--c-section-separation);
+    margin-bottom: var(--c-section-separation);
 
     &__header {
       margin-bottom: em(40px);
@@ -90,7 +96,7 @@
 
     &--border {
       &-bottom {
-        padding-bottom: em(54px);
+        padding-bottom: var(--c-section-separation);
         border-bottom: rem(1px) solid var(--color-border);
       }
     }
