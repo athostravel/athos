@@ -26,17 +26,14 @@
                     />
                 </div>
             </div>
-            <div class="c-footer__footer">
+            <div class="c-footer__copyright">
                 <AtText v-if="copyright" v-bind="cfg.copyright" class="c-footer__text">
                     {{ copyright.text }}
                 </AtText>
 
-                <AtPicture class="c-footer__logo"
-                           v-if="image"
-                           v-bind="cfg.image"
-                           :src="image.src"
-                           :ratio="cfg.image.ratio"
-                />
+                <div class="c-footer__logo">
+                    <img class="c-footer__image" v-if="image" :src="image.src" :alt="image.src">
+                </div>
             </div>
         </AtContainer>
     </div>
@@ -46,15 +43,13 @@
     import AtContainer from '@components/Container/Container'
     import AtLinksList from '@components/LinksList/LinksList'
     import AtText from '@components/Text/Text'
-    import AtPicture from '@components/Picture/Picture'
 
     export default {
         name: 'AtFooter',
         components: {
             AtContainer,
             AtLinksList,
-            AtText,
-            AtPicture
+            AtText
         },
         props: {
             lists: {
@@ -101,12 +96,6 @@
                     copyright: {
                         color: 'white',
                         size: 'diorite'
-                    },
-                    image: {
-                        ratio: {
-                            height: 1,
-                            width: 2,
-                        }
                     }
                 }
             }
@@ -119,12 +108,14 @@
     --footer-bg-color-primary: var(--color-primary);
     --footer-bg-color-secondary: var(--color-secondary);
     --footer-padding: 0;
-    --footer-inner-padding: var(--space-m) 0;
+    --footer-inner-padding: var(--space-l) 0;
     --footer-lists-row-gap: var(--space-xl);
     --footer-lists-column-gap: var(--space-7xl);
     --footer-title-padding: 0 0 var(--space-xs) 0;
     --footer-title-margin: 0 0 var(--space-s) 0;
     --footer-title-border-color: #fff;
+    --footer-copyright-border-color: #fff;
+    --footer-copyright-padding: var(--space-l) 0;
   }
 </style>
 
@@ -155,14 +146,17 @@
       margin: var(--footer-title-margin);
     }
 
-      &__footer {
-          border-top: 1px solid #fff;
-          margin-top: 26px;
-          padding: var(--footer-inner-padding);
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          grid-column-gap: var(--footer-lists-column-gap);
-          grid-row-gap: var(--footer-lists-row-gap);
+    &__copyright {
+      border-top: 1px solid var(--footer-copyright-border-color);
+      padding: var(--footer-copyright-padding);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: var(--footer-lists-column-gap);
+      grid-row-gap: var(--footer-lists-row-gap);
+    }
+
+      &__logo {
+          text-align: right;
       }
   }
 </style>

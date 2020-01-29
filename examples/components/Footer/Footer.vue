@@ -11,7 +11,8 @@
                         text: '© Dondear Viajes S.L. BAL716 M/M con C.I.F. B57797730',
                     },
                     image: {
-                        src: 'https://d1hkxmgwhmmdhs.cloudfront.net/dist/assets/img/muchoviaje/logo.png'
+                        src: 'https://d1hkxmgwhmmdhs.cloudfront.net/dist/assets/img/muchoviaje/footer-logo.png',
+                        alt: 'Alternative Text'
                     },
                     lists: [
                         {
