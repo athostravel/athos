@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Crear un componente | Avoris Travel</title>
+    <meta name="description" content="Componentes de Vue para las aplicaciones de Avoris Travel">
+    
+    
+    <link rel="preload" href="/athos/assets/css/0.styles.2296cf6f.css" as="style"><link rel="preload" href="/athos/assets/js/app.72791691.js" as="script"><link rel="preload" href="/athos/assets/js/3.792069fb.js" as="script"><link rel="preload" href="/athos/assets/js/2.8eac71f3.js" as="script"><link rel="preload" href="/athos/assets/js/10.852ed69b.js" as="script"><link rel="prefetch" href="/athos/assets/js/11.3912a390.js"><link rel="prefetch" href="/athos/assets/js/12.973c67ab.js"><link rel="prefetch" href="/athos/assets/js/13.93005694.js"><link rel="prefetch" href="/athos/assets/js/14.ff60d810.js"><link rel="prefetch" href="/athos/assets/js/15.22a57bf4.js"><link rel="prefetch" href="/athos/assets/js/16.578abbc1.js"><link rel="prefetch" href="/athos/assets/js/4.4f8b9160.js"><link rel="prefetch" href="/athos/assets/js/5.37123fb9.js"><link rel="prefetch" href="/athos/assets/js/6.67db8767.js"><link rel="prefetch" href="/athos/assets/js/7.947ecaec.js"><link rel="prefetch" href="/athos/assets/js/8.e378f6fc.js"><link rel="prefetch" href="/athos/assets/js/9.b2cd4b87.js">
+    <link rel="stylesheet" href="/athos/assets/css/0.styles.2296cf6f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="layout" data-v-1d18bfd4><header class="navbar layout__navbar" data-v-4a1b8f66 data-v-1d18bfd4><button class="sidebar-button navbar__sidebar-button" data-v-c930e686 data-v-4a1b8f66><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon" data-v-c930e686><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z" data-v-c930e686></path></svg></button> <a href="/athos/es/" class="navbar__brand router-link-active" data-v-4a1b8f66><img src="/athos/assets/img/avoris.svg" alt="Avoris Travel" class="navbar__logo" data-v-4a1b8f66> <!----></a> <div class="navbar__links" data-v-4a1b8f66><nav class="nav-links" data-v-902279a6 data-v-4a1b8f66><div class="nav-links__item" data-v-902279a6><a href="/athos/es/" class="nav-links__link" data-v-ad52937c data-v-902279a6>
+    Inicio
+</a></div><div class="nav-links__item" data-v-902279a6><a href="/athos/es/documentacion/" class="nav-links__link" data-v-ad52937c data-v-902279a6>
+    Documentación
+</a></div><div class="nav-links__item" data-v-902279a6><a href="/athos/es/desarrollo/" class="nav-links__link router-link-active" data-v-ad52937c data-v-902279a6>
+    Desarrollo
+</a></div><div class="nav-links__item" data-v-902279a6><div class="dropdown" data-v-f953b9f0 data-v-902279a6><a class="dropdown__title" data-v-f953b9f0><span class="dropdown__title-text" data-v-f953b9f0>Idiomas</span> <span class="dropdown__arrow right" data-v-f953b9f0></span></a> <ul class="dropdown__nav" style="display:none;" data-v-f953b9f0 data-v-f953b9f0><li class="dropdown__item" data-v-f953b9f0><!----> <a href="/athos/" class="nav-links__link dropdown__link" data-v-ad52937c data-v-f953b9f0>
+    English
+</a></li><li class="dropdown__item" data-v-f953b9f0><!----> <a href="/athos/es/desarrollo/crear-un-componente.html" class="nav-links__link dropdown__link router-link-exact-active router-link-active" data-v-ad52937c data-v-f953b9f0>
+    Español
+</a></li></ul></div></div> <!----></nav></div></header> <div class="layout__sidebar-mask" data-v-1d18bfd4></div> <aside class="sidebar layout__sidebar" data-v-4edd66be data-v-1d18bfd4><div class="sidebar__inner" data-v-4edd66be><div class="sidebar__scrollbar" data-v-4edd66be><div class="simplebar-wrapper"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div> <div class="simplebar-mask"><div class="simplebar-offset"><div class="simplebar-content-wrapper"><div class="simplebar-content"><div class="sidebar__box" data-v-4edd66be><div class="search-box sidebar__search" data-v-4edd66be><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links nav-links--mobile" data-v-902279a6 data-v-4edd66be><div class="nav-links__item" data-v-902279a6><a href="/athos/es/" class="nav-links__link" data-v-ad52937c data-v-902279a6>
+    Inicio
+</a></div><div class="nav-links__item" data-v-902279a6><a href="/athos/es/documentacion/" class="nav-links__link" data-v-ad52937c data-v-902279a6>
+    Documentación
+</a></div><div class="nav-links__item" data-v-902279a6><a href="/athos/es/desarrollo/" class="nav-links__link router-link-active" data-v-ad52937c data-v-902279a6>
+    Desarrollo
+</a></div><div class="nav-links__item" data-v-902279a6><div class="dropdown dropdown--mobile" data-v-f953b9f0 data-v-902279a6><a class="dropdown__title" data-v-f953b9f0><span class="dropdown__title-text" data-v-f953b9f0>Idiomas</span> <span class="dropdown__arrow right" data-v-f953b9f0></span></a> <ul class="dropdown__nav" style="display:none;" data-v-f953b9f0 data-v-f953b9f0><li class="dropdown__item" data-v-f953b9f0><!----> <a href="/athos/" class="nav-links__link dropdown__link" data-v-ad52937c data-v-f953b9f0>
+    English
+</a></li><li class="dropdown__item" data-v-f953b9f0><!----> <a href="/athos/es/desarrollo/crear-un-componente.html" class="nav-links__link dropdown__link router-link-exact-active router-link-active" data-v-ad52937c data-v-f953b9f0>
+    Español
+</a></li></ul></div></div> <!----></nav> </div> <div class="sidebar__box sidebar__box--not-padding" data-v-4edd66be><ul class="sidebar-links" data-v-99e331ba data-v-4edd66be><li class="sidebar-links__item" data-v-99e331ba><section class="sidebar-group depth-0" data-v-99e331ba><p class="sidebar-heading open"><span>Empezando</span> <!----></p> <ul class="sidebar-links sidebar-group-items" data-v-99e331ba><li class="sidebar-links__item" data-v-99e331ba><a href="/athos/es/desarrollo/" class="sidebar-link" data-v-99e331ba>Instalación</a></li><li class="sidebar-links__item" data-v-99e331ba><a href="/athos/es/desarrollo/crear-un-componente.html" class="active sidebar-link" data-v-99e331ba>Crear un componente</a><ul class="sidebar-sub-headers" data-v-99e331ba data-v-99e331ba><li class="sidebar-sub-header" data-v-99e331ba data-v-99e331ba><a href="/athos/es/desarrollo/crear-un-componente.html#preparar-el-componente-para-la-libreria" class="sidebar-link" data-v-99e331ba>Preparar el componente para la librería</a><ul class="sidebar-sub-headers" data-v-99e331ba data-v-99e331ba><li class="sidebar-sub-header" data-v-99e331ba data-v-99e331ba><a href="/athos/es/desarrollo/crear-un-componente.html#componentes-anidados" class="sidebar-link" data-v-99e331ba>Componentes anidados</a></li></ul></li><li class="sidebar-sub-header" data-v-99e331ba data-v-99e331ba><a href="/athos/es/desarrollo/crear-un-componente.html#plantilla-del-componente" class="sidebar-link" data-v-99e331ba>Plantilla del componente</a></li></ul></li><li class="sidebar-links__item" data-v-99e331ba><a href="/athos/es/desarrollo/documentar-un-componente.html" class="sidebar-link" data-v-99e331ba>Documentar un componente</a></li></ul></section></li></ul> </div></div></div></div></div> <div class="simplebar-placeholder"></div></div> <div class="simplebar-track simplebar-horizontal"><div class="simplebar-scrollbar"></div></div> <div class="simplebar-track simplebar-vertical"><div class="simplebar-scrollbar"></div></div></div></div></aside> <main class="page layout__page" data-v-32e869ed data-v-1d18bfd4><div class="page__content" data-v-32e869ed> <div class="theme-default-content content__default" data-v-32e869ed><h1 id="crear-un-componente"><a href="#crear-un-componente" class="header-anchor">#</a> Crear un componente</h1> <p>Para crear un componente (se aplica también a páginas y layouts) deberemos seguir la siguiente estructura:</p> <div class="language- extra-class"><pre class="language-text"><code>├── src
+│   ├── components
+│   │   └── MyComponent
+│   │   │   ├── MyComponent.vue
+│   │   │   └── index.js
+│   ├── layouts
+│   │   └── MyLayout
+│   │   │   ├── MyLayout.vue
+│   │   │   └── index.js
+│   ├── pages
+│   │   └── MyPage
+│   │   │   ├── MyPage.vue
+│   │   │   └── index.js
+│   ├── ...
+</code></pre></div><div class="docs-msg docs-msg--tip"><div class="docs-msg__title">TIP</div> <p>Cuando nos referimos a componentes también estamos hablando de páginas y layouts. Todo son componentes, pero es una manera de categorizarlos.</p></div> <h2 id="preparar-el-componente-para-la-libreria"><a href="#preparar-el-componente-para-la-libreria" class="header-anchor">#</a> Preparar el componente para la librería</h2> <p>Una vez creados los archivos deberemos preparar el componente para ser exportado en la librería. Para ello en el <code>index.js</code> añadimos:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> MyComponent <span class="token keyword">from</span> <span class="token string">'./MyComponent.vue'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> use<span class="token punctuation">,</span> registerComponent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@utils/plugins'</span>
+
+<span class="token keyword">const</span> Plugin <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token function">install</span> <span class="token punctuation">(</span><span class="token parameter">Vue</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">registerComponent</span><span class="token punctuation">(</span>Vue<span class="token punctuation">,</span> MyComponent<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">use</span><span class="token punctuation">(</span>Plugin<span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> Plugin
+</code></pre></div><p>También tendremos que importar y exportar este <code>index.js</code> al <code>index.js</code> correspondiente de la carpeta padre, en este caso estaría en <code>src/components/index.js</code>. Podemos hacerlo de la siguiente manera:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token punctuation">{</span> <span class="token keyword">default</span> <span class="token keyword">as</span> MyComponent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@components/MyComponent'</span>
+</code></pre></div><h3 id="componentes-anidados"><a href="#componentes-anidados" class="header-anchor">#</a> Componentes anidados</h3> <p>En el caso que necesitemos crear un componente que a su vez necesite de otro pero el conjunto se considera como uno seguiremos la siguiente estructura:</p> <div class="language- extra-class"><pre class="language-text"><code>├── src
+│   ├── components
+│   │   └── Tabs
+│   │   │   ├── Tab.vue
+│   │   │   ├── Tabs.vue
+│   │   │   └── index.js
+│   ├── ...
+</code></pre></div><p>A la hora de exportarlo en el <code>index.js</code> sería suficiente añadir otro <code>registerComponent</code>:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> Tab <span class="token keyword">from</span> <span class="token string">'./Tab.vue'</span>
+<span class="token keyword">import</span> Tabs <span class="token keyword">from</span> <span class="token string">'./Tabs.vue'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> use<span class="token punctuation">,</span> registerComponent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@utils/plugins'</span>
+
+<span class="token keyword">const</span> Plugin <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token function">install</span> <span class="token punctuation">(</span><span class="token parameter">Vue</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">registerComponent</span><span class="token punctuation">(</span>Vue<span class="token punctuation">,</span> Tab<span class="token punctuation">)</span>
+        <span class="token function">registerComponent</span><span class="token punctuation">(</span>Vue<span class="token punctuation">,</span> Tabs<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">use</span><span class="token punctuation">(</span>Plugin<span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> Plugin
+</code></pre></div><h2 id="plantilla-del-componente"><a href="#plantilla-del-componente" class="header-anchor">#</a> Plantilla del componente</h2> <p>El archivo <code>.vue</code> seguiría este formato:</p> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>c-my-component<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token comment">&lt;!-- Code --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+        name<span class="token punctuation">:</span> <span class="token string">'AtMyComponent'</span>
+    <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>scss<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">.c-my-component</span> <span class="token punctuation">{</span>
+    <span class="token property">--c-my-component-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--color-primary<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>scss<span class="token punctuation">&quot;</span></span> <span class="token attr-name">scoped</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">.c-my-component</span> <span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--c-my-component-color<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><ul><li>Todos los componentes deberán llevar un <code>name</code> en formato CamelCase empezando por <code>At</code> y seguido por el nombre del componente.</li> <li>Todas las clases para los componentes deberán empezar por <code>c-</code> seguido del nombre. Todo minúsculas y con guiones medios.</li> <li>En caso de usar variables, deberá haber dos <code>styles</code>. En el primero irá la clase del componente con las variables locales sin el atributo <code>scope</code> y en el segundo los estilos del componente con el atributo <code>scope</code>.</li> <li>Los nombres de las variables deberán empezar por <code>c-</code> seguido de nombre del componente, seguido de la propiedad de css que aplicará.</li></ul></div> <!----> <footer class="page-edit" data-v-32e869ed><!----> <!----></footer> <div class="page-nav" data-v-32e869ed><p class="page-nav__inner" data-v-32e869ed><span class="page-nav__prev" data-v-32e869ed><span class="page-nav__icon" data-v-32e869ed>←</span> <a href="/athos/es/desarrollo/" class="router-link-active" data-v-32e869ed>Instalación</a></span> <span class="page-nav__next" data-v-32e869ed><a href="/athos/es/desarrollo/documentar-un-componente.html" data-v-32e869ed>Documentar un componente</a> <span class="page-nav__icon" data-v-32e869ed>→</span></span></p></div> </div></main></div><div class="global-ui"></div></div>
+    <script src="/athos/assets/js/app.72791691.js" defer></script><script src="/athos/assets/js/3.792069fb.js" defer></script><script src="/athos/assets/js/2.8eac71f3.js" defer></script><script src="/athos/assets/js/10.852ed69b.js" defer></script>
+  </body>
+</html>
