@@ -100,13 +100,13 @@
     display: flex;
     flex-wrap: wrap;
 
-      &--position-center {
-          justify-content: center;
-      }
+    &--position-center {
+      justify-content: center;
+    }
 
-      &--position-right {
-          justify-content: flex-end;
-      }
+    &--position-right {
+      justify-content: flex-end;
+    }
 
     &--border {
       &-bottom {
@@ -129,6 +129,7 @@
     }
 
     &__item {
+      align-items: center;
       display: flex;
 
       &:not(:last-child) {
