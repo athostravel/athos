@@ -14,5 +14,12 @@ export default {
     },
     beforeMount () {
         this.cfg = merge(this.cfg, this.config)
+    },
+    methods: {
+        merge (...args) {
+            let result = {}
+            args.forEach((arg) => { result = merge(result, arg) })
+            return result
+        }
     }
 }

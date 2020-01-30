@@ -144,6 +144,7 @@ module.exports = {
                                 '/es/documentacion/components/radio',
                                 '/es/documentacion/components/section-crux',
                                 '/es/documentacion/components/section-lynx',
+                                '/es/documentacion/components/section-taurus',
                                 '/es/documentacion/components/section',
                                 '/es/documentacion/components/switch-orion',
                                 '/es/documentacion/components/switch',

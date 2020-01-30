@@ -11,6 +11,11 @@
             v-if="caribbeanOffers && caribbeanOffers.items"
             v-bind="[{ config: cfg.caribbeanOffers }, caribbeanOffers]"
         />
+
+        <AtSectionTaurus
+            v-if="hotelsOffers && hotelsOffers.items"
+            v-bind="[{ config: cfg.hotelsOffers }, hotelsOffers]"
+        />
     </AtLayoutVirgo>
 </template>
 
@@ -19,6 +24,7 @@
     import AtHeading from '@components/Heading/Heading'
     import AtSectionCrux from '@components/SectionCrux/SectionCrux'
     import AtSectionLynx from '@components/SectionLynx/SectionLynx'
+    import AtSectionTaurus from '@components/SectionTaurus/SectionTaurus'
 
     export default {
         name: 'AtPageHydra',
@@ -26,7 +32,8 @@
             AtHeading,
             AtLayoutVirgo,
             AtSectionCrux,
-            AtSectionLynx
+            AtSectionLynx,
+            AtSectionTaurus
         },
         props: {
             heading: {
@@ -38,6 +45,10 @@
                 default: () => {}
             },
             caribbeanOffers: {
+                type: Object,
+                default: () => {}
+            },
+            hotelsOffers: {
                 type: Object,
                 default: () => {}
             }
